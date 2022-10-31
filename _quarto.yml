@@ -7,12 +7,16 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: About me
+      - href: tutorials.qmd
+        text: Tutorials
+      - href: publications.qmd
+        text: Publications
+        
 
 format:
   html:
-    theme: cosmo
+    theme: simplex
     css: styles.css
     toc: true
 

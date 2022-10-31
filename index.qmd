@@ -1,11 +1,25 @@
 ---
-title: "riegersven.github.io"
+title: "Sven Rieger"
+about:
+  template: trestles
+  image: images/cfa.svg
+  image-shape: rounded
+  image-width: 15em
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/svenrieger_____
+    - icon: github
+      text: Github
+      href: https://github.com/RiegerSven
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
-```{r}
-1 + 1
-```
+I am a postdoctoral researcher in educational research at the University of Tübingen in Germany. You can find my CV here. I am lazy in updating such things, so be patient with me.
+
+My research interests encompass
+
+- latent variable modeling
+- causal inference
+- motivation & personality development 

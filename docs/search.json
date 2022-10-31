@@ -9,8 +9,15 @@
   {
     "objectID": "index.html",
     "href": "index.html",
+    "title": "Sven Rieger",
+    "section": "",
+    "text": "My research interests encompass\n\nlatent variable modeling\ncausal inference\nmotivation & personality development"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
     "title": "riegersven.github.io",
     "section": "",
-    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Google scholar\nORCiD\nUniversity of Tübingen website"
   }
 ]
