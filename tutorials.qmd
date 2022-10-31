@@ -2,4 +2,4 @@
 title: " "
 ---
 
-This is work in progress. It is planned to upload a couple of tutorials.
+This is work in progress. It is planned to upload a couple of tutorials on data processing and applying statistical models.
