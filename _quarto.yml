@@ -19,6 +19,8 @@ format:
     theme: simplex
     css: styles.css
     toc: true
+    
+bibliography: ["rieger-pub.bib"]
 
 
 

@@ -2,4 +2,4 @@
 title: " "
 ---
 
-This is work in progress. It is planned to upload a couple of tutorials on data processing and applying statistical models.
+I like to create tutorials which I upload here: <https://riegersven.github.io/method-website/>

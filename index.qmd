@@ -1,7 +1,7 @@
 ---
 title: "Sven Rieger"
 about:
-  template: trestles
+  template: solana
   image: images/cfa.svg
   image-shape: rounded
   image-width: 15em
@@ -12,14 +12,29 @@ about:
     - icon: github
       text: Github
       href: https://github.com/RiegerSven
+    - icon: pause
+      text: ORCiD
+      href: https://orcid.org/0000-0002-0339-0695
+    - icon: bag-fill
+      text: University
+      href: https://uni-tuebingen.de/en/faculties/faculty-of-economics-and-social-sciences/subjects/department-of-social-sciences/education-sciences-and-psychology/institute/staff/rieger-sven-dr/
 ---
-
 
 
 I am a postdoctoral researcher in educational research at the [University of Tübingen](https://uni-tuebingen.de/) in Germany.
 
 My research interests encompass
 
-- latent variable modeling
+- latent variable modeling (focus on longitudinal analyses)
 - causal inference
+- automation of data analyses with `R` and `Quarto`
 - motivation & personality development 
+
+
+## Education
+
+- PhD in Psychology (Dr.rer.nat), 2014 - 2018, University of Tübingen
+
+- Studies of Education Sciences and Psychology (M.Sc.), 2012 - 2014, University of Tübingen 
+
+- Studies of Education (B.A.), 2009 - 2012, University of Tübingen

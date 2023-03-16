@@ -4,27 +4,34 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "1 + 1\n\n[1] 2"
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Sven Rieger",
     "section": "",
-    "text": "My research interests encompass\n\nlatent variable modeling\ncausal inference\nmotivation & personality development"
+    "text": "I am a postdoctoral researcher in educational research at the University of Tübingen in Germany.\nMy research interests encompass"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Sven Rieger",
+    "section": "Education",
+    "text": "Education\n\nPhD in Psychology (Dr.rer.nat), 2014 - 2018, University of Tübingen\nStudies of Education Sciences and Psychology (M.Sc.), 2012 - 2014, University of Tübingen\nStudies of Education (B.A.), 2009 - 2012, University of Tübingen"
   },
   {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "riegersven.github.io",
     "section": "",
-    "text": "Google scholar\nORCiD\nUniversity of Tübingen website"
+    "text": "I will list the publications here, for now, you find most of them on Google scholar"
   },
   {
     "objectID": "tutorials.html",
     "href": "tutorials.html",
     "title": "riegersven.github.io",
     "section": "",
-    "text": "This is work in progress. It is planned to upload a couple of tutorials."
+    "text": "I like to create tutorials which I upload here: https://riegersven.github.io/method-website/"
   }
 ]
