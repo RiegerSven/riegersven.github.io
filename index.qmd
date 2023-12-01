@@ -2,7 +2,7 @@
 title: "Sven Rieger"
 about:
   template: trestles
-  image: images/cfa.svg
+  image: images/me.jpg
   image-shape: rounded
   image-width: 15em
   links:

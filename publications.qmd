@@ -1,8 +1,45 @@
 ---
-title: " "
+title: "Publications"
+sidebar: false
+repo-actions: false
 ---
 
-I will list the publications here, for now, you find most of them on [Google scholar](https://scholar.google.com/citations?user=zIjPay4AAAAJ&hl=de)
+This publication list ~~is~~ will be (need to do some coding) based on my [Zotero](https://www.zotero.org/riegersven) publication list. Most of the publications (and maybe some more) can also be found  on [Google scholar](https://scholar.google.com/citations?user=zIjPay4AAAAJ&hl=de).
+
+<!--
+
+::: {.callout-tip collapse="true" icon="false"}
+# The list is created with the `RefManageR` package.
+
+```{r}
+#| label: prep-Pub
+#| echo: true
+#| eval: false
+#| output: hide
+if(!"RefManageR" %in% rownames(installed.packages()) == TRUE) {
+    install.packages("RefManageR") }
+```
+
+```{r}
+#| label: import-ref
+#| echo: true
+#| eval: false
+impRef <- RefManageR::ReadBib(file = "rieger-pub.bib")
+
+
+```
+
+:::
+
+```{r}
+#| label: print-ref
+#| echo: false
+#| eval: false
+#| output: asis
+RefManageR::PrintBibliography( impRef )
+```
+
+-->
 
 
 
