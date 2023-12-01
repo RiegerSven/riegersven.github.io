@@ -1,15 +1,45 @@
 ---
-date: today
+title: Descriptive statistics
+author: "Sven Rieger"
+email: "sven.rieger@uni-tuebingen.de"
+email-obfuscation: javascript
+date: 12/01/23
+date-format: long
 published-title: "Last updated on"
+abstract: "This material introduces the basic descriptive statistics (e.g., mean, standard deviation etc.). The material is also available as a [Revealjs presentation](https://quarto.org/docs/presentations/revealjs/)."
 format:
   html: default
   revealjs: 
+    self-contained: true
     output-file: descr-reveal.html
+    footer: "[Back to ...](<https://riegersven.github.io/material/basic-caluclations/descriptive-statistics.html>)"
+    smaller: true
+    scrollable: true
+    navigation-mode: linear
+    progress: true
+    keyboard: true
+    controls: true
+    controls-tutorial: true
+    controls-layout: edges
+    mouse-wheel: false
+    slide-number: c/t
+    show-slide-number: all
+    reference-location: document
+    highlight-style: github
+    theme: [simple, "../revealjs-styles.scss"]
 ---
 
-# Descriptive statistics {#descr}
+::: {.content-hidden when-format="revealjs"}
 
-navigate vertical &#8595;
+## Revealjs Presentation
+
+If you want to see the presentation in full screen go to **Other Formats** on the right.
+
+<div class="container">
+  <iframe class="responsive-iframe" src="descr-reveal.html"></iframe>
+</div> 
+
+:::
 
 ## Preface: Software I
 
@@ -65,6 +95,8 @@ Print list of packages and cite them via [Pandoc citation](<https://pandoc.org/M
 
 ```{r}
 #| label: write-pkgs
+#| code-fold: true
+#| code-summary: "Show/hide fenced code"
 #| echo: fenced
 #| output-location: fragment
 #| output: asis
@@ -199,7 +231,7 @@ exVec <- c(1, 2, 5, 3, 8)
 :::
 ::::
 
-## Descriptive statistics: Mean {#descr-mean}
+## Mean {#descr-mean}
 
 ::: {.callout-note appearance="simple" icon="false"}
 The mean (or arithmetic mean, average) is the sum of a collection of numbers divided by the count of numbers in the collection. The formula is given in @eq-mean.
@@ -269,11 +301,12 @@ mean(exVec2, na.rm = T)
 :::
 
 
-::: {.footer}
+::: {.column-margin}
 [More on missing data in R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Missing-values)
 :::
 
-## Descriptive statistics: Median {#descr-median}
+
+## Median {#descr-median}
 
 ::: {.callout-note appearance="simple" icon="false"}
 The median is the value separating the higher half from the lower half of a data sample, a population, or a probability distribution. For a data set, it may be thought of as "the middle" value. The formulas are given in @eq-med.
@@ -306,7 +339,7 @@ median(exVec)
 
 :::
 
-## Descriptive statistics: Variance {#descr-var}
+## Variance {#descr-var}
 
 ::: {.callout-note appearance="simple" icon="false"}
 The variance is the expectation of the squared deviation of a random variable from its mean. Usually it is distinguished between the population and the sample variance. The formula of the population variance is given in @eq-pop-var.
@@ -339,7 +372,7 @@ var(exVec)
 
 
 
-## Descriptive statistics: Standard Deviation {#descr-sd}
+## Standard Deviation {#descr-sd}
 
 ::: {.callout-note appearance="simple" icon="false"}
 The standard deviation is defined as the square root of the variance. Again, it is distinguished between the population and the sample variance. The formula of the population standard deviation is given in @eq-pop-sd.
@@ -385,7 +418,7 @@ ggplot(data.frame(x = c(-3*sd(exVec), sd(exVec)*3)), aes(x)) +
 ```
 
 
-## Descriptive statistics: Range{#descr-range}
+## Range{#descr-range}
 
 ::: {.callout-note appearance="simple" icon="false"}
 The range of a vector is the difference between the largest (maximum) and the smallest (minimum) values/observations. 
@@ -567,9 +600,16 @@ exDescrTab <- exDescr |> #<1>
 8. Add a footnote (`add_footer_lines`) and align it to the left.
 9. Change column width (`width`) to 2 resp. 1 inch.
 
+
+::: {.content-visible when-format="revealjs"}
+
 ::: notes
 Lambda functions, also known as anonymous functions, are a feature in many programming languages, including R. In R, a lambda function is a function that is not bound to a name. This means that it can be created and used on the fly without defining it in the standard way with a name. Lambda functions are particularly useful for short, one-off functions that are used as arguments to other functions, like in apply family functions or in operations that involve the pipe operator (|>).
 :::
+
+:::
+
+
 
 ## Making a table II {#make-tab-ii}
 
@@ -619,7 +659,9 @@ dat |>
 
 Style the table according to your ideas/demands.
 
-## References (Descriptive statistics slides) {#descr-ref}
+
+
+## References {#descr-ref}
 
 ::: {#refs}
 :::

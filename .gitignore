@@ -1,6 +1,6 @@
 /.quarto/
 /docs/
-/site/
+/_site/
 /_extensions/
 
 .Rproj.user

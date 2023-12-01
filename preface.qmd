@@ -9,6 +9,54 @@ This site serves as a compendium of teaching and coding material that I develope
 This page is work in progress.
 :::
 
+## Used Software
+
+The majority of the provided code is from the statistical software `R` [@R-base]. My most used packages are following:
+
+```{r}
+#| label: pkg-list
+pkgList <- c("base",
+             "haven",
+             "stringr",
+             "moments",
+             "psych",
+             "lme4",
+             "merTools",
+             "mice",
+             "lavaan",
+             "knitr",
+             "kableExtra",
+             "flextable",
+             "ggplot2")
+```
+
+You can install them with the following code: 
+
+```{r}
+#| label: install-pkg
+#| code-fold: show
+#| eval: false
+
+lapply(pkgList,
+       function(x) 
+        if(!x %in% rownames(installed.packages())) {
+            install.packages(x)
+            }
+        )
+
+```
+
+
+```{r}
+#| label: write-most-used-bib
+#| eval: false
+#| echo: false
+knitr::write_bib(x = pkgList,
+                 file = "most-used-r-refs.bib")
+
+
+```
+
 ## Disclaimer
 
 All material is licensed under the MIT License [(MIT)](https://en.wikipedia.org/wiki/MIT_License) and comes with **ABSOLUTELY NO WARRANTY**. 
