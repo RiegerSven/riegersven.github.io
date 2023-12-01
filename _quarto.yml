@@ -1,26 +1,75 @@
 project:
-  type: website
+  type: website 
   output-dir: docs
 
 website:
-  title: "riegersven.github.io"
+  title: " "
+  open-graph:
+    site-name: "Material Compendium of Sven Rieger"
+  twitter-card: true
+  site-url: https://github.com/RiegerSven/
+  repo-url: https://github.com/RiegerSven/riegersven.github.io
+  repo-actions: [edit, issue]
+  page-navigation: true
+  page-footer:
+    left: "The website is build with [Quarto](quarto.org)."
+    center: "Copyrigh (c) 2023"
+    right: "All material is licensed under the MIT License [(MIT)](https://en.wikipedia.org/wiki/MIT_License)."
+  search:
+    location: navbar
+    type: overlay 
+  reader-mode: false
   navbar:
-    left:
-      - href: index.qmd
-        text: About me
-      - href: tutorials.qmd
-        text: Tutorials
-      - href: publications.qmd
-        text: Publications
-        
+    collapse: true
+    pinned: true
+    right:
+      - text: "About me"
+        file: index.qmd 
+      - text: Compendium
+        file: preface.qmd
+      - text: Publications
+        file: publications.qmd
+      - icon: github
+        href: https://github.com/RiegerSven/
+      - text: Bluesky 
+        href: https://bsky.app/profile/svenrieger.bsky.social
+  sidebar:
+    - title: "Compendium"
+      style: "floating"
+      border: false
+      type: dark
+      background: none
+      search: true
+      contents:
+        - text: "Preface"
+          href: preface.qmd
+        - section: "Software"
+          contents: 
+            - auto: material/software/*.qmd
+        - section: "Data (Pre-)Processing"
+          contents:
+            - auto: material/data-proc/*.qmd
+        - section: "Descriptive Statistics"
+          contents: 
+            - auto: material/descriptive-statistics/*.qmd
+        - section: ""
 
 format:
   html:
-    theme: simplex
-    css: styles.css
+    theme: litera
     toc: true
-    
-bibliography: ["rieger-pub.bib"]
+    page-layout: article
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+    css: styles.css
 
+bibliography: 
+  - "rieger-pub.bib"
 
+code-line-numbers: true
+code-copy: true
+code-link: true
+code-summary: "Show/hide code"
 

@@ -1,5 +1,6 @@
 /.quarto/
 /docs/
+/_extensions/
 
 .Rproj.user
 .Rhistory
