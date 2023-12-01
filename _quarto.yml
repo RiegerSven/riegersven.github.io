@@ -1,6 +1,6 @@
 project:
   type: website 
-  output-dir: site
+  output-dir: _site
 
 website:
   title: " "
@@ -39,6 +39,7 @@ website:
       border: false
       type: dark
       background: none
+      reader-mode: true
       search: true
       contents:
         - text: "Preface"
@@ -49,9 +50,9 @@ website:
         - section: "Data (Pre-)Processing"
           contents:
             - auto: material/data-proc/*.qmd
-        - section: "Descriptive Statistics"
+        - section: "Basic Calculations"
           contents: 
-            - auto: material/descriptive-statistics/*.qmd
+            - auto: material/basic-calculations/*.qmd
         - section: ""
 
 format:
@@ -60,13 +61,15 @@ format:
     toc: true
     page-layout: article
     grid:
-      sidebar-width: 300px
-      body-width: 900px
-      margin-width: 300px
+      sidebar-width: 250px
+      body-width: 800px
+      margin-width: 250px
     css: styles.css
 
 bibliography: 
   - "rieger-pub.bib"
+  - "github-page.bib"
+  - "most-used-r-refs.bib"
 
 code-line-numbers: true
 code-copy: true
