@@ -633,6 +633,7 @@ If you want to export the table...
 ```{r}
 #| label: docx-export
 #| echo: true
+#| eval: false
 exDescrTab |>
   set_caption(caption = "Table X.\nDescriptive statistics") |>
   save_as_docx(path = "descr-tab.docx")
