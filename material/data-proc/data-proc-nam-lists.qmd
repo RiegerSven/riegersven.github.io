@@ -1,0 +1,121 @@
+---
+title: "(Named) Lists & character vectors"
+author: "Sven Rieger"
+published-title: "Last update on"
+date: today
+---
+
+
+During the last years, I heavily rely on using (named) lists and/or character vectors. What is a character or a character [vector](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vector-objects)? A character is a string It is created using single quotes or double quotes.
+
+```{r}
+#| label: chr-vec-1
+#| eval: false
+#| echo: true
+
+myChr <- "Hi I am string"
+
+```
+
+It is possible to combine (```c(...)```) multiple characters into a vector or a list.
+
+```{r}
+#| label: chr-vec-2
+#| eval: true
+#| echo: true
+
+myChr1 <- "Hi I am string"
+myChr2 <- "Hi I am string, too"
+
+myChr <- c(myChr1, myChr2)
+
+```
+
+
+## (Named) Lists
+
+What is a [list](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#List-objects) in R? Lists are objects which contain any type of other R objects (e.g., characters, numeric inputs). 
+
+```{r}
+#| label: list-1
+#| eval: false
+#| echo: true
+
+myList <- list(myChr,
+               "Hi Iam another string",
+               3)
+```
+
+Sometimes^[It is especially advisable when you want to automate table or plot generation see e.g., [here]()] it is advisable to name the list elements.
+
+```{r}
+#| label: list-2
+#| eval: false
+#| echo: true
+
+myNamedList <- list(MyChr = myChr,
+                    String3 = "Hi Iam another string",
+                    "Number 3" = 3)
+
+names(myNamedList) <- c("MyChr", "String3", "Number 3")
+```
+
+Or alternatively.
+
+```{r}
+#| label: list-3
+#| eval: false
+#| echo: true
+
+names(myList) <- c("MyChr", "String3", "Number 3")
+```
+
+## Creating character vectors {#create-chr-vec}
+
+The ```paste``` and ```paste0``` functions are extremely powerful functions. They convert R objects to character vectors. With the ```sep=``` and ```collapse=``` arguments, it is possible to select specific character strings which separates/collapse the objects. It is important to note that the functions behave slightly different (see [here](https://stackoverflow.com/questions/36279800/difference-between-paste-and-paste0)). The focus here is on ```paste0``` which sets ```sep=""```.
+
+```{r}
+#| label: create-chr-vec
+#| eval: true
+#| echo: true
+#| results: asis
+
+myName <- "John Doe"
+
+paste0(c("hello, my name is ", myName), collapse = " <3 ")
+```
+
+
+We can use the ```paste0``` function to create the names of the variables (of a measure)^[It is important to point out, that it might be reasonable to import the codebook instead of creating the variable names by yourself]. The variable names should follow a precise structure^[On how to create codebooks see e.g. [DataWiz Knowledge Base](https://datawizkb.leibniz-psychology.org/index.php/during-data-collection/what-should-i-know-about-codebooks/).] see @tbl-varNames.
+
+| Abbreviation of measure | Item Number | Measurement occasion |
+| :-----------------------------: | :---------: | :------------------: |
+| Self-concept > sc                       |           1 | T1                   |
+| Self-concept > sc                       |           2 | T1                   |
+| Self-concept > sc                       |           3 | T1                   |
+| Self-concept > sc                       |           1 | T2                   |
+| Self-concept > sc                       |           2 | T2                   |
+| ...                                     | ...         | ...                  |
+
+: Overview of the Structure of Variable Names {#tbl-varNames}
+
+
+```paste0``` function
+
+
+```{r}
+#| label: sc-examp-list-1
+#| echo: true
+list("ScT1" = paste0("sc", 1:3, "T1"),
+     "ScT2" = paste0("sc", 1:3, "T2"))
+
+```
+
+If you are really laze you could also write.
+
+```{r}
+#| label: sc-examp-list-2
+#| echo: true
+paste0("sc", 1:3, rep(paste0("T", 1:2), each = 3))
+
+```

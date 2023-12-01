@@ -1,0 +1,625 @@
+---
+date: today
+published-title: "Last updated on"
+format:
+  html: default
+  revealjs: 
+    output-file: descr-reveal.html
+---
+
+# Descriptive statistics {#descr}
+
+navigate vertical &#8595;
+
+## Preface: Software I
+
+- The following packages are used:
+
+```{r}
+#| label: descr-pkg
+#| echo: true
+#| output-location: column
+descrPkg <- c("merTools",
+              "sn",
+              "knitr",
+              "flextable",
+              "psych",
+              "ggplot2")
+```
+
+::: {.fragment}
+
+- Install packages when not already installed:
+
+```{r}
+#| label: descr-install
+#| echo: true
+#| results: hide
+lapply(descrPkg,
+        function(x) 
+          if(!x %in% rownames(installed.packages())) {install.packages(x)}
+      )
+
+```
+
+:::
+
+::: {.fragment}
+
+- Load (a subset of) the required package(s) into the `R` session.
+
+```{r}
+#| label: load-descr-pkg
+#| echo: true
+#| output-location: column
+library(ggplot2)
+library(flextable)
+```
+
+:::
+
+## Preface: Software II
+
+
+Print list of packages and cite them via [Pandoc citation](<https://pandoc.org/MANUAL.html#citations>).
+
+```{r}
+#| label: write-pkgs
+#| echo: fenced
+#| output-location: fragment
+#| output: asis
+
+for (i in 1:length(descrPkg)) {
+  
+  cat(paste0(i, ". ",
+             descrPkg[i],
+             " [", "v", utils::packageVersion(descrPkg[i]),", @R-", descrPkg[i],
+             "]\n"))
+}
+    
+
+```
+
+
+## Preface: Data matrix
+
+Variables (e.g., characterisics), units (e.g., persons) and data (e.g., measurements) are often presented in matrix form. A matrix is a system of $n \cdot p$ quantities and looks like in the following:
+
+::: {.fragment}
+
+$$
+\begin{bmatrix}
+X_{11} & X_{12} & \cdots & X_{1p} \\
+X_{21} & X_{22} & \cdots & X_{2p} \\
+\vdots & \vdots &  & \vdots \\
+X_{n1} & X_{n2} & \cdots & X_{np}
+\end{bmatrix}
+$$
+
+:::
+
+::: {.fragment}
+
+- $n$ rows; 1 row is also known as a vector or row matrix
+- $p$ columns; 1 column is also known as a vector or column matrix
+
+:::
+
+::: aside
+see @eid2013
+:::
+
+## Descriptive statistics: Overview
+
+:::: {.columns}
+::: {.column width="49.5%"}
+
+::: {.fragment}
+
+- **Measures of central tendency**
+  - [Mean](#descr-mean)
+  - [Median](#descr-median)
+  - Mode
+
+:::
+::: {.fragment}
+
+- **Measures of variability**
+  - [Standard deviation](#descr-sd)
+  - [Variance](#descr-var)
+  - [Range](#descr-range) (Minimum, Maximum)
+  
+:::
+::: {.fragment}
+
+- **Measures of shape**
+  - Skewness (not covered in slides)
+  - Kurtosis (not covered in slides)
+
+:::
+:::
+::: {.column width="1%"}
+:::
+::: {.column width="49.5%"}
+
+```{r}
+#| label: load-ggplot2
+#| echo: false
+
+library(ggplot2)
+```
+
+```{r}
+#| label: norm-dis
+#| fig-height: 6
+#| echo: false
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "darkgrey",
+                alpha = 1,
+                args = list(mean = 0, sd = .5)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                alpha = .6,
+                args = list(mean = 0, sd = 1)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "#009E73",
+                alpha = .6,
+                args = list(mean = 1, sd = .5)) +
+  stat_function(fun = sn::dsn,
+                geom = "area",
+                fill = "darkred",
+                alpha = .6,
+                args = list(xi = -2, omega = 1.25, alpha = 12)) +
+  scale_x_continuous(breaks = seq(-3, 3, by = 1),
+                     limits = c(-3, 3)) +
+  theme_classic() +
+  theme(axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank())
+  
+
+```
+
+::: {.fragment}
+::: {.callout-caution appearance="simple" icon="false" title="Example"}
+Consider the following example vector:
+
+```{r}
+#| label: exVec
+#| code-line-numbers: false
+#| echo: true
+exVec <- c(1, 2, 5, 3, 8)
+```
+::: 
+:::
+:::
+::::
+
+## Descriptive statistics: Mean {#descr-mean}
+
+::: {.callout-note appearance="simple" icon="false"}
+The mean (or arithmetic mean, average) is the sum of a collection of numbers divided by the count of numbers in the collection. The formula is given in @eq-mean.
+
+$$\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i=\frac{x_1+x_2+\dots+x_n}{n}$${#eq-mean}
+
+For example, consider a vector of numbers: $x = 1, 2, 5, 3, 8$
+
+$$\bar{x} = \frac{(1+2+5+3+8)}{5}=3.8$$
+
+
+If the underlying data is a sample (i.e., a subset of a population), it is called the sample mean.
+
+:::
+
+::: {.fragment}
+
+How to calculate the mean in `R`?
+
+```{r}
+#| label: mean-r1
+#| echo: true
+#| output-location: column-fragment
+#| code-line-numbers: false
+mean(exVec)
+```
+
+:::
+
+::: {.fragment}
+
+If there is missing data (in `R` denoted by `NA`), we set the argument `na.rm` to `TRUE`. To demonstrate this we create another example vector (`exVec2`). 
+
+:::: {.columns}
+
+::: {.column width="48.5%"}
+
+```{r}
+#| label: mean-r2
+#| echo: true
+#| output-location: fragment
+#| code-line-numbers: false
+exVec2 <- c(1, 2, 5, 3, 8, NA)
+mean(exVec2)
+```
+
+:::
+
+::: {.column width="1%"}
+
+:::
+
+::: {.column width="48.5%"}
+
+```{r}
+#| label: mean-r3
+#| echo: true
+#| output-location: fragment
+#| code-line-numbers: false
+mean(exVec2, na.rm = T)
+```
+
+:::
+
+::::
+
+:::
+
+
+::: {.footer}
+[More on missing data in R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Missing-values)
+:::
+
+## Descriptive statistics: Median {#descr-median}
+
+::: {.callout-note appearance="simple" icon="false"}
+The median is the value separating the higher half from the lower half of a data sample, a population, or a probability distribution. For a data set, it may be thought of as "the middle" value. The formulas are given in @eq-med.
+
+$$
+Mdn = \widetilde{x} = 
+\begin{cases}
+x_{(n+1)/2}                 & \:\: \text{if } n  \text{ is odd} \\
+(x_{n/2} + x_{(n/2)+1}) / 2 & \:\: \text{if } n  \text{ is even}
+\end{cases}
+$${#eq-med}
+
+Consider again the vector of numbers: $x = 1, 2, 5, 3, 8$ with length $n = 5$. To calculate the median you need to first, order the the vector: $x = 1, 2, 3, 5, 8$ and then apply the corresponding formula (odd vs. even; here odd):
+
+$$\widetilde{x}=x_{\frac{(5+1)}{2}}=x_3 = 3$$
+:::
+
+
+::: {.fragment}
+
+How to calculate the median in `R`?
+
+```{r}
+#| label: med-r
+#| echo: true
+#| output-location: column-fragment
+#| code-line-numbers: false
+median(exVec)
+```
+
+:::
+
+## Descriptive statistics: Variance {#descr-var}
+
+::: {.callout-note appearance="simple" icon="false"}
+The variance is the expectation of the squared deviation of a random variable from its mean. Usually it is distinguished between the population and the sample variance. The formula of the population variance is given in @eq-pop-var.
+
+$$VAR(X) = \sigma^2 = \frac{1}{N} \sum\limits_{i=1}^N (x_i - \mu)^2$${#eq-pop-var}
+
+The formula of the sample variance is given in @eq-samp-var.
+
+
+$$VAR(X) = s^2 = \frac{1}{n-1} \sum\limits_{i=1}^n (x_i - \bar{x})^2$${#eq-samp-var}
+
+Using again the vector $x = 1, 2, 5, 3, 8$, the sample variance is calculated as follows: 
+
+$$Var(X) =\frac{1}{4}((1-3.8)^2 + (2-3.8)^2 + (5-3.8)^2 + (3-3.8)^2 + (8-3.8)^2) = 7.7$$
+
+:::
+
+::: {.fragment}
+
+How to calculate the variance in `R`?
+
+```{r}
+#| label: var-r
+#| echo: true
+#| output-location: column-fragment 
+#| code-line-numbers: false
+var(exVec)
+```
+:::
+
+
+
+## Descriptive statistics: Standard Deviation {#descr-sd}
+
+::: {.callout-note appearance="simple" icon="false"}
+The standard deviation is defined as the square root of the variance. Again, it is distinguished between the population and the sample variance. The formula of the population standard deviation is given in @eq-pop-sd.
+
+$$SD(X) = \sigma = \sqrt{\sigma^2}$${#eq-pop-sd}
+
+The formula of the population standard deviation is given in @eq-samp-sd.
+
+$$SD(X) = s = \sqrt{s^2}$${#eq-samp-sd}
+
+Recall the variance calculation from the previous [slide](#descr-var), the (sample) variance of the vector is $7.7$.
+
+$$SD(X) = \sqrt{7.7}=2.774887$$
+
+:::
+
+
+::: {.fragment}
+
+How to calculate the standard deviation in `R`?
+
+```{r}
+#| label: sd-r
+#| echo: true
+#| output-location: column-fragment
+#| code-line-numbers: false
+sd(exVec)
+```
+
+:::
+
+```{r}
+#| echo: false
+#| eval: false
+ggplot(data.frame(x = c(-3*sd(exVec), sd(exVec)*3)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "darkgrey",
+                alpha = 1,
+                args = list(mean = mean(exVec), sd = sd(exVec))) +
+  scale_x_continuous(limits= c(sd(exVec)*-3, sd(exVec)*3)+3,
+                     breaks = seq(sd(exVec)*-3, sd(exVec)*3+3, by = 1))
+```
+
+
+## Descriptive statistics: Range{#descr-range}
+
+::: {.callout-note appearance="simple" icon="false"}
+The range of a vector is the difference between the largest (maximum) and the smallest (minimum) values/observations. 
+
+$$Range(x) = R =  x_{max}-x_{min}$${#eq-range}
+
+:::
+
+
+::: {.fragment}
+
+How to calculate the range in `R`?
+
+```{r}
+#| label: range-r-1
+#| echo: true
+#| output-location: column-fragment
+#| code-line-numbers: false
+range(exVec)
+```
+:::
+
+::: {.fragment}
+
+Alternatively, calculate the minimum...
+
+```{r}
+#| label: range-r-2
+#| echo: true
+#| output-location: column
+#| code-line-numbers: false
+min(exVec)
+```
+... and the maximum.
+
+```{r}
+#| label: range-r-3
+#| echo: true
+#| output-location: column
+#| code-line-numbers: false
+max(exVec)
+```
+And to compute the range apply @eq-range.
+
+```{r}
+#| label: range-r-4
+#| echo: true
+#| output-location: column
+#| code-line-numbers: false
+max(exVec)-min(exVec)
+```
+
+:::
+
+## Put everything together I
+
+Recall, the dataset `dat` is the HSB dataset from the `merTools` package:
+
+```{r}
+#| label: dat-notrun
+#| echo: true
+#| eval: true
+#| code-line-numbers: false
+#| output-location: column
+dat <- merTools::hsb
+```
+
+Calculating the mean, standard deviation, minimum and maximum for a set of variables:
+
+```{r}
+#| label: state-var
+#| echo: true
+#| output-location: column
+#| code-line-numbers: 2-5|7|8|9|10|11-16|17-18
+# <0>
+myVar <- c("Math achievement" = "mathach", # <1>
+           "Gender" = "female", # <1> 
+           "Socioeconomic status" = "ses", # <1>
+           "Class size" = "size") # <1>
+
+exDescr <- apply( # <2>
+  X = dat[,myVar], # <3>
+  MARGIN = 2, # <4>
+  FUN = function(x) { # <5>
+    ret <- c( # <6>
+             mean(x, na.rm = T), # <6>
+             sd(x, na.rm = T), # <6>
+             min(x, na.rm = T), # <6>
+             max(x, na.rm = T) # <6>
+             ) # <6>
+    return(ret) # <7>
+    }) # <7>
+```
+
+1. Create a (named) character vector of the variables by using the `c()` function.
+2. Use the `apply` function to apply a or multiple function(s) on data (here: 4 columns).
+3. The input is the dataset with the selected columns of interest (see 1.).
+4. `MARGIN = 2` indicates that the function should be applied over columns.
+5. Create the function that should be applied. Here we calculate the `mean()`, `sd()`, `min()` and `max()`.
+6. Create a temporary `R` object, which should be later returned (here: the vector `ret`)
+7. Return the temporary object and close functions.
+
+## Put everything together II
+
+Print the results...
+
+```{r}
+#| label: print-descr-1
+#| echo: true
+#| output-location: column-fragment
+
+exDescr |>
+  print()
+```
+
+::: {.fragment}
+<br>
+This is a weird format; variables should be in rows not columns. Transpose...
+:::
+
+::: {.fragment}
+
+```{r}
+#| label: print-descr-2
+#| echo: true
+#| output-location: column
+exDescr |>
+  t() |>
+  print()
+```
+
+:::
+
+<br>
+
+::: {.fragment}
+Better, but still not really convincing...
+:::
+
+## Making a table I
+
+```{r}
+#| label: demo-descr-tbl
+#| echo: true
+#| eval: true
+#| code-line-numbers: 2|3-4|5|6|7|8-13|14-15|16-20|21-22
+#| output-location: column
+# <0>
+exDescrTab <- exDescr |> #<1>
+    t() |> #<2>
+    as.data.frame() |> #<2>
+    (\(d) cbind(names(myVar), d))() |>  #<3>
+    flextable() |> #<4>
+    theme_apa() |> #<5>
+    set_header_labels( #<6>
+      "names(myVar)" = "Variables", #<6>
+      V1 = "Mean",  #<6>
+      V2 = "SD", #<6>
+      V3 = "Min", #<6>
+      V4 = "Max") |> #<6>
+    align(part = "body", align = "c") |> #<7>
+    align(j = 1, part = "all", align = "l") |> #<7>
+    add_footer_lines( #<8>
+      as_paragraph(as_i("Note. "), #<8>
+                   "This is a footnote.") #<8>
+      ) |> #<8>
+    align(align = "left", part = "footer") |> #<8>
+    width(j = 1, width = 2, unit = "in") |> #<9>
+    width(j = 2:5, width = 1, unit = "in")  #<9>
+```
+
+1. Take the results (here: `exDescr` object)...
+2. ...and `transpose` (i.e., using the `t()` function) and coerce it to a `data.frame` object (`as.data.frame()`) 
+3. Use the so-called [lambda (or anonymous) function](<https://en.wikipedia.org/wiki/Anonymous_function>) to bind (using the `cbind()` function) the variable names as the first column to the dataset.
+4. Apply the `flextable()` function.
+5. Use the APA theme (`theme_apa()`).
+6. Rename the column names (`set_header_labels()`).
+7. Center body part of the table (`align()`).
+8. Add a footnote (`add_footer_lines`) and align it to the left.
+9. Change column width (`width`) to 2 resp. 1 inch.
+
+::: notes
+Lambda functions, also known as anonymous functions, are a feature in many programming languages, including R. In R, a lambda function is a function that is not bound to a name. This means that it can be created and used on the fly without defining it in the standard way with a name. Lambda functions are particularly useful for short, one-off functions that are used as arguments to other functions, like in apply family functions or in operations that involve the pipe operator (|>).
+:::
+
+## Making a table II {#make-tab-ii}
+
+Print the table.
+
+```{r}
+#| label: tbl-descr
+#| tbl-cap: "Descriptive statistics"
+#| tbl-colwidths: [40, 15, 15, 15, 15]
+#| echo: true
+#| code-annotations: false
+#| eval: true
+#| output-location: column-fragment
+exDescrTab
+```
+
+## Table export
+
+If you want to export the table...
+
+```{r}
+#| label: docx-export
+#| echo: true
+exDescrTab |>
+  set_caption(caption = "Table X.\nDescriptive statistics") |>
+  save_as_docx(path = "descr-tab.docx")
+```
+
+## Descriptive statistics with the `psych` package {#descr-R}
+
+- Alternatively, it is convenient to use additional `R` packages such as the `psych` package [@R-psych] to calculate descriptive statistics
+ 
+- Here we use the `describe` function (with the `fast` argument set to `TRUE`) to calculate the descriptive statistics of all variables within the example data set
+
+```{r}
+#| label: tbl-descr-psych
+#| tbl-cap: Descriptive statistics with the psych package
+#| echo: true
+#| output-location: default
+
+dat |>
+  psych::describe(fast = TRUE) |>
+  flextable() 
+```
+
+## Exercise 
+
+Style the table according to your ideas/demands.
+
+## References (Descriptive statistics slides) {#descr-ref}
+
+::: {#refs}
+:::
