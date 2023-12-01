@@ -1,11 +1,11 @@
 project:
   type: website 
-  output-dir: docs
+  output-dir: site
 
 website:
   title: " "
   open-graph:
-    site-name: "Material Compendium of Sven Rieger"
+    site-name: "Compendium of Sven Rieger"
   twitter-card: true
   site-url: https://github.com/RiegerSven/
   repo-url: https://github.com/RiegerSven/riegersven.github.io
