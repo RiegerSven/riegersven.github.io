@@ -1,5 +1,0 @@
----
-title: " "
----
-
-I like to create tutorials which I upload here: <https://riegersven.github.io/method-website/>
