@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Sven Rieger">
 <meta name="dcterms.date" content="2023-12-01">
 
-<title>  – descriptive-statistics</title>
+<title>- Descriptive statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -123,6 +125,12 @@ div.csl-indent {
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="- Descriptive statistics">
+<meta property="og:description" content="This material introduces the basic descriptive statistics (e.g., mean, standard deviation etc.). The material is also available as a Revealjs presentation.">
+<meta property="og:site_name" content="Compendium of Sven Rieger">
+<meta name="twitter:title" content="- Descriptive statistics">
+<meta name="twitter:description" content="This material introduces the basic descriptive statistics (e.g., mean, standard deviation etc.). The material is also available as a Revealjs presentation.">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar floating nav-fixed slimcontent">
@@ -174,7 +182,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/descriptive-statistics/descriptive-statistics.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="../../material/descriptive-statistics/descriptive-statistics.html">Descriptive statistics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/basic-calculations/descriptive-statistics.html">Basic Calculations</a></li><li class="breadcrumb-item"><a href="../../material/basic-calculations/descriptive-statistics.html">Descriptive statistics</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -249,7 +257,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Descriptive Statistics</span></a>
+ <span class="menu-text">Basic Calculations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -257,7 +265,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../material/descriptive-statistics/descriptive-statistics.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../material/basic-calculations/descriptive-statistics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Descriptive statistics</span></a>
   </div>
 </li>
@@ -273,17 +281,16 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#descr" id="toc-descr" class="nav-link active" data-scroll-target="#descr">Descriptive statistics</a>
-  <ul class="collapse">
+  <li><a href="#revealjs-presentation" id="toc-revealjs-presentation" class="nav-link active" data-scroll-target="#revealjs-presentation">Revealjs Presentation</a></li>
   <li><a href="#preface-software-i" id="toc-preface-software-i" class="nav-link" data-scroll-target="#preface-software-i">Preface: Software I</a></li>
   <li><a href="#preface-software-ii" id="toc-preface-software-ii" class="nav-link" data-scroll-target="#preface-software-ii">Preface: Software II</a></li>
   <li><a href="#preface-data-matrix" id="toc-preface-data-matrix" class="nav-link" data-scroll-target="#preface-data-matrix">Preface: Data matrix</a></li>
   <li><a href="#descriptive-statistics-overview" id="toc-descriptive-statistics-overview" class="nav-link" data-scroll-target="#descriptive-statistics-overview">Descriptive statistics: Overview</a></li>
-  <li><a href="#descr-mean" id="toc-descr-mean" class="nav-link" data-scroll-target="#descr-mean">Descriptive statistics: Mean</a></li>
-  <li><a href="#descr-median" id="toc-descr-median" class="nav-link" data-scroll-target="#descr-median">Descriptive statistics: Median</a></li>
-  <li><a href="#descr-var" id="toc-descr-var" class="nav-link" data-scroll-target="#descr-var">Descriptive statistics: Variance</a></li>
-  <li><a href="#descr-sd" id="toc-descr-sd" class="nav-link" data-scroll-target="#descr-sd">Descriptive statistics: Standard Deviation</a></li>
-  <li><a href="#descr-range" id="toc-descr-range" class="nav-link" data-scroll-target="#descr-range">Descriptive statistics: Range</a></li>
+  <li><a href="#descr-mean" id="toc-descr-mean" class="nav-link" data-scroll-target="#descr-mean">Mean</a></li>
+  <li><a href="#descr-median" id="toc-descr-median" class="nav-link" data-scroll-target="#descr-median">Median</a></li>
+  <li><a href="#descr-var" id="toc-descr-var" class="nav-link" data-scroll-target="#descr-var">Variance</a></li>
+  <li><a href="#descr-sd" id="toc-descr-sd" class="nav-link" data-scroll-target="#descr-sd">Standard Deviation</a></li>
+  <li><a href="#descr-range" id="toc-descr-range" class="nav-link" data-scroll-target="#descr-range">Range</a></li>
   <li><a href="#put-everything-together-i" id="toc-put-everything-together-i" class="nav-link" data-scroll-target="#put-everything-together-i">Put everything together I</a></li>
   <li><a href="#put-everything-together-ii" id="toc-put-everything-together-ii" class="nav-link" data-scroll-target="#put-everything-together-ii">Put everything together II</a></li>
   <li><a href="#making-a-table-i" id="toc-making-a-table-i" class="nav-link" data-scroll-target="#making-a-table-i">Making a table I</a></li>
@@ -291,22 +298,28 @@ div.csl-indent {
   <li><a href="#table-export" id="toc-table-export" class="nav-link" data-scroll-target="#table-export">Table export</a></li>
   <li><a href="#descr-R" id="toc-descr-R" class="nav-link" data-scroll-target="#descr-R">Descriptive statistics with the <code>psych</code> package</a></li>
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
-  <li><a href="#descr-ref" id="toc-descr-ref" class="nav-link" data-scroll-target="#descr-ref">References (Descriptive statistics slides)</a></li>
-  </ul></li>
+  <li><a href="#descr-ref" id="toc-descr-ref" class="nav-link" data-scroll-target="#descr-ref">References</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/descriptive-statistics/descriptive-statistics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="descr-reveal.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/basic-calculations/descriptive-statistics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="descr-reveal.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/descriptive-statistics/descriptive-statistics.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="../../material/descriptive-statistics/descriptive-statistics.html">Descriptive statistics</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/basic-calculations/descriptive-statistics.html">Basic Calculations</a></li><li class="breadcrumb-item"><a href="../../material/basic-calculations/descriptive-statistics.html">Descriptive statistics</a></li></ol></nav>
 <div class="quarto-title">
+<h1 class="title">Descriptive statistics</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sven Rieger </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Last updated on</div>
@@ -318,14 +331,24 @@ div.csl-indent {
     
   </div>
   
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    This material introduces the basic descriptive statistics (e.g., mean, standard deviation etc.). The material is also available as a <a href="https://quarto.org/docs/presentations/revealjs/">Revealjs presentation</a>.
+  </div>
+</div>
 
 
 </header>
 
 
-<section id="descr" class="level1 page-columns page-full">
-<h1>Descriptive statistics</h1>
-<p>navigate vertical ↓</p>
+<section id="revealjs-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="revealjs-presentation">Revealjs Presentation</h2>
+<p>If you want to see the presentation in full screen go to <strong>Other Formats</strong> on the right.</p>
+<div class="container">
+<p><iframe class="responsive-iframe" src="descr-reveal.html"></iframe></p>
+</div>
+</section>
 <section id="preface-software-i" class="level2">
 <h2 class="anchored" data-anchor-id="preface-software-i">Preface: Software I</h2>
 <ul>
@@ -364,26 +387,31 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="preface-software-ii">Preface: Software II</h2>
 <p>Print list of packages and cite them via <a href="https://pandoc.org/MANUAL.html#citations">Pandoc citation</a>.</p>
 <div class="cell" data-output-location="fragment">
+<details class="code-fold">
+<summary>Show/hide fenced code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="in">```{r}</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="in">#| label: write-pkgs</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="in">#| output-location: fragment</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="in">#| output: asis</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="in">for (i in 1:length(descrPkg)) {</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="in">  </span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="in">  cat(paste0(i, ". ",</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="in">             descrPkg[i],</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="in">             " [", "v", utils::packageVersion(descrPkg[i]),", @R-", descrPkg[i],</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="in">             "]\n"))</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="in">}</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="in">#| code-summary: "Show/hide fenced code"</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="in">#| output-location: fragment</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="in">#| output: asis</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="in">for (i in 1:length(descrPkg)) {</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="in">  </span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="in">  cat(paste0(i, ". ",</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="in">             descrPkg[i],</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="in">             " [", "v", utils::packageVersion(descrPkg[i]),", @R-", descrPkg[i],</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="in">             "]\n"))</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="in">}</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <ol type="1">
 <li>merTools <span class="citation" data-cites="R-merTools">(v0.6.1, <a href="#ref-R-merTools" role="doc-biblioref"><strong>R-merTools?</strong></a>)</span></li>
 <li>sn <span class="citation" data-cites="R-sn">(v2.1.1, <a href="#ref-R-sn" role="doc-biblioref"><strong>R-sn?</strong></a>)</span></li>
-<li>knitr <span class="citation" data-cites="R-knitr">(v1.44, <a href="#ref-R-knitr" role="doc-biblioref"><strong>R-knitr?</strong></a>)</span></li>
-<li>flextable <span class="citation" data-cites="R-flextable">(v0.9.4, <a href="#ref-R-flextable" role="doc-biblioref"><strong>R-flextable?</strong></a>)</span></li>
-<li>psych <span class="citation" data-cites="R-psych">(v2.3.9, <a href="#ref-R-psych" role="doc-biblioref"><strong>R-psych?</strong></a>)</span></li>
-<li>ggplot2 <span class="citation" data-cites="R-ggplot2">(v3.4.4, <a href="#ref-R-ggplot2" role="doc-biblioref"><strong>R-ggplot2?</strong></a>)</span></li>
+<li>knitr <span class="citation" data-cites="R-knitr">(v1.44, <a href="#ref-R-knitr" role="doc-biblioref">Xie 2023</a>)</span></li>
+<li>flextable <span class="citation" data-cites="R-flextable">(v0.9.4, <a href="#ref-R-flextable" role="doc-biblioref">Gohel and Skintzos 2023</a>)</span></li>
+<li>psych <span class="citation" data-cites="R-psych">(v2.3.9, <a href="#ref-R-psych" role="doc-biblioref">Revelle 2023</a>)</span></li>
+<li>ggplot2 <span class="citation" data-cites="R-ggplot2">(v3.4.4, <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al. 2023</a>)</span></li>
 </ol>
 </div>
 </section>
@@ -408,7 +436,7 @@ X_{n1} &amp; X_{n2} &amp; \cdots &amp; X_{np}
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p>see <span class="citation" data-cites="eid2013">(<a href="#ref-eid2013" role="doc-biblioref"><strong>eid2013?</strong></a>)</span></p>
+<p>see <span class="citation" data-cites="eid2013">Eid, Gollwitzer, and Schmitt (<a href="#ref-eid2013" role="doc-biblioref">2013</a>)</span></p>
 </div></div></section>
 <section id="descriptive-statistics-overview" class="level2">
 <h2 class="anchored" data-anchor-id="descriptive-statistics-overview">Descriptive statistics: Overview</h2>
@@ -472,8 +500,8 @@ Example
 </div>
 </div>
 </section>
-<section id="descr-mean" class="level2">
-<h2 class="anchored" data-anchor-id="descr-mean">Descriptive statistics: Mean</h2>
+<section id="descr-mean" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="descr-mean">Mean</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -520,12 +548,12 @@ Example
 </div>
 </div>
 </div>
-<div class="footer">
+
+<div class="no-row-height column-margin column-container"><div class="">
 <p><a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Missing-values">More on missing data in R</a></p>
-</div>
-</section>
+</div></div></section>
 <section id="descr-median" class="level2">
-<h2 class="anchored" data-anchor-id="descr-median">Descriptive statistics: Median</h2>
+<h2 class="anchored" data-anchor-id="descr-median">Median</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -556,7 +584,7 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 </div>
 </section>
 <section id="descr-var" class="level2">
-<h2 class="anchored" data-anchor-id="descr-var">Descriptive statistics: Variance</h2>
+<h2 class="anchored" data-anchor-id="descr-var">Variance</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -583,7 +611,7 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 </div>
 </section>
 <section id="descr-sd" class="level2">
-<h2 class="anchored" data-anchor-id="descr-sd">Descriptive statistics: Standard Deviation</h2>
+<h2 class="anchored" data-anchor-id="descr-sd">Standard Deviation</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -610,7 +638,7 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 </div>
 </section>
 <section id="descr-range" class="level2">
-<h2 class="anchored" data-anchor-id="descr-range">Descriptive statistics: Range</h2>
+<h2 class="anchored" data-anchor-id="descr-range">Range</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -817,23 +845,20 @@ size    1.056862e+03 604.1724993 100.000 2713.000</code></pre>
 </dl>
 </div>
 </div>
-<div class="notes">
-<p>Lambda functions, also known as anonymous functions, are a feature in many programming languages, including R. In R, a lambda function is a function that is not bound to a name. This means that it can be created and used on the fly without defining it in the standard way with a name. Lambda functions are particularly useful for short, one-off functions that are used as arguments to other functions, like in apply family functions or in operations that involve the pipe operator (|&gt;).</p>
-</div>
 </section>
 <section id="make-tab-ii" class="level2">
 <h2 class="anchored" data-anchor-id="make-tab-ii">Making a table II</h2>
 <p>Print the table.</p>
 <div class="cell" data-tbl-colwidths="[40,15,15,15,15]" data-code-annotations="false" data-output-location="column-fragment">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>exDescrTab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-descr" class="cell anchored" data-code-annotations="false" data-output-location="column-fragment">
+<div id="tbl-descr" class="cell anchored" data-output-location="column-fragment" data-code-annotations="false">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-descr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Descriptive statistics
 </figcaption>
 <div aria-describedby="tbl-descr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-fb3265fe{}.cl-fb2251fa{font-family:'Times New Roman';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-fb22520e{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-fb225218{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-fb286fcc{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-fb286fe0{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-fb286fe1{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-fb289092{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fb28909c{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fb2890a6{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fb2890a7{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fb2890b0{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fb2890b1{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fb2890ba{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fb2890bb{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-fb3265fe"><thead><tr style="overflow-wrap:break-word;"><th class="cl-fb289092"><p class="cl-fb286fcc"><span class="cl-fb2251fa">Variables</span></p></th><th class="cl-fb28909c"><p class="cl-fb286fe0"><span class="cl-fb2251fa">Mean</span></p></th><th class="cl-fb28909c"><p class="cl-fb286fe0"><span class="cl-fb2251fa">SD</span></p></th><th class="cl-fb28909c"><p class="cl-fb286fe0"><span class="cl-fb2251fa">Min</span></p></th><th class="cl-fb28909c"><p class="cl-fb286fe0"><span class="cl-fb2251fa">Max</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-fb2890a6"><p class="cl-fb286fcc"><span class="cl-fb2251fa">Math achievement</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">12.75</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">6.88</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">-2.83</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">24.99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fb2890a6"><p class="cl-fb286fcc"><span class="cl-fb2251fa">Gender</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">0.53</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">0.50</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">0.00</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">1.00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fb2890a6"><p class="cl-fb286fcc"><span class="cl-fb2251fa">Socioeconomic status</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">0.00</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">0.78</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">-3.76</span></p></td><td class="cl-fb2890a7"><p class="cl-fb286fe0"><span class="cl-fb2251fa">2.69</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fb2890b0"><p class="cl-fb286fcc"><span class="cl-fb2251fa">Class size</span></p></td><td class="cl-fb2890b1"><p class="cl-fb286fe0"><span class="cl-fb2251fa">1,056.86</span></p></td><td class="cl-fb2890b1"><p class="cl-fb286fe0"><span class="cl-fb2251fa">604.17</span></p></td><td class="cl-fb2890b1"><p class="cl-fb286fe0"><span class="cl-fb2251fa">100.00</span></p></td><td class="cl-fb2890b1"><p class="cl-fb286fe0"><span class="cl-fb2251fa">2,713.00</span></p></td></tr></tbody><tfoot><tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-fb2890ba"><p class="cl-fb286fe1"><span class="cl-fb22520e">Note. </span><span class="cl-fb225218">This is a footnote.</span></p></td></tr></tfoot></table></div>
+<div class="tabwid"><style>.cl-cc5e5a34{}.cl-cc52eab4{font-family:'Times New Roman';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cc52eabe{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cc52eac8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cc576e54{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-cc576e5e{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-cc576e68{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cc57865a{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc578664{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc578665{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc57866e{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc57866f{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc578670{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc578678{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc578679{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-cc5e5a34"><thead><tr style="overflow-wrap:break-word;"><th class="cl-cc57865a"><p class="cl-cc576e54"><span class="cl-cc52eab4">Variables</span></p></th><th class="cl-cc578664"><p class="cl-cc576e5e"><span class="cl-cc52eab4">Mean</span></p></th><th class="cl-cc578664"><p class="cl-cc576e5e"><span class="cl-cc52eab4">SD</span></p></th><th class="cl-cc578664"><p class="cl-cc576e5e"><span class="cl-cc52eab4">Min</span></p></th><th class="cl-cc578664"><p class="cl-cc576e5e"><span class="cl-cc52eab4">Max</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-cc578665"><p class="cl-cc576e54"><span class="cl-cc52eab4">Math achievement</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">12.75</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">6.88</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">-2.83</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">24.99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc578665"><p class="cl-cc576e54"><span class="cl-cc52eab4">Gender</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">0.53</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">0.50</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">0.00</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">1.00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc578665"><p class="cl-cc576e54"><span class="cl-cc52eab4">Socioeconomic status</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">0.00</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">0.78</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">-3.76</span></p></td><td class="cl-cc57866e"><p class="cl-cc576e5e"><span class="cl-cc52eab4">2.69</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc57866f"><p class="cl-cc576e54"><span class="cl-cc52eab4">Class size</span></p></td><td class="cl-cc578670"><p class="cl-cc576e5e"><span class="cl-cc52eab4">1,056.86</span></p></td><td class="cl-cc578670"><p class="cl-cc576e5e"><span class="cl-cc52eab4">604.17</span></p></td><td class="cl-cc578670"><p class="cl-cc576e5e"><span class="cl-cc52eab4">100.00</span></p></td><td class="cl-cc578670"><p class="cl-cc576e5e"><span class="cl-cc52eab4">2,713.00</span></p></td></tr></tbody><tfoot><tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-cc578678"><p class="cl-cc576e68"><span class="cl-cc52eabe">Note. </span><span class="cl-cc52eac8">This is a footnote.</span></p></td></tr></tfoot></table></div>
 </div>
 </div>
 </figure>
@@ -852,7 +877,7 @@ Table&nbsp;1: Descriptive statistics
 <section id="descr-R" class="level2">
 <h2 class="anchored" data-anchor-id="descr-R">Descriptive statistics with the <code>psych</code> package</h2>
 <ul>
-<li><p>Alternatively, it is convenient to use additional <code>R</code> packages such as the <code>psych</code> package <span class="citation" data-cites="R-psych">(<a href="#ref-R-psych" role="doc-biblioref"><strong>R-psych?</strong></a>)</span> to calculate descriptive statistics</p></li>
+<li><p>Alternatively, it is convenient to use additional <code>R</code> packages such as the <code>psych</code> package <span class="citation" data-cites="R-psych">(<a href="#ref-R-psych" role="doc-biblioref">Revelle 2023</a>)</span> to calculate descriptive statistics</p></li>
 <li><p>Here we use the <code>describe</code> function (with the <code>fast</code> argument set to <code>TRUE</code>) to calculate the descriptive statistics of all variables within the example data set</p></li>
 </ul>
 <div class="cell" data-output-location="default">
@@ -872,7 +897,7 @@ Table&nbsp;2: Descriptive statistics with the psych package
 </figcaption>
 <div aria-describedby="tbl-descr-psych-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-fba1b878{}.cl-fb93580a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-fb985f6c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-fb98792a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fb987934{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fb987935{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-fba1b878"><thead><tr style="overflow-wrap:break-word;"><th class="cl-fb98792a"><p class="cl-fb985f6c"><span class="cl-fb93580a">vars</span></p></th><th class="cl-fb98792a"><p class="cl-fb985f6c"><span class="cl-fb93580a">n</span></p></th><th class="cl-fb98792a"><p class="cl-fb985f6c"><span class="cl-fb93580a">mean</span></p></th><th class="cl-fb98792a"><p class="cl-fb985f6c"><span class="cl-fb93580a">sd</span></p></th><th class="cl-fb98792a"><p class="cl-fb985f6c"><span class="cl-fb93580a">min</span></p></th><th class="cl-fb98792a"><p class="cl-fb985f6c"><span class="cl-fb93580a">max</span></p></th><th class="cl-fb98792a"><p class="cl-fb985f6c"><span class="cl-fb93580a">range</span></p></th><th class="cl-fb98792a"><p class="cl-fb985f6c"><span class="cl-fb93580a">se</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">1</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">7,185</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a"></span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a"></span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">Inf</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">-Inf</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">-Inf</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">2</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">7,185</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.2747390397</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.4464137</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">1.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">1.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.005266525</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">3</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">7,185</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.5281837161</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.4992398</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">1.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">1.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.005889736</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">4</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">7,185</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.0001433542</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.7793552</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">-3.758</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">2.692</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">6.450</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.009194372</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">5</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">7,185</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">12.7478526096</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">6.8782457</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">-2.832</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">24.993</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">27.825</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.081145473</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">6</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">7,185</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">1,056.8617954071</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">604.1724993</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">100.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">2,713.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">2,613.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">7.127669715</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">7</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">7,185</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.4931106472</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.4999873</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">1.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">1.000</span></p></td><td class="cl-fb987934"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.005898555</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fb987935"><p class="cl-fb985f6c"><span class="cl-fb93580a">8</span></p></td><td class="cl-fb987935"><p class="cl-fb985f6c"><span class="cl-fb93580a">7,185</span></p></td><td class="cl-fb987935"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.0061384830</span></p></td><td class="cl-fb987935"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.4135539</span></p></td><td class="cl-fb987935"><p class="cl-fb985f6c"><span class="cl-fb93580a">-1.188</span></p></td><td class="cl-fb987935"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.831</span></p></td><td class="cl-fb987935"><p class="cl-fb985f6c"><span class="cl-fb93580a">2.019</span></p></td><td class="cl-fb987935"><p class="cl-fb985f6c"><span class="cl-fb93580a">0.004878864</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-ccab1388{}.cl-cca04c32{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cca44a4e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cca45fa2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cca45fac{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cca45fad{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-ccab1388"><thead><tr style="overflow-wrap:break-word;"><th class="cl-cca45fa2"><p class="cl-cca44a4e"><span class="cl-cca04c32">vars</span></p></th><th class="cl-cca45fa2"><p class="cl-cca44a4e"><span class="cl-cca04c32">n</span></p></th><th class="cl-cca45fa2"><p class="cl-cca44a4e"><span class="cl-cca04c32">mean</span></p></th><th class="cl-cca45fa2"><p class="cl-cca44a4e"><span class="cl-cca04c32">sd</span></p></th><th class="cl-cca45fa2"><p class="cl-cca44a4e"><span class="cl-cca04c32">min</span></p></th><th class="cl-cca45fa2"><p class="cl-cca44a4e"><span class="cl-cca04c32">max</span></p></th><th class="cl-cca45fa2"><p class="cl-cca44a4e"><span class="cl-cca04c32">range</span></p></th><th class="cl-cca45fa2"><p class="cl-cca44a4e"><span class="cl-cca04c32">se</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">1</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">7,185</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32"></span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32"></span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">Inf</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">-Inf</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">-Inf</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">2</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">7,185</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.2747390397</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.4464137</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">1.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">1.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.005266525</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">3</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">7,185</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.5281837161</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.4992398</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">1.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">1.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.005889736</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">4</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">7,185</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.0001433542</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.7793552</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">-3.758</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">2.692</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">6.450</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.009194372</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">5</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">7,185</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">12.7478526096</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">6.8782457</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">-2.832</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">24.993</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">27.825</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.081145473</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">6</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">7,185</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">1,056.8617954071</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">604.1724993</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">100.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">2,713.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">2,613.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">7.127669715</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">7</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">7,185</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.4931106472</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.4999873</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">1.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">1.000</span></p></td><td class="cl-cca45fac"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.005898555</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cca45fad"><p class="cl-cca44a4e"><span class="cl-cca04c32">8</span></p></td><td class="cl-cca45fad"><p class="cl-cca44a4e"><span class="cl-cca04c32">7,185</span></p></td><td class="cl-cca45fad"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.0061384830</span></p></td><td class="cl-cca45fad"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.4135539</span></p></td><td class="cl-cca45fad"><p class="cl-cca44a4e"><span class="cl-cca04c32">-1.188</span></p></td><td class="cl-cca45fad"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.831</span></p></td><td class="cl-cca45fad"><p class="cl-cca44a4e"><span class="cl-cca04c32">2.019</span></p></td><td class="cl-cca45fad"><p class="cl-cca44a4e"><span class="cl-cca04c32">0.004878864</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </figure>
@@ -884,13 +909,27 @@ Table&nbsp;2: Descriptive statistics with the psych package
 <p>Style the table according to your ideas/demands.</p>
 </section>
 <section id="descr-ref" class="level2">
-<h2 class="anchored" data-anchor-id="descr-ref">References (Descriptive statistics slides)</h2>
-<div id="refs" role="list">
-
+<h2 class="anchored" data-anchor-id="descr-ref">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-eid2013" class="csl-entry" role="listitem">
+Eid, Michael, Mario Gollwitzer, and Manfred Schmitt. 2013. <em>Statistik und Forschungsmethoden: Lehrbuch ; mit Online-Materialien</em>. 3., korrigierte Auflage. <span>Weinheim Basel</span>: <span>Beltz</span>.
+</div>
+<div id="ref-R-flextable" class="csl-entry" role="listitem">
+Gohel, David, and Panagiotis Skintzos. 2023. <em>Flextable: Functions for Tabular Reporting</em>. <a href="https://ardata-fr.github.io/flextable-book/">https://ardata-fr.github.io/flextable-book/</a>.
+</div>
+<div id="ref-R-psych" class="csl-entry" role="listitem">
+Revelle, William. 2023. <em>Psych: Procedures for Psychological, Psychometric, and Personality Research</em>. <a href="https://personality-project.org/r/psych/
+https://personality-project.org/r/psych-manual.pdf">https://personality-project.org/r/psych/ https://personality-project.org/r/psych-manual.pdf</a>.
+</div>
+<div id="ref-R-ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2023. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+<div id="ref-R-knitr" class="csl-entry" role="listitem">
+Xie, Yihui. 2023. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

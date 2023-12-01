@@ -51,7 +51,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -209,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Descriptive Statistics</span></a>
+ <span class="menu-text">Basic Calculations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -217,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../material/descriptive-statistics/descriptive-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../material/basic-calculations/descriptive-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Descriptive statistics</span></a>
   </div>
 </li>
@@ -958,7 +978,7 @@ NULL</code></pre>
 </section></section></section><section id="baseR-tidyverse" class="level2"><h2 class="anchored" data-anchor-id="baseR-tidyverse">Base R <del>vs.</del> &amp; tidyverse</h2>
 <div class="columns">
 <div class="column" style="width:47.5%;">
-<p>Besides the functionality of base <code>R</code> <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref"><strong>R-base?</strong></a>)</span>, there is the so-called <code>tidyverse</code> <span class="citation" data-cites="R-tidyverse">(<a href="#ref-R-tidyverse" role="doc-biblioref"><strong>R-tidyverse?</strong></a>)</span> within <code>R</code>. The <code>tidyverse</code> is a collection of <code>R</code> packages (see <a href="#fig-tidyverse" class="quarto-xref">Figure&nbsp;1</a>) that <em>“share an underlying design philosophy, grammar, and data structures”</em> and are (specifically) designed for data science (see <a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>).</p>
+<p>Besides the functionality of base <code>R</code> <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2023</a>)</span>, there is the so-called <code>tidyverse</code> <span class="citation" data-cites="R-tidyverse">(<a href="#ref-R-tidyverse" role="doc-biblioref"><strong>R-tidyverse?</strong></a>)</span> within <code>R</code>. The <code>tidyverse</code> is a collection of <code>R</code> packages (see <a href="#fig-tidyverse" class="quarto-xref">Figure&nbsp;1</a>) that <em>“share an underlying design philosophy, grammar, and data structures”</em> and are (specifically) designed for data science (see <a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>).</p>
 </div><div class="column" style="width:5%;">
 <!-- empty column to create gap -->
 </div><div class="column" style="width:47.5%;">
@@ -992,9 +1012,9 @@ Figure&nbsp;1: tidyverse package collection
 </li>
 <li>Select the variables: <code>msc1</code> and <code>msc2</code> <strong>and then</strong>
 </li>
-<li>Calculate descriptive statistics using the <code>describe</code> function from the <code>psych</code> package <span class="citation" data-cites="R-psych">(<a href="#ref-R-psych" role="doc-biblioref"><strong>R-psych?</strong></a>)</span> <strong>and then</strong>
+<li>Calculate descriptive statistics using the <code>describe</code> function from the <code>psych</code> package <span class="citation" data-cites="R-psych">(<a href="#ref-R-psych" role="doc-biblioref">Revelle 2023</a>)</span> <strong>and then</strong>
 </li>
-<li>Create a table with the <code>kable</code> function from the <code>knitr</code> package <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref"><strong>R-knitr?</strong></a>)</span>
+<li>Create a table with the <code>kable</code> function from the <code>knitr</code> package <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref">Xie 2023</a>)</span>
 </li>
 </ol>
 <div class="cell">
@@ -1059,7 +1079,18 @@ Figure&nbsp;1: tidyverse package collection
 </div>
 
 
-</section></section><div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-R-base" class="csl-entry" role="listitem">
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-R-psych" class="csl-entry" role="listitem">
+Revelle, William. 2023. <em>Psych: Procedures for Psychological, Psychometric, and Personality Research</em>. <a href="https://personality-project.org/r/psych/%0D%0Ahttps://personality-project.org/r/psych-manual.pdf">https://personality-project.org/r/psych/ https://personality-project.org/r/psych-manual.pdf</a>.
+</div>
+<div id="ref-R-knitr" class="csl-entry" role="listitem">
+Xie, Yihui. 2023. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+</div></section><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 <ol>
 <li id="fn1"><p>You can customize them: <code>Tools &gt; Global Options &gt; Pane Layout</code><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>We omitted the <code>complex</code> type.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
