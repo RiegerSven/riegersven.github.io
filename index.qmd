@@ -35,7 +35,6 @@ My research interests encompass:
 - automation of data analyses with `R` and `Quarto`
 - motivation & personality development 
 
-
 ## Education
 
 - PhD in Psychology (Dr.rer.nat), 2014 - 2018, University of Tübingen

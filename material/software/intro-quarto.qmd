@@ -17,7 +17,7 @@ If you are familiar with RMarkdown [@R-rmarkdown] the [FAQ for RMarkdown Users](
 
 ## What is Quarto? {#what-is-quarto}
 
-![](../../images/quarto.PNG){width=80% fig-align="center"}
+![](../images/quarto.PNG){width=80% fig-align="center"}
 
 But, what is [Pandoc](https://pandoc.org/)? `Pandoc` is a universal document converter. It converts files from one markup format into another (e.g., `markdown` &rarr; `HTML`).
 
@@ -44,11 +44,11 @@ The focus of this workshop is on **HTML** (and **PDF**) documents. For an overvi
 
 1. Provide a title (& author name)
 
-![](../../images/create-quarto.PNG)
+![](../images/create-quarto.PNG)
 
 2. Save the document with a reasonable name and use the `Render` button
 
-![](../../images/my-first-quarto-document.PNG)
+![](../images/my-first-quarto-document.PNG)
 
 :::
 

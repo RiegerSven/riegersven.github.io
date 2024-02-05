@@ -1,5 +1,5 @@
 project:
-  type: website 
+  type: website
   output-dir: _site
 
 website:
@@ -41,28 +41,36 @@ website:
       background: none
       reader-mode: true
       search: true
+      collapse-level: 1
       contents:
         - text: "Preface"
           href: preface.qmd
         - section: "Software"
           contents: 
             - auto: material/software/*.qmd
+        - section: "Example Data"
+          contents:
+            - auto: material/example-data/*.qmd
         - section: "Data (Pre-)Processing"
           contents:
             - auto: material/data-proc/*.qmd
         - section: "Basic Calculations"
           contents: 
             - auto: material/basic-calculations/*.qmd
-        - section: ""
+        - section: "Multilevel Modeling"
+          contents:
+            - auto: material/mlm/*.qmd
+        - section: "Measurement Models"
+          contents:
+            - auto: material/measurement-models/*.qmd
 
 format:
   html:
-    theme: litera
     toc: true
-    page-layout: article
+    theme: litera
     grid:
       sidebar-width: 250px
-      body-width: 800px
+      body-width: 900px
       margin-width: 250px
     css: styles.css
 
@@ -71,8 +79,35 @@ bibliography:
   - "github-page.bib"
   - "most-used-r-refs.bib"
 
+csl: apa.csl
+
+# code stuff
+highlight-style: github
+code-fold: show
 code-line-numbers: true
+code-annotations: below
 code-copy: true
 code-link: true
-code-summary: "Show/hide code"
 
+# figures
+fig-format: svg
+fig-dpi: 300
+fig-responsive: true
+
+# links
+link-external-icon: true
+link-external-newwindow: false
+
+html-math-method: 
+  method: mathjax
+  number-equations: true
+  url: "https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.3/tex-mml-chtml.js"
+  
+#url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+webr:
+  show-startup-message: true
+  packages: ["lavaan"]
+
+filters:
+  - webr

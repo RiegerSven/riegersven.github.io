@@ -84,15 +84,15 @@ It is also reasonable to use the **project option**. This means, whenever you st
 
 - Version Control (this is recommended, but is beyond the scope of this workshop)
 
-![](../../images/new-proj-wizz.PNG)
+![](../images/new-proj-wizz.PNG)
 
 2. Choose a project type (today a `R project` or `Quarto project`)
 
-![](../../images/project-type.PNG)
+![](../images/project-type.PNG)
 
 3. Provide a short name, set the check mark `Open in new session` and click `Create Project`
 
-![](../../images/name-rproj.PNG)
+![](../images/name-rproj.PNG)
 
 :::
 

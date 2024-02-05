@@ -3,7 +3,7 @@
 
 ## About the Compendium
 
-This site serves as a compendium of teaching and coding material that I developed along th last couple of years.
+This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books, websites (e.g., <https://stats.stackexchange.com/>),... . Many of the materials are also available as a [Revealjs presentation](https://quarto.org/docs/presentations/revealjs/).
 
 :::{.callout-warning}
 This page is work in progress.
@@ -17,6 +17,7 @@ The majority of the provided code is from the statistical software `R` [@R-base]
 #| label: pkg-list
 pkgList <- c("base",
              "haven",
+             "renv",
              "stringr",
              "moments",
              "psych",
