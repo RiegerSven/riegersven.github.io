@@ -5,8 +5,32 @@
     <lastmod>2023-12-01T08:36:02.340Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/RiegerSven/material/software/intro-r-rstudio.html</loc>
-    <lastmod>2023-12-01T08:36:02.338Z</lastmod>
+    <loc>https://github.com/RiegerSven/material/software/setup-project-folder.html</loc>
+    <lastmod>2024-02-05T09:45:19.879Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/software/intro-quarto.html</loc>
+    <lastmod>2024-02-05T09:31:13.985Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/mlm/random-coeff.html</loc>
+    <lastmod>2023-12-15T13:09:46.316Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/mlm/random-coeff-model-reveal.html</loc>
+    <lastmod>2023-12-15T13:09:46.316Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/mlm/intro-mlm.html</loc>
+    <lastmod>2023-12-15T13:09:50.459Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/mlm/intro-mlm-reveal.html</loc>
+    <lastmod>2023-12-15T13:09:50.459Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/example-data/data-latent-state.html</loc>
+    <lastmod>2023-12-08T12:58:34.117Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/data-proc/data-proc-nam-lists.html</loc>
@@ -14,26 +38,50 @@
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/basic-calculations/descriptive-statistics.html</loc>
-    <lastmod>2023-12-01T13:11:14.126Z</lastmod>
+    <lastmod>2023-12-15T12:57:19.682Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/basic-calculations/descr-reveal.html</loc>
-    <lastmod>2023-12-01T13:11:14.126Z</lastmod>
+    <lastmod>2023-12-15T12:57:19.682Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/index.html</loc>
-    <lastmod>2023-12-01T08:36:02.326Z</lastmod>
+    <lastmod>2023-12-08T09:17:10.614Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/data-proc/data-proc-func-loops.html</loc>
     <lastmod>2023-12-01T08:36:02.328Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/RiegerSven/material/software/intro-quarto.html</loc>
-    <lastmod>2023-12-01T08:36:02.333Z</lastmod>
+    <loc>https://github.com/RiegerSven/material/example-data/data-hsb.html</loc>
+    <lastmod>2023-12-08T14:01:53.019Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/measurement-models/cfa-reveal.html</loc>
+    <lastmod>2023-12-15T13:08:24.932Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/measurement-models/cfa.html</loc>
+    <lastmod>2023-12-15T13:08:24.932Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/mlm/random-anova-reveal.html</loc>
+    <lastmod>2023-12-15T13:09:48.929Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/mlm/random-anova.html</loc>
+    <lastmod>2023-12-15T13:09:48.929Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/new-stuff/CACE.html</loc>
+    <lastmod>2024-02-02T09:54:50.304Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/software/intro-r-rstudio.html</loc>
+    <lastmod>2024-02-05T09:31:11.962Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/preface.html</loc>
-    <lastmod>2023-12-01T10:50:43.913Z</lastmod>
+    <lastmod>2024-02-05T09:42:02.914Z</lastmod>
   </url>
 </urlset>

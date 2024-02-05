@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.489">
+<meta name="generator" content="quarto-1.4.537">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -85,6 +85,7 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../material/mlm/intro-mlm.html" rel="next">
 <link href="../../material/data-proc/data-proc-nam-lists.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -103,7 +104,9 @@ div.csl-indent {
   "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
-    null
+    "f",
+    "/",
+    "s"
   ],
   "language": {
     "search-no-results-text": "No results",
@@ -113,6 +116,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -122,14 +126,41 @@ div.csl-indent {
 <script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.3/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="- Descriptive statistics">
-<meta property="og:description" content="This material introduces the basic descriptive statistics (e.g., mean, standard deviation etc.). The material is also available as a Revealjs presentation.">
+<meta property="og:description" content="This material introduces basic descriptive statistics (e.g., mean, standard deviation etc.). It is also available as a Revealjs presentation.">
 <meta property="og:site_name" content="Compendium of Sven Rieger">
 <meta name="twitter:title" content="- Descriptive statistics">
-<meta name="twitter:description" content="This material introduces the basic descriptive statistics (e.g., mean, standard deviation etc.). The material is also available as a Revealjs presentation.">
+<meta name="twitter:description" content="This material introduces basic descriptive statistics (e.g., mean, standard deviation etc.). It is also available as a Revealjs presentation.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -210,13 +241,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/software/intro-quarto.html" class="sidebar-item-text sidebar-link">
@@ -229,17 +260,46 @@ div.csl-indent {
  <span class="menu-text">Introduction to R &amp; RStudio</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../material/software/setup-project-folder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup a project folder</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Data (Pre-)Processing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Example Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../material/example-data/data-hsb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">High School and Beyond (HSB)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../material/example-data/data-latent-state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulated Data based on 3-dimensional CFA Multiple Group Model</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Data (Pre-)Processing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/data-proc/data-proc-func-loops.html" class="sidebar-item-text sidebar-link">
@@ -256,17 +316,63 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Basic Calculations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/basic-calculations/descriptive-statistics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Descriptive statistics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Multilevel Modeling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../material/mlm/intro-mlm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Multilevel Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../material/mlm/random-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">One-Way ANOVA with Random Effects</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../material/mlm/random-coeff.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Random-Coefficient Model</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Measurement Models</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../material/measurement-models/cfa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Confirmatory Factor Analyses</span></a>
   </div>
 </li>
       </ul>
@@ -334,7 +440,7 @@ div.csl-indent {
 <div>
   <div class="abstract">
     <div class="block-title">Abstract</div>
-    This material introduces the basic descriptive statistics (e.g., mean, standard deviation etc.). The material is also available as a <a href="https://quarto.org/docs/presentations/revealjs/">Revealjs presentation</a>.
+    This material introduces basic descriptive statistics (e.g., mean, standard deviation etc.). It is also available as a <a href="https://quarto.org/docs/presentations/revealjs/">Revealjs presentation</a>.
   </div>
 </div>
 
@@ -355,22 +461,30 @@ div.csl-indent {
 <li>The following packages are used:</li>
 </ul>
 <div class="cell" data-output-location="column">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>descrPkg <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"merTools"</span>,</span>
 <span id="cb1-2"><a href="#cb1-2"></a>              <span class="st">"sn"</span>,</span>
 <span id="cb1-3"><a href="#cb1-3"></a>              <span class="st">"knitr"</span>,</span>
 <span id="cb1-4"><a href="#cb1-4"></a>              <span class="st">"flextable"</span>,</span>
 <span id="cb1-5"><a href="#cb1-5"></a>              <span class="st">"psych"</span>,</span>
 <span id="cb1-6"><a href="#cb1-6"></a>              <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="fragment">
 <ul>
 <li>Install packages when not already installed:</li>
 </ul>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">lapply</span>(descrPkg,</span>
 <span id="cb2-2"><a href="#cb2-2"></a>        <span class="cf">function</span>(x) </span>
-<span id="cb2-3"><a href="#cb2-3"></a>          <span class="cf">if</span>(<span class="sc">!</span>x <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())) {<span class="fu">install.packages</span>(x)}</span>
-<span id="cb2-4"><a href="#cb2-4"></a>      )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3"></a>          <span class="cf">if</span>(<span class="sc">!</span>x <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())) {</span>
+<span id="cb2-4"><a href="#cb2-4"></a>            <span class="fu">install.packages</span>(x)</span>
+<span id="cb2-5"><a href="#cb2-5"></a>            }</span>
+<span id="cb2-6"><a href="#cb2-6"></a>          )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 <div class="fragment">
@@ -378,8 +492,11 @@ div.csl-indent {
 <li>Load (a subset of) the required package(s) into the <code>R</code> session.</li>
 </ul>
 <div class="cell" data-output-location="column">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(flextable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 </section>
@@ -406,12 +523,12 @@ div.csl-indent {
 <span id="cb4-15"><a href="#cb4-15"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <ol type="1">
-<li>merTools <span class="citation" data-cites="R-merTools">(v0.6.1, <a href="#ref-R-merTools" role="doc-biblioref"><strong>R-merTools?</strong></a>)</span></li>
+<li>merTools <span class="citation" data-cites="R-merTools">(v0.6.1, <a href="#ref-R-merTools" role="doc-biblioref">Knowles et al., 2023</a>)</span></li>
 <li>sn <span class="citation" data-cites="R-sn">(v2.1.1, <a href="#ref-R-sn" role="doc-biblioref"><strong>R-sn?</strong></a>)</span></li>
-<li>knitr <span class="citation" data-cites="R-knitr">(v1.44, <a href="#ref-R-knitr" role="doc-biblioref">Xie 2023</a>)</span></li>
-<li>flextable <span class="citation" data-cites="R-flextable">(v0.9.4, <a href="#ref-R-flextable" role="doc-biblioref">Gohel and Skintzos 2023</a>)</span></li>
-<li>psych <span class="citation" data-cites="R-psych">(v2.3.9, <a href="#ref-R-psych" role="doc-biblioref">Revelle 2023</a>)</span></li>
-<li>ggplot2 <span class="citation" data-cites="R-ggplot2">(v3.4.4, <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al. 2023</a>)</span></li>
+<li>knitr <span class="citation" data-cites="R-knitr">(v1.44, <a href="#ref-R-knitr" role="doc-biblioref">Xie, 2023</a>)</span></li>
+<li>flextable <span class="citation" data-cites="R-flextable">(v0.9.4, <a href="#ref-R-flextable" role="doc-biblioref">Gohel &amp; Skintzos, 2023</a>)</span></li>
+<li>psych <span class="citation" data-cites="R-psych">(v2.3.9, <a href="#ref-R-psych" role="doc-biblioref">Revelle, 2023</a>)</span></li>
+<li>ggplot2 <span class="citation" data-cites="R-ggplot2">(v3.4.4, <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al., 2023</a>)</span></li>
 </ol>
 </div>
 </section>
@@ -435,8 +552,8 @@ X_{n1} &amp; X_{n2} &amp; \cdots &amp; X_{np}
 </ul>
 </div>
 
-<div class="no-row-height column-margin column-container"><div class="">
-<p>see <span class="citation" data-cites="eid2013">Eid, Gollwitzer, and Schmitt (<a href="#ref-eid2013" role="doc-biblioref">2013</a>)</span></p>
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>see <span class="citation" data-cites="eid2013">Eid et al. (<a href="#ref-eid2013" role="doc-biblioref">2013</a>)</span></p>
 </div></div></section>
 <section id="descriptive-statistics-overview" class="level2">
 <h2 class="anchored" data-anchor-id="descriptive-statistics-overview">Descriptive statistics: Overview</h2>
@@ -476,7 +593,11 @@ X_{n1} &amp; X_{n2} &amp; \cdots &amp; X_{np}
 </div><div class="column" style="width:49.5%;">
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="descriptive-statistics_files/figure-html/norm-dis-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="descriptive-statistics_files/figure-html/norm-dis-1.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="fragment">
@@ -492,7 +613,10 @@ Example
 <div class="callout-body-container callout-body">
 <p>Consider the following example vector:</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>exVec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 </div>
@@ -509,7 +633,7 @@ Example
 </div>
 <div class="callout-body-container">
 <p>The mean (or arithmetic mean, average) is the sum of a collection of numbers divided by the count of numbers in the collection. The formula is given in <a href="#eq-mean" class="quarto-xref">Equation&nbsp;1</a>.</p>
-<p><span id="eq-mean"><span class="math display">\[\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i=\frac{x_1+x_2+\dots+x_n}{n} \tag{1}\]</span></span></p>
+<p><span id="eq-mean"><span class="math display">\[\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i=\frac{x_1+x_2+\dots+x_n}{n} \qquad(1)\]</span></span></p>
 <p>For example, consider a vector of numbers: <span class="math inline">\(x = 1, 2, 5, 3, 8\)</span></p>
 <p><span class="math display">\[\bar{x} = \frac{(1+2+5+3+8)}{5}=3.8\]</span></p>
 <p>If the underlying data is a sample (i.e., a subset of a population), it is called the sample mean.</p>
@@ -519,7 +643,10 @@ Example
 <div class="fragment">
 <p>How to calculate the mean in <code>R</code>?</p>
 <div class="cell" data-output-location="column-fragment">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.8</code></pre>
 </div>
@@ -530,8 +657,11 @@ Example
 <div class="columns">
 <div class="column" style="width:48.5%;">
 <div class="cell" data-output-location="fragment">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>exVec2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="cn">NA</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(exVec2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
@@ -540,7 +670,10 @@ Example
 
 </div><div class="column" style="width:48.5%;">
 <div class="cell" data-output-location="fragment">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(exVec2, <span class="at">na.rm =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.8</code></pre>
 </div>
@@ -567,7 +700,7 @@ Mdn = \widetilde{x} =
 x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 (x_{n/2} + x_{(n/2)+1}) / 2 &amp; \:\: \text{if } n  \text{ is even}
 \end{cases}
-\tag{2}\]</span></span></p>
+\qquad(2)\]</span></span></p>
 <p>Consider again the vector of numbers: <span class="math inline">\(x = 1, 2, 5, 3, 8\)</span> with length <span class="math inline">\(n = 5\)</span>. To calculate the median you need to first, order the the vector: <span class="math inline">\(x = 1, 2, 3, 5, 8\)</span> and then apply the corresponding formula (odd vs.&nbsp;even; here odd):</p>
 <p><span class="math display">\[\widetilde{x}=x_{\frac{(5+1)}{2}}=x_3 = 3\]</span></p>
 </div>
@@ -576,7 +709,10 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 <div class="fragment">
 <p>How to calculate the median in <code>R</code>?</p>
 <div class="cell" data-output-location="column-fragment">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
@@ -592,9 +728,11 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 </div>
 <div class="callout-body-container">
 <p>The variance is the expectation of the squared deviation of a random variable from its mean. Usually it is distinguished between the population and the sample variance. The formula of the population variance is given in <a href="#eq-pop-var" class="quarto-xref">Equation&nbsp;3</a>.</p>
-<p><span id="eq-pop-var"><span class="math display">\[VAR(X) = \sigma^2 = \frac{1}{N} \sum\limits_{i=1}^N (x_i - \mu)^2 \tag{3}\]</span></span></p>
+<p><span id="eq-pop-var"><span class="math display">\[VAR(X) = \sigma^2 = \frac{1}{N} \sum\limits_{i=1}^N (x_i - \mu)^2 \qquad(3)\]</span></span></p>
 <p>The formula of the sample variance is given in <a href="#eq-samp-var" class="quarto-xref">Equation&nbsp;4</a>.</p>
-<p><span id="eq-samp-var"><span class="math display">\[VAR(X) = s^2 = \frac{1}{n-1} \sum\limits_{i=1}^n (x_i - \bar{x})^2 \tag{4}\]</span></span></p>
+<p><span id="eq-samp-var"><span class="math display">\[
+VAR(X) = s^2 = \frac{1}{n-1} \sum\limits_{i=1}^n (x_i - \bar{x})^2
+\qquad(4)\]</span></span></p>
 <p>Using again the vector <span class="math inline">\(x = 1, 2, 5, 3, 8\)</span>, the sample variance is calculated as follows:</p>
 <p><span class="math display">\[Var(X) =\frac{1}{4}((1-3.8)^2 + (2-3.8)^2 + (5-3.8)^2 + (3-3.8)^2 + (8-3.8)^2) = 7.7\]</span></p>
 </div>
@@ -603,7 +741,10 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 <div class="fragment">
 <p>How to calculate the variance in <code>R</code>?</p>
 <div class="cell" data-output-location="column-fragment">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7.7</code></pre>
 </div>
@@ -619,9 +760,9 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 </div>
 <div class="callout-body-container">
 <p>The standard deviation is defined as the square root of the variance. Again, it is distinguished between the population and the sample variance. The formula of the population standard deviation is given in <a href="#eq-pop-sd" class="quarto-xref">Equation&nbsp;5</a>.</p>
-<p><span id="eq-pop-sd"><span class="math display">\[SD(X) = \sigma = \sqrt{\sigma^2} \tag{5}\]</span></span></p>
+<p><span id="eq-pop-sd"><span class="math display">\[SD(X) = \sigma = \sqrt{\sigma^2} \qquad(5)\]</span></span></p>
 <p>The formula of the population standard deviation is given in <a href="#eq-samp-sd" class="quarto-xref">Equation&nbsp;6</a>.</p>
-<p><span id="eq-samp-sd"><span class="math display">\[SD(X) = s = \sqrt{s^2} \tag{6}\]</span></span></p>
+<p><span id="eq-samp-sd"><span class="math display">\[SD(X) = s = \sqrt{s^2} \qquad(6)\]</span></span></p>
 <p>Recall the variance calculation from the previous <a href="#descr-var">slide</a>, the (sample) variance of the vector is <span class="math inline">\(7.7\)</span>.</p>
 <p><span class="math display">\[SD(X) = \sqrt{7.7}=2.774887\]</span></p>
 </div>
@@ -630,7 +771,10 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 <div class="fragment">
 <p>How to calculate the standard deviation in <code>R</code>?</p>
 <div class="cell" data-output-location="column-fragment">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.774887</code></pre>
 </div>
@@ -646,14 +790,17 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 </div>
 <div class="callout-body-container">
 <p>The range of a vector is the difference between the largest (maximum) and the smallest (minimum) values/observations.</p>
-<p><span id="eq-range"><span class="math display">\[Range(x) = R =  x_{max}-x_{min} \tag{7}\]</span></span></p>
+<p><span id="eq-range"><span class="math display">\[Range(x) = R =  x_{max}-x_{min} \qquad(7)\]</span></span></p>
 </div>
 </div>
 </div>
 <div class="fragment">
 <p>How to calculate the range in <code>R</code>?</p>
 <div class="cell" data-output-location="column-fragment">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 8</code></pre>
 </div>
@@ -662,21 +809,30 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 <div class="fragment">
 <p>Alternatively, calculate the minimum…</p>
 <div class="cell" data-output-location="column">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
 </div>
 <p>… and the maximum.</p>
 <div class="cell" data-output-location="column">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8</code></pre>
 </div>
 </div>
 <p>And to compute the range apply <a href="#eq-range" class="quarto-xref">Equation&nbsp;7</a>.</p>
 <div class="cell" data-output-location="column">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(exVec)<span class="sc">-</span><span class="fu">min</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7</code></pre>
 </div>
@@ -687,10 +843,15 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 <h2 class="anchored" data-anchor-id="put-everything-together-i">Put everything together I</h2>
 <p>Recall, the dataset <code>dat</code> is the HSB dataset from the <code>merTools</code> package:</p>
 <div class="cell" data-output-location="column">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> merTools<span class="sc">::</span>hsb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Calculating the mean, standard deviation, minimum and maximum for a set of variables:</p>
 <div class="cell" data-output-location="column">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2"></a>myVar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Math achievement"</span> <span class="ot">=</span> <span class="st">"mathach"</span>,</span>
 <span id="annotated-cell-4-3"><a href="#annotated-cell-4-3"></a>           <span class="st">"Gender"</span> <span class="ot">=</span> <span class="st">"female"</span>,</span>
@@ -709,6 +870,7 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 <span id="annotated-cell-4-16"><a href="#annotated-cell-4-16"></a>             )</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-4-17" class="code-annotation-target"><a href="#annotated-cell-4-17"></a>    <span class="fu">return</span>(ret)</span>
 <span id="annotated-cell-4-18"><a href="#annotated-cell-4-18"></a>    })</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
@@ -747,8 +909,11 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 <h2 class="anchored" data-anchor-id="put-everything-together-ii">Put everything together II</h2>
 <p>Print the results…</p>
 <div class="cell" data-output-location="column-fragment">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>exDescr <span class="sc">|&gt;</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>       mathach    female           ses      size
 [1,] 12.747853 0.5281837  0.0001433542 1056.8618
@@ -762,9 +927,12 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 </div>
 <div class="fragment">
 <div class="cell" data-output-location="column">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>exDescr <span class="sc">|&gt;</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">t</span>() <span class="sc">|&gt;</span></span>
 <span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>                [,1]        [,2]    [,3]     [,4]
 mathach 1.274785e+01   6.8782457  -2.832   24.993
@@ -782,6 +950,8 @@ size    1.056862e+03 604.1724993 100.000 2713.000</code></pre>
 <section id="making-a-table-i" class="level2">
 <h2 class="anchored" data-anchor-id="making-a-table-i">Making a table I</h2>
 <div class="cell" data-output-location="column">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2"></a>exDescrTab <span class="ot">&lt;-</span> exDescr <span class="sc">|&gt;</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3"></a>    <span class="fu">t</span>() <span class="sc">|&gt;</span></span>
@@ -804,6 +974,7 @@ size    1.056862e+03 604.1724993 100.000 2713.000</code></pre>
 <span id="annotated-cell-6-20"><a href="#annotated-cell-6-20"></a>    <span class="fu">align</span>(<span class="at">align =</span> <span class="st">"left"</span>, <span class="at">part =</span> <span class="st">"footer"</span>) <span class="sc">|&gt;</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-6-21" class="code-annotation-target"><a href="#annotated-cell-6-21"></a>    <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">1</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">unit =</span> <span class="st">"in"</span>) <span class="sc">|&gt;</span></span>
 <span id="annotated-cell-6-22"><a href="#annotated-cell-6-22"></a>    <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">width =</span> <span class="dv">1</span>, <span class="at">unit =</span> <span class="st">"in"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
@@ -850,15 +1021,18 @@ size    1.056862e+03 604.1724993 100.000 2713.000</code></pre>
 <h2 class="anchored" data-anchor-id="make-tab-ii">Making a table II</h2>
 <p>Print the table.</p>
 <div class="cell" data-tbl-colwidths="[40,15,15,15,15]" data-code-annotations="false" data-output-location="column-fragment">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>exDescrTab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-descr" class="cell anchored" data-code-annotations="false" data-output-location="column-fragment">
+</details>
+<div id="tbl-descr" class="cell quarto-float anchored" data-code-annotations="false" data-output-location="column-fragment">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-descr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Descriptive statistics
 </figcaption>
 <div aria-describedby="tbl-descr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-cc1eec34{}.cl-cc1337ea{font-family:'Times New Roman';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cc1337f4{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cc1337fe{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cc17c7ba{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-cc17c7c4{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-cc17c7ce{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cc17e010{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc17e01a{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc17e01b{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc17e01c{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc17e01d{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc17e024{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc17e025{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc17e02e{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-cc1eec34"><thead><tr style="overflow-wrap:break-word;"><th class="cl-cc17e010"><p class="cl-cc17c7ba"><span class="cl-cc1337ea">Variables</span></p></th><th class="cl-cc17e01a"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">Mean</span></p></th><th class="cl-cc17e01a"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">SD</span></p></th><th class="cl-cc17e01a"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">Min</span></p></th><th class="cl-cc17e01a"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">Max</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-cc17e01b"><p class="cl-cc17c7ba"><span class="cl-cc1337ea">Math achievement</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">12.75</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">6.88</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">-2.83</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">24.99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc17e01b"><p class="cl-cc17c7ba"><span class="cl-cc1337ea">Gender</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">0.53</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">0.50</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">0.00</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">1.00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc17e01b"><p class="cl-cc17c7ba"><span class="cl-cc1337ea">Socioeconomic status</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">0.00</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">0.78</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">-3.76</span></p></td><td class="cl-cc17e01c"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">2.69</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc17e01d"><p class="cl-cc17c7ba"><span class="cl-cc1337ea">Class size</span></p></td><td class="cl-cc17e024"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">1,056.86</span></p></td><td class="cl-cc17e024"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">604.17</span></p></td><td class="cl-cc17e024"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">100.00</span></p></td><td class="cl-cc17e024"><p class="cl-cc17c7c4"><span class="cl-cc1337ea">2,713.00</span></p></td></tr></tbody><tfoot><tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-cc17e025"><p class="cl-cc17c7ce"><span class="cl-cc1337f4">Note. </span><span class="cl-cc1337fe">This is a footnote.</span></p></td></tr></tfoot></table></div>
+<div class="tabwid"><style>.cl-8596a38e{}.cl-85728fda{font-family:'Times New Roman';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-85728fe4{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-85728fee{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-858faab6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-858faaca{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-858faacb{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-858fc2da{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-858fc2db{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-858fc2e4{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-858fc2ee{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-858fc2ef{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-858fc2f8{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-858fc2f9{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-858fc302{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-8596a38e"><thead><tr style="overflow-wrap:break-word;"><th class="cl-858fc2da"><p class="cl-858faab6"><span class="cl-85728fda">Variables</span></p></th><th class="cl-858fc2db"><p class="cl-858faaca"><span class="cl-85728fda">Mean</span></p></th><th class="cl-858fc2db"><p class="cl-858faaca"><span class="cl-85728fda">SD</span></p></th><th class="cl-858fc2db"><p class="cl-858faaca"><span class="cl-85728fda">Min</span></p></th><th class="cl-858fc2db"><p class="cl-858faaca"><span class="cl-85728fda">Max</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-858fc2e4"><p class="cl-858faab6"><span class="cl-85728fda">Math achievement</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">12.75</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">6.88</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">-2.83</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">24.99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-858fc2e4"><p class="cl-858faab6"><span class="cl-85728fda">Gender</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">0.53</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">0.50</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">0.00</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">1.00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-858fc2e4"><p class="cl-858faab6"><span class="cl-85728fda">Socioeconomic status</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">0.00</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">0.78</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">-3.76</span></p></td><td class="cl-858fc2ee"><p class="cl-858faaca"><span class="cl-85728fda">2.69</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-858fc2ef"><p class="cl-858faab6"><span class="cl-85728fda">Class size</span></p></td><td class="cl-858fc2f8"><p class="cl-858faaca"><span class="cl-85728fda">1,056.86</span></p></td><td class="cl-858fc2f8"><p class="cl-858faaca"><span class="cl-85728fda">604.17</span></p></td><td class="cl-858fc2f8"><p class="cl-858faaca"><span class="cl-85728fda">100.00</span></p></td><td class="cl-858fc2f8"><p class="cl-858faaca"><span class="cl-85728fda">2,713.00</span></p></td></tr></tbody><tfoot><tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-858fc2f9"><p class="cl-858faacb"><span class="cl-85728fe4">Note. </span><span class="cl-85728fee">This is a footnote.</span></p></td></tr></tfoot></table></div>
 </div>
 </div>
 </figure>
@@ -869,35 +1043,36 @@ Table&nbsp;1: Descriptive statistics
 <h2 class="anchored" data-anchor-id="table-export">Table export</h2>
 <p>If you want to export the table…</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>exDescrTab <span class="sc">|&gt;</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">set_caption</span>(<span class="at">caption =</span> <span class="st">"Table X.</span><span class="sc">\n</span><span class="st">Descriptive statistics"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">save_as_docx</span>(<span class="at">path =</span> <span class="st">"descr-tab.docx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="descr-R" class="level2">
 <h2 class="anchored" data-anchor-id="descr-R">Descriptive statistics with the <code>psych</code> package</h2>
 <ul>
-<li><p>Alternatively, it is convenient to use additional <code>R</code> packages such as the <code>psych</code> package <span class="citation" data-cites="R-psych">(<a href="#ref-R-psych" role="doc-biblioref">Revelle 2023</a>)</span> to calculate descriptive statistics</p></li>
+<li><p>Alternatively, it is convenient to use additional <code>R</code> packages such as the <code>psych</code> package <span class="citation" data-cites="R-psych">(<a href="#ref-R-psych" role="doc-biblioref">Revelle, 2023</a>)</span> to calculate descriptive statistics</p></li>
 <li><p>Here we use the <code>describe</code> function (with the <code>fast</code> argument set to <code>TRUE</code>) to calculate the descriptive statistics of all variables within the example data set</p></li>
 </ul>
 <div class="cell" data-output-location="default">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>dat <span class="sc">|&gt;</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a>  psych<span class="sc">::</span><span class="fu">describe</span>(<span class="at">fast =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">flextable</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf</code></pre>
-</div>
-<div id="tbl-descr-psych" class="cell anchored" data-output-location="default">
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>  psych<span class="sc">::</span><span class="fu">describe</span>(<span class="at">fast =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">flextable</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-descr-psych" class="cell quarto-float anchored" data-output-location="default">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-descr-psych-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descr-psych-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Descriptive statistics with the psych package
 </figcaption>
 <div aria-describedby="tbl-descr-psych-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-cc4f7a02{}.cl-cc44c97c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cc48b41a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cc48c86a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc48c874{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc48c875{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-cc4f7a02"><thead><tr style="overflow-wrap:break-word;"><th class="cl-cc48c86a"><p class="cl-cc48b41a"><span class="cl-cc44c97c">vars</span></p></th><th class="cl-cc48c86a"><p class="cl-cc48b41a"><span class="cl-cc44c97c">n</span></p></th><th class="cl-cc48c86a"><p class="cl-cc48b41a"><span class="cl-cc44c97c">mean</span></p></th><th class="cl-cc48c86a"><p class="cl-cc48b41a"><span class="cl-cc44c97c">sd</span></p></th><th class="cl-cc48c86a"><p class="cl-cc48b41a"><span class="cl-cc44c97c">min</span></p></th><th class="cl-cc48c86a"><p class="cl-cc48b41a"><span class="cl-cc44c97c">max</span></p></th><th class="cl-cc48c86a"><p class="cl-cc48b41a"><span class="cl-cc44c97c">range</span></p></th><th class="cl-cc48c86a"><p class="cl-cc48b41a"><span class="cl-cc44c97c">se</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">1</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">7,185</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c"></span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c"></span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">Inf</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">-Inf</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">-Inf</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">2</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">7,185</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.2747390397</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.4464137</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">1.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">1.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.005266525</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">3</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">7,185</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.5281837161</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.4992398</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">1.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">1.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.005889736</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">4</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">7,185</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.0001433542</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.7793552</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">-3.758</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">2.692</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">6.450</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.009194372</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">5</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">7,185</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">12.7478526096</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">6.8782457</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">-2.832</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">24.993</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">27.825</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.081145473</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">6</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">7,185</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">1,056.8617954071</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">604.1724993</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">100.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">2,713.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">2,613.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">7.127669715</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">7</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">7,185</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.4931106472</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.4999873</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">1.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">1.000</span></p></td><td class="cl-cc48c874"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.005898555</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc48c875"><p class="cl-cc48b41a"><span class="cl-cc44c97c">8</span></p></td><td class="cl-cc48c875"><p class="cl-cc48b41a"><span class="cl-cc44c97c">7,185</span></p></td><td class="cl-cc48c875"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.0061384830</span></p></td><td class="cl-cc48c875"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.4135539</span></p></td><td class="cl-cc48c875"><p class="cl-cc48b41a"><span class="cl-cc44c97c">-1.188</span></p></td><td class="cl-cc48c875"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.831</span></p></td><td class="cl-cc48c875"><p class="cl-cc48b41a"><span class="cl-cc44c97c">2.019</span></p></td><td class="cl-cc48c875"><p class="cl-cc48b41a"><span class="cl-cc44c97c">0.004878864</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-85b55e3c{}.cl-85a96a0a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-85ad6614{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-85ad7b7c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-85ad7b86{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-85ad7b87{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-85b55e3c"><thead><tr style="overflow-wrap:break-word;"><th class="cl-85ad7b7c"><p class="cl-85ad6614"><span class="cl-85a96a0a">vars</span></p></th><th class="cl-85ad7b7c"><p class="cl-85ad6614"><span class="cl-85a96a0a">n</span></p></th><th class="cl-85ad7b7c"><p class="cl-85ad6614"><span class="cl-85a96a0a">mean</span></p></th><th class="cl-85ad7b7c"><p class="cl-85ad6614"><span class="cl-85a96a0a">sd</span></p></th><th class="cl-85ad7b7c"><p class="cl-85ad6614"><span class="cl-85a96a0a">min</span></p></th><th class="cl-85ad7b7c"><p class="cl-85ad6614"><span class="cl-85a96a0a">max</span></p></th><th class="cl-85ad7b7c"><p class="cl-85ad6614"><span class="cl-85a96a0a">range</span></p></th><th class="cl-85ad7b7c"><p class="cl-85ad6614"><span class="cl-85a96a0a">se</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">1</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">7,185</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.2747390397</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.4464137</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">1.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">1.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.005266525</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">2</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">7,185</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.5281837161</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.4992398</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">1.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">1.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.005889736</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">3</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">7,185</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.0001433542</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.7793552</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">-3.758</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">2.692</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">6.450</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.009194372</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">4</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">7,185</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">12.7478526096</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">6.8782457</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">-2.832</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">24.993</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">27.825</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.081145473</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">5</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">7,185</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">1,056.8617954071</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">604.1724993</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">100.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">2,713.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">2,613.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">7.127669715</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">6</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">7,185</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.4931106472</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.4999873</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">1.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">1.000</span></p></td><td class="cl-85ad7b86"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.005898555</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-85ad7b87"><p class="cl-85ad6614"><span class="cl-85a96a0a">7</span></p></td><td class="cl-85ad7b87"><p class="cl-85ad6614"><span class="cl-85a96a0a">7,185</span></p></td><td class="cl-85ad7b87"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.0061384830</span></p></td><td class="cl-85ad7b87"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.4135539</span></p></td><td class="cl-85ad7b87"><p class="cl-85ad6614"><span class="cl-85a96a0a">-1.188</span></p></td><td class="cl-85ad7b87"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.831</span></p></td><td class="cl-85ad7b87"><p class="cl-85ad6614"><span class="cl-85a96a0a">2.019</span></p></td><td class="cl-85ad7b87"><p class="cl-85ad6614"><span class="cl-85a96a0a">0.004878864</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </figure>
@@ -910,22 +1085,25 @@ Table&nbsp;2: Descriptive statistics with the psych package
 </section>
 <section id="descr-ref" class="level2">
 <h2 class="anchored" data-anchor-id="descr-ref">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-eid2013" class="csl-entry" role="listitem">
-Eid, Michael, Mario Gollwitzer, and Manfred Schmitt. 2013. <em>Statistik und Forschungsmethoden: Lehrbuch ; mit Online-Materialien</em>. 3., korrigierte Auflage. <span>Weinheim Basel</span>: <span>Beltz</span>.
+Eid, M., Gollwitzer, M., &amp; Schmitt, M. (2013). <em>Statistik und Forschungsmethoden: Lehrbuch ; mit Online-Materialien</em> (3., korrigierte Auflage). <span>Beltz</span>.
 </div>
 <div id="ref-R-flextable" class="csl-entry" role="listitem">
-Gohel, David, and Panagiotis Skintzos. 2023. <em>Flextable: Functions for Tabular Reporting</em>. <a href="https://ardata-fr.github.io/flextable-book/">https://ardata-fr.github.io/flextable-book/</a>.
+Gohel, D., &amp; Skintzos, P. (2023). <em>Flextable: Functions for tabular reporting</em>. <a href="https://ardata-fr.github.io/flextable-book/">https://ardata-fr.github.io/flextable-book/</a>
+</div>
+<div id="ref-R-merTools" class="csl-entry" role="listitem">
+Knowles, J. E., Frederick, C., &amp; Whitworth, A. (2023). <em><span class="nocase">merTools</span>: <span>Tools</span> for <span>Analyzing Mixed Effect Regression Models</span></em>. <a href="https://github.com/jknowles/merTools">https://github.com/jknowles/merTools</a>
 </div>
 <div id="ref-R-psych" class="csl-entry" role="listitem">
-Revelle, William. 2023. <em>Psych: Procedures for Psychological, Psychometric, and Personality Research</em>. <a href="https://personality-project.org/r/psych/
-https://personality-project.org/r/psych-manual.pdf">https://personality-project.org/r/psych/ https://personality-project.org/r/psych-manual.pdf</a>.
+Revelle, W. (2023). <em>Psych: Procedures for psychological, psychometric, and personality research</em>. <a href="https://personality-project.org/r/psych/
+https://personality-project.org/r/psych-manual.pdf">https://personality-project.org/r/psych/ https://personality-project.org/r/psych-manual.pdf</a>
 </div>
 <div id="ref-R-ggplot2" class="csl-entry" role="listitem">
-Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2023. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., &amp; Dunnington, D. (2023). <em>ggplot2: Create elegant data visualisations using the grammar of graphics</em>. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>
 </div>
 <div id="ref-R-knitr" class="csl-entry" role="listitem">
-Xie, Yihui. 2023. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+Xie, Y. (2023). <em>Knitr: A general-purpose package for dynamic report generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>
 </div>
 </div>
 
@@ -1012,6 +1190,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/github\.com\/RiegerSven\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1061,38 +1254,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1101,7 +1284,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
@@ -1330,6 +1515,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../material/mlm/intro-mlm.html" class="pagination-link" aria-label="Introduction to Multilevel Modeling">
+        <span class="nav-page-text">Introduction to Multilevel Modeling</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1340,7 +1528,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 <p>Copyrigh (c) 2023</p>
-</div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/basic-calculations/descriptive-statistics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>All material is licensed under the MIT License <a href="https://en.wikipedia.org/wiki/MIT_License">(MIT)</a>.</p>
 </div>
