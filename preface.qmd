@@ -3,7 +3,7 @@
 
 ## About the Compendium
 
-This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books (references will be given), websites (e.g., <https://stats.stackexchange.com/>),... . Many of the materials are also available as a [Revealjs presentation](https://quarto.org/docs/presentations/revealjs/) that I usually use in teaching.
+This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books (references will be given), websites (e.g., <https://stats.stackexchange.com/>), AI tools (e.g., [ChatGPT](<https://chat.openai.com/>), [Blackbox AI](<https://www.blackbox.ai/>)) . Many of the materials are also available as a [Revealjs presentation](https://quarto.org/docs/presentations/revealjs/) that I usually use in teaching.
 
 :::{.callout-warning}
 This page is work in progress.
