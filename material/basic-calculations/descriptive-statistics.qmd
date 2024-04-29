@@ -6,13 +6,13 @@ email-obfuscation: javascript
 date: 12/01/23
 date-format: long
 published-title: "Last updated on"
-abstract: "This material introduces the basic descriptive statistics (e.g., mean, standard deviation etc.). The material is also available as a [Revealjs presentation](https://quarto.org/docs/presentations/revealjs/)."
+abstract: "This material introduces basic descriptive statistics (e.g., mean, standard deviation etc.). It is also available as a [Revealjs presentation](https://quarto.org/docs/presentations/revealjs/)."
 format:
   html: default
   revealjs: 
     self-contained: true
     output-file: descr-reveal.html
-    footer: "[Back to ...](<https://riegersven.github.io/material/basic-caluclations/descriptive-statistics.html>)"
+    footer: "[Back to website](<https://riegersven.github.io/material/basic-calculations/descriptive-statistics.html>)"
     smaller: true
     scrollable: true
     navigation-mode: linear
@@ -67,8 +67,10 @@ descrPkg <- c("merTools",
 #| results: hide
 lapply(descrPkg,
         function(x) 
-          if(!x %in% rownames(installed.packages())) {install.packages(x)}
-      )
+          if(!x %in% rownames(installed.packages())) {
+            install.packages(x)
+            }
+          )
 
 ```
 
@@ -173,13 +175,6 @@ see @eid2013
 ::: {.column width="1%"}
 :::
 ::: {.column width="49.5%"}
-
-```{r}
-#| label: load-ggplot2
-#| echo: false
-
-library(ggplot2)
-```
 
 ```{r}
 #| label: norm-dis
@@ -348,8 +343,9 @@ $$VAR(X) = \sigma^2 = \frac{1}{N} \sum\limits_{i=1}^N (x_i - \mu)^2$${#eq-pop-va
 
 The formula of the sample variance is given in @eq-samp-var.
 
-
-$$VAR(X) = s^2 = \frac{1}{n-1} \sum\limits_{i=1}^n (x_i - \bar{x})^2$${#eq-samp-var}
+$$
+VAR(X) = s^2 = \frac{1}{n-1} \sum\limits_{i=1}^n (x_i - \bar{x})^2
+$${#eq-samp-var}
 
 Using again the vector $x = 1, 2, 5, 3, 8$, the sample variance is calculated as follows: 
 
@@ -652,6 +648,7 @@ exDescrTab |>
 #| output-location: default
 
 dat |>
+  subset(select = -c(1)) |>
   psych::describe(fast = TRUE) |>
   flextable() 
 ```

@@ -1,6 +1,7 @@
 /.quarto/
 /docs/
 /_site/
+/_freeze/
 /_extensions/
 
 /material/new-stuff/

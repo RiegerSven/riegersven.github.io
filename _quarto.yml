@@ -1,7 +1,6 @@
 project:
   type: website
   output-dir: _site
-
 website:
   title: " "
   open-graph:
@@ -13,7 +12,7 @@ website:
   page-navigation: true
   page-footer:
     left: "The website is build with [Quarto](quarto.org)."
-    center: "Copyrigh (c) 2023"
+    center: "Copyright (c) 2023"
     right: "All material is licensed under the MIT License [(MIT)](https://en.wikipedia.org/wiki/MIT_License)."
   search:
     location: navbar
@@ -47,22 +46,26 @@ website:
           href: preface.qmd
         - section: "Software"
           contents: 
-            - auto: material/software/*.qmd
+            - material/software/setup-project-folder.qmd
+            - material/software/intro-r-rstudio.qmd
+            - material/software/intro-quarto.qmd
         - section: "Example Data"
           contents:
-            - auto: material/example-data/*.qmd
+            - material/example-data/data-hsb.qmd
+            - material/example-data/data-latent-state.qmd
         - section: "Data (Pre-)Processing"
           contents:
-            - auto: material/data-proc/*.qmd
+            - material/data-proc/data-proc-func-loops.qmd
+            - material/data-proc/data-proc-nam-lists.qmd
         - section: "Basic Calculations"
           contents: 
-            - auto: material/basic-calculations/*.qmd
+            - material/basic-calculations/descriptive-statistics.qmd
         - section: "Multilevel Modeling"
           contents:
-            - auto: material/mlm/*.qmd
+            - material/mlm/intro-mlm.qmd
         - section: "Measurement Models"
           contents:
-            - auto: material/measurement-models/*.qmd
+            - material/measurement-models/cfa.qmd
 
 format:
   html:
@@ -73,6 +76,9 @@ format:
       body-width: 900px
       margin-width: 250px
     css: styles.css
+
+execute: 
+  freeze: auto
 
 bibliography: 
   - "rieger-pub.bib"
@@ -90,7 +96,6 @@ code-copy: true
 code-link: true
 
 # figures
-fig-format: svg
 fig-dpi: 300
 fig-responsive: true
 
@@ -101,13 +106,6 @@ link-external-newwindow: false
 html-math-method: 
   method: mathjax
   number-equations: true
-  url: "https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.3/tex-mml-chtml.js"
-  
+
+#url: "https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.3/tex-mml-chtml.js"
 #url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-
-webr:
-  show-startup-message: true
-  packages: ["lavaan"]
-
-filters:
-  - webr
