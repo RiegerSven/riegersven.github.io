@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.537">
+<meta name="generator" content="quarto-1.5.25">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title></title>
+<title>  – preface</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,7 +159,7 @@ div.csl-indent {
   </li>  
 </ul>
 </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
@@ -342,7 +342,7 @@ div.csl-indent {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><section id="about-the-compendium" class="level2"><h2 class="anchored" data-anchor-id="about-the-compendium">About the Compendium</h2>
-<p>This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books, websites (e.g., <a href="https://stats.stackexchange.com/" class="uri">https://stats.stackexchange.com/</a>),… . Many of the materials are also available as a <a href="https://quarto.org/docs/presentations/revealjs/">Revealjs presentation</a>.</p>
+<p>This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books (references will be given), websites (e.g., <a href="https://stats.stackexchange.com/" class="uri">https://stats.stackexchange.com/</a>), AI tools (e.g., <a href="https://chat.openai.com/">ChatGPT</a>, <a href="https://www.blackbox.ai/">Blackbox AI</a>) . Many of the materials are also available as a <a href="https://quarto.org/docs/presentations/revealjs/">Revealjs presentation</a> that I usually use in teaching.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -359,7 +359,7 @@ Warning
 </section><section id="used-software" class="level2"><h2 class="anchored" data-anchor-id="used-software">Used Software</h2>
 <p>The majority of the provided code is from the statistical software <code>R</code> <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2023</a>)</span>. My most used packages are following:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>pkgList <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"base"</span>,</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>pkgList <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"base"</span>,</span>
 <span id="cb1-2"><a href="#cb1-2"></a>             <span class="st">"haven"</span>,</span>
 <span id="cb1-3"><a href="#cb1-3"></a>             <span class="st">"renv"</span>,</span>
 <span id="cb1-4"><a href="#cb1-4"></a>             <span class="st">"stringr"</span>,</span>
@@ -373,17 +373,15 @@ Warning
 <span id="cb1-12"><a href="#cb1-12"></a>             <span class="st">"kableExtra"</span>,</span>
 <span id="cb1-13"><a href="#cb1-13"></a>             <span class="st">"flextable"</span>,</span>
 <span id="cb1-14"><a href="#cb1-14"></a>             <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>You can install them with the following code:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">lapply</span>(pkgList,</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">lapply</span>(pkgList,</span>
 <span id="cb2-2"><a href="#cb2-2"></a>       <span class="cf">function</span>(x) </span>
 <span id="cb2-3"><a href="#cb2-3"></a>        <span class="cf">if</span>(<span class="sc">!</span>x <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())) {</span>
 <span id="cb2-4"><a href="#cb2-4"></a>            <span class="fu">install.packages</span>(x)</span>
 <span id="cb2-5"><a href="#cb2-5"></a>            }</span>
 <span id="cb2-6"><a href="#cb2-6"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section><section id="disclaimer" class="level2"><h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
 <p>All material is licensed under the MIT License <a href="https://en.wikipedia.org/wiki/MIT_License">(MIT)</a> and comes with <strong>ABSOLUTELY NO WARRANTY</strong>.</p>
@@ -451,18 +449,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -494,7 +481,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/github\.com\/RiegerSven\/");
@@ -502,10 +511,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // default icon
           link.classList.add("external");
       }
@@ -544,7 +558,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -592,7 +610,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {

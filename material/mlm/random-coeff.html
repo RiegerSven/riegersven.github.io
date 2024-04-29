@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.537">
+<meta name="generator" content="quarto-1.5.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sven Rieger">
 <meta name="dcterms.date" content="2023-12-01">
 
-<title>- Random-Coefficient Model</title>
+<title>  – Random-Coefficient Model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -123,9 +123,11 @@ div.csl-indent {
   }
 }</script>
 <link href="../../site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+
 <script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.3/tex-mml-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -204,7 +206,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -475,8 +477,11 @@ window.Quarto = {
 </ul>
 <div class="cell" data-output-location="column">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(lme4)</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">library</span>(flextable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.3.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(flextable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -486,27 +491,27 @@ window.Quarto = {
 <div class="cell" data-output-location="fragment">
 <details class="code-fold">
 <summary>Show/hide fenced code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="in">#| label: write-mlmPkg</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="in">#| code-fold: true</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="in">#| code-summary: "Show/hide fenced code"</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="in">#| output-location: fragment</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="in">#| output: asis</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="in">for (i in 1:length(mlmRcPkg)) {</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="in">  </span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="in">  cat(paste0(i, ". ",</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="in">             mlmRcPkg[i],</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="in">             " [", "v", utils::packageVersion(mlmRcPkg[i]),", @R-", mlmRcPkg[i],</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="in">             "]\n"))</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="in">}</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="in">#| label: write-mlmPkg</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="in">#| code-summary: "Show/hide fenced code"</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="in">#| output-location: fragment</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="in">#| output: asis</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="in">for (i in 1:length(mlmRcPkg)) {</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="in">  </span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="in">  cat(paste0(i, ". ",</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="in">             mlmRcPkg[i],</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="in">             " [", "v", utils::packageVersion(mlmRcPkg[i]),", @R-", mlmRcPkg[i],</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="in">             "]\n"))</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="in">}</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <ol type="1">
 <li>merTools <span class="citation" data-cites="R-merTools">(v0.6.1, <a href="#ref-R-merTools" role="doc-biblioref">Knowles et al., 2023</a>)</span></li>
 <li>lme4 <span class="citation" data-cites="R-lme4">(v1.1.34, <a href="#ref-R-lme4" role="doc-biblioref">Bates et al., 2023</a>)</span></li>
 <li>flextable <span class="citation" data-cites="R-flextable">(v0.9.4, <a href="#ref-R-flextable" role="doc-biblioref">Gohel &amp; Skintzos, 2023</a>)</span></li>
-<li>ggplot2 <span class="citation" data-cites="R-ggplot2">(v3.4.4, <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al., 2023</a>)</span></li>
+<li>ggplot2 <span class="citation" data-cites="R-ggplot2">(v3.5.0, <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al., 2023</a>)</span></li>
 </ol>
 </div>
 </section>
@@ -514,8 +519,8 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="preface-dataset">Preface: Dataset</h2>
 <p>Recall, we use the HSB dataset from the <code>merTools</code> package <span class="citation" data-cites="R-merTools">(<a href="#ref-R-merTools" role="doc-biblioref">Knowles et al., 2023</a>)</span>. For a more detailed description see :</p>
 <div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> merTools<span class="sc">::</span>hsb</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> merTools<span class="sc">::</span>hsb</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  schid minority female    ses mathach size schtype meanses
 1  1224        0      1 -1.528   5.876  842       0  -0.428
@@ -594,23 +599,23 @@ Research question
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-7-1" class="code-annotation-target"><a href="#annotated-cell-7-1"></a>rcMod <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2"></a>  <span class="fu">lmer</span>(<span class="at">formula =</span> mathach <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> ses <span class="sc">+</span></span>
-<span id="annotated-cell-7-3"><a href="#annotated-cell-7-3"></a>                  (<span class="dv">1</span> <span class="sc">+</span> ses <span class="sc">|</span> schid),</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4"></a>       <span class="at">REML =</span> <span class="cn">TRUE</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-9-1" class="code-annotation-target"><a href="#annotated-cell-9-1"></a>rcMod <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-9-2" class="code-annotation-target"><a href="#annotated-cell-9-2"></a>  <span class="fu">lmer</span>(<span class="at">formula =</span> mathach <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> ses <span class="sc">+</span></span>
+<span id="annotated-cell-9-3"><a href="#annotated-cell-9-3"></a>                  (<span class="dv">1</span> <span class="sc">+</span> ses <span class="sc">|</span> schid),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-9-4" class="code-annotation-target"><a href="#annotated-cell-9-4"></a>       <span class="at">REML =</span> <span class="cn">TRUE</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="1" data-code-annotation="1">Take the dataset (here: <code>dat</code> which is the hsb dataset)…</span>
+<span data-code-cell="annotated-cell-9" data-code-lines="1" data-code-annotation="1">Take the dataset (here: <code>dat</code> which is the hsb dataset)…</span>
 </dd>
-<dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="2,3" data-code-annotation="2">…and then use the <code>lmer()</code> function. To allow the level-1 predictor to vary across cluster, we include the variable (here: <code>ses</code>) in the random-effects part of the formula (i.e., within the brackets <code>(...)</code>)</span>
+<span data-code-cell="annotated-cell-9" data-code-lines="2,3" data-code-annotation="2">…and then use the <code>lmer()</code> function. To allow the level-1 predictor to vary across cluster, we include the variable (here: <code>ses</code>) in the random-effects part of the formula (i.e., within the brackets <code>(...)</code>)</span>
 </dd>
-<dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="4" data-code-annotation="3">Set <code>REML</code> estimation to <code>TRUE</code>.</span>
+<span data-code-cell="annotated-cell-9" data-code-lines="4" data-code-annotation="3">Set <code>REML</code> estimation to <code>TRUE</code>.</span>
 </dd>
 </dl>
 </div>
@@ -618,7 +623,7 @@ Research question
 <p><br></p>
 <div class="fragment">
 <div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy"><code class="sourceCode r"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1"></a><span class="fu">summary</span>(rcMod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1"></a><span class="fu">summary</span>(rcMod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML ['lmerMod']
 Formula: mathach ~ 1 + ses + (1 + ses | schid)
@@ -653,17 +658,17 @@ ses -0.045</code></pre>
 <div class="cell" data-output-location="column-fragment">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="in">#| label: tbl-rc</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="in">#| tbl-cap: "Table generated by the flextable package [@R-flextable]"</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="in">#| code-line-numbers: 1|2-3|4</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="in">#| output-location: column-fragment</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="in">dat |&gt;</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="in">  lmer(formula = mathach ~ 1 + ses +</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="in">                  (1 + ses | schid),</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="in">       REML = FALSE) |&gt;</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="in">  as_flextable()</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="in">#| label: tbl-rc</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="in">#| tbl-cap: "Table generated by the flextable package [@R-flextable]"</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="in">#| code-line-numbers: 1|2-3|4</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="in">#| output-location: column-fragment</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="in">dat |&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="in">  lmer(formula = mathach ~ 1 + ses +</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="in">                  (1 + ses | schid),</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="in">       REML = FALSE) |&gt;</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="in">  as_flextable()</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="tbl-rc" class="cell quarto-float anchored" data-output-location="column-fragment">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -672,7 +677,7 @@ Table&nbsp;1: Table generated by the flextable package <span class="citation" da
 </figcaption>
 <div aria-describedby="tbl-rc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-b872c95e{}.cl-b85af798{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b86a8dde{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b86a8df2{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b86a8df3{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b86aa936{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa940{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa941{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa94a{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa94b{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa94c{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa954{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa955{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa956{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa95e{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa972{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa973{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa974{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa986{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa987{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa988{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa990{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa991{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa99a{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa99b{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa99c{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa99d{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9a4{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9a5{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9ae{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9af{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9b0{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9b1{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9b8{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9b9{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9c2{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9c3{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9c4{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9cc{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9cd{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9ce{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9cf{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9d6{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9d7{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9d8{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9e0{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86aa9e1{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-b872c95e"><thead><tr style="overflow-wrap:break-word;"><th class="cl-b86aa936"><p class="cl-b86a8dde"><span class="cl-b85af798">group</span></p></th><th class="cl-b86aa940"><p class="cl-b86a8dde"><span class="cl-b85af798"></span></p></th><th class="cl-b86aa941"><p class="cl-b86a8df2"><span class="cl-b85af798">Estimate</span></p></th><th class="cl-b86aa94a"><p class="cl-b86a8df2"><span class="cl-b85af798">Standard Error</span></p></th><th class="cl-b86aa94b"><p class="cl-b86a8dde"><span class="cl-b85af798"></span></p></th><th class="cl-b86aa94c"><p class="cl-b86a8df2"><span class="cl-b85af798">statistic</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-b86aa954"><p class="cl-b86a8df3"><span class="cl-b85af798">Fixed effects</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b86aa974"><p class="cl-b86a8dde"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa986"><p class="cl-b86a8dde"><span class="cl-b85af798">(Intercept)</span></p></td><td class="cl-b86aa987"><p class="cl-b86a8df2"><span class="cl-b85af798">12.666</span></p></td><td class="cl-b86aa988"><p class="cl-b86a8df2"><span class="cl-b85af798">0.189</span></p></td><td class="cl-b86aa990"><p class="cl-b86a8dde"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa991"><p class="cl-b86a8df2"><span class="cl-b85af798">66.980</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b86aa99a"><p class="cl-b86a8dde"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa99b"><p class="cl-b86a8dde"><span class="cl-b85af798">ses</span></p></td><td class="cl-b86aa99c"><p class="cl-b86a8df2"><span class="cl-b85af798">2.395</span></p></td><td class="cl-b86aa99d"><p class="cl-b86a8df2"><span class="cl-b85af798">0.118</span></p></td><td class="cl-b86aa9a4"><p class="cl-b86a8dde"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa9a5"><p class="cl-b86a8df2"><span class="cl-b85af798">20.351</span></p></td></tr><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-b86aa954"><p class="cl-b86a8df3"><span class="cl-b85af798">Random effects</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b86aa974"><p class="cl-b86a8dde"><span class="cl-b85af798">schid</span></p></td><td class="cl-b86aa986"><p class="cl-b86a8dde"><span class="cl-b85af798">sd__(Intercept)</span></p></td><td class="cl-b86aa987"><p class="cl-b86a8df2"><span class="cl-b85af798">2.187</span></p></td><td class="cl-b86aa988"><p class="cl-b86a8df2"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa990"><p class="cl-b86a8dde"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa991"><p class="cl-b86a8df2"><span class="cl-b85af798"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b86aa974"><p class="cl-b86a8dde"><span class="cl-b85af798">schid</span></p></td><td class="cl-b86aa986"><p class="cl-b86a8dde"><span class="cl-b85af798">cor__(Intercept).ses</span></p></td><td class="cl-b86aa987"><p class="cl-b86a8df2"><span class="cl-b85af798">-0.113</span></p></td><td class="cl-b86aa988"><p class="cl-b86a8df2"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa990"><p class="cl-b86a8dde"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa991"><p class="cl-b86a8df2"><span class="cl-b85af798"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b86aa9ae"><p class="cl-b86a8dde"><span class="cl-b85af798">schid</span></p></td><td class="cl-b86aa9af"><p class="cl-b86a8dde"><span class="cl-b85af798">sd__ses</span></p></td><td class="cl-b86aa9b0"><p class="cl-b86a8df2"><span class="cl-b85af798">0.631</span></p></td><td class="cl-b86aa9b1"><p class="cl-b86a8df2"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa9b8"><p class="cl-b86a8dde"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa9b9"><p class="cl-b86a8df2"><span class="cl-b85af798"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b86aa9c2"><p class="cl-b86a8dde"><span class="cl-b85af798">Residual</span></p></td><td class="cl-b86aa9c3"><p class="cl-b86a8dde"><span class="cl-b85af798">sd__Observation</span></p></td><td class="cl-b86aa9c4"><p class="cl-b86a8df2"><span class="cl-b85af798">6.069</span></p></td><td class="cl-b86aa9cc"><p class="cl-b86a8df2"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa9cd"><p class="cl-b86a8dde"><span class="cl-b85af798"></span></p></td><td class="cl-b86aa9ce"><p class="cl-b86a8df2"><span class="cl-b85af798"></span></p></td></tr></tbody><tfoot><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-b86aa9cf"><p class="cl-b86a8dde"><span class="cl-b85af798">square root of the estimated residual variance: 6.1</span></p></td></tr><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-b86aa9cf"><p class="cl-b86a8dde"><span class="cl-b85af798">data's log-likelihood under the model: -23,318.2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-b86aa9cf"><p class="cl-b86a8dde"><span class="cl-b85af798">Akaike Information Criterion: 46,648.5</span></p></td></tr><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-b86aa9cf"><p class="cl-b86a8dde"><span class="cl-b85af798">Bayesian Information Criterion: 46,689.7</span></p></td></tr></tfoot></table></div>
+<div class="tabwid"><style>.cl-f4e7e73a{}.cl-f4d03f4a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f4dfbcea{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f4dfbcf4{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f4dfbcfe{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f4dfd66c{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd680{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd68a{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd68b{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd694{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd695{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd696{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd69e{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd69f{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6a8{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6a9{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6aa{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6b2{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6b3{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6bc{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6bd{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6be{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6c6{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6c7{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6d0{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6d1{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6d2{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6da{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6db{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6dc{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6dd{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6e4{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6e5{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6e6{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6ee{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6ef{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6f0{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6f8{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6f9{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd6fa{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd702{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd703{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd704{width:1.644in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd70c{width:0.88in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd70d{width:1.287in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd70e{width:0.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f4dfd716{width:0.795in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-f4e7e73a"><thead><tr style="overflow-wrap:break-word;"><th class="cl-f4dfd66c"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">group</span></p></th><th class="cl-f4dfd680"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a"></span></p></th><th class="cl-f4dfd68a"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">Estimate</span></p></th><th class="cl-f4dfd68b"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">Standard Error</span></p></th><th class="cl-f4dfd694"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a"></span></p></th><th class="cl-f4dfd695"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">statistic</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-f4dfd696"><p class="cl-f4dfbcfe"><span class="cl-f4d03f4a">Fixed effects</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f4dfd6b2"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd6b3"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">(Intercept)</span></p></td><td class="cl-f4dfd6bc"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">12.666</span></p></td><td class="cl-f4dfd6bd"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">0.189</span></p></td><td class="cl-f4dfd6be"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd6c6"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">66.980</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f4dfd6c7"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd6d0"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">ses</span></p></td><td class="cl-f4dfd6d1"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">2.395</span></p></td><td class="cl-f4dfd6d2"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">0.118</span></p></td><td class="cl-f4dfd6da"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd6db"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">20.351</span></p></td></tr><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-f4dfd696"><p class="cl-f4dfbcfe"><span class="cl-f4d03f4a">Random effects</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f4dfd6b2"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">schid</span></p></td><td class="cl-f4dfd6b3"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">sd__(Intercept)</span></p></td><td class="cl-f4dfd6bc"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">2.187</span></p></td><td class="cl-f4dfd6bd"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd6be"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd6c6"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f4dfd6b2"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">schid</span></p></td><td class="cl-f4dfd6b3"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">cor__(Intercept).ses</span></p></td><td class="cl-f4dfd6bc"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">-0.113</span></p></td><td class="cl-f4dfd6bd"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd6be"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd6c6"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f4dfd6dc"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">schid</span></p></td><td class="cl-f4dfd6dd"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">sd__ses</span></p></td><td class="cl-f4dfd6e4"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">0.631</span></p></td><td class="cl-f4dfd6e5"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd6e6"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd6ee"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f4dfd6ef"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">Residual</span></p></td><td class="cl-f4dfd6f0"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">sd__Observation</span></p></td><td class="cl-f4dfd6f8"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a">6.069</span></p></td><td class="cl-f4dfd6f9"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd6fa"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a"></span></p></td><td class="cl-f4dfd702"><p class="cl-f4dfbcf4"><span class="cl-f4d03f4a"></span></p></td></tr></tbody><tfoot><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-f4dfd703"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">square root of the estimated residual variance: 6.1</span></p></td></tr><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-f4dfd703"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">data's log-likelihood under the model: -23,318.2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-f4dfd703"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">Akaike Information Criterion: 46,648.5</span></p></td></tr><tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-f4dfd703"><p class="cl-f4dfbcea"><span class="cl-f4d03f4a">Bayesian Information Criterion: 46,689.7</span></p></td></tr></tfoot></table></div>
 </div>
 </div>
 </figure>
@@ -681,10 +686,10 @@ Table&nbsp;1: Table generated by the flextable package <span class="citation" da
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>rcFixedEff <span class="ot">&lt;-</span> <span class="fu">summary</span>(rcMod) <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">coefficients</span>()</span>
-<span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a>rcFixedEff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>rcFixedEff <span class="ot">&lt;-</span> <span class="fu">summary</span>(rcMod) <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">coefficients</span>()</span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a>rcFixedEff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Estimate Std. Error  t value
 (Intercept) 12.66502  0.1898466 66.71189
@@ -692,12 +697,12 @@ ses          2.39381  0.1181213 20.26569</code></pre>
 </div>
 </div>
 <div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>rcRandomEff <span class="ot">&lt;-</span> rcMod <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">VarCorr</span>() <span class="sc">|&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="st">"vcov"</span>)</span>
-<span id="cb11-5"><a href="#cb11-5"></a>  </span>
-<span id="cb11-6"><a href="#cb11-6"></a>rcRandomEff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>rcRandomEff <span class="ot">&lt;-</span> rcMod <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">VarCorr</span>() <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="st">"vcov"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5"></a>  </span>
+<span id="cb13-6"><a href="#cb13-6"></a>rcRandomEff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        vcov
 1  4.8287337
@@ -723,7 +728,7 @@ Gohel, D., &amp; Skintzos, P. (2023). <em>Flextable: Functions for tabular repor
 Knowles, J. E., Frederick, C., &amp; Whitworth, A. (2023). <em><span class="nocase">merTools</span>: <span>Tools</span> for <span>Analyzing Mixed Effect Regression Models</span></em>. <a href="https://github.com/jknowles/merTools">https://github.com/jknowles/merTools</a>
 </div>
 <div id="ref-raudenbush2002" class="csl-entry" role="listitem">
-Raudenbush, S. W., &amp; Bryk, A. S. (2002). <em>Hierarchical linear models: <span>Applications</span> and data analysis methods</em>. <span>Sage Publications</span>.
+Raudenbush, S. W., &amp; Bryk, A. S. (2002). <em>Hierarchical linear models: <span>Applications</span> and data analysis methods</em>. Sage Publications.
 </div>
 <div id="ref-R-ggplot2" class="csl-entry" role="listitem">
 Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., &amp; Dunnington, D. (2023). <em>ggplot2: Create elegant data visualisations using the grammar of graphics</em>. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>
@@ -769,18 +774,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -812,7 +806,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/github\.com\/RiegerSven\/");
@@ -820,10 +836,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // default icon
           link.classList.add("external");
       }
@@ -862,7 +883,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -910,7 +935,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1133,7 +1163,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../material/mlm/random-anova.html" class="pagination-link  aria-label=" one-way="" anova="" with="" random="" effects"="">
+      <a href="../../material/mlm/random-anova.html" class="pagination-link" aria-label="One-Way ANOVA with Random Effects">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">One-Way ANOVA with Random Effects</span>
       </a>          
   </div>
