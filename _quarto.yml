@@ -83,7 +83,7 @@ csl: apa.csl
 
 # code stuff
 highlight-style: github
-code-fold: show
+code-fold: false
 code-line-numbers: true
 code-annotations: below
 code-copy: true
