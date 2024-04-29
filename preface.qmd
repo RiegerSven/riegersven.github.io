@@ -3,7 +3,7 @@
 
 ## About the Compendium
 
-This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books, websites (e.g., <https://stats.stackexchange.com/>),... . Many of the materials are also available as a [Revealjs presentation](https://quarto.org/docs/presentations/revealjs/).
+This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books (references will be given), websites (e.g., <https://stats.stackexchange.com/>),... . Many of the materials are also available as a [Revealjs presentation](https://quarto.org/docs/presentations/revealjs/) that I usually use in teaching.
 
 :::{.callout-warning}
 This page is work in progress.
@@ -15,6 +15,7 @@ The majority of the provided code is from the statistical software `R` [@R-base]
 
 ```{r}
 #| label: pkg-list
+#| code-fold: false
 pkgList <- c("base",
              "haven",
              "renv",
@@ -35,7 +36,7 @@ You can install them with the following code:
 
 ```{r}
 #| label: install-pkg
-#| code-fold: show
+#| code-fold: false
 #| eval: false
 
 lapply(pkgList,
