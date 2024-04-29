@@ -11,7 +11,7 @@ This page is work in progress.
 
 ## Used Software
 
-The majority of the provided code is from the statistical software `R` [@R-base]. My most used packages are following:
+The majority of the provided code is from the statistical software `R` [@R-base]. My most used packages are the following:
 
 ```{r}
 #| label: pkg-list
