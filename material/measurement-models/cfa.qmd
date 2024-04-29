@@ -3,7 +3,7 @@ title: Confirmatory Factor Analyses
 author: "Sven Rieger"
 email: "sven.rieger@uni-tuebingen.de"
 email-obfuscation: javascript
-date: 12/01/23
+date: 04/29/24
 date-format: long
 published-title: "Last updated on"
 abstract: "This material introduces confirmatory factor analyses (CFA) as one possible measurement model that relates observed measures (or indicators) with latent variables (also called unobserved factors). It relies on Chapter 22 *Confirmatory Factor Analysis* [@brown2012] of the *Handbook of Structural Equation Modeling* [@hoyle2012]. There is also annotated code to implement CFA models with the `lavaan` package [@R-lavaan]."
@@ -11,7 +11,7 @@ format:
   html: default
   revealjs:         
     output-file: cfa-reveal.html
-    footer: "[Back to website]"
+    footer: "[Back to website](<https://riegersven.github.io/material/measurement-models/cfa.html>)"
     self-contained: true
     smaller: true
     scrollable: true
@@ -81,6 +81,7 @@ lapply(cfaPkg,
 ```{r}
 #| label: load-descr-pkg
 #| echo: true
+#| warning: false
 #| code-fold: false
 #| output-location: column
 library(lavaan)
@@ -373,10 +374,9 @@ rel := (lam1+lam2+lam3)^2 / # <7>
 ```{r}
 #| label: cfa-2
 #| echo: true
-#| code-line-numbers: 2|3|4|5|6
+#| code-line-numbers: 1|2|3|4|5
 #| code-annotations: below
 #| output-location: column
-# <0>
 fitCfaMod <- sem( # <1>
     model = CfaMod, # <2>
     data = wideLSdat, # <3>
@@ -398,9 +398,8 @@ fitCfaMod <- sem( # <1>
 #| label: cfa-syn-3-1
 #| echo: true
 #| eval: false
-#| code-line-numbers: 2|3|4|5
+#| code-line-numbers: 1|2|3|4
 #| output-location: column 
-# <0>
 summary( # <1>
     fitCfaMod, # <1>
     fit = TRUE, # <2>

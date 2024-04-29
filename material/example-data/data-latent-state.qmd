@@ -81,5 +81,6 @@ wideLSdat$group <- wideLSdat$group-1
 ```{r}
 #| label: save-wideLSdat
 #| eval: false
-saveRDS(wideLSdat, "data/wideLSdat.RDS")
+
+saveRDS(wideLSdat, "material/example-data/wideLSdat.RDS")
 ```
