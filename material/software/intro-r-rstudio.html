@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.25">
+<meta name="generator" content="quarto-1.5.26">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>  – intro-r-rstudio</title>
 <style>
 code{white-space: pre-wrap;}
@@ -73,14 +76,15 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../material/software/setup-project-folder.html" rel="next">
-<link href="../../material/software/intro-quarto.html" rel="prev">
+<link href="../../material/software/intro-quarto.html" rel="next">
+<link href="../../material/software/setup-project-folder.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -89,7 +93,8 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -114,7 +119,10 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="../../styles.css">
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Compendium of Sven Rieger">
@@ -122,10 +130,13 @@ div.csl-indent {
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
+
 <body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title"></span>
@@ -137,7 +148,7 @@ div.csl-indent {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">About me</span></a>
   </li>  
@@ -159,31 +170,37 @@ div.csl-indent {
 <span class="menu-text">Bluesky</span></a>
   </li>  
 </ul>
-</div> <!-- /navcollapse -->
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/software/intro-quarto.html">Software</a></li><li class="breadcrumb-item"><a href="../../material/software/intro-r-rstudio.html">Introduction to R &amp; RStudio</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/software/setup-project-folder.html">Software</a></li><li class="breadcrumb-item"><a href="../../material/software/intro-r-rstudio.html">Introduction to R &amp; RStudio</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -197,11 +214,11 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../material/software/intro-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A not so short introduction to Quarto</span></a>
+  <a href="../../material/software/setup-project-folder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup a project folder</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -212,12 +229,12 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../material/software/setup-project-folder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Setup a project folder</span></a>
+  <a href="../../material/software/intro-quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A not so short introduction to Quarto</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
@@ -226,8 +243,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/example-data/data-hsb.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">High School and Beyond (HSB)</span></a>
@@ -240,7 +257,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
@@ -249,8 +266,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/data-proc/data-proc-func-loops.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions and Loops</span></a>
@@ -263,7 +280,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
@@ -272,15 +289,15 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/basic-calculations/descriptive-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Descriptive statistics</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
@@ -289,27 +306,15 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/mlm/intro-mlm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Multilevel Modeling</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/mlm/random-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">One-Way ANOVA with Random Effects</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/mlm/random-coeff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Random-Coefficient Model</span></a>
-  </div>
-</li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
@@ -318,51 +323,55 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/measurement-models/cfa.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Confirmatory Factor Analyses</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li>
-<a href="#introduction-to-r-rstudio" id="toc-introduction-to-r-rstudio" class="nav-link active" data-scroll-target="#introduction-to-r-rstudio">Introduction to R &amp; RStudio</a>
+  <li><a href="#introduction-to-r-rstudio" id="toc-introduction-to-r-rstudio" class="nav-link active" data-scroll-target="#introduction-to-r-rstudio">Introduction to R &amp; RStudio</a>
   <ul class="collapse">
-<li><a href="#what-is-r-rstudio" id="toc-what-is-r-rstudio" class="nav-link" data-scroll-target="#what-is-r-rstudio">What is R &amp; RStudio?</a></li>
-  <li>
-<a href="#how-to-work-with-r-and-rstudio" id="toc-how-to-work-with-r-and-rstudio" class="nav-link" data-scroll-target="#how-to-work-with-r-and-rstudio">How to work with R and RStudio?</a>
+  <li><a href="#what-is-r-rstudio" id="toc-what-is-r-rstudio" class="nav-link" data-scroll-target="#what-is-r-rstudio">What is R &amp; RStudio?</a></li>
+  <li><a href="#how-to-work-with-r-and-rstudio" id="toc-how-to-work-with-r-and-rstudio" class="nav-link" data-scroll-target="#how-to-work-with-r-and-rstudio">How to work with R and RStudio?</a>
   <ul class="collapse">
-<li><a href="#panes" id="toc-panes" class="nav-link" data-scroll-target="#panes">Panes</a></li>
+  <li><a href="#panes" id="toc-panes" class="nav-link" data-scroll-target="#panes">Panes</a></li>
   <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">Projects</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#short-introduction-to-the-r-programming-language" id="toc-short-introduction-to-the-r-programming-language" class="nav-link" data-scroll-target="#short-introduction-to-the-r-programming-language">Short introduction to the R programming language</a>
+  </ul></li>
+  <li><a href="#short-introduction-to-the-r-programming-language" id="toc-short-introduction-to-the-r-programming-language" class="nav-link" data-scroll-target="#short-introduction-to-the-r-programming-language">Short introduction to the R programming language</a>
   <ul class="collapse">
-<li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics">Basics</a></li>
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics">Basics</a></li>
   <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data Types</a></li>
   <li><a href="#data-structure" id="toc-data-structure" class="nav-link" data-scroll-target="#data-structure">Data Structures</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#baseR-tidyverse" id="toc-baseR-tidyverse" class="nav-link" data-scroll-target="#baseR-tidyverse">Base R <del>vs.</del> &amp; tidyverse</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/software/intro-r-rstudio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/software/intro-r-rstudio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><section id="introduction-to-r-rstudio" class="level1"><h1>Introduction to R &amp; RStudio</h1>
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="introduction-to-r-rstudio" class="level1">
+<h1>Introduction to R &amp; RStudio</h1>
 <p>This part gives a short introduction to <code>R</code> and <code>RStudio</code>. If you are familiar with the programs and are not interested in the <code>R</code> vs <code>tidyverse</code> “distinction”, you can skip this section.</p>
-<section id="what-is-r-rstudio" class="level2"><h2 class="anchored" data-anchor-id="what-is-r-rstudio">What is R &amp; RStudio?</h2>
+<section id="what-is-r-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-r-rstudio">What is R &amp; RStudio?</h2>
 <ul>
 <li><p><strong>R</strong>: <code>R</code> is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS (see <a href="https://www.r-project.org/" target="_blank">https://www.r-project.org/</a>).</p></li>
 <li><p><strong>R Studio</strong>: Coding environment for <code>R</code>, built by <a href="https://posit.co/" target="_blank">Posit</a>.</p></li>
@@ -372,7 +381,9 @@ div.csl-indent {
 <p>Used by millions of people weekly, the RStudio integrated development environment (IDE) is a set of tools built to help you be more productive with R and Python. It includes a console, syntax-highlighting editor that supports direct code execution. It also features tools for plotting, viewing history, debugging and managing your workspace.</p>
 </blockquote>
 <p>Of course there are other IDEs (e.g., <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>, but if you use <code>R</code>, <code>RStudio</code> is most likely the way to go.</p>
-</section><section id="how-to-work-with-r-and-rstudio" class="level2"><h2 class="anchored" data-anchor-id="how-to-work-with-r-and-rstudio">How to work with R and RStudio?</h2>
+</section>
+<section id="how-to-work-with-r-and-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-work-with-r-and-rstudio">How to work with R and RStudio?</h2>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -391,23 +402,18 @@ Exercise: Open RStudio!
 </div>
 </div>
 <p>In <code>RStudio</code> there are different panes<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
-<section id="panes" class="level3"><h3 class="anchored" data-anchor-id="panes">Panes</h3>
+<section id="panes" class="level3">
+<h3 class="anchored" data-anchor-id="panes">Panes</h3>
 <ul>
-<li>
-<strong>Console</strong>
+<li><strong>Console</strong>
 <ul>
-<li>Here you can access <code>R</code>
-</li>
-<li>E.g., ask <code>R</code> what is: <code>2 + 2</code>
-</li>
-</ul>
-</li>
-<li>
-<strong>Source/Script</strong>
+<li>Here you can access <code>R</code></li>
+<li>E.g., ask <code>R</code> what is: <code>2 + 2</code></li>
+</ul></li>
+<li><strong>Source/Script</strong>
 <ul>
 <li>Editor to save scripts</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -423,28 +429,25 @@ Warning
 </div>
 </div>
 <ul>
-<li>
-<strong>Environment/History/…/Tutorial</strong>
+<li><strong>Environment/History/…/Tutorial</strong>
 <ul>
 <li>Environment: contains all objects that were created or loaded during an R session</li>
 <li>History:</li>
-<li>… e.g., the free and open source distributed version control system <a href="https://git-scm.com/">git</a>
-</li>
-<li>Tutorial: A tutorial to learn <code>R</code> with the <code>learnr</code> package <span class="citation" data-cites="R-learnr">(<a href="#ref-R-learnr" role="doc-biblioref"><strong>R-learnr?</strong></a>)</span>
-</li>
-</ul>
-</li>
-<li>
-<strong>Files/Plots/Packages/Help/Viewer</strong>
+<li>… e.g., the free and open source distributed version control system <a href="https://git-scm.com/">git</a></li>
+<li>Tutorial: A tutorial to learn <code>R</code> with the <code>learnr</code> package <span class="citation" data-cites="R-learnr">(<a href="#ref-R-learnr" role="doc-biblioref"><strong>R-learnr?</strong></a>)</span></li>
+</ul></li>
+<li><strong>Files/Plots/Packages/Help/Viewer</strong>
 <ul>
 <li>Files: is kind of the file manager</li>
 <li>Plots: shows the generated plots</li>
 <li>Packages: overview of the (loaded &amp;) installed packages</li>
-<li>Help: When you ask for help (e.g., regarding a specific function in R: <code><a href="https://rdrr.io/r/base/mean.html">?mean</a></code>)</li>
+<li>Help: When you ask for help (e.g., regarding a specific function in R: <code>?mean</code>)</li>
 <li>Viewer: E.g., previewing rendered Quarto documents</li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="projects" class="level3"><h3 class="anchored" data-anchor-id="projects">Projects</h3>
+</section>
+<section id="projects" class="level3">
+<h3 class="anchored" data-anchor-id="projects">Projects</h3>
 <p>It is also reasonable to use the <strong>project option</strong>. This means, whenever you start a new project (e.g., a scale-manual), create an <code>project</code>: <code>File &gt; New Project</code></p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -472,14 +475,16 @@ Exercise: Create an project!
 </ol>
 <p><img src="../images/project-type.PNG" class="img-fluid"></p>
 <ol start="3" type="1">
-<li>Provide a short name, set the check mark <code>Open in new session</code> and click <code>Create Project</code>
-</li>
+<li>Provide a short name, set the check mark <code>Open in new session</code> and click <code>Create Project</code></li>
 </ol>
 <p><img src="../images/name-rproj.PNG" class="img-fluid"></p>
 </div>
 </div>
 </div>
-</section></section><section id="short-introduction-to-the-r-programming-language" class="level2"><h2 class="anchored" data-anchor-id="short-introduction-to-the-r-programming-language">Short introduction to the R programming language</h2>
+</section>
+</section>
+<section id="short-introduction-to-the-r-programming-language" class="level2">
+<h2 class="anchored" data-anchor-id="short-introduction-to-the-r-programming-language">Short introduction to the R programming language</h2>
 <p>This section gives a (very?) brief introduction to the <code>R</code> programming language.</p>
 <div class="callout callout-style-simple callout-tip callout-titled" title="For (more) comprehensive introductions...">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -515,19 +520,19 @@ For (more) comprehensive introductions…
 <p>– John Chambers (creator of the S programming language)</p>
 </div>
 </blockquote>
-<section id="basics" class="level3"><h3 class="anchored" data-anchor-id="basics">Basics</h3>
+<section id="basics" class="level3">
+<h3 class="anchored" data-anchor-id="basics">Basics</h3>
 <p>Before working with <code>R</code>, there are a few basics you need to know:</p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li>
-<code>R</code> is a <strong>case-sensitive</strong> programming language. This means that R distinguishes whether a word is written in upper or lower case</li>
+<li><code>R</code> is a <strong>case-sensitive</strong> programming language. This means that R distinguishes whether a word is written in upper or lower case</li>
 </ul>
 </div><div class="column" style="width:10%;">
 <!-- empty column to create gap -->
 </div><div class="column" style="width:40%;">
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="st">"name"</span> <span class="op">==</span> <span class="st">"Name"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="st">"name"</span> <span class="sc">==</span> <span class="st">"Name"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
@@ -537,24 +542,20 @@ For (more) comprehensive introductions…
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li>
-<strong>Values</strong> are assigned to objects using <code>&lt;-</code>
-</li>
+<li><strong>Values</strong> are assigned to objects using <code>&lt;-</code></li>
 </ul>
 </div><div class="column" style="width:10%;">
 <!-- empty column to create gap -->
 </div><div class="column" style="width:40%;">
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="st">"Hello world!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="st">"Hello world!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li>
-<strong>Arguments</strong> within functions are assigned using <code>=</code>
-</li>
+<li><strong>Arguments</strong> within functions are assigned using <code>=</code></li>
 </ul>
 </div><div class="column" style="width:10%;">
 <!-- empty column to create gap -->
@@ -585,23 +586,29 @@ Exercise: Create a new R script
 </div>
 </div>
 </div>
-</section><section id="data-types" class="level3"><h3 class="anchored" data-anchor-id="data-types">Data Types</h3>
+</section>
+<section id="data-types" class="level3">
+<h3 class="anchored" data-anchor-id="data-types">Data Types</h3>
 <p>The basic data types<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> in <code>R</code> are depicted in <a href="#tbl-data-type-R" class="quarto-xref">Table&nbsp;1</a>.</p>
 <div id="tbl-data-type-R" class="quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-type-R-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-type-R-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Basic data types in R
-</figcaption><div aria-describedby="tbl-data-type-R-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+<div aria-describedby="tbl-data-type-R-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
 <colgroup>
 <col style="width: 19%">
 <col style="width: 50%">
 <col style="width: 28%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>Type</th>
 <th>Description</th>
 <th>Value (example)</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><strong>Numeric</strong></td>
@@ -611,46 +618,37 @@ Table&nbsp;1: Basic data types in R
 <tr class="even">
 <td><strong>Integer</strong></td>
 <td>Counting numbers and their additive inverses</td>
-<td>
-<code>2</code>, <code>-115</code>
-</td>
+<td><code>2</code>, <code>-115</code></td>
 </tr>
 <tr class="odd">
 <td><strong>Character</strong></td>
 <td>aka string. Letters enclosed by quotes in the output.</td>
-<td>
-<code>"Hello World!"</code>,<code>"4"</code>
-</td>
+<td><code>"Hello World!"</code>,<code>"4"</code></td>
 </tr>
 <tr class="even">
 <td><strong>Logical </strong></td>
 <td>boolean</td>
-<td>
-<code>TRUE</code>, <code>FALSE</code>
-</td>
+<td><code>TRUE</code>, <code>FALSE</code></td>
 </tr>
 <tr class="odd">
 <td><strong>Factor</strong></td>
 <td>Categorial data<br>
 - <em>Level:</em> characteristic value as seen by R<br>
 - <em>Label:</em> designation of the characteristic attributes</td>
-<td>
-<br><code>0</code>, <code>1</code><br><code>male</code>,<code>female</code>
-</td>
+<td><br>
+<code>0</code>, <code>1</code><br>
+<code>male</code>,<code>female</code></td>
 </tr>
 <tr class="even">
 <td><strong>Special</strong></td>
 <td><ul>
-<li>
-<em>Missing values:</em> unknown cell value</li>
-<li>
-<em>Impossible values:</em> not a number</li>
-<li>
-<em>Empty values:</em> known empty cell value</li>
+<li><em>Missing values:</em> unknown cell value</li>
+<li><em>Impossible values:</em> not a number</li>
+<li><em>Empty values:</em> known empty cell value</li>
 </ul></td>
-<td>
-<code>NA</code><br><code>NaN</code><br><code>NULL</code>
-</td>
+<td><code>NA</code><br>
+<code>NaN</code><br>
+<code>NULL</code></td>
 </tr>
 </tbody>
 </table>
@@ -670,14 +668,14 @@ Exercise: Use the class function to check the data type of an object!
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">class</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>y <span class="ot">&lt;-</span> <span class="st">"Hello World"</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>y <span class="ot">&lt;-</span> <span class="st">"Hello World"</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="fu">class</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
 </div>
@@ -687,6 +685,7 @@ Exercise: Use the class function to check the data type of an object!
 <!--
 ::: {.callout-note collapse="true"}
 ## Why might factors be useful?
+
 
 
 
@@ -742,20 +741,23 @@ levels(fac)
 
 
 
+
 :::
 
 -->
-</section><section id="data-structure" class="level3"><h3 class="anchored" data-anchor-id="data-structure">Data Structures</h3>
+</section>
+<section id="data-structure" class="level3">
+<h3 class="anchored" data-anchor-id="data-structure">Data Structures</h3>
 <p><code>R</code> has a couple of different data structures<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> which are briefly described in the following subsections.</p>
-<section id="vector" class="level4"><h4 class="anchored" data-anchor-id="vector">Vector</h4>
+<section id="vector" class="level4">
+<h4 class="anchored" data-anchor-id="vector">Vector</h4>
 <div class="columns">
 <div class="column" style="width:35%;">
 <ul>
 <li>one-dimensional array<br>
 </li>
 <li>same data type</li>
-<li>e.g., <code>c(45, 6, -83, 23, 61)</code>
-</li>
+<li>e.g., <code>c(45, 6, -83, 23, 61)</code></li>
 </ul>
 </div><div class="column" style="width:5%;">
 <!-- empty column to create gap -->
@@ -828,15 +830,16 @@ Tips for handling vectors
 </div>
 </div>
 </div>
-</section><section id="matrix" class="level4"><h4 class="anchored" data-anchor-id="matrix">Matrix</h4>
+</section>
+<section id="matrix" class="level4">
+<h4 class="anchored" data-anchor-id="matrix">Matrix</h4>
 <div class="columns">
 <div class="column" style="width:35%;">
 <ul>
 <li>two-dimensional<br>
 </li>
 <li>same data type</li>
-<li>example see on the <a href="#tip-mat">right</a>
-</li>
+<li>example see on the <a href="#tip-mat">right</a></li>
 </ul>
 </div><div class="column" style="width:5%;">
 <!-- empty column to create gap -->
@@ -880,15 +883,16 @@ Tip&nbsp;1: Tips for handling matrices
 </div>
 </div>
 </div>
-</section><section id="list" class="level4"><h4 class="anchored" data-anchor-id="list">List</h4>
+</section>
+<section id="list" class="level4">
+<h4 class="anchored" data-anchor-id="list">List</h4>
 <div class="columns">
 <div class="column" style="width:35%;">
 <ul>
 <li>can contain elements of various data types</li>
 <li>often ordered collection of values</li>
 <li>one-indexed (indexing starts with 1)</li>
-<li>e.g., <code>list("hi", 2, NULL)</code>
-</li>
+<li>e.g., <code>list("hi", 2, NULL)</code></li>
 </ul>
 </div><div class="column" style="width:5%;">
 <!-- empty column to create gap -->
@@ -962,7 +966,9 @@ NULL</code></pre>
 </div>
 </div>
 </div>
-</section><section id="data-frame" class="level4"><h4 class="anchored" data-anchor-id="data-frame">Data frame</h4>
+</section>
+<section id="data-frame" class="level4">
+<h4 class="anchored" data-anchor-id="data-frame">Data frame</h4>
 <div class="columns">
 <div class="column" style="width:35%;">
 <ul>
@@ -970,8 +976,7 @@ NULL</code></pre>
 <li>different data types</li>
 <li>variables = columns</li>
 <li>observations = rows</li>
-<li>example see on the <a href="#tip-df">right</a>
-</li>
+<li>example see on the <a href="#tip-df">right</a></li>
 </ul>
 </div><div class="column" style="width:5%;">
 <!-- empty column to create gap -->
@@ -1061,7 +1066,11 @@ Tip&nbsp;2: Tips for handling dataFrames
 </div>
 </div>
 </div>
-</section></section></section><section id="baseR-tidyverse" class="level2"><h2 class="anchored" data-anchor-id="baseR-tidyverse">Base R <del>vs.</del> &amp; tidyverse</h2>
+</section>
+</section>
+</section>
+<section id="baseR-tidyverse" class="level2">
+<h2 class="anchored" data-anchor-id="baseR-tidyverse">Base R <del>vs.</del> &amp; tidyverse</h2>
 <div class="columns">
 <div class="column" style="width:47.5%;">
 <p>Besides the functionality of base <code>R</code> <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2023</a>)</span>, there is the so-called <code>tidyverse</code> <span class="citation" data-cites="R-tidyverse">(<a href="#ref-R-tidyverse" role="doc-biblioref"><strong>R-tidyverse?</strong></a>)</span> within <code>R</code>. The <code>tidyverse</code> is a collection of <code>R</code> packages (see <a href="#fig-tidyverse" class="quarto-xref">Figure&nbsp;1</a>) that <em>“share an underlying design philosophy, grammar, and data structures”</em> and are (specifically) designed for data science (see <a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>).</p>
@@ -1069,12 +1078,14 @@ Tip&nbsp;2: Tips for handling dataFrames
 <!-- empty column to create gap -->
 </div><div class="column" style="width:47.5%;">
 <div id="fig-tidyverse" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../../images/tidyverse.png" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: tidyverse package collection
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -1093,15 +1104,10 @@ What does the pipe operator |&gt;?
 <div class="callout-body-container callout-body">
 <p><a href="https://style.tidyverse.org/">The tidyverse style guide</a> suggests using the pipe operator <em>“to emphasize a sequence of actions”</em>. The pipe operator can be understood as <em>“take the object and then”</em> pass it to the next function. In the following, the use of the base <code>R</code> pipe operator is shown:</p>
 <ol type="1">
-<li>
-<strong>Take</strong> the data frame <code>exDat</code> <strong>and then</strong>
-</li>
-<li>Select the variables: <code>msc1</code> and <code>msc2</code> <strong>and then</strong>
-</li>
-<li>Calculate descriptive statistics using the <code>describe</code> function from the <code>psych</code> package <span class="citation" data-cites="R-psych">(<a href="#ref-R-psych" role="doc-biblioref">Revelle, 2023</a>)</span> <strong>and then</strong>
-</li>
-<li>Create a table with the <code>kable</code> function from the <code>knitr</code> package <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref">Xie, 2023</a>)</span>
-</li>
+<li><strong>Take</strong> the data frame <code>exDat</code> <strong>and then</strong></li>
+<li>Select the variables: <code>msc1</code> and <code>msc2</code> <strong>and then</strong></li>
+<li>Calculate descriptive statistics using the <code>describe</code> function from the <code>psych</code> package <span class="citation" data-cites="R-psych">(<a href="#ref-R-psych" role="doc-biblioref">Revelle, 2023</a>)</span> <strong>and then</strong></li>
+<li>Create a table with the <code>kable</code> function from the <code>knitr</code> package <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref">Xie, 2023</a>)</span></li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>exDat <span class="sc">|&gt;</span> </span>
@@ -1110,17 +1116,36 @@ What does the pipe operator |&gt;?
 <span id="cb56-4"><a href="#cb56-4"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
-<thead><tr class="header">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 13%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
 <th style="text-align: left;"></th>
 <th style="text-align: right;">vars</th>
 <th style="text-align: right;">n</th>
 <th style="text-align: right;">mean</th>
 <th style="text-align: right;">sd</th>
+<th style="text-align: right;">median</th>
 <th style="text-align: right;">min</th>
 <th style="text-align: right;">max</th>
 <th style="text-align: right;">range</th>
+<th style="text-align: right;">skew</th>
+<th style="text-align: right;">kurtosis</th>
 <th style="text-align: right;">se</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">msc1</td>
@@ -1128,9 +1153,12 @@ What does the pipe operator |&gt;?
 <td style="text-align: right;">750</td>
 <td style="text-align: right;">2.52</td>
 <td style="text-align: right;">0.74</td>
+<td style="text-align: right;">3</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">3</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">-0.31</td>
 <td style="text-align: right;">0.03</td>
 </tr>
 <tr class="even">
@@ -1139,9 +1167,12 @@ What does the pipe operator |&gt;?
 <td style="text-align: right;">680</td>
 <td style="text-align: right;">2.54</td>
 <td style="text-align: right;">0.72</td>
+<td style="text-align: right;">3</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">3</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">-0.27</td>
 <td style="text-align: right;">0.03</td>
 </tr>
 </tbody>
@@ -1166,23 +1197,31 @@ What does the pipe operator |&gt;?
 
 
 
-</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-R-base" class="csl-entry" role="listitem">
 R Core Team. (2023). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
 </div>
 <div id="ref-R-psych" class="csl-entry" role="listitem">
-Revelle, W. (2023). <em>Psych: Procedures for psychological, psychometric, and personality research</em>. <a href="https://personality-project.org/r/psych/%0D%0Ahttps://personality-project.org/r/psych-manual.pdf">https://personality-project.org/r/psych/ https://personality-project.org/r/psych-manual.pdf</a>
+Revelle, W. (2023). <em>Psych: Procedures for psychological, psychometric, and personality research</em>. <a href="https://personality-project.org/r/psych/
+https://personality-project.org/r/psych-manual.pdf">https://personality-project.org/r/psych/ https://personality-project.org/r/psych-manual.pdf</a>
 </div>
 <div id="ref-R-knitr" class="csl-entry" role="listitem">
 Xie, Y. (2023). <em>Knitr: A general-purpose package for dynamic report generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
 <ol>
 <li id="fn1"><p>You can customize them: <code>Tools &gt; Global Options &gt; Pane Layout</code><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>We omitted the <code>complex</code> type.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>We omitted <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Arrays-and-matrices">arrays</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>for the difference between <code>|&gt;</code> and <code>%&gt;%</code> see <a href="https://ivelasq.rbind.io/blog/understanding-the-r-pipe/" class="uri">https://ivelasq.rbind.io/blog/understanding-the-r-pipe/</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1603,30 +1642,35 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../../material/software/intro-quarto.html" class="pagination-link" aria-label="A not so short introduction to Quarto">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">A not so short introduction to Quarto</span>
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../material/software/setup-project-folder.html" class="pagination-link" aria-label="Setup a project folder">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setup a project folder</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../material/software/setup-project-folder.html" class="pagination-link" aria-label="Setup a project folder">
-        <span class="nav-page-text">Setup a project folder</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../material/software/intro-quarto.html" class="pagination-link" aria-label="A not so short introduction to Quarto">
+        <span class="nav-page-text">A not so short introduction to Quarto</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>The website is build with <a href="quarto.org">Quarto</a>.</p>
 </div>   
     <div class="nav-footer-center">
-<p>Copyrigh (c) 2023</p>
+<p>Copyright (c) 2023</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/software/intro-r-rstudio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>All material is licensed under the MIT License <a href="https://en.wikipedia.org/wiki/MIT_License">(MIT)</a>.</p>
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>
