@@ -1,4 +1,8 @@
-
+---
+date: 04/30/24
+date-format: long
+published-title: "Last updated on"
+---
 
 
 ## About the Compendium
@@ -6,7 +10,7 @@
 This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books (references will be given), websites (e.g., <https://stats.stackexchange.com/>), AI tools (e.g., [ChatGPT](<https://chat.openai.com/>), [Blackbox AI](<https://www.blackbox.ai/>)) . Many of the materials are also available as a [Revealjs presentation](https://quarto.org/docs/presentations/revealjs/) that I usually use in teaching.
 
 :::{.callout-warning}
-This page is work in progress.
+This page is work in progress and under active development.
 :::
 
 ## Used Software
@@ -20,6 +24,7 @@ pkgList <- c("base",
              "haven",
              "renv",
              "stringr",
+             "dplyr",
              "moments",
              "psych",
              "lme4",
@@ -37,7 +42,8 @@ You can install them with the following code:
 ```{r}
 #| label: install-pkg
 #| code-fold: false
-#| eval: false
+#| eval: true
+#| results: hide 
 
 lapply(pkgList,
        function(x) 
@@ -51,10 +57,10 @@ lapply(pkgList,
 
 ```{r}
 #| label: write-most-used-bib
-#| eval: false
+#| eval: true
 #| echo: false
 knitr::write_bib(x = pkgList,
-                 file = "most-used-r-refs.bib")
+                 file = "bib-files/most-used-r-refs.bib")
 
 
 ```

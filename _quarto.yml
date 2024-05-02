@@ -81,9 +81,10 @@ execute:
   freeze: auto
 
 bibliography: 
-  - "rieger-pub.bib"
-  - "github-page.bib"
-  - "most-used-r-refs.bib"
+  - "bib-files/rieger-pub.bib"
+  - "bib-files/github-page.bib"
+  - "bib-files/most-used-r-refs.bib"
+  - "bib-files/descr-pkg.bib"
 
 csl: apa.csl
 
@@ -106,6 +107,5 @@ link-external-newwindow: false
 html-math-method: 
   method: mathjax
   number-equations: true
-
-#url: "https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.3/tex-mml-chtml.js"
+  url: "https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.3/tex-mml-chtml.js"
 #url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"

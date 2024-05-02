@@ -46,7 +46,7 @@ A data frame with 7,185 observations on the following 8 variables.
 
 ::::
 
-## Import HSB dataset 
+## Import HSB dataset {#import-hsb}
 
 ```{r}
 #| label: dataset
