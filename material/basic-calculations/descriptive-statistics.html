@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.26">
+<meta name="generator" content="quarto-1.5.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sven Rieger">
-<meta name="dcterms.date" content="2023-12-01">
+<meta name="dcterms.date" content="2024-05-15">
 
 <title>  – Descriptive statistics</title>
 <style>
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -123,10 +123,12 @@ div.csl-indent {
   }
 }</script>
 <link href="../../site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+
 <script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script>
 
+
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.6/tex-mml-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -376,15 +378,22 @@ window.Quarto = {
    
   <ul>
   <li><a href="#revealjs-presentation" id="toc-revealjs-presentation" class="nav-link active" data-scroll-target="#revealjs-presentation">Revealjs Presentation</a></li>
-  <li><a href="#preface-software-i" id="toc-preface-software-i" class="nav-link" data-scroll-target="#preface-software-i">Preface: Software I</a></li>
-  <li><a href="#preface-software-ii" id="toc-preface-software-ii" class="nav-link" data-scroll-target="#preface-software-ii">Preface: Software II</a></li>
+  <li><a href="#preface-used-packages" id="toc-preface-used-packages" class="nav-link" data-scroll-target="#preface-used-packages">Preface: Used packages</a></li>
+  <li><a href="#preface-cite-the-packages" id="toc-preface-cite-the-packages" class="nav-link" data-scroll-target="#preface-cite-the-packages">Preface: Cite the packages</a></li>
   <li><a href="#preface-data-matrix" id="toc-preface-data-matrix" class="nav-link" data-scroll-target="#preface-data-matrix">Preface: Data matrix</a></li>
-  <li><a href="#descriptive-statistics-overview" id="toc-descriptive-statistics-overview" class="nav-link" data-scroll-target="#descriptive-statistics-overview">Descriptive statistics: Overview</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#example-data-set" id="toc-example-data-set" class="nav-link" data-scroll-target="#example-data-set">Example data set</a></li>
+  <li><a href="#abs-freq" id="toc-abs-freq" class="nav-link" data-scroll-target="#abs-freq">Absolute Frequencies</a></li>
+  <li><a href="#abs-freq-r" id="toc-abs-freq-r" class="nav-link" data-scroll-target="#abs-freq-r">Absolute Frequencies in R</a></li>
+  <li><a href="#rel-freq" id="toc-rel-freq" class="nav-link" data-scroll-target="#rel-freq">Relative Frequencies</a></li>
+  <li><a href="#rel-freq-r" id="toc-rel-freq-r" class="nav-link" data-scroll-target="#rel-freq-r">Relative Frequencies in R</a></li>
   <li><a href="#descr-mean" id="toc-descr-mean" class="nav-link" data-scroll-target="#descr-mean">Mean</a></li>
+  <li><a href="#a-brief-note-on-missing-data" id="toc-a-brief-note-on-missing-data" class="nav-link" data-scroll-target="#a-brief-note-on-missing-data">A brief note on missing data</a></li>
   <li><a href="#descr-median" id="toc-descr-median" class="nav-link" data-scroll-target="#descr-median">Median</a></li>
   <li><a href="#descr-var" id="toc-descr-var" class="nav-link" data-scroll-target="#descr-var">Variance</a></li>
   <li><a href="#descr-sd" id="toc-descr-sd" class="nav-link" data-scroll-target="#descr-sd">Standard Deviation</a></li>
   <li><a href="#descr-range" id="toc-descr-range" class="nav-link" data-scroll-target="#descr-range">Range</a></li>
+  <li><a href="#put-everything-together-0-1" id="toc-put-everything-together-0-1" class="nav-link" data-scroll-target="#put-everything-together-0-1">Put everything together 0</a></li>
   <li><a href="#put-everything-together-i" id="toc-put-everything-together-i" class="nav-link" data-scroll-target="#put-everything-together-i">Put everything together I</a></li>
   <li><a href="#put-everything-together-ii" id="toc-put-everything-together-ii" class="nav-link" data-scroll-target="#put-everything-together-ii">Put everything together II</a></li>
   <li><a href="#making-a-table-i" id="toc-making-a-table-i" class="nav-link" data-scroll-target="#making-a-table-i">Making a table I</a></li>
@@ -418,7 +427,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Last updated on</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 1, 2023</p>
+      <p class="date">May 15, 2024</p>
     </div>
   </div>
   
@@ -436,6 +445,19 @@ window.Quarto = {
 </header>
 
 
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This page is work in progress and under active development.</p>
+</div>
+</div>
 <section id="revealjs-presentation" class="level2">
 <h2 class="anchored" data-anchor-id="revealjs-presentation">Revealjs Presentation</h2>
 <p>If you want to see the presentation in full screen go to <strong>Other Formats</strong> on the right.</p>
@@ -443,8 +465,8 @@ window.Quarto = {
 <p><iframe class="responsive-iframe" src="descr-reveal.html"></iframe></p>
 </div>
 </section>
-<section id="preface-software-i" class="level2">
-<h2 class="anchored" data-anchor-id="preface-software-i">Preface: Software I</h2>
+<section id="preface-used-packages" class="level2">
+<h2 class="anchored" data-anchor-id="preface-used-packages">Preface: Used packages</h2>
 <ul>
 <li>The following packages are used:</li>
 </ul>
@@ -454,19 +476,20 @@ window.Quarto = {
 <span id="cb1-3"><a href="#cb1-3"></a>              <span class="st">"knitr"</span>,</span>
 <span id="cb1-4"><a href="#cb1-4"></a>              <span class="st">"flextable"</span>,</span>
 <span id="cb1-5"><a href="#cb1-5"></a>              <span class="st">"psych"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6"></a>              <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6"></a>              <span class="st">"lavaan"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7"></a>              <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <ul>
 <li>Install packages when not already installed:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">lapply</span>(descrPkg,</span>
-<span id="cb2-2"><a href="#cb2-2"></a>        <span class="cf">function</span>(x) </span>
-<span id="cb2-3"><a href="#cb2-3"></a>          <span class="cf">if</span>(<span class="sc">!</span>x <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())) {</span>
-<span id="cb2-4"><a href="#cb2-4"></a>            <span class="fu">install.packages</span>(x)</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">lapply</span>(<span class="at">X =</span> descrPkg,</span>
+<span id="cb2-2"><a href="#cb2-2"></a>       <span class="at">FUN =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb2-3"><a href="#cb2-3"></a>          <span class="cf">if</span>( <span class="sc">!</span>x <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>()) ) { </span>
+<span id="cb2-4"><a href="#cb2-4"></a>            <span class="fu">install.packages</span>(x) }</span>
 <span id="cb2-5"><a href="#cb2-5"></a>            }</span>
-<span id="cb2-6"><a href="#cb2-6"></a>          )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href="#cb2-6"></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -479,8 +502,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="preface-software-ii" class="level2">
-<h2 class="anchored" data-anchor-id="preface-software-ii">Preface: Software II</h2>
+<section id="preface-cite-the-packages" class="level2">
+<h2 class="anchored" data-anchor-id="preface-cite-the-packages">Preface: Cite the packages</h2>
 <p>Print list of packages and cite them via <a href="https://pandoc.org/MANUAL.html#citations">Pandoc citation</a>.</p>
 <div class="cell" data-output-location="fragment">
 <details class="code-fold">
@@ -502,12 +525,13 @@ window.Quarto = {
 <span id="cb4-15"><a href="#cb4-15"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <ol type="1">
-<li>merTools <span class="citation" data-cites="R-merTools">(v0.6.2, <a href="#ref-R-merTools" role="doc-biblioref"><strong>R-merTools?</strong></a>)</span></li>
-<li>sn <span class="citation" data-cites="R-sn">(v2.1.1, <a href="#ref-R-sn" role="doc-biblioref"><strong>R-sn?</strong></a>)</span></li>
-<li>knitr <span class="citation" data-cites="R-knitr">(v1.45, <a href="#ref-R-knitr" role="doc-biblioref">Xie, 2023</a>)</span></li>
-<li>flextable <span class="citation" data-cites="R-flextable">(v0.9.5, <a href="#ref-R-flextable" role="doc-biblioref">Gohel &amp; Skintzos, 2023</a>)</span></li>
-<li>psych <span class="citation" data-cites="R-psych">(v2.4.3, <a href="#ref-R-psych" role="doc-biblioref">Revelle, 2023</a>)</span></li>
-<li>ggplot2 <span class="citation" data-cites="R-ggplot2">(v3.4.4, <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al., 2023</a>)</span></li>
+<li>merTools <span class="citation" data-cites="R-merTools">(v0.6.1, <a href="#ref-R-merTools" role="doc-biblioref">Knowles &amp; Frederick, 2023</a>)</span></li>
+<li>sn <span class="citation" data-cites="R-sn">(v2.1.1, <a href="#ref-R-sn" role="doc-biblioref">Azzalini, 2023</a>)</span></li>
+<li>knitr <span class="citation" data-cites="R-knitr">(v1.44, <a href="#ref-R-knitr" role="doc-biblioref">Xie, 2023</a>)</span></li>
+<li>flextable <span class="citation" data-cites="R-flextable">(v0.9.4, <a href="#ref-R-flextable" role="doc-biblioref">Gohel &amp; Skintzos, 2024</a>)</span></li>
+<li>psych <span class="citation" data-cites="R-psych">(v2.3.9, <a href="#ref-R-psych" role="doc-biblioref">Revelle, 2024</a>)</span></li>
+<li>lavaan <span class="citation" data-cites="R-lavaan">(v0.6.16, <a href="#ref-R-lavaan" role="doc-biblioref">Rosseel et al., 2023</a>)</span></li>
+<li>ggplot2 <span class="citation" data-cites="R-ggplot2">(v3.5.0, <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al., 2023</a>)</span></li>
 </ol>
 </div>
 </section>
@@ -534,20 +558,40 @@ X_{n1} &amp; X_{n2} &amp; \cdots &amp; X_{np}
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>see <span class="citation" data-cites="eid2013">Eid et al. (<a href="#ref-eid2013" role="doc-biblioref">2013</a>)</span></p>
 </div></div></section>
-<section id="descriptive-statistics-overview" class="level2">
-<h2 class="anchored" data-anchor-id="descriptive-statistics-overview">Descriptive statistics: Overview</h2>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <div class="columns">
 <div class="column" style="width:49.5%;">
+<div class="fragment">
+<ul>
+<li><strong>Frequencies</strong>
+<ul>
+<li><a href="#abs-freq">Absolute</a></li>
+<li><a href="#rel-freq">Relative</a></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Quantiles</strong> (not covered)</li>
+</ul>
+</div>
 <div class="fragment">
 <ul>
 <li><strong>Measures of central tendency</strong>
 <ul>
 <li><a href="#descr-mean">Mean</a></li>
+<li>Weighted mean (not covered)</li>
+<li>Weighted geometric mean (not covered)</li>
 <li><a href="#descr-median">Median</a></li>
-<li>Mode</li>
+<li>Mode (not covered)</li>
+<li>…</li>
 </ul></li>
 </ul>
 </div>
+</div><div class="column" style="width:1%;">
+
+</div><div class="column" style="width:49.5%;">
 <div class="fragment">
 <ul>
 <li><strong>Measures of variability</strong>
@@ -555,6 +599,9 @@ X_{n1} &amp; X_{n2} &amp; \cdots &amp; X_{np}
 <li><a href="#descr-sd">Standard deviation</a></li>
 <li><a href="#descr-var">Variance</a></li>
 <li><a href="#descr-range">Range</a> (Minimum, Maximum)</li>
+<li>Interquartile range (not covered)</li>
+<li>Semi-interquartile range (not covered)</li>
+<li>…</li>
 </ul></li>
 </ul>
 </div>
@@ -562,45 +609,226 @@ X_{n1} &amp; X_{n2} &amp; \cdots &amp; X_{np}
 <ul>
 <li><strong>Measures of shape</strong>
 <ul>
-<li>Skewness (not covered in slides)</li>
-<li>Kurtosis (not covered in slides)</li>
+<li>Skewness (not covered)</li>
+<li>Kurtosis (not covered)</li>
 </ul></li>
 </ul>
 </div>
-</div><div class="column" style="width:1%;">
-
-</div><div class="column" style="width:49.5%;">
+</div>
+</div>
+</section>
+<section id="example-data-set" class="level2">
+<h2 class="anchored" data-anchor-id="example-data-set">Example data set</h2>
+<p><strong>Consider the following 2 vectors within the example data set</strong></p>
 <div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="descriptive-statistics_files/figure-html/norm-dis-1.png" class="img-fluid figure-img" width="2100"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>exDat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="at">numVec =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>),</span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="at">chrVec =</span> <span class="fu">c</span>(<span class="st">"low"</span>, <span class="st">"med"</span>, <span class="st">"low"</span>, <span class="st">"high"</span>, <span class="st">"high"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<div class="fragment">
-<div class="callout callout-style-simple callout-caution no-icon callout-titled" title="Example">
-<div class="callout-header d-flex align-content-center">
+</section>
+<section id="abs-freq" class="level2">
+<h2 class="anchored" data-anchor-id="abs-freq">Absolute Frequencies</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Example
+<div class="callout-body-container">
+<p>Absolute frequencies refer to the numbers of a particular value or category appearing in a variable. It may be abbreviated with <span class="math inline">\(n_j\)</span> where <span class="math inline">\(n\)</span> is the number of a specific value/category <span class="math inline">\(j\)</span>.</p>
+<div class="fragment">
+<table class="table">
+<caption>Example Frequency table</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 40%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Category <span class="math inline">\(j\)</span></th>
+<th style="text-align: center;">Absolute Frequency (<span class="math inline">\(n_j\)</span>)</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">low (<span class="math inline">\(j=1\)</span>)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">med (<span class="math inline">\(j=2\)</span>)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">high (<span class="math inline">\(j=3\)</span>)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sum\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{j=1}^3n_j=n=5\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Consider the following example vector:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>exVec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</section>
+<section id="abs-freq-r" class="level2">
+<h2 class="anchored" data-anchor-id="abs-freq-r">Absolute Frequencies in R</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">base</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">dplyr</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell" data-output-location="column-fragment">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">with</span>(exDat,</span>
+<span id="cb6-2"><a href="#cb6-2"></a>     <span class="fu">table</span>(chrVec)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>chrVec
+high  low  med 
+   2    2    1 </code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>An important argument (<code>useNA</code>) and another useful function (<code>addmargins()</code>)…</p>
+<div class="cell" data-output-location="column-fragment">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">with</span>(exDat,</span>
+<span id="cb8-2"><a href="#cb8-2"></a>     <span class="fu">table</span>(chrVec, <span class="at">useNA =</span> <span class="st">"always"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">addmargins</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>chrVec
+high  low  med &lt;NA&gt;  Sum 
+   2    2    1    0    5 </code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell" data-output-location="column">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>exDat <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(chrVec) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">absFreq =</span> dplyr<span class="sc">::</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  chrVec absFreq
+  &lt;chr&gt;    &lt;int&gt;
+1 high         2
+2 low          2
+3 med          1</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="descr-mean" class="level2 page-columns page-full">
+<section id="rel-freq" class="level2">
+<h2 class="anchored" data-anchor-id="rel-freq">Relative Frequencies</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Relative frequencies refer to the proportion of a specific value or category relative to the total number of observations (<span class="math inline">\(n\)</span>).</p>
+<p><span class="math display">\[
+h_j=\frac{n_j}{n}
+\]</span></p>
+<div class="fragment">
+<table class="table">
+<caption>Example Frequency table</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 40%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Category <span class="math inline">\(j\)</span></th>
+<th style="text-align: center;">Absolute Frequency (<span class="math inline">\(n_j\)</span>)</th>
+<th style="text-align: center;">Relative Frequency (<span class="math inline">\(h_j\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">low (<span class="math inline">\(j=1\)</span>)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">med (<span class="math inline">\(j=2\)</span>)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">high (<span class="math inline">\(j=3\)</span>)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sum\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{j=1}^3n_j=n=5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{j=1}^3h_j=1\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="rel-freq-r" class="level2">
+<h2 class="anchored" data-anchor-id="rel-freq-r">Relative Frequencies in R</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">base</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">dplyr</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell" data-output-location="column-fragment">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">with</span>(exDat,</span>
+<span id="cb12-2"><a href="#cb12-2"></a>     <span class="fu">table</span>(chrVec)<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">table</span>(exDat<span class="sc">$</span>chrVec))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>chrVec
+high  low  med 
+ 0.4  0.4  0.2 </code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>Another useful function (<code>sprintf()</code>) to force 2 decimal and add %…</p>
+<div class="cell" data-output-location="column-fragment">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">with</span>(exDat,</span>
+<span id="cb14-2"><a href="#cb14-2"></a>     <span class="fu">table</span>(chrVec)<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">table</span>(chrVec))) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>     (<span class="cf">function</span>(x) <span class="fu">sprintf</span>(<span class="st">"%.2f%%"</span>, x<span class="sc">*</span><span class="dv">100</span>))()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "40.00%" "40.00%" "20.00%"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell" data-output-location="column">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>exDat <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(chrVec) <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(chrVec) <span class="sc">|&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">absFreq=</span> dplyr<span class="sc">::</span><span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">relFreq =</span> absFreq<span class="sc">/</span><span class="fu">sum</span>(absFreq)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  chrVec absFreq relFreq
+  &lt;chr&gt;    &lt;int&gt;   &lt;dbl&gt;
+1 high         2     0.4
+2 low          2     0.4
+3 med          1     0.2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="descr-mean" class="level2">
 <h2 class="anchored" data-anchor-id="descr-mean">Mean</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -609,9 +837,13 @@ Example
 </div>
 <div class="callout-body-container">
 <p>The mean (or arithmetic mean, average) is the sum of a collection of numbers divided by the count of numbers in the collection. The formula is given in <a href="#eq-mean" class="quarto-xref">Equation&nbsp;1</a>.</p>
-<p><span id="eq-mean"><span class="math display">\[\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i=\frac{x_1+x_2+\dots+x_n}{n} \qquad(1)\]</span></span></p>
+<p><span id="eq-mean"><span class="math display">\[
+\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i=\frac{x_1+x_2+\dots+x_n}{n}
+\qquad(1)\]</span></span></p>
 <p>For example, consider a vector of numbers: <span class="math inline">\(x = 1, 2, 5, 3, 8\)</span></p>
-<p><span class="math display">\[\bar{x} = \frac{(1+2+5+3+8)}{5}=3.8\]</span></p>
+<p><span class="math display">\[
+\bar{x} = \frac{(1+2+5+3+8)}{5}=3.8
+\]</span></p>
 <p>If the underlying data is a sample (i.e., a subset of a population), it is called the sample mean.</p>
 </div>
 </div>
@@ -619,28 +851,37 @@ Example
 <div class="fragment">
 <p>How to calculate the mean in <code>R</code>?</p>
 <div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(exDat,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">mean</span>(numVec))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.8</code></pre>
 </div>
 </div>
 </div>
-<div class="fragment">
-<p>If there is missing data (in <code>R</code> denoted by <code>NA</code>), we set the argument <code>na.rm</code> to <code>TRUE</code>. To demonstrate this we create another example vector (<code>exVec2</code>).</p>
+</section>
+<section id="a-brief-note-on-missing-data" class="level2">
+<h2 class="anchored" data-anchor-id="a-brief-note-on-missing-data">A brief note on missing data</h2>
+<p>In <code>R</code> missing values/data are represented by the symbol <code>NA</code>. Most of the basic functions cannot deal <em>appropriately</em> with missing data.</p>
+<p><br></p>
 <div class="columns">
-<div class="column" style="width:48.5%;">
+<div class="column" style="width:49.5%;">
+<div class="fragment">
+<p>To demonstrate this we create another example vector (<code>exVec2</code>).</p>
 <div class="cell" data-output-location="fragment">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>exVec2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="cn">NA</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(exVec2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>numVec2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="cn">NA</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(numVec2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
 </div>
+</div>
 </div><div class="column" style="width:1%;">
 
-</div><div class="column" style="width:48.5%;">
+</div><div class="column" style="width:49.5%;">
+<div class="fragment">
+<p>If there is missing data, we are required to set the argument <code>na.rm</code> to <code>TRUE</code>.</p>
 <div class="cell" data-output-location="fragment">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(exVec2, <span class="at">na.rm =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(numVec2, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.8</code></pre>
 </div>
@@ -648,10 +889,18 @@ Example
 </div>
 </div>
 </div>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Missing-values">More on missing data in R</a></p>
-</div></div></section>
+<p><br></p>
+<div class="fragment callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Omitting or deleting missing values should–in most scenarios–be avoided altogether <span class="citation" data-cites="schafer2002 enders2023">(<a href="#ref-enders2023" role="doc-biblioref">Enders, 2023</a>; <a href="#ref-schafer2002" role="doc-biblioref">Schafer &amp; Graham, 2002</a>)</span></p>
+</div>
+</div>
+</div>
+</section>
 <section id="descr-median" class="level2">
 <h2 class="anchored" data-anchor-id="descr-median">Median</h2>
 <div class="callout callout-style-simple callout-note no-icon">
@@ -669,14 +918,17 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 \end{cases}
 \qquad(2)\]</span></span></p>
 <p>Consider again the vector of numbers: <span class="math inline">\(x = 1, 2, 5, 3, 8\)</span> with length <span class="math inline">\(n = 5\)</span>. To calculate the median you need to first, order the the vector: <span class="math inline">\(x = 1, 2, 3, 5, 8\)</span> and then apply the corresponding formula (odd vs.&nbsp;even; here odd):</p>
-<p><span class="math display">\[\widetilde{x}=x_{\frac{(5+1)}{2}}=x_3 = 3\]</span></p>
+<p><span class="math display">\[
+\widetilde{x}=x_{\frac{(5+1)}{2}}=x_3 = 3
+\]</span></p>
 </div>
 </div>
 </div>
 <div class="fragment">
 <p>How to calculate the median in <code>R</code>?</p>
 <div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(exDat,</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">median</span>(numVec))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
@@ -698,14 +950,17 @@ x_{(n+1)/2}                 &amp; \:\: \text{if } n  \text{ is odd} \\
 VAR(X) = s^2 = \frac{1}{n-1} \sum\limits_{i=1}^n (x_i - \bar{x})^2
 \qquad(4)\]</span></span></p>
 <p>Using again the vector <span class="math inline">\(x = 1, 2, 5, 3, 8\)</span>, the sample variance is calculated as follows:</p>
-<p><span class="math display">\[Var(X) =\frac{1}{4}((1-3.8)^2 + (2-3.8)^2 + (5-3.8)^2 + (3-3.8)^2 + (8-3.8)^2) = 7.7\]</span></p>
+<p><span class="math display">\[
+Var(X) =\frac{1}{4}((1-3.8)^2 + (2-3.8)^2 + (5-3.8)^2 + (3-3.8)^2 + (8-3.8)^2) = 7.7
+\]</span></p>
 </div>
 </div>
 </div>
 <div class="fragment">
 <p>How to calculate the variance in <code>R</code>?</p>
 <div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(exDat,</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">var</span>(numVec))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7.7</code></pre>
 </div>
@@ -721,18 +976,25 @@ VAR(X) = s^2 = \frac{1}{n-1} \sum\limits_{i=1}^n (x_i - \bar{x})^2
 </div>
 <div class="callout-body-container">
 <p>The standard deviation is defined as the square root of the variance. Again, it is distinguished between the population and the sample variance. The formula of the population standard deviation is given in <a href="#eq-pop-sd" class="quarto-xref">Equation&nbsp;5</a>.</p>
-<p><span id="eq-pop-sd"><span class="math display">\[SD(X) = \sigma = \sqrt{\sigma^2} \qquad(5)\]</span></span></p>
+<p><span id="eq-pop-sd"><span class="math display">\[
+SD(X) = \sigma = \sqrt{\sigma^2}
+\qquad(5)\]</span></span></p>
 <p>The formula of the population standard deviation is given in <a href="#eq-samp-sd" class="quarto-xref">Equation&nbsp;6</a>.</p>
-<p><span id="eq-samp-sd"><span class="math display">\[SD(X) = s = \sqrt{s^2} \qquad(6)\]</span></span></p>
+<p><span id="eq-samp-sd"><span class="math display">\[
+SD(X) = s = \sqrt{s^2}
+\qquad(6)\]</span></span></p>
 <p>Recall the variance calculation from the previous <a href="#descr-var">slide</a>, the (sample) variance of the vector is <span class="math inline">\(7.7\)</span>.</p>
-<p><span class="math display">\[SD(X) = \sqrt{7.7}=2.774887\]</span></p>
+<p><span class="math display">\[
+SD(X) = \sqrt{7.7}=2.774887
+\]</span></p>
 </div>
 </div>
 </div>
 <div class="fragment">
 <p>How to calculate the standard deviation in <code>R</code>?</p>
 <div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(exDat,</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">sd</span>(numVec))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.774887</code></pre>
 </div>
@@ -748,109 +1010,141 @@ VAR(X) = s^2 = \frac{1}{n-1} \sum\limits_{i=1}^n (x_i - \bar{x})^2
 </div>
 <div class="callout-body-container">
 <p>The range of a vector is the difference between the largest (maximum) and the smallest (minimum) values/observations.</p>
-<p><span id="eq-range"><span class="math display">\[Range(x) = R =  x_{max}-x_{min} \qquad(7)\]</span></span></p>
+<p><span id="eq-range"><span class="math display">\[
+Range(x) = R =  x_{max}-x_{min}
+\qquad(7)\]</span></span></p>
 </div>
 </div>
 </div>
 <div class="fragment">
 <p>How to calculate the range in <code>R</code>?</p>
 <div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(exDat,</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">range</span>(numVec))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 8</code></pre>
 </div>
 </div>
 </div>
 <div class="fragment">
-<p>Alternatively, calculate the minimum…</p>
+<p>Alternatively, calculate minimum and maximum separately…</p>
 <div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(exDat,{</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">c</span>(<span class="fu">min</span>(numVec),</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">max</span>(numVec))})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1</code></pre>
+<pre><code>[1] 1 8</code></pre>
 </div>
 </div>
-<p>… and the maximum.</p>
+<p>To compute the range apply <a href="#eq-range" class="quarto-xref">Equation&nbsp;7</a>.</p>
 <div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
-</div>
-</div>
-<p>And to compute the range apply <a href="#eq-range" class="quarto-xref">Equation&nbsp;7</a>.</p>
-<div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(exVec)<span class="sc">-</span><span class="fu">min</span>(exVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(exDat,</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">max</span>(numVec)<span class="sc">-</span><span class="fu">min</span>(numVec))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="put-everything-together-i" class="level2">
-<h2 class="anchored" data-anchor-id="put-everything-together-i">Put everything together I</h2>
-<p>Recall, the dataset <code>dat</code> is the HSB dataset from the <code>merTools</code> package:</p>
-<div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> merTools<span class="sc">::</span>hsb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="put-everything-together-0-1" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="put-everything-together-0-1">Put everything together 0</h2>
+<div class="callout callout-style-simple callout-caution callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>Calculating the mean, standard deviation, minimum and maximum for a set of variables:</p>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let us calculate several descriptive statistics (e.g., mean, standard deviation, minimum and maximum) for multiple variables. For this exercise, we use a subset of the HSB dataset which is provided in the <code>merTools</code> package <span class="citation" data-cites="R-merTools">(<a href="#ref-R-merTools" role="doc-biblioref">Knowles &amp; Frederick, 2023</a>)</span> (for some details see <a href="../../material/example-data/data-hsb.html">here</a>):</p>
+<div class="cell" data-output-location="column-fragment">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> merTools<span class="sc">::</span>hsb</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   schid minority female    ses mathach size schtype meanses
+1   1224        0      1 -1.528   5.876  842       0  -0.428
+2   1224        0      1 -0.588  19.708  842       0  -0.428
+3   1224        0      0 -0.528  20.349  842       0  -0.428
+4   1224        0      0 -0.668   8.781  842       0  -0.428
+5   1224        0      0 -0.158  17.898  842       0  -0.428
+6   1224        0      0  0.022   4.583  842       0  -0.428
+7   1224        0      1 -0.618  -2.832  842       0  -0.428
+8   1224        0      0 -0.998   0.523  842       0  -0.428
+9   1224        0      1 -0.888   1.527  842       0  -0.428
+10  1224        0      0 -0.458  21.521  842       0  -0.428</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="put-everything-together-i" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="put-everything-together-i">Put everything together I</h2>
+<p>A flexible approach would be…</p>
 <div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2"></a>myVar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Math achievement"</span> <span class="ot">=</span> <span class="st">"mathach"</span>,</span>
-<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3"></a>           <span class="st">"Gender"</span> <span class="ot">=</span> <span class="st">"female"</span>,</span>
-<span id="annotated-cell-4-4"><a href="#annotated-cell-4-4"></a>           <span class="st">"Socioeconomic status"</span> <span class="ot">=</span> <span class="st">"ses"</span>,</span>
-<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5"></a>           <span class="st">"Class size"</span> <span class="ot">=</span> <span class="st">"size"</span>)</span>
-<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-7" class="code-annotation-target"><a href="#annotated-cell-4-7"></a>exDescr <span class="ot">&lt;-</span> <span class="fu">apply</span>(</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-8" class="code-annotation-target"><a href="#annotated-cell-4-8"></a>  <span class="at">X =</span> dat[,myVar],</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-9" class="code-annotation-target"><a href="#annotated-cell-4-9"></a>  <span class="at">MARGIN =</span> <span class="dv">2</span>,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-10" class="code-annotation-target"><a href="#annotated-cell-4-10"></a>  <span class="at">FUN =</span> <span class="cf">function</span>(x) {</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-4-11" class="code-annotation-target"><a href="#annotated-cell-4-11"></a>    ret <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="annotated-cell-4-12"><a href="#annotated-cell-4-12"></a>             <span class="fu">mean</span>(x, <span class="at">na.rm =</span> T),</span>
-<span id="annotated-cell-4-13"><a href="#annotated-cell-4-13"></a>             <span class="fu">sd</span>(x, <span class="at">na.rm =</span> T),</span>
-<span id="annotated-cell-4-14"><a href="#annotated-cell-4-14"></a>             <span class="fu">min</span>(x, <span class="at">na.rm =</span> T),</span>
-<span id="annotated-cell-4-15"><a href="#annotated-cell-4-15"></a>             <span class="fu">max</span>(x, <span class="at">na.rm =</span> T)</span>
-<span id="annotated-cell-4-16"><a href="#annotated-cell-4-16"></a>             )</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-4-17" class="code-annotation-target"><a href="#annotated-cell-4-17"></a>    <span class="fu">return</span>(ret)</span>
-<span id="annotated-cell-4-18"><a href="#annotated-cell-4-18"></a>    })</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1"></a>myVar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Math achievement"</span> <span class="ot">=</span> <span class="st">"mathach"</span>,</span>
+<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2"></a>           <span class="st">"Gender"</span> <span class="ot">=</span> <span class="st">"female"</span>,</span>
+<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3"></a>           <span class="st">"Socioeconomic status"</span> <span class="ot">=</span> <span class="st">"ses"</span>,</span>
+<span id="annotated-cell-4-4"><a href="#annotated-cell-4-4"></a>           <span class="st">"Class size"</span> <span class="ot">=</span> <span class="st">"size"</span>)</span>
+<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6"></a>exDescr <span class="ot">&lt;-</span> <span class="fu">apply</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-7" class="code-annotation-target"><a href="#annotated-cell-4-7"></a>  <span class="at">X =</span> dat[,myVar],</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-8" class="code-annotation-target"><a href="#annotated-cell-4-8"></a>  <span class="at">MARGIN =</span> <span class="dv">2</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-9" class="code-annotation-target"><a href="#annotated-cell-4-9"></a>  <span class="at">FUN =</span> <span class="cf">function</span>(x) {</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-4-10" class="code-annotation-target"><a href="#annotated-cell-4-10"></a>    ret <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="annotated-cell-4-11"><a href="#annotated-cell-4-11"></a>             <span class="fu">mean</span>(x, <span class="at">na.rm =</span> T),</span>
+<span id="annotated-cell-4-12"><a href="#annotated-cell-4-12"></a>             <span class="fu">sd</span>(x, <span class="at">na.rm =</span> T),</span>
+<span id="annotated-cell-4-13"><a href="#annotated-cell-4-13"></a>             <span class="fu">min</span>(x, <span class="at">na.rm =</span> T),</span>
+<span id="annotated-cell-4-14"><a href="#annotated-cell-4-14"></a>             <span class="fu">max</span>(x, <span class="at">na.rm =</span> T)</span>
+<span id="annotated-cell-4-15"><a href="#annotated-cell-4-15"></a>             )</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-4-16" class="code-annotation-target"><a href="#annotated-cell-4-16"></a>    <span class="fu">return</span>(ret)</span>
+<span id="annotated-cell-4-17"><a href="#annotated-cell-4-17"></a>    })</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="2,3,4,5" data-code-annotation="1">Create a (named) character vector of the variables by using the <code>c()</code> function.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="1,2,3,4" data-code-annotation="1">Create a (named) character vector of the variables by using the <code>c()</code> function.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="7" data-code-annotation="2">Use the <code>apply</code> function to apply a or multiple function(s) on data (here: 4 columns).</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="6" data-code-annotation="2">Use the <code>apply</code> function to apply a or multiple function(s) on data (here: 4 columns).</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="8" data-code-annotation="3">The input is the dataset with the selected columns of interest (see 1.).</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="7" data-code-annotation="3">The input is the dataset with the selected columns of interest (see 1.).</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="9" data-code-annotation="4"><code>MARGIN = 2</code> indicates that the function should be applied over columns.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="8" data-code-annotation="4"><code>MARGIN = 2</code> indicates that the function should be applied over columns.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="10" data-code-annotation="5">Create the function that should be applied. Here we calculate the <code>mean()</code>, <code>sd()</code>, <code>min()</code> and <code>max()</code>.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="9" data-code-annotation="5">Create the function that should be applied. Here we calculate the <code>mean()</code>, <code>sd()</code>, <code>min()</code> and <code>max()</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="11,12,13,14,15,16" data-code-annotation="6">Create a temporary <code>R</code> object, which should be later returned (here: the vector <code>ret</code>)</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="10,11,12,13,14,15" data-code-annotation="6">Create a temporary <code>R</code> object, which should be later returned (here: the vector <code>ret</code>)</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="17,18" data-code-annotation="7">Return the temporary object and close functions.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="16,17" data-code-annotation="7">Return the temporary object and close functions.</span>
 </dd>
 </dl>
 </div>
 </div>
-</section>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<div class="fragment">
+<p>There are also functions such as <code>colMeans()</code>, <code>colSums()</code>, <code>rowMeans()</code> and <code>rowSums()</code>.</p>
+</div>
+</div></div></section>
 <section id="put-everything-together-ii" class="level2">
 <h2 class="anchored" data-anchor-id="put-everything-together-ii">Put everything together II</h2>
 <p>Print the results…</p>
 <div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>exDescr <span class="sc">|&gt;</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>exDescr <span class="sc">|&gt;</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       mathach    female           ses      size
 [1,] 12.747853 0.5281837  0.0001433542 1056.8618
@@ -864,9 +1158,9 @@ VAR(X) = s^2 = \frac{1}{n-1} \sum\limits_{i=1}^n (x_i - \bar{x})^2
 </div>
 <div class="fragment">
 <div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>exDescr <span class="sc">|&gt;</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">t</span>() <span class="sc">|&gt;</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>exDescr <span class="sc">|&gt;</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">t</span>() <span class="sc">|&gt;</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                [,1]        [,2]    [,3]     [,4]
 mathach 1.274785e+01   6.8782457  -2.832   24.993
@@ -884,65 +1178,64 @@ size    1.056862e+03 604.1724993 100.000 2713.000</code></pre>
 <section id="making-a-table-i" class="level2">
 <h2 class="anchored" data-anchor-id="making-a-table-i">Making a table I</h2>
 <div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2"></a>exDescrTab <span class="ot">&lt;-</span> exDescr <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3"></a>    <span class="fu">t</span>() <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4"></a>    <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5"></a>    (\(d) <span class="fu">cbind</span>(<span class="fu">names</span>(myVar), d))() <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-6-6" class="code-annotation-target"><a href="#annotated-cell-6-6"></a>    <span class="fu">flextable</span>() <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-6-7" class="code-annotation-target"><a href="#annotated-cell-6-7"></a>    <span class="fu">theme_apa</span>() <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-6-8" class="code-annotation-target"><a href="#annotated-cell-6-8"></a>    <span class="fu">set_header_labels</span>(</span>
-<span id="annotated-cell-6-9"><a href="#annotated-cell-6-9"></a>      <span class="st">"names(myVar)"</span> <span class="ot">=</span> <span class="st">"Variables"</span>,</span>
-<span id="annotated-cell-6-10"><a href="#annotated-cell-6-10"></a>      <span class="at">V1 =</span> <span class="st">"Mean"</span>,</span>
-<span id="annotated-cell-6-11"><a href="#annotated-cell-6-11"></a>      <span class="at">V2 =</span> <span class="st">"SD"</span>,</span>
-<span id="annotated-cell-6-12"><a href="#annotated-cell-6-12"></a>      <span class="at">V3 =</span> <span class="st">"Min"</span>,</span>
-<span id="annotated-cell-6-13"><a href="#annotated-cell-6-13"></a>      <span class="at">V4 =</span> <span class="st">"Max"</span>) <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-6-14" class="code-annotation-target"><a href="#annotated-cell-6-14"></a>    <span class="fu">align</span>(<span class="at">part =</span> <span class="st">"body"</span>, <span class="at">align =</span> <span class="st">"c"</span>) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-6-15"><a href="#annotated-cell-6-15"></a>    <span class="fu">align</span>(<span class="at">j =</span> <span class="dv">1</span>, <span class="at">part =</span> <span class="st">"all"</span>, <span class="at">align =</span> <span class="st">"l"</span>) <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-6-16" class="code-annotation-target"><a href="#annotated-cell-6-16"></a>    <span class="fu">add_footer_lines</span>(</span>
-<span id="annotated-cell-6-17"><a href="#annotated-cell-6-17"></a>      <span class="fu">as_paragraph</span>(<span class="fu">as_i</span>(<span class="st">"Note. "</span>),</span>
-<span id="annotated-cell-6-18"><a href="#annotated-cell-6-18"></a>                   <span class="st">"This is a footnote."</span>)</span>
-<span id="annotated-cell-6-19"><a href="#annotated-cell-6-19"></a>      ) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-6-20"><a href="#annotated-cell-6-20"></a>    <span class="fu">align</span>(<span class="at">align =</span> <span class="st">"left"</span>, <span class="at">part =</span> <span class="st">"footer"</span>) <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-6-21" class="code-annotation-target"><a href="#annotated-cell-6-21"></a>    <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">1</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">unit =</span> <span class="st">"in"</span>) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-6-22"><a href="#annotated-cell-6-22"></a>    <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">width =</span> <span class="dv">1</span>, <span class="at">unit =</span> <span class="st">"in"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-1" class="code-annotation-target"><a href="#annotated-cell-6-1"></a>exDescrTab <span class="ot">&lt;-</span> exDescr <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2"></a>    <span class="fu">t</span>() <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-6-3"><a href="#annotated-cell-6-3"></a>    <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4"></a>    (\(d) <span class="fu">cbind</span>(<span class="fu">names</span>(myVar), d))() <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5"></a>    <span class="fu">flextable</span>() <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-6-6" class="code-annotation-target"><a href="#annotated-cell-6-6"></a>    <span class="fu">theme_apa</span>() <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-6-7" class="code-annotation-target"><a href="#annotated-cell-6-7"></a>    <span class="fu">set_header_labels</span>(</span>
+<span id="annotated-cell-6-8"><a href="#annotated-cell-6-8"></a>      <span class="st">"names(myVar)"</span> <span class="ot">=</span> <span class="st">"Variables"</span>,</span>
+<span id="annotated-cell-6-9"><a href="#annotated-cell-6-9"></a>      <span class="at">V1 =</span> <span class="st">"Mean"</span>,</span>
+<span id="annotated-cell-6-10"><a href="#annotated-cell-6-10"></a>      <span class="at">V2 =</span> <span class="st">"SD"</span>,</span>
+<span id="annotated-cell-6-11"><a href="#annotated-cell-6-11"></a>      <span class="at">V3 =</span> <span class="st">"Min"</span>,</span>
+<span id="annotated-cell-6-12"><a href="#annotated-cell-6-12"></a>      <span class="at">V4 =</span> <span class="st">"Max"</span>) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-6-13" class="code-annotation-target"><a href="#annotated-cell-6-13"></a>    <span class="fu">align</span>(<span class="at">part =</span> <span class="st">"body"</span>, <span class="at">align =</span> <span class="st">"c"</span>) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-6-14"><a href="#annotated-cell-6-14"></a>    <span class="fu">align</span>(<span class="at">j =</span> <span class="dv">1</span>, <span class="at">part =</span> <span class="st">"all"</span>, <span class="at">align =</span> <span class="st">"l"</span>) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-6-15" class="code-annotation-target"><a href="#annotated-cell-6-15"></a>    <span class="fu">add_footer_lines</span>(</span>
+<span id="annotated-cell-6-16"><a href="#annotated-cell-6-16"></a>      <span class="fu">as_paragraph</span>(<span class="fu">as_i</span>(<span class="st">"Note. "</span>),</span>
+<span id="annotated-cell-6-17"><a href="#annotated-cell-6-17"></a>                   <span class="st">"This is a footnote."</span>)</span>
+<span id="annotated-cell-6-18"><a href="#annotated-cell-6-18"></a>      ) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-6-19"><a href="#annotated-cell-6-19"></a>    <span class="fu">align</span>(<span class="at">align =</span> <span class="st">"left"</span>, <span class="at">part =</span> <span class="st">"footer"</span>) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-6-20" class="code-annotation-target"><a href="#annotated-cell-6-20"></a>    <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">1</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">unit =</span> <span class="st">"in"</span>) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-6-21"><a href="#annotated-cell-6-21"></a>    <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">width =</span> <span class="dv">1</span>, <span class="at">unit =</span> <span class="st">"in"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="1">Take the results (here: <code>exDescr</code> object)…</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="1" data-code-annotation="1">Take the results (here: <code>exDescr</code> object)…</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="3,4" data-code-annotation="2">…and <code>transpose</code> (i.e., using the <code>t()</code> function) and coerce it to a <code>data.frame</code> object (<code>as.data.frame()</code>)</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="2,3" data-code-annotation="2">…and <code>transpose</code> (i.e., using the <code>t()</code> function) and coerce it to a <code>data.frame</code> object (<code>as.data.frame()</code>)</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="3">Use the so-called <a href="https://en.wikipedia.org/wiki/Anonymous_function">lambda (or anonymous) function</a> to bind (using the <code>cbind()</code> function) the variable names as the first column to the dataset.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="4" data-code-annotation="3">Use the so-called <a href="https://en.wikipedia.org/wiki/Anonymous_function">lambda (or anonymous) function</a> to bind (using the <code>cbind()</code> function) the variable names as the first column to the dataset.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="6" data-code-annotation="4">Apply the <code>flextable()</code> function.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="4">Apply the <code>flextable()</code> function.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="7" data-code-annotation="5">Use the APA theme (<code>theme_apa()</code>).</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="6" data-code-annotation="5">Use the APA theme (<code>theme_apa()</code>).</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="8,9,10,11,12,13" data-code-annotation="6">Rename the column names (<code>set_header_labels()</code>).</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="7,8,9,10,11,12" data-code-annotation="6">Rename the column names (<code>set_header_labels()</code>).</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="14,15" data-code-annotation="7">Center body part of the table (<code>align()</code>).</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="13,14" data-code-annotation="7">Center body part of the table (<code>align()</code>).</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="16,17,18,19,20" data-code-annotation="8">Add a footnote (<code>add_footer_lines</code>) and align it to the left.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="15,16,17,18,19" data-code-annotation="8">Add a footnote (<code>add_footer_lines</code>) and align it to the left.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="9">9</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="21,22" data-code-annotation="9">Change column width (<code>width</code>) to 2 resp. 1 inch.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="20,21" data-code-annotation="9">Change column width (<code>width</code>) to 2 resp. 1 inch.</span>
 </dd>
 </dl>
 </div>
@@ -951,16 +1244,19 @@ size    1.056862e+03 604.1724993 100.000 2713.000</code></pre>
 <section id="make-tab-ii" class="level2">
 <h2 class="anchored" data-anchor-id="make-tab-ii">Making a table II</h2>
 <p>Print the table.</p>
-<div class="cell" data-tbl-colwidths="[40,15,15,15,15]" data-code-annotations="false" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>exDescrTab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-descr" class="cell quarto-float anchored" data-output-location="column-fragment" data-code-annotations="false">
+<div class="cell" data-tbl-colwidths="[40,15,15,15,15]" data-code-annotations="false" data-output-location="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>exDescrTab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-descr" class="cell quarto-float anchored" data-tbl-colwidths="[40,15,15,15,15]" data-output-location="default" data-code-annotations="false">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Descriptive statistics
 </figcaption>
 <div aria-describedby="tbl-descr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-d7ecb3b2{}.cl-d7ea3a92{font-family:'Times New Roman';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-d7ea3a9c{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-d7ea3a9d{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-d7eb3960{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-d7eb3961{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-d7eb3962{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-d7eb4068{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d7eb4069{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d7eb4072{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d7eb4073{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d7eb4074{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d7eb4075{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d7eb4076{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d7eb407c{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-d7ecb3b2"><thead><tr style="overflow-wrap:break-word;"><th class="cl-d7eb4068"><p class="cl-d7eb3960"><span class="cl-d7ea3a92">Variables</span></p></th><th class="cl-d7eb4069"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">Mean</span></p></th><th class="cl-d7eb4069"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">SD</span></p></th><th class="cl-d7eb4069"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">Min</span></p></th><th class="cl-d7eb4069"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">Max</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-d7eb4072"><p class="cl-d7eb3960"><span class="cl-d7ea3a92">Math achievement</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">12.75</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">6.88</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">-2.83</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">24.99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d7eb4072"><p class="cl-d7eb3960"><span class="cl-d7ea3a92">Gender</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">0.53</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">0.50</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">0.00</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">1.00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d7eb4072"><p class="cl-d7eb3960"><span class="cl-d7ea3a92">Socioeconomic status</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">0.00</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">0.78</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">-3.76</span></p></td><td class="cl-d7eb4073"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">2.69</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d7eb4074"><p class="cl-d7eb3960"><span class="cl-d7ea3a92">Class size</span></p></td><td class="cl-d7eb4075"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">1,056.86</span></p></td><td class="cl-d7eb4075"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">604.17</span></p></td><td class="cl-d7eb4075"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">100.00</span></p></td><td class="cl-d7eb4075"><p class="cl-d7eb3961"><span class="cl-d7ea3a92">2,713.00</span></p></td></tr></tbody><tfoot><tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-d7eb4076"><p class="cl-d7eb3962"><span class="cl-d7ea3a9c">Note. </span><span class="cl-d7ea3a9d">This is a footnote.</span></p></td></tr></tfoot></table></div>
+<div class="tabwid"><style>.cl-508bae68{}.cl-50741a0a{font-family:'Times New Roman';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-50741a14{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-50741a1e{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5083a240{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-5083a24a{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-5083a24b{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5083bbfe{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5083bbff{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5083bc08{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5083bc09{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5083bc0a{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5083bc12{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5083bc13{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5083bc1c{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-508bae68"><thead><tr style="overflow-wrap:break-word;"><th class="cl-5083bbfe"><p class="cl-5083a240"><span class="cl-50741a0a">Variables</span></p></th><th class="cl-5083bbff"><p class="cl-5083a24a"><span class="cl-50741a0a">Mean</span></p></th><th class="cl-5083bbff"><p class="cl-5083a24a"><span class="cl-50741a0a">SD</span></p></th><th class="cl-5083bbff"><p class="cl-5083a24a"><span class="cl-50741a0a">Min</span></p></th><th class="cl-5083bbff"><p class="cl-5083a24a"><span class="cl-50741a0a">Max</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-5083bc08"><p class="cl-5083a240"><span class="cl-50741a0a">Math achievement</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">12.75</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">6.88</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">-2.83</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">24.99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5083bc08"><p class="cl-5083a240"><span class="cl-50741a0a">Gender</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">0.53</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">0.50</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">0.00</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">1.00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5083bc08"><p class="cl-5083a240"><span class="cl-50741a0a">Socioeconomic status</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">0.00</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">0.78</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">-3.76</span></p></td><td class="cl-5083bc09"><p class="cl-5083a24a"><span class="cl-50741a0a">2.69</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5083bc0a"><p class="cl-5083a240"><span class="cl-50741a0a">Class size</span></p></td><td class="cl-5083bc12"><p class="cl-5083a24a"><span class="cl-50741a0a">1,056.86</span></p></td><td class="cl-5083bc12"><p class="cl-5083a24a"><span class="cl-50741a0a">604.17</span></p></td><td class="cl-5083bc12"><p class="cl-5083a24a"><span class="cl-50741a0a">100.00</span></p></td><td class="cl-5083bc12"><p class="cl-5083a24a"><span class="cl-50741a0a">2,713.00</span></p></td></tr></tbody><tfoot><tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-5083bc13"><p class="cl-5083a24b"><span class="cl-50741a14">Note. </span><span class="cl-50741a1e">This is a footnote.</span></p></td></tr></tfoot></table></div>
 </div>
 </div>
 </figure>
@@ -971,22 +1267,23 @@ Table&nbsp;1: Descriptive statistics
 <h2 class="anchored" data-anchor-id="table-export">Table export</h2>
 <p>If you want to export the table…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>exDescrTab <span class="sc">|&gt;</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">set_caption</span>(<span class="at">caption =</span> <span class="st">"Table X.</span><span class="sc">\n</span><span class="st">Descriptive statistics"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">save_as_docx</span>(<span class="at">path =</span> <span class="st">"descr-tab.docx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>exDescrTab <span class="sc">|&gt;</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">set_caption</span>(<span class="at">caption =</span> <span class="st">"Table X.</span><span class="sc">\n</span><span class="st">Descriptive statistics"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a>  <span class="fu">save_as_docx</span>(<span class="at">path =</span> <span class="st">"descr-tab.docx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="descr-R" class="level2">
 <h2 class="anchored" data-anchor-id="descr-R">Descriptive statistics with the <code>psych</code> package</h2>
 <ul>
-<li><p>Alternatively, it is convenient to use additional <code>R</code> packages such as the <code>psych</code> package <span class="citation" data-cites="R-psych">(<a href="#ref-R-psych" role="doc-biblioref">Revelle, 2023</a>)</span> to calculate descriptive statistics</p></li>
+<li><p>Alternatively, it is convenient to use additional <code>R</code> packages such as the <code>psych</code> package <span class="citation" data-cites="R-psych">(<a href="#ref-R-psych" role="doc-biblioref">Revelle, 2024</a>)</span> to calculate descriptive statistics</p></li>
 <li><p>Here we use the <code>describe</code> function (with the <code>fast</code> argument set to <code>TRUE</code>) to calculate the descriptive statistics of all variables within the example data set</p></li>
 </ul>
 <div class="cell" data-output-location="default">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>dat <span class="sc">|&gt;</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a>  psych<span class="sc">::</span><span class="fu">describe</span>(<span class="at">fast =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">flextable</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>dat <span class="sc">|&gt;</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a>  psych<span class="sc">::</span><span class="fu">describe</span>(<span class="at">fast =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a>  <span class="fu">flextable</span>() <span class="sc">|&gt;</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a>  <span class="fu">colformat_double</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-descr-psych" class="cell quarto-float anchored" data-output-location="default">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descr-psych-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -994,7 +1291,7 @@ Table&nbsp;2: Descriptive statistics with the psych package
 </figcaption>
 <div aria-describedby="tbl-descr-psych-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-d7f8cfc6{}.cl-d7f6238e{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-d7f70858{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-d7f70f1a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d7f70f1b{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d7f70f24{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-d7f8cfc6"><thead><tr style="overflow-wrap:break-word;"><th class="cl-d7f70f1a"><p class="cl-d7f70858"><span class="cl-d7f6238e">vars</span></p></th><th class="cl-d7f70f1a"><p class="cl-d7f70858"><span class="cl-d7f6238e">n</span></p></th><th class="cl-d7f70f1a"><p class="cl-d7f70858"><span class="cl-d7f6238e">mean</span></p></th><th class="cl-d7f70f1a"><p class="cl-d7f70858"><span class="cl-d7f6238e">sd</span></p></th><th class="cl-d7f70f1a"><p class="cl-d7f70858"><span class="cl-d7f6238e">median</span></p></th><th class="cl-d7f70f1a"><p class="cl-d7f70858"><span class="cl-d7f6238e">min</span></p></th><th class="cl-d7f70f1a"><p class="cl-d7f70858"><span class="cl-d7f6238e">max</span></p></th><th class="cl-d7f70f1a"><p class="cl-d7f70858"><span class="cl-d7f6238e">range</span></p></th><th class="cl-d7f70f1a"><p class="cl-d7f70858"><span class="cl-d7f6238e">skew</span></p></th><th class="cl-d7f70f1a"><p class="cl-d7f70858"><span class="cl-d7f6238e">kurtosis</span></p></th><th class="cl-d7f70f1a"><p class="cl-d7f70858"><span class="cl-d7f6238e">se</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">1</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">7,185</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.2747390397</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.4464137</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">1.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">1.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">1.00906215</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">-0.9819302</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.005266525</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">2</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">7,185</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.5281837161</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.4992398</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">1.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">1.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">1.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">-0.11289082</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">-1.9875322</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.005889736</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">3</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">7,185</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.0001433542</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.7793552</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.002</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">-3.758</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">2.692</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">6.450</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">-0.22809706</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">-0.3804498</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.009194372</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">4</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">7,185</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">12.7478526096</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">6.8782457</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">13.131</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">-2.832</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">24.993</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">27.825</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">-0.18049184</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">-0.9215987</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.081145473</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">5</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">7,185</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">1,056.8617954071</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">604.1724993</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">1,016.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">100.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">2,713.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">2,613.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.57149608</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">-0.3649453</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">7.127669715</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">6</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">7,185</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.4931106472</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.4999873</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">1.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">1.000</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.02755427</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">-1.9995190</span></p></td><td class="cl-d7f70f1b"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.005898555</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d7f70f24"><p class="cl-d7f70858"><span class="cl-d7f6238e">7</span></p></td><td class="cl-d7f70f24"><p class="cl-d7f70858"><span class="cl-d7f6238e">7,185</span></p></td><td class="cl-d7f70f24"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.0061384830</span></p></td><td class="cl-d7f70f24"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.4135539</span></p></td><td class="cl-d7f70f24"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.038</span></p></td><td class="cl-d7f70f24"><p class="cl-d7f70858"><span class="cl-d7f6238e">-1.188</span></p></td><td class="cl-d7f70f24"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.831</span></p></td><td class="cl-d7f70f24"><p class="cl-d7f70858"><span class="cl-d7f6238e">2.019</span></p></td><td class="cl-d7f70f24"><p class="cl-d7f70858"><span class="cl-d7f6238e">-0.26812150</span></p></td><td class="cl-d7f70f24"><p class="cl-d7f70858"><span class="cl-d7f6238e">-0.4797392</span></p></td><td class="cl-d7f70f24"><p class="cl-d7f70858"><span class="cl-d7f6238e">0.004878864</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-50e8b496{}.cl-50dd269e{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-50e20b46{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-50e223c4{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-50e223ce{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-50e223cf{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-50e8b496"><thead><tr style="overflow-wrap:break-word;"><th class="cl-50e223c4"><p class="cl-50e20b46"><span class="cl-50dd269e">vars</span></p></th><th class="cl-50e223c4"><p class="cl-50e20b46"><span class="cl-50dd269e">n</span></p></th><th class="cl-50e223c4"><p class="cl-50e20b46"><span class="cl-50dd269e">mean</span></p></th><th class="cl-50e223c4"><p class="cl-50e20b46"><span class="cl-50dd269e">sd</span></p></th><th class="cl-50e223c4"><p class="cl-50e20b46"><span class="cl-50dd269e">min</span></p></th><th class="cl-50e223c4"><p class="cl-50e20b46"><span class="cl-50dd269e">max</span></p></th><th class="cl-50e223c4"><p class="cl-50e20b46"><span class="cl-50dd269e">range</span></p></th><th class="cl-50e223c4"><p class="cl-50e20b46"><span class="cl-50dd269e">se</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">1</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">7,185.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.27</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.45</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">1.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">1.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.01</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">2</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">7,185.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.53</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.50</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">1.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">1.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.01</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">3</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">7,185.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.78</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">-3.76</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">2.69</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">6.45</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.01</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">4</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">7,185.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">12.75</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">6.88</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">-2.83</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">24.99</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">27.82</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.08</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">5</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">7,185.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">1,056.86</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">604.17</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">100.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">2,713.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">2,613.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">7.13</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">6</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">7,185.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.49</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.50</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">1.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">1.00</span></p></td><td class="cl-50e223ce"><p class="cl-50e20b46"><span class="cl-50dd269e">0.01</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e223cf"><p class="cl-50e20b46"><span class="cl-50dd269e">7</span></p></td><td class="cl-50e223cf"><p class="cl-50e20b46"><span class="cl-50dd269e">7,185.00</span></p></td><td class="cl-50e223cf"><p class="cl-50e20b46"><span class="cl-50dd269e">0.01</span></p></td><td class="cl-50e223cf"><p class="cl-50e20b46"><span class="cl-50dd269e">0.41</span></p></td><td class="cl-50e223cf"><p class="cl-50e20b46"><span class="cl-50dd269e">-1.19</span></p></td><td class="cl-50e223cf"><p class="cl-50e20b46"><span class="cl-50dd269e">0.83</span></p></td><td class="cl-50e223cf"><p class="cl-50e20b46"><span class="cl-50dd269e">2.02</span></p></td><td class="cl-50e223cf"><p class="cl-50e20b46"><span class="cl-50dd269e">0.00</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </figure>
@@ -1003,20 +1300,44 @@ Table&nbsp;2: Descriptive statistics with the psych package
 </section>
 <section id="exercise" class="level2">
 <h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
-<p>Style the table according to your ideas/demands.</p>
+<div class="callout callout-style-simple callout-caution">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Style the table according to your ideas/demands and export it to Word.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="descr-ref" class="level2">
 <h2 class="anchored" data-anchor-id="descr-ref">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-R-sn" class="csl-entry" role="listitem">
+Azzalini, A. (2023). <em>Sn: The skew-normal and related distributions such as the skew-t and the SUN</em>. <a href="http://azzalini.stat.unipd.it/SN/">http://azzalini.stat.unipd.it/SN/</a>
+</div>
 <div id="ref-eid2013" class="csl-entry" role="listitem">
 Eid, M., Gollwitzer, M., &amp; Schmitt, M. (2013). <em>Statistik und Forschungsmethoden: Lehrbuch ; mit Online-Materialien</em> (3., korrigierte Auflage). Beltz.
 </div>
+<div id="ref-enders2023" class="csl-entry" role="listitem">
+Enders, C. K. (2023). Missing data: <span>An</span> update on the state of the art. <em>Psychological Methods</em>. <a href="https://doi.org/10.1037/met0000563">https://doi.org/10.1037/met0000563</a>
+</div>
 <div id="ref-R-flextable" class="csl-entry" role="listitem">
-Gohel, D., &amp; Skintzos, P. (2023). <em>Flextable: Functions for tabular reporting</em>. <a href="https://ardata-fr.github.io/flextable-book/">https://ardata-fr.github.io/flextable-book/</a>
+Gohel, D., &amp; Skintzos, P. (2024). <em>Flextable: Functions for tabular reporting</em>. <a href="https://ardata-fr.github.io/flextable-book/">https://ardata-fr.github.io/flextable-book/</a>
+</div>
+<div id="ref-R-merTools" class="csl-entry" role="listitem">
+Knowles, J. E., &amp; Frederick, C. (2023). <em>merTools: Tools for analyzing mixed effect regression models</em>. <a href="https://CRAN.R-project.org/package=merTools">https://CRAN.R-project.org/package=merTools</a>
 </div>
 <div id="ref-R-psych" class="csl-entry" role="listitem">
-Revelle, W. (2023). <em>Psych: Procedures for psychological, psychometric, and personality research</em>. <a href="https://personality-project.org/r/psych/
+Revelle, W. (2024). <em>Psych: Procedures for psychological, psychometric, and personality research</em>. <a href="https://personality-project.org/r/psych/
 https://personality-project.org/r/psych-manual.pdf">https://personality-project.org/r/psych/ https://personality-project.org/r/psych-manual.pdf</a>
+</div>
+<div id="ref-R-lavaan" class="csl-entry" role="listitem">
+Rosseel, Y., Jorgensen, T. D., &amp; De Wilde, L. (2023). <em>Lavaan: Latent variable analysis</em>. <a href="https://lavaan.ugent.be">https://lavaan.ugent.be</a>
+</div>
+<div id="ref-schafer2002" class="csl-entry" role="listitem">
+Schafer, J. L., &amp; Graham, J. W. (2002). Missing data: <span>Our</span> view of the state of the art. <em>Psychological Methods</em>, <em>7</em>(2), 147–177. <a href="https://doi.org/10.1037/1082-989X.7.2.147">https://doi.org/10.1037/1082-989X.7.2.147</a>
 </div>
 <div id="ref-R-ggplot2" class="csl-entry" role="listitem">
 Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., &amp; Dunnington, D. (2023). <em>ggplot2: Create elegant data visualisations using the grammar of graphics</em>. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>

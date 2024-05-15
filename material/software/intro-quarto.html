@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.26">
-
+<meta name="generator" content="quarto-1.5.31">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="dcterms.date" content="2023-04-13">
-
 <title>  – intro-quarto</title>
 <style>
 code{white-space: pre-wrap;}
@@ -34,7 +31,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -77,7 +74,6 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -94,8 +90,7 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -120,10 +115,7 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../../styles.css">
+}</script><link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="">
 <meta property="og:description" content="This part gives a not so short introduction to Quarto. This introduction is based on the https://quarto.org website. Sometimes the topics are introduced a bit shorter, sometimes complementary information is provided. Most sub-sections provide the hyperlink to the respective Quarto sub-website.">
 <meta property="og:site_name" content="Compendium of Sven Rieger">
@@ -131,13 +123,10 @@ div.csl-indent {
 <meta name="twitter:description" content="This part gives a not so short introduction to Quarto. This introduction is based on the https://quarto.org website. Sometimes the topics are introduced a bit shorter, sometimes complementary information is provided. Most sub-sections provide the hyperlink to the respective Quarto sub-website.">
 <meta name="twitter:card" content="summary">
 </head>
-
 <body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title"></span>
@@ -149,7 +138,7 @@ div.csl-indent {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">About me</span></a>
   </li>  
@@ -171,13 +160,11 @@ div.csl-indent {
 <span class="menu-text">Bluesky</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -188,20 +175,16 @@ div.csl-indent {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -215,8 +198,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/software/setup-project-folder.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setup a project folder</span></a>
@@ -235,7 +218,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
@@ -244,8 +227,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/example-data/data-hsb.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">High School and Beyond (HSB)</span></a>
@@ -258,7 +241,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
@@ -267,8 +250,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/data-proc/data-proc-func-loops.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions and Loops</span></a>
@@ -281,7 +264,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
@@ -290,15 +273,15 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/basic-calculations/descriptive-statistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Descriptive statistics</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
@@ -307,15 +290,15 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/mlm/intro-mlm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Multilevel Modeling</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
@@ -324,58 +307,60 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../material/measurement-models/cfa.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Confirmatory Factor Analyses</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a-not-so-short-introduction-to-quarto" id="toc-a-not-so-short-introduction-to-quarto" class="nav-link active" data-scroll-target="#a-not-so-short-introduction-to-quarto">A not so short introduction to Quarto</a>
+<li>
+<a href="#a-not-so-short-introduction-to-quarto" id="toc-a-not-so-short-introduction-to-quarto" class="nav-link active" data-scroll-target="#a-not-so-short-introduction-to-quarto">A not so short introduction to Quarto</a>
   <ul class="collapse">
-  <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link" data-scroll-target="#what-is-quarto">What is Quarto?</a></li>
+<li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link" data-scroll-target="#what-is-quarto">What is Quarto?</a></li>
   <li><a href="#how-to-work-with-quarto" id="toc-how-to-work-with-quarto" class="nav-link" data-scroll-target="#how-to-work-with-quarto">How to work with Quarto?</a></li>
-  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header">The YAML header</a>
+  <li>
+<a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header">The YAML header</a>
   <ul class="collapse">
-  <li><a href="#overview-of-yaml-syntax" id="toc-overview-of-yaml-syntax" class="nav-link" data-scroll-target="#overview-of-yaml-syntax">Overview of YAML syntax</a></li>
+<li><a href="#overview-of-yaml-syntax" id="toc-overview-of-yaml-syntax" class="nav-link" data-scroll-target="#overview-of-yaml-syntax">Overview of YAML syntax</a></li>
   <li><a href="#citing" id="toc-citing" class="nav-link" data-scroll-target="#citing">Citing</a></li>
   <li><a href="#executionoutput-options" id="toc-executionoutput-options" class="nav-link" data-scroll-target="#executionoutput-options">Execution/Output options</a></li>
-  </ul></li>
-  <li><a href="#quarto-body" id="toc-quarto-body" class="nav-link" data-scroll-target="#quarto-body">The body</a>
+  </ul>
+</li>
+  <li>
+<a href="#quarto-body" id="toc-quarto-body" class="nav-link" data-scroll-target="#quarto-body">The body</a>
   <ul class="collapse">
-  <li><a href="#md-lang" id="toc-md-lang" class="nav-link" data-scroll-target="#md-lang">Markdown language</a></li>
+<li><a href="#md-lang" id="toc-md-lang" class="nav-link" data-scroll-target="#md-lang">Markdown language</a></li>
   <li><a href="#cross-referencing" id="toc-cross-referencing" class="nav-link" data-scroll-target="#cross-referencing">Cross-referencing</a></li>
   <li><a href="#include-images" id="toc-include-images" class="nav-link" data-scroll-target="#include-images">Images</a></li>
   <li><a href="#cite-syn" id="toc-cite-syn" class="nav-link" data-scroll-target="#cite-syn">Citation syntax</a></li>
   <li><a href="#there-is-a-lot-more" id="toc-there-is-a-lot-more" class="nav-link" data-scroll-target="#there-is-a-lot-more">There is a lot more!</a></li>
-  </ul></li>
-  <li><a href="#computations" id="toc-computations" class="nav-link" data-scroll-target="#computations">Computations</a>
+  </ul>
+</li>
+  <li>
+<a href="#computations" id="toc-computations" class="nav-link" data-scroll-target="#computations">Computations</a>
   <ul class="collapse">
-  <li><a href="#comp-codeblock" id="toc-comp-codeblock" class="nav-link" data-scroll-target="#comp-codeblock">R code blocks (or chunks)</a></li>
+<li><a href="#comp-codeblock" id="toc-comp-codeblock" class="nav-link" data-scroll-target="#comp-codeblock">R code blocks (or chunks)</a></li>
   <li><a href="#comp-chunk-opt" id="toc-comp-chunk-opt" class="nav-link" data-scroll-target="#comp-chunk-opt">Chunk options</a></li>
   <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering">Rendering</a></li>
-  </ul></li>
-  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/software/intro-quarto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/software/intro-quarto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/software/setup-project-folder.html">Software</a></li><li class="breadcrumb-item"><a href="../../material/software/intro-quarto.html">A not so short introduction to Quarto</a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/software/setup-project-folder.html">Software</a></li><li class="breadcrumb-item"><a href="../../material/software/intro-quarto.html">A not so short introduction to Quarto</a></li></ol></nav><div class="quarto-title">
 </div>
 
 
@@ -401,11 +386,7 @@ div.csl-indent {
 </div>
 
 
-</header>
-
-
-<section id="a-not-so-short-introduction-to-quarto" class="level1">
-<h1>A not so short introduction to Quarto</h1>
+</header><section id="a-not-so-short-introduction-to-quarto" class="level1"><h1>A not so short introduction to Quarto</h1>
 <div class="callout callout-style-default callout-tip callout-titled" title="Tip for RMarkdown user">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -422,11 +403,9 @@ Tip for RMarkdown user
 </div>
 </div>
 </div>
-<section id="what-is-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h2>
+<section id="what-is-quarto" class="level2"><h2 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/quarto.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<figure class="figure"><p><img src="../images/quarto.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p>But, what is <a href="https://pandoc.org/">Pandoc</a>? <code>Pandoc</code> is a universal document converter. It converts files from one markup format into another (e.g., <code>markdown</code> → <code>HTML</code>).</p>
@@ -438,14 +417,14 @@ Tip for RMarkdown user
 <li><p>Markdown</p></li>
 </ul>
 <p>The focus of this workshop is on <strong>HTML</strong> (and <strong>PDF</strong>) documents. For an overview about all formats see <a href="https://quarto.org/docs/output-formats/all-formats.html" target="_blank">here</a>.</p>
-</section>
-<section id="how-to-work-with-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-work-with-quarto">How to work with Quarto?</h2>
+</section><section id="how-to-work-with-quarto" class="level2"><h2 class="anchored" data-anchor-id="how-to-work-with-quarto">How to work with Quarto?</h2>
 <ul>
 <li>It is basically the same<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> as working in regular a R-script.
 <ul>
-<li>Open a new file: <code>File &gt; New File &gt; Quarto Document...</code></li>
-</ul></li>
+<li>Open a new file: <code>File &gt; New File &gt; Quarto Document...</code>
+</li>
+</ul>
+</li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -473,21 +452,20 @@ Exercise: Create your first Quarto document!
 <ul>
 <li>A quarto document roughly consists of two parts:
 <ul>
-<li>The <a href="#yaml-header">YAML header</a></li>
-<li>The <a href="#quarto-body">Body</a></li>
-</ul></li>
-<li>The website <a href="https://quarto.org" target="_blank">quarto.org</a> is a great resource to learn it (e.g., follow the <a href="https://quarto.org/docs/guide/" target="_blank">guide</a>). It is a <em>daily</em> companion and covers the topics in much greater detail than this page.</li>
+<li>The <a href="#yaml-header">YAML header</a>
+</li>
+<li>The <a href="#quarto-body">Body</a>
+</li>
 </ul>
-</section>
-<section id="yaml-header" class="level2">
-<h2 class="anchored" data-anchor-id="yaml-header">The YAML header</h2>
+</li>
+<li>The website <a href="https://quarto.org" target="_blank">quarto.org</a> is a great resource to learn it (e.g., follow the <a href="https://quarto.org/docs/guide/" target="_blank">guide</a>). It is a <em>daily</em> companion and covers the topics in much greater detail than this page.</li>
+</ul></section><section id="yaml-header" class="level2"><h2 class="anchored" data-anchor-id="yaml-header">The YAML header</h2>
 <p>The <code>YAML</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> header is enclosed by three dashes (<code>---</code>):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"my-first-quarto-document"</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="overview-of-yaml-syntax" class="level3">
-<h3 class="anchored" data-anchor-id="overview-of-yaml-syntax">Overview of YAML syntax</h3>
+<section id="overview-of-yaml-syntax" class="level3"><h3 class="anchored" data-anchor-id="overview-of-yaml-syntax">Overview of YAML syntax</h3>
 <p>The basic syntax of <code>YAML</code> uses so-called key-value pairs in the format <code>key: value</code>. This is extremely powerful, because you can generate great documents like this <code>Quarto book</code> without knowing much about <code>HTML</code>, <code>LATEX</code> or programming in general.</p>
 <p>Some useful key-value pairs:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"my subtitle"</span></span>
@@ -516,15 +494,14 @@ Exercise: Identify useful key-value pairs
 <ul>
 <li><a href="https://quarto.org/docs/output-formats/html-basics.html" target="_blank">HTML</a></li>
 <li><a href="https://quarto.org/docs/output-formats/pdf-basics.html" target="_blank">PDF</a></li>
-</ul></li>
+</ul>
+</li>
 <li>Add them to your YAML header.</li>
 </ol>
 </div>
 </div>
 </div>
-</section>
-<section id="citing" class="level3">
-<h3 class="anchored" data-anchor-id="citing">Citing</h3>
+</section><section id="citing" class="level3"><h3 class="anchored" data-anchor-id="citing">Citing</h3>
 <p>With <code>Quarto</code> it is possible to automatically generate citations and bibliographies in many different ways.</p>
 <p>The <code>key: value</code> pair to include <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">citations</a> in <code>Quarto</code> documents is:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> r-refs.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -567,7 +544,7 @@ Exercise: Create a .bib file for the R references
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Check the path with the <code>base::getwd</code> function (should be the same folder as the <code>Quarto</code> document, otherwise you have to provide the path in the <code>YAML</code> <code>bibliography</code> argument).</li>
+<li>Check the path with the <code><a href="https://rdrr.io/r/base/getwd.html">base::getwd</a></code> function (should be the same folder as the <code>Quarto</code> document, otherwise you have to provide the path in the <code>YAML</code> <code>bibliography</code> argument).</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -596,9 +573,7 @@ Exercise: Create a .bib file for the R references
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> apa.csl</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The <code>apa.csl</code> file can be found on <a href="https://github.com/citation-style-language/styles" target="_blank">github</a>.</p>
 <p>The citation syntax (How to cite the references in the text?) is briefly explained in the <a href="#quarto-body">The Body</a> subsection <a href="#cite-syn">Citation syntax</a>.</p>
-</section>
-<section id="executionoutput-options" class="level3">
-<h3 class="anchored" data-anchor-id="executionoutput-options">Execution/Output options</h3>
+</section><section id="executionoutput-options" class="level3"><h3 class="anchored" data-anchor-id="executionoutput-options">Execution/Output options</h3>
 <p>There are many different options to customize the output of the (executed code).The options can be specified:</p>
 <ul>
 <li>globally (see in the following)</li>
@@ -610,10 +585,7 @@ Exercise: Create a .bib file for the R references
 <span id="cb9-3"><a href="#cb9-3"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This means that no code and no warnings are shown, except you state it otherwise in a specific code block.</p>
 <p>For more (chunk) options see <a href="https://quarto.org/docs/computations/execution-options.html" target="_blank">https://quarto.org/docs/computations/execution-options.html</a>.</p>
-</section>
-</section>
-<section id="quarto-body" class="level2">
-<h2 class="anchored" data-anchor-id="quarto-body">The body</h2>
+</section></section><section id="quarto-body" class="level2"><h2 class="anchored" data-anchor-id="quarto-body">The body</h2>
 <p>As explained in the section <a href="#what-is-quarto">What is Quarto?</a>:</p>
 <blockquote class="blockquote">
 <p>Quarto is based on Pandoc and uses its variation of markdown as its underlying document syntax (see <a href="https://quarto.org/docs/authoring/markdown-basics.html" target="_blank">https://quarto.org</a>)</p>
@@ -640,30 +612,29 @@ Exercise: Work through the <a href="#md-lang">Markdown language</a> section and 
 </div>
 </div>
 </div>
-<section id="md-lang" class="level3">
-<h3 class="anchored">Markdown language</h3>
+<section id="md-lang" class="level3"><h3 class="anchored">Markdown language</h3>
 <p>There are plenty of different guides to get a quick overview about the language (see e.g., <a href="https://www.markdownguide.org/basic-syntax/" target="_blank">markdownguide</a>, or <a href="https://quarto.org/docs/authoring/markdown-basics.html" target="_blank">Quarto-website</a>). The following code snippets are copied and sometimes slightly adjusted from <a href="https://quarto.org/docs/authoring/markdown-basics.html" target="_blank">https://quarto.org</a>.</p>
-<section id="md-txt-format" class="level4">
-<h4 class="anchored" data-anchor-id="md-txt-format">Text formatting</h4>
+<section id="md-txt-format" class="level4"><h4 class="anchored" data-anchor-id="md-txt-format">Text formatting</h4>
 <table class="table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 44%">
+<col style="width: 48%">
+<col style="width: 43%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Markdown Syntax</th>
 <th>Output</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td><pre><code>*italics* and **bold**</code></pre></td>
-<td><em>italics</em> and <strong>bold</strong></td>
+<td>
+<em>italics</em> and <strong>bold</strong>
+</td>
 </tr>
 <tr class="even">
 <td><pre><code>superscript^2^ / subscript~2~</code></pre></td>
-<td>superscript<sup>2</sup> / subscript<sub>2</sub></td>
+<td>superscript<sup>2</sup> / subscript<sub>2</sub>
+</td>
 </tr>
 <tr class="odd">
 <td><pre><code>~~strikethrough~~</code></pre></td>
@@ -674,22 +645,17 @@ Exercise: Work through the <a href="#md-lang">Markdown language</a> section and 
 <td><code>verbatim code</code></td>
 </tr>
 </tbody>
-</table>
-</section>
-<section id="md-head" class="level4">
-<h4 class="anchored">Headings</h4>
+</table></section><section id="md-head" class="level4"><h4 class="anchored">Headings</h4>
 <p>To create headings, add one (or more) <code>#</code> in front of the heading.</p>
 <table class="table">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 66%">
+<col style="width: 29%">
+<col style="width: 65%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Markdown Syntax</th>
 <th>Output</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td><pre><code># Header 1</code></pre></td>
@@ -713,20 +679,16 @@ Exercise: Work through the <a href="#md-lang">Markdown language</a> section and 
 }
 </style>
 <p>This goes up to level 6 (i.e., <code>######</code>) which probably is not recommended to use though.</p>
-</section>
-<section id="md-lists" class="level4">
-<h4 class="anchored" data-anchor-id="md-lists">Lists</h4>
+</section><section id="md-lists" class="level4"><h4 class="anchored" data-anchor-id="md-lists">Lists</h4>
 <table class="table">
 <colgroup>
-<col style="width: 52%">
-<col style="width: 47%">
+<col style="width: 51%">
+<col style="width: 45%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Markdown Syntax</th>
 <th>Output</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td><pre><code>* unordered list
@@ -734,14 +696,18 @@ Exercise: Work through the <a href="#md-lang">Markdown language</a> section and 
     + sub-item 2
         - sub-sub-item 1</code></pre></td>
 <td><ul>
-<li><p>unordered list</p>
+<li>
+<p>unordered list</p>
 <ul>
 <li><p>sub-item 1</p></li>
-<li><p>sub-item 2</p>
+<li>
+<p>sub-item 2</p>
 <ul>
 <li>sub-sub-item 1</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -751,30 +717,29 @@ Exercise: Work through the <a href="#md-lang">Markdown language</a> section and 
          A.  sub-sub-item 1</code></pre></td>
 <td><ol type="1">
 <li><p>ordered list</p></li>
-<li><p>item 2</p>
+<li>
+<p>item 2</p>
 <ol type="i">
-<li><p>sub-item 1</p>
+<li>
+<p>sub-item 1</p>
 <ol type="A">
 <li>sub-sub-item 1</li>
-</ol></li>
-</ol></li>
+</ol>
+</li>
+</ol>
+</li>
 </ol></td>
 </tr>
 </tbody>
 </table>
 <p>More example can be found on <a href="https://quarto.org/docs/authoring/markdown-basics.html#lists" target="_blank">https://quarto.org/docs/authoring/markdown-basics.html#lists</a>.</p>
-</section>
-</section>
-<section id="cross-referencing" class="level3">
-<h3 class="anchored" data-anchor-id="cross-referencing">Cross-referencing</h3>
+</section></section><section id="cross-referencing" class="level3"><h3 class="anchored" data-anchor-id="cross-referencing">Cross-referencing</h3>
 <p>To make a figure, table, equation, …, or section/heading referenceable, it is necessary to provide unique identifier. Identifiers <strong>must</strong> start with their type (e.g., <code>#fig-</code>, <code>#tbl-</code>, <code>#eq-</code>), except for headers (see in the following example):</p>
-<p>When we want to cross-reference the <strong>Images</strong> section, we have to provide unique identifier that is enclosed by braces <code>{}</code> (here: <code>#include-images</code>) after the heading:</p>
+<p>When we want to cross-reference the <strong>Images</strong> section, we have to provide unique identifier that is enclosed by braces <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> (here: <code>#include-images</code>) after the heading:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">## Images {#include-images} </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>An example on how to reference figures is shown in the <a href="#include-images">Images</a> section.</p>
 <p>For more on cross-referencing (e.g., how to make sub-figures) see again <a href="https://quarto.org/docs/authoring/cross-references.html" target="_blank">https://quarto.org/docs/authoring/cross-references.html</a>.</p>
-</section>
-<section id="include-images" class="level3">
-<h3 class="anchored" data-anchor-id="include-images">Images</h3>
+</section><section id="include-images" class="level3"><h3 class="anchored" data-anchor-id="include-images">Images</h3>
 <p>One way to include images is as follows:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1"></a><span class="al">![Here goes the caption](/path-to-file/myImage.png)</span>{#fig-myImage}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The caption <code>[Here goes the caption]</code> and label <code>{#fig-myImage}</code> make this figure referenceable. To reference it, use the following syntax:</p>
@@ -782,14 +747,12 @@ Exercise: Work through the <a href="#md-lang">Markdown language</a> section and 
 <p>It renders to:</p>
 <p>See <a href="#fig-cfa-model" class="quarto-xref">Figure&nbsp;1</a> for a graphical representation.</p>
 <div id="fig-cfa-model" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-cfa-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-cfa-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../../images/cfa.svg" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cfa-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Here goes the caption
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -818,9 +781,7 @@ Tip. There are a few other options to include images…
 </div>
 </div>
 </div>
-</section>
-<section id="cite-syn" class="level3">
-<h3 class="anchored" data-anchor-id="cite-syn">Citation syntax</h3>
+</section><section id="cite-syn" class="level3"><h3 class="anchored" data-anchor-id="cite-syn">Citation syntax</h3>
 <p>Recall a reference in the .bib-file looks like this:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bib number-lines code-with-copy"><code class="sourceCode bibtex"><span id="cb23-1"><a href="#cb23-1"></a><span class="va">@Manual</span>{<span class="ot">R</span>-<span class="ot">base</span>,</span>
 <span id="cb23-2"><a href="#cb23-2"></a>  <span class="dt">title</span> = {R: A Language and Environment for Statistical Computing},</span>
@@ -832,33 +793,41 @@ Tip. There are a few other options to include images…
 <span id="cb23-8"><a href="#cb23-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To cite the <code>R</code> program, use <code>@</code> before the so-called BibLaTex key <code>R-base</code>. Three example follow:</p>
 <ol type="1">
-<li><code>[@R-base]</code> renders as: <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2023</a>)</span></li>
-<li><code>@R-base</code> renders as: <span class="citation" data-cites="R-base">R Core Team (<a href="#ref-R-base" role="doc-biblioref">2023</a>)</span></li>
-<li><code>[-@R-base]</code> renders as: <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">2023</a>)</span></li>
+<li>
+<code>[@R-base]</code> renders as: <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2023</a>)</span>
+</li>
+<li>
+<code>@R-base</code> renders as: <span class="citation" data-cites="R-base">R Core Team (<a href="#ref-R-base" role="doc-biblioref">2023</a>)</span>
+</li>
+<li>
+<code>[-@R-base]</code> renders as: <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">2023</a>)</span>
+</li>
 </ol>
 <p>Multiple citations are separated by semicolons:</p>
 <ol start="4" type="1">
-<li><code>[@R-base; @R-knitr]</code> renders as: <span class="citation" data-cites="R-base R-knitr">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2023</a>; <a href="#ref-R-knitr" role="doc-biblioref">Xie, 2023</a>)</span></li>
+<li>
+<code>[@R-base; @R-knitr]</code> renders as: <span class="citation" data-cites="R-base R-knitr">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2023</a>; <a href="#ref-R-knitr" role="doc-biblioref">Xie, 2023</a>)</span>
+</li>
 </ol>
 <p>For more information on the citation syntax see the <a href="https://pandoc.org/MANUAL.html#citations" target="_blank">Pandoc Citations</a> documentation.</p>
-</section>
-<section id="there-is-a-lot-more" class="level3">
-<h3 class="anchored" data-anchor-id="there-is-a-lot-more">There is a lot more!</h3>
+</section><section id="there-is-a-lot-more" class="level3"><h3 class="anchored" data-anchor-id="there-is-a-lot-more">There is a lot more!</h3>
 <ul>
 <li><p>Technical writing (e.g., Equations): Use <code>$</code> delimiters for inline math and <code>$$</code> delimiters for display math (see <a href="https://quarto.org/docs/visual-editor/technical.html" target="_blank">https://quarto.org</a>)</p></li>
-<li><p>Links:</p>
+<li>
+<p>Links:</p>
 <ul>
-<li><code>[This is a link to google.de](www.google.de)</code> which appears as <a href="www.google.de">This is a link to google.de</a></li>
-<li><code>&lt;https://quarto.org&gt;</code> which appears as <a href="https://quarto.org" class="uri">https://quarto.org</a></li>
-</ul></li>
+<li>
+<code>[This is a link to google.de](www.google.de)</code> which appears as <a href="www.google.de">This is a link to google.de</a>
+</li>
+<li>
+<code>&lt;https://quarto.org&gt;</code> which appears as <a href="https://quarto.org" class="uri">https://quarto.org</a>
+</li>
+</ul>
+</li>
 <li><p>Diagrams (e.g., <a href="https://mermaid.js.org/#/" target="_blank">Mermaid</a>,<a href="https://graphviz.org/" target="_blank">Graphviz</a>)</p></li>
 <li><p>Videos</p></li>
 <li><p>…</p></li>
-</ul>
-</section>
-</section>
-<section id="computations" class="level2">
-<h2 class="anchored" data-anchor-id="computations">Computations</h2>
+</ul></section></section><section id="computations" class="level2"><h2 class="anchored" data-anchor-id="computations">Computations</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -872,8 +841,7 @@ Note
 <p>When using <code>R</code>, <code>Quarto</code> uses the <a href="https://yihui.org/knitr/" target="_blank">Knitr</a> engine<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> to execute <code>R</code> code.</p>
 </div>
 </div>
-<section id="comp-codeblock" class="level3">
-<h3 class="anchored" data-anchor-id="comp-codeblock">R code blocks (or chunks)</h3>
+<section id="comp-codeblock" class="level3"><h3 class="anchored" data-anchor-id="comp-codeblock">R code blocks (or chunks)</h3>
 <p>Within a <code>Quarto</code> document source code<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> can be displayed by using <code>```</code> at the start and the end of the code.</p>
 <p>The starting <code>```</code> are followed by braces around the programming language (e.g., <code>```{python}</code>)</p>
 <p><code>R</code> code is included by using braces around the <strong>letter r</strong> (i.e., <code>```{r}</code>; the Windows shortcut is <code>Ctrl+Shift+I</code>)</p>
@@ -894,14 +862,12 @@ Note
 <span id="cb24-13"><a href="#cb24-13"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-example-ggplot" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-example-ggplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-example-ggplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="intro-quarto_files/figure-html/fig-example-ggplot-1.png" class="img-fluid figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-example-ggplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: My first ggplot
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -918,9 +884,8 @@ Exercise: Create your first <code>R</code> code block.
 
 </div>
 </div>
-</section>
-<section id="comp-chunk-opt" class="level3">
-<h3 class="anchored" data-anchor-id="comp-chunk-opt">Chunk options<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></h3>
+</section><section id="comp-chunk-opt" class="level3"><h3 class="anchored" data-anchor-id="comp-chunk-opt">Chunk options<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>
+</h3>
 <p>What are chunk options? Chunk options customize the output of the code blocks. In <code>Quarto</code> it is recommended<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> to include the chunk options as special comments (i.e., <code>|#</code>) at the top of the chunk.</p>
 <p>In the following example, we set <code>output: false</code>…</p>
 <div class="cell">
@@ -935,22 +900,20 @@ Exercise: Create your first <code>R</code> code block.
 <p>The most common chunk options are:</p>
 <table class="table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 51%">
-<col style="width: 29%">
+<col style="width: 22%">
+<col style="width: 48%">
+<col style="width: 26%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Chunk option</th>
 <th>Description</th>
 <th>Value</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td><code>echo</code></td>
 <td>Include the source code in output</td>
-<td><code>true/false/fenced</code></td>
+<td><code>tr ue/false/fenced</code></td>
 </tr>
 <tr class="even">
 <td><code>eval</code></td>
@@ -965,7 +928,9 @@ Exercise: Create your first <code>R</code> code block.
 <tr class="even">
 <td><code>results</code></td>
 <td>Should results be displayed in the output or not (<code>false</code>)? If yes how (<code>markup</code> vs.&nbsp;<code>asis</code>)?</td>
-<td><code>markup/asis/hold/</code> <code>hide/false</code></td>
+<td>
+<code>ma rkup/asis/hold/</code> <code>hide/false</code>
+</td>
 </tr>
 <tr class="odd">
 <td><code>warnings</code></td>
@@ -973,19 +938,18 @@ Exercise: Create your first <code>R</code> code block.
 <td><code>true/false</code></td>
 </tr>
 </tbody>
-</table>
-</section>
-<section id="rendering" class="level3">
-<h3 class="anchored" data-anchor-id="rendering">Rendering</h3>
+</table></section><section id="rendering" class="level3"><h3 class="anchored" data-anchor-id="rendering">Rendering</h3>
 <p>There are a <a href="https://quarto.org/docs/computations/r.html#rendering" target="_blank">couple of ways</a> to render a <code>Quarto</code> document:</p>
 <ol type="1">
 <li><p>Clicking the <strong>Render</strong> Button or using the keyboard shortcut (windows): <code>Ctrl+Shift+K</code><a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p></li>
-<li><p>Using the terminal</p>
+<li>
+<p>Using the terminal</p>
 <ul>
 <li><code>quarto render script.qmd --to html</code></li>
 <li><code>quarto render script.qmd --to pdf</code></li>
 <li>…</li>
-</ul></li>
+</ul>
+</li>
 <li><p>Using the <code>quarto_render</code> function from the <code>quarto</code> <span class="citation" data-cites="R-quarto">(<a href="#ref-R-quarto" role="doc-biblioref"><strong>R-quarto?</strong></a>)</span> package</p></li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -1004,12 +968,7 @@ Important
 
 
 
-</section>
-</section>
-</section>
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+</section></section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-R-base" class="csl-entry" role="listitem">
 R Core Team. (2023). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
 </div>
@@ -1017,7 +976,6 @@ R Core Team. (2023). <em>R: A language and environment for statistical computing
 Xie, Y. (2023). <em>Knitr: A general-purpose package for dynamic report generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
 <ol>
 <li id="fn1"><p>Note: It is also possible to generate, presentations (e.g., powerpoint, beamer), websites, books and even interactive components.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Nevertheless, it (probably) will take some time to get familiar with it<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -1030,9 +988,7 @@ Xie, Y. (2023). <em>Knitr: A general-purpose package for dynamic report generati
 <li id="fn9"><p>see also here: <a href="https://yihui.org/knitr/options/" target="_blank">https://yihui.org/knitr/options/</a><a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn10"><p>The <code>rmarkdown</code> syntax is different (e.g., <code>{r my-label, echo = FALSE}</code>), but it also works in <code>Quarto</code>.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn11"><p>For Mac it is: <code>Cmd+Shift+K</code><a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1453,9 +1409,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../../material/software/intro-r-rstudio.html" class="pagination-link" aria-label="Introduction to R &amp; RStudio">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to R &amp; RStudio</span>
       </a>          
@@ -1467,8 +1421,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>The website is build with <a href="quarto.org">Quarto</a>.</p>
 </div>   
@@ -1480,8 +1433,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
