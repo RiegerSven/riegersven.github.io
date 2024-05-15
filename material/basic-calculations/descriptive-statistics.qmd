@@ -3,7 +3,7 @@ title: Descriptive statistics
 author: "Sven Rieger"
 email: "sven.rieger@uni-tuebingen.de"
 email-obfuscation: javascript
-date: 04/30/24
+date: 05/15/24
 date-format: long
 published-title: "Last updated on"
 abstract: "This material introduces basic descriptive statistics (e.g., mean, standard deviation etc.). It is also available as a [Revealjs presentation](https://quarto.org/docs/presentations/revealjs/)."
@@ -30,6 +30,12 @@ format:
 ---
 
 ::: {.content-hidden when-format="revealjs"}
+
+::: {.callout-warning}
+
+This page is work in progress and under active development.
+
+:::
 
 ## Revealjs Presentation
 
@@ -59,7 +65,7 @@ navigate vertical &#8595;
 
 :::
 
-## Preface: Software I
+## Preface: Used packages
 
 - The following packages are used:
 
@@ -95,8 +101,10 @@ knitr::write_bib(x = descrPkg,
 #| echo: true
 #| results: hide
 lapply(X = descrPkg,
-       FUN = function(x) 
-         if( !x %in% rownames(installed.packages()) ) { install.packages(x) }
+       FUN = function(x) {
+          if( !x %in% rownames(installed.packages()) ) { 
+            install.packages(x) }
+            }
        )
 
 ```
@@ -118,7 +126,7 @@ library(flextable)
 
 :::
 
-## Preface: Software II
+## Preface: Cite the packages
 
 
 Print list of packages and cite them via [Pandoc citation](<https://pandoc.org/MANUAL.html#citations>).
@@ -184,7 +192,7 @@ navigate vertical &#8595;
 ## Overview
 
 :::: {.columns}
-::: {.column width="31%"}
+::: {.column width="49.5%"}
 
 ::: {.fragment}
 
@@ -215,7 +223,10 @@ navigate vertical &#8595;
 ::: 
 
 
-::: {.column width="31%"}
+::: {.column width="1%"}
+:::
+
+::: {.column width="49.5%"}
 
 ::: {.fragment}
 
@@ -236,15 +247,9 @@ navigate vertical &#8595;
 
 :::
 
-:::
-
-
-::: {.column width="1%"}
-:::
-::: {.column width="37%"}
-
 ```{r}
 #| label: norm-dis
+#| eval: false
 #| fig-height: 6
 #| echo: false
 ggplot(data.frame(x = c(-3, 3)), aes(x)) +
@@ -278,13 +283,16 @@ ggplot(data.frame(x = c(-3, 3)), aes(x)) +
 
 ```
 
-::: {.fragment}
-::: {.callout-caution appearance="simple" icon="false" title="Example"}
-Consider the following 2 vectors within the example data set:
+:::
+::::
+
+## Example data set
+
+**Consider the following 2 vectors within the example data set**
 
 ```{r}
 #| label: exDat
-#| code-line-numbers: false
+#| code-line-numbers: true
 #| echo: true
 
 exDat <- data.frame(
@@ -292,18 +300,34 @@ exDat <- data.frame(
   chrVec = c("low", "med", "low", "high", "high")
 )
 ```
-::: 
-:::
-:::
-::::
 
 ## Absolute Frequencies {#abs-freq}
 
 ::: {.callout-note appearance="simple" icon="false"}
-Absolute frequencies refer to the numbers of a particular value or category appearing in a vector (e.g., column of a data set). It may be abbreviated with $n_j$ where $n$ is the number of a specific value/category $j$.
+
+Absolute frequencies refer to the numbers of a particular value or category appearing in a variable. It may be abbreviated with $n_j$ where $n$ is the number of a specific value/category $j$.
+
+::: {.fragment}
+
++----------------+----------------------------+-------------------------------------+
+| Category $j$   | Absolute Frequency ($n_j$) |                                     |
++:===============+:==========================:+:===================================:+
+| low ($j=1$)    | 2                          |                                     |
++----------------+----------------------------+-------------------------------------+
+| med ($j=2$)    | 1                          |                                     |
++----------------+----------------------------+-------------------------------------+
+| high ($j=3$)   | 2                          |                                     |
++----------------+----------------------------+-------------------------------------+
+| $\sum$         | $\sum_{j=1}^3n_j=n=5$      |                                     |
++----------------+----------------------------+-------------------------------------+
+
+: Example Frequency table {tbl-colwidths="[20,40,40]" }
 
 :::
 
+:::
+
+## Absolute Frequencies in R {#abs-freq-r}
 
 ::: {.panel-tabset}
 
@@ -349,9 +373,36 @@ exDat |>
 ## Relative Frequencies {#rel-freq}
 
 ::: {.callout-note appearance="simple" icon="false"}
-Relative frequencies refer to the proportion of a specific value or category relative to the total number of observations. refer to the number of times a particular value or category appears in a vector (e.g., column of a data set). It may be abbreviated with $n_j$ where $n$ is the number of a specific value/category $j$.
+
+Relative frequencies refer to the proportion of a specific value or category relative to the total number of observations ($n$). 
+
+$$
+h_j=\frac{n_j}{n}
+$$
+
+::: {.fragment}
+
++----------------+----------------------------+-------------------------------------+
+| Category $j$   | Absolute Frequency ($n_j$) | Relative Frequency ($h_j$)          |
++:===============+:==========================:+:===================================:+
+| low ($j=1$)    | 2                          |  0.40                               |
++----------------+----------------------------+-------------------------------------+
+| med ($j=2$)    | 1                          |  0.20                               |
++----------------+----------------------------+-------------------------------------+
+| high ($j=3$)   | 2                          |  0.40                               |
++----------------+----------------------------+-------------------------------------+
+| $\sum$         | $\sum_{j=1}^3n_j=n=5$      | $\sum_{j=1}^3h_j=1$                 |
++----------------+----------------------------+-------------------------------------+
+
+: Example Frequency table {tbl-colwidths="[20,40,40]" }
 
 :::
+
+
+:::
+
+
+## Relative Frequencies in R {#rel-freq-r}
 
 
 ::: {.panel-tabset}
@@ -363,8 +414,7 @@ Relative frequencies refer to the proportion of a specific value or category rel
 #| echo: true
 #| output-location: column-fragment
 with(exDat,
-     table(chrVec)/length(table(chrVec))) 
-  
+     table(chrVec)/sum(table(exDat$chrVec))) 
 ```
 
 
@@ -377,8 +427,8 @@ Another useful function (`sprintf()`) to force 2 decimal and add %...
 #| echo: true
 #| output-location: column-fragment
 with(exDat,
-     table(chrVec)/length(table(chrVec))*100) |>
-  (function(x) sprintf("%.2f%%", x))()
+     table(chrVec)/sum(table(chrVec))) |>
+     (function(x) sprintf("%.2f%%", x*100))()
 
 ```
 
@@ -435,7 +485,7 @@ with(exDat,
 
 :::
 
-## Excursus: Missing Data 
+## A brief note on missing data 
 
 In `R` missing values/data are represented by the symbol `NA`. Most of the basic functions cannot deal *appropriately* with missing data.
 
@@ -678,29 +728,36 @@ navigate vertical &#8595;
 
 :::
 
+::: {.content-hidden unless-format="revealjs"}
 
-## Put everything together 0
-
+## Put everything together 0 {auto-animate=true}
 
 
 ::: {.callout-caution appearance="simple" icon="true" title="Exercise"}
 
 Let us calculate several descriptive statistics (e.g., mean, standard deviation, minimum and maximum) for multiple variables. For this exercise, we use a subset of the HSB dataset which is provided in the `merTools` package [@R-merTools] (for some details see [here](../example-data/data-hsb.qmd)):
 
+:::
+
+:::
+
+## Put everything together 0 {auto-animate=true}
+
+::: {.callout-caution appearance="simple" icon="true" title="Exercise"}
+
+Let us calculate several descriptive statistics (e.g., mean, standard deviation, minimum and maximum) for multiple variables. For this exercise, we use a subset of the HSB dataset which is provided in the `merTools` package [@R-merTools] (for some details see [here](../example-data/data-hsb.qmd)):
 
 ```{r}
 #| label: descr-imp-hsb
 #| echo: true
 #| eval: true
 #| code-line-numbers: false
-#| output-location: column
+#| output-location: column-fragment
 dat <- merTools::hsb
 head(dat, 10)
 ```
 
-
 :::
-
 
 ## Put everything together I
 
@@ -740,9 +797,9 @@ exDescr <- apply( # <2>
 7. Return the temporary object and close functions.
 
 ::: aside
-
+::: {.fragment}
 There are also functions such as `colMeans()`, `colSums()`, `rowMeans()` and `rowSums()`.
-
+:::
 :::
 
 ## Put everything together II
@@ -886,8 +943,9 @@ dat |>
 
 ## Exercise 
 
-Style the table according to your ideas/demands.
-
+::: {.callout-caution appearance="simple"}
+Style the table according to your ideas/demands and export it to Word.
+:::
 
 ::: {.content-visible when-format="revealjs"}
 
