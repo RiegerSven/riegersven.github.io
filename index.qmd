@@ -13,7 +13,7 @@ about:
       text: Google Scholar
       href: https://scholar.google.de/citations?user=zIjPay4AAAAJ&hl=de 
     - icon: orcid
-      text: ORCiD
+      text: ORCID
       href: https://orcid.org/0000-0002-0339-0695
     - icon: hat
       text: University
@@ -30,9 +30,9 @@ I am a postdoctoral researcher in educational research at the [University of Tü
 
 My research interests encompass:
 
-- latent variable modeling (focus on longitudinal analyses)
 - causal inference
-- automation of data analyses with `R` and `Quarto`
+- automation of data analyses with {{< fa brands r-project size=xl >}} and `Quarto`
+- latent variable modeling (focus on longitudinal analyses)
 - motivation & personality development 
 
 ## Education

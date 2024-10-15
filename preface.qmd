@@ -1,26 +1,36 @@
 ---
-date: 04/30/24
+date: 10/08/24
 date-format: long
 published-title: "Last updated on"
 ---
 
 
-## About the Compendium
+## About the Material
 
-This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books (references will be given), websites (e.g., <https://stats.stackexchange.com/>), AI tools (e.g., [ChatGPT](<https://chat.openai.com/>), [Blackbox AI](<https://www.blackbox.ai/>)) . Many of the materials are also available as a [Revealjs presentation](https://quarto.org/docs/presentations/revealjs/) that I usually use in teaching.
-
-:::{.callout-warning}
-This page is work in progress and under active development.
-:::
+This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books (references will be given), websites (e.g., <https://stats.stackexchange.com/>), AI tools (e.g., [ChatGPT](<https://chat.openai.com/>), [Blackbox AI](<https://www.blackbox.ai/>)). Many of the materials are also available as a [Revealjs](<https://quarto.org/docs/presentations/revealjs/>) presentation that I usually use in teaching.
 
 ## Used Software
 
-The majority of the provided code is from the statistical software `R` [@R-base]. My most used packages are the following:
+```{r}
+#| label: today
+#| echo: false
+#| results: hide
+
+Sys.setlocale("LC_TIME", "C")
+pkgUpdate <-  as.Date("2024-10-08")
+
+```
+
+The majority of the provided code is from the statistical software {{< fa brands r-project size=xl >}} [@R-base]. Below, I list the packages I use most frequently, along with their respective versions. 
+
+<!-- (last update was on `r format(pkgUpdate, "%B %d, %Y")`):
+-->
 
 ```{r}
 #| label: pkg-list
 #| code-fold: false
 pkgList <- c("base",
+             "devtools",
              "haven",
              "renv",
              "stringr",
@@ -37,29 +47,69 @@ pkgList <- c("base",
              "ggplot2")
 ```
 
-You can install them with the following code: 
+```{r}
+#| label: write-pkgs
+#| echo: false
+#| results: asis
+
+for (i in 1:length(pkgList)) {
+  
+  cat(paste0(i, ". ",
+             pkgList[i],
+             " [", "v", utils::packageVersion(pkgList[i]),", @R-", pkgList[i],
+             "]\n"))
+}
+    
+
+```
+
+
+::: {.callout-tip appearance="simple" title="To install these exact versions of the packages, run the following code." collapse="true"}
+
+1. Install the `remotes` package [@R-remotes].
+
+```{r}
+#| label: install-remotes
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+
+
+install.packages("remotes", dependencies = TRUE)
+```
+
+2. Then run the following code.
 
 ```{r}
 #| label: install-pkg
-#| code-fold: false
+#| code-fold: true
+#| code-summary: "How I generated the code"
 #| eval: true
-#| results: hide 
 
-lapply(pkgList,
-       function(x) 
-        if(!x %in% rownames(installed.packages())) {
-            install.packages(x)
-            }
-        )
+installedPkgs <- as.data.frame(installed.packages()[, c("Package", "Version")]) |>
+                    subset(subset = Package %in% pkgList[-1]) # delete base
+
+apply(installedPkgs, 1, function(pkg) {
+  paste0("remotes::install_version('",
+         pkg[1], "', version = '",
+         pkg[2], "', repos = getOption(\"repos\"))")
+         }) |>
+  cat(sep = "\n\n")
+
 
 ```
+
+:::
+
+
+
 
 
 ```{r}
 #| label: write-most-used-bib
 #| eval: true
 #| echo: false
-knitr::write_bib(x = pkgList,
+knitr::write_bib(x = c(pkgList, "remotes"),
                  file = "bib-files/most-used-r-refs.bib")
 
 

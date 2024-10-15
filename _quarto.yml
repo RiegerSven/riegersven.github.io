@@ -2,18 +2,24 @@ project:
   type: website
   output-dir: _site
 website:
-  title: " "
+  title: "riegersven.github.io"
+  announcement:
+    icon: info-circle
+    dismissable: true
+    content: "This website is work in progress and under active development."
+    type: primary
+    position: below-navbar
   open-graph:
-    site-name: "Compendium of Sven Rieger"
+    site-name: "Personal website of Sven Rieger"
   twitter-card: true
   site-url: https://github.com/RiegerSven/
   repo-url: https://github.com/RiegerSven/riegersven.github.io
   repo-actions: [edit, issue]
   page-navigation: true
   page-footer:
-    left: "The website is build with [Quarto](quarto.org)."
+    left: "The website is build with [Quarto](<www.quarto.org>)."
     center: "Copyright (c) 2023"
-    right: "All material is licensed under the MIT License [(MIT)](https://en.wikipedia.org/wiki/MIT_License)."
+    right: "All material is licensed under the MIT License [(MIT)](<https://en.wikipedia.org/wiki/MIT_License>)."
   search:
     location: navbar
     type: overlay 
@@ -24,7 +30,7 @@ website:
     right:
       - text: "About me"
         file: index.qmd 
-      - text: Compendium
+      - text: Material
         file: preface.qmd
       - text: Publications
         file: publications.qmd
@@ -33,7 +39,7 @@ website:
       - text: Bluesky 
         href: https://bsky.app/profile/svenrieger.bsky.social
   sidebar:
-    - title: "Compendium"
+    - title: "Material"
       style: "floating"
       border: false
       type: dark
@@ -70,7 +76,7 @@ website:
 format:
   html:
     toc: true
-    theme: litera
+    theme: zephyr
     grid:
       sidebar-width: 250px
       body-width: 900px
@@ -101,8 +107,8 @@ fig-dpi: 300
 fig-responsive: true
 
 # links
-link-external-icon: true
-link-external-newwindow: false
+link-external-icon: false
+link-external-newwindow: true
 
 html-math-method: 
   method: mathjax
