@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.31">
+<meta name="generator" content="quarto-1.6.11">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Sven Rieger">
 <meta name="dcterms.date" content="2023-12-01">
-<title>  – One-Way ANOVA with Random Effects</title>
+<title>One-Way ANOVA with Random Effects – riegersven.github.io</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,10 +86,10 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-3d3a3f531f1be4526fdd4068b34a2ee6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-69adac596de0945cacfdcab5d73d8484.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -141,10 +141,10 @@ window.Quarto = {
   typesetMath
 };
 </script><link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="- One-Way ANOVA with Random Effects">
+<meta property="og:title" content="One-Way ANOVA with Random Effects – riegersven.github.io">
 <meta property="og:description" content="This part introduces the One-Way ANOVA with Random Effects (or so-called empty model). The material relies on Chapter 2 of the book Hierarchical Linear Models: Applications and Data Analysis Methods (raudenbush2002?).">
-<meta property="og:site_name" content="Compendium of Sven Rieger">
-<meta name="twitter:title" content="- One-Way ANOVA with Random Effects">
+<meta property="og:site_name" content="Personal website of Sven Rieger">
+<meta name="twitter:title" content="One-Way ANOVA with Random Effects – riegersven.github.io">
 <meta name="twitter:description" content="This part introduces the One-Way ANOVA with Random Effects (or so-called empty model). The material relies on Chapter 2 of the book Hierarchical Linear Models: Applications and Data Analysis Methods (raudenbush2002?).">
 <meta name="twitter:card" content="summary">
 </head>
@@ -154,11 +154,11 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title"></span>
+    <span class="navbar-title">riegersven.github.io</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -169,7 +169,7 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../preface.html"> 
-<span class="menu-text">Compendium</span></a>
+<span class="menu-text">Material</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../publications.html"> 
@@ -189,7 +189,13 @@ window.Quarto = {
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav><div id="quarto-announcement" data-announcement-id="cf5712b0d6d4d53aa37f95e0f08970ba" class="alert alert-primary hidden">
+<i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p>This website is work in progress and under active development.</p>
+</div>
+<i class="bi bi-x-lg quarto-announcement-action"></i>
+</div>
+</header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -299,9 +305,9 @@ window.Quarto = {
 <span id="cb4-14"><a href="#cb4-14"></a><span class="in">}</span></span>
 <span id="cb4-15"><a href="#cb4-15"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><ol type="1">
-<li>merTools <span class="citation" data-cites="R-merTools">(v0.6.1, <a href="#ref-R-merTools" role="doc-biblioref">Knowles &amp; Frederick, 2023</a>)</span>
+<li>merTools <span class="citation" data-cites="R-merTools">(v0.6.1, <a href="#ref-R-merTools" role="doc-biblioref">Knowles &amp; Frederick, 2024</a>)</span>
 </li>
-<li>lme4 <span class="citation" data-cites="R-lme4">(v1.1.34, <a href="#ref-R-lme4" role="doc-biblioref">Bates et al., 2023</a>)</span>
+<li>lme4 <span class="citation" data-cites="R-lme4">(v1.1.34, <a href="#ref-R-lme4" role="doc-biblioref">Bates et al., 2024</a>)</span>
 </li>
 <li>flextable <span class="citation" data-cites="R-flextable">(v0.9.2, <a href="#ref-R-flextable" role="doc-biblioref">Gohel &amp; Skintzos, 2024</a>)</span>
 </li>
@@ -310,7 +316,7 @@ window.Quarto = {
 </ol>
 </div>
 </section><section id="preface-dataset" class="level2"><h2 class="anchored" data-anchor-id="preface-dataset">Preface: Dataset</h2>
-<p>Recall, we use the HSB dataset from the <code>merTools</code> package <span class="citation" data-cites="R-merTools">(<a href="#ref-R-merTools" role="doc-biblioref">Knowles &amp; Frederick, 2023</a>)</span>. For a more detailed description see :</p>
+<p>Recall, we use the HSB dataset from the <code>merTools</code> package <span class="citation" data-cites="R-merTools">(<a href="#ref-R-merTools" role="doc-biblioref">Knowles &amp; Frederick, 2024</a>)</span>. For a more detailed description see :</p>
 <div class="cell" data-output-location="column-fragment">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">merTools</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/merTools/man/hsb.html">hsb</a></span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dat</span>, <span class="fl">6</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -417,7 +423,7 @@ Fixed effects:
 <span id="cb9-3"><a href="#cb9-3"></a>        (<span class="dv">1</span> <span class="sc">|</span> schid),</span>
 <span id="cb9-4"><a href="#cb9-4"></a>       <span class="at">REML =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">as_flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-ra-anova" class="cell quarto-float anchored" data-output-location="column-fragment">
+<div id="tbl-ra-anova" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-output-location="column-fragment">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ra-anova-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Random ANOVA Table generated by the flextable package <span class="citation" data-cites="R-flextable">(<a href="#ref-R-flextable" role="doc-biblioref">Gohel &amp; Skintzos, 2024</a>)</span>
 </figcaption><div aria-describedby="tbl-ra-anova-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -515,13 +521,13 @@ Table&nbsp;1: Random ANOVA Table generated by the flextable package <span class=
 </section><section id="mlm-ra-ref" class="level2"><h2 class="anchored" data-anchor-id="mlm-ra-ref">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-R-lme4" class="csl-entry" role="listitem">
-Bates, D., Maechler, M., Bolker, B., &amp; Walker, S. (2023). <em>lme4: Linear mixed-effects models using eigen and S4</em>. <a href="https://github.com/lme4/lme4/">https://github.com/lme4/lme4/</a>
+Bates, D., Maechler, M., Bolker, B., &amp; Walker, S. (2024). <em>lme4: Linear mixed-effects models using eigen and S4</em>. <a href="https://github.com/lme4/lme4/">https://github.com/lme4/lme4/</a>
 </div>
 <div id="ref-R-flextable" class="csl-entry" role="listitem">
 Gohel, D., &amp; Skintzos, P. (2024). <em>Flextable: Functions for tabular reporting</em>. <a href="https://ardata-fr.github.io/flextable-book/">https://ardata-fr.github.io/flextable-book/</a>
 </div>
 <div id="ref-R-merTools" class="csl-entry" role="listitem">
-Knowles, J. E., &amp; Frederick, C. (2023). <em>merTools: Tools for analyzing mixed effect regression models</em>. <a href="https://CRAN.R-project.org/package=merTools">https://CRAN.R-project.org/package=merTools</a>
+Knowles, J. E., &amp; Frederick, C. (2024). <em>merTools: Tools for analyzing mixed effect regression models</em>. <a href="https://CRAN.R-project.org/package=merTools">https://CRAN.R-project.org/package=merTools</a>
 </div>
 <div id="ref-R-ggplot2" class="csl-entry" role="listitem">
 Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., &amp; Dunnington, D. (2023). <em>ggplot2: Create elegant data visualisations using the grammar of graphics</em>. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>
@@ -635,8 +641,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
-          // default icon
-          link.classList.add("external");
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -954,7 +963,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>The website is build with <a href="quarto.org">Quarto</a>.</p>
+<p>The website is build with <a href="www.quarto.org">Quarto</a>.</p>
 </div>   
     <div class="nav-footer-center">
 <p>Copyright (c) 2023</p>
