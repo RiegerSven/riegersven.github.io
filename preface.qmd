@@ -102,9 +102,6 @@ apply(installedPkgs, 1, function(pkg) {
 :::
 
 
-
-
-
 ```{r}
 #| label: write-most-used-bib
 #| eval: true
