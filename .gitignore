@@ -1,4 +1,5 @@
 /.quarto/
+/material/software/.quarto/
 /docs/
 /_site/
 /_freeze/
