@@ -26,7 +26,7 @@ website:
   reader-mode: false
   navbar:
     collapse: true
-    pinned: true
+    pinned: false
     right:
       - text: "About me"
         file: index.qmd 
@@ -52,17 +52,18 @@ website:
           href: preface.qmd
         - section: "Software"
           contents: 
-            - material/software/setup-project-folder.qmd
             - material/software/intro-r-rstudio.qmd
             - material/software/intro-quarto.qmd
+            - material/software/setup-project.qmd
         - section: "Example Data"
           contents:
             - material/example-data/data-hsb.qmd
             - material/example-data/data-latent-state.qmd
         - section: "Data (Pre-)Processing"
-          contents:
-            - material/data-proc/data-proc-func-loops.qmd
+          contents:            
             - material/data-proc/data-proc-nam-lists.qmd
+            - material/data-proc/data-proc-functions.qmd
+            - material/data-proc/data-proc-loops.qmd
         - section: "Basic Calculations"
           contents: 
             - material/basic-calculations/descriptive-statistics.qmd

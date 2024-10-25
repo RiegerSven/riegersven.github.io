@@ -1,5 +1,5 @@
 ---
-date: 10/08/24
+date: 10/21/24
 date-format: long
 published-title: "Last updated on"
 ---
@@ -7,9 +7,11 @@ published-title: "Last updated on"
 
 ## About the Material
 
-This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books (references will be given), websites (e.g., <https://stats.stackexchange.com/>), AI tools (e.g., [ChatGPT](<https://chat.openai.com/>), [Blackbox AI](<https://www.blackbox.ai/>)). Many of the materials are also available as a [Revealjs](<https://quarto.org/docs/presentations/revealjs/>) presentation that I usually use in teaching.
+This site serves as a compendium of teaching and coding material that I developed along the last couple of years. The material is based on text books (references will be given), websites (e.g., <https://stats.stackexchange.com/>), AI tools (e.g., [ChatGPT](<https://chat.openai.com/>), [Blackbox AI](<https://www.blackbox.ai/>)). Many of the materials are also available as a [Revealjs](<https://quarto.org/docs/presentations/revealjs/>) presentation that I usually use in teaching.
 
 ## Used Software
+
+### Package Overview {#pkg-overview}
 
 ```{r}
 #| label: today
@@ -30,6 +32,10 @@ The majority of the provided code is from the statistical software {{< fa brands
 #| label: pkg-list
 #| code-fold: false
 pkgList <- c("base",
+             "pak",
+             "quarto",
+             "rmarkdown",
+             "knitr",
              "devtools",
              "haven",
              "renv",
@@ -41,7 +47,6 @@ pkgList <- c("base",
              "merTools",
              "mice",
              "lavaan",
-             "knitr",
              "kableExtra",
              "flextable",
              "ggplot2")
@@ -63,25 +68,29 @@ for (i in 1:length(pkgList)) {
 
 ```
 
+### Installation
 
-::: {.callout-tip appearance="simple" title="To install these exact versions of the packages, run the following code." collapse="true"}
-
-1. Install the `remotes` package [@R-remotes].
+Before installing the packages, install the `pak` package [@R-pak]. The `pak` package is desinged to overcome some limitations of the `install.packages()` function and makes package management in `R` more reliable.
 
 ```{r}
-#| label: install-remotes
+#| label: install-pak
 #| eval: false
 #| echo: true
 #| code-line-numbers: false
 
 
-install.packages("remotes", dependencies = TRUE)
+install.packages("pak", dependencies = TRUE)
 ```
 
-2. Then run the following code.
+
+To install the packages, run one of the following code snippets.
+
+::: {.panel-tabset}
+
+#### Exact versions
 
 ```{r}
-#| label: install-pkg
+#| label: generate-pkg-current
 #| code-fold: true
 #| code-summary: "How I generated the code"
 #| eval: true
@@ -89,28 +98,44 @@ install.packages("remotes", dependencies = TRUE)
 installedPkgs <- as.data.frame(installed.packages()[, c("Package", "Version")]) |>
                     subset(subset = Package %in% pkgList[-1]) # delete base
 
-apply(installedPkgs, 1, function(pkg) {
-  paste0("remotes::install_version('",
-         pkg[1], "', version = '",
-         pkg[2], "', repos = getOption(\"repos\"))")
-         }) |>
-  cat(sep = "\n\n")
-
+paste0("myPks <- c(",
+    paste0("'", with(installedPkgs, paste0(Package, "@", Version)), "'",
+           collapse = ", "),
+    ")") |>
+      stringr::str_wrap(width = 80) |>
+      cat()
 
 ```
 
-:::
+```{r}
+#| label: install-pkg-current
+#| eval: false
+#| code-line-numbers: false
+pak::pkg_install(pkg = myPks, upgrade = FALSE)
+```
 
+#### Most updated versions
+
+```{r}
+#| label: install-pkg-updated
+#| eval: false
+#| code-line-numbers: false
+pak::pkg_install(pkg = pkgList, upgrade = TRUE)
+```
+
+:::
 
 ```{r}
 #| label: write-most-used-bib
 #| eval: true
 #| echo: false
-knitr::write_bib(x = c(pkgList, "remotes"),
+knitr::write_bib(x = c(pkgList, "remotes", "tidyverse", "learnr", "magrittr", "jsonlite"),
                  file = "bib-files/most-used-r-refs.bib")
 
 
 ```
+
+
 
 ## Disclaimer
 

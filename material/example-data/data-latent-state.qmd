@@ -61,7 +61,7 @@ eta3 ~~ c(1,1.5)*eta3 # <7>
 #| code-line-numbers: 2|3|4|5|6|
 #| output-location: column
 
-# <0>
+# #install.packages("lavaan")
 wideLSdat <- lavaan::simulateData( # <1>
     model = popLsModel, # <2>
     meanstructure = TRUE, # <3>
@@ -81,6 +81,7 @@ wideLSdat$group <- wideLSdat$group-1
 ```{r}
 #| label: save-wideLSdat
 #| eval: false
+#| code-line-numbers: false
 
-saveRDS(wideLSdat, "material/example-data/wideLSdat.RDS")
+saveRDS(wideLSdat, "path-to-data-folder/wideLSdat.RDS")
 ```

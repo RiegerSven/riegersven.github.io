@@ -1,8 +1,7 @@
 ---
 title: "(Named) Lists & character vectors"
-author: "Sven Rieger"
 published-title: "Last update on"
-date: today
+date: "Cant remember"
 ---
 
 
