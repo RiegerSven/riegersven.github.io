@@ -2,86 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/RiegerSven/publications.html</loc>
-    <lastmod>2023-12-01T08:36:02.340Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/RiegerSven/material/software/setup-project-folder.html</loc>
-    <lastmod>2024-10-15T09:27:17.879Z</lastmod>
+    <loc>https://github.com/RiegerSven/material/software/setup-project.html</loc>
+    <lastmod>2024-10-25T11:23:28.820Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/software/intro-quarto.html</loc>
-    <lastmod>2024-10-15T09:27:21.320Z</lastmod>
+    <lastmod>2024-10-25T07:48:36.767Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/mlm/random-coeff.html</loc>
-    <lastmod>2024-04-29T07:59:40.499Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/mlm/random-coeff-model-reveal.html</loc>
-    <lastmod>2024-04-29T07:59:40.499Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/mlm/intro-mlm.html</loc>
-    <lastmod>2024-04-29T07:59:46.590Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/mlm/intro-mlm-reveal.html</loc>
-    <lastmod>2024-04-29T07:59:46.590Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/example-data/data-latent-state.html</loc>
-    <lastmod>2024-05-02T06:01:40.514Z</lastmod>
+    <lastmod>2024-10-25T09:46:18.703Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/data-proc/data-proc-nam-lists.html</loc>
-    <lastmod>2023-12-01T08:36:02.330Z</lastmod>
+    <lastmod>2024-10-25T09:44:59.303Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/RiegerSven/material/basic-calculations/descriptive-statistics.html</loc>
-    <lastmod>2024-05-15T08:35:06.991Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/RiegerSven/material/basic-calculations/descr-reveal.html</loc>
-    <lastmod>2024-05-15T08:35:06.991Z</lastmod>
+    <loc>https://github.com/RiegerSven/material/data-proc/data-proc-functions.html</loc>
+    <lastmod>2024-10-25T11:40:16.692Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/index.html</loc>
-    <lastmod>2024-10-08T06:47:58.441Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/RiegerSven/material/data-proc/data-proc-func-loops.html</loc>
-    <lastmod>2023-12-01T08:36:02.328Z</lastmod>
+    <loc>https://github.com/RiegerSven/material/basic-calculations/descr-reveal.html</loc>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/basic-calculations/descriptive-statistics.html</loc>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/RiegerSven/material/data-proc/data-proc-loops.html</loc>
+    <lastmod>2024-10-25T11:40:14.050Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/example-data/data-hsb.html</loc>
-    <lastmod>2024-05-02T06:01:40.513Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/measurement-models/cfa-reveal.html</loc>
-    <lastmod>2024-05-02T06:01:40.515Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/measurement-models/cfa.html</loc>
-    <lastmod>2024-05-02T06:01:40.515Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/mlm/random-anova-reveal.html</loc>
-    <lastmod>2024-04-29T07:59:30.988Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/mlm/random-anova.html</loc>
-    <lastmod>2024-04-29T07:59:30.988Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/new-stuff/CACE.html</loc>
-    <lastmod>2024-02-02T09:54:50.304Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/material/software/intro-r-rstudio.html</loc>
-    <lastmod>2024-02-05T09:31:11.962Z</lastmod>
+    <lastmod>2024-10-15T10:09:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/RiegerSven/preface.html</loc>
-    <lastmod>2024-10-15T09:24:52.649Z</lastmod>
+    <lastmod>2024-10-25T08:15:52.207Z</lastmod>
   </url>
 </urlset>

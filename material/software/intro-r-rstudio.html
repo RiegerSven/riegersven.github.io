@@ -74,13 +74,14 @@ div.csl-indent {
 }</style>
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../material/software/intro-quarto.html" rel="next">
-<link href="../../material/software/setup-project-folder.html" rel="prev">
+<link href="../../preface.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -167,7 +168,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/software/setup-project-folder.html">Software</a></li><li class="breadcrumb-item"><a href="../../material/software/intro-r-rstudio.html">Introduction to R &amp; RStudio</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/software/intro-r-rstudio.html">Software</a></li><li class="breadcrumb-item"><a href="../../material/software/intro-r-rstudio.html">Introduction to R &amp; RStudio</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -206,12 +207,6 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../material/software/setup-project-folder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Setup a project folder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../material/software/intro-r-rstudio.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introduction to R &amp; RStudio</span></a>
   </div>
@@ -220,6 +215,12 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="../../material/software/intro-quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A not so short introduction to Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../material/software/setup-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implement a Project-Oriented Workflow</span></a>
   </div>
 </li>
       </ul>
@@ -258,14 +259,20 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-func-loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Functions and Loops</span></a>
+  <a href="../../material/data-proc/data-proc-nam-lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(Named) Lists &amp; character vectors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-nam-lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">(Named) Lists &amp; character vectors</span></a>
+  <a href="../../material/data-proc/data-proc-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../material/data-proc/data-proc-loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Loops in R</span></a>
   </div>
 </li>
       </ul>
@@ -424,7 +431,7 @@ Warning
 <li>History:</li>
 <li>… e.g., the free and open source distributed version control system <a href="https://git-scm.com/">git</a>
 </li>
-<li>Tutorial: A tutorial to learn <code>R</code> with the <code>learnr</code> package <span class="citation" data-cites="R-learnr">(<a href="#ref-R-learnr" role="doc-biblioref"><strong>R-learnr?</strong></a>)</span>
+<li>Tutorial: A tutorial to learn <code>R</code> with the <code>learnr</code> package <span class="citation" data-cites="R-learnr">(<a href="#ref-R-learnr" role="doc-biblioref">Aden-Buie et al., 2023</a>)</span>
 </li>
 </ul>
 </li>
@@ -1056,7 +1063,7 @@ Tip&nbsp;2: Tips for handling dataFrames
 </section></section></section><section id="baseR-tidyverse" class="level2"><h2 class="anchored" data-anchor-id="baseR-tidyverse">Base R <del>vs.</del> &amp; tidyverse</h2>
 <div class="columns">
 <div class="column" style="width:47.5%;">
-<p>Besides the functionality of base <code>R</code> <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2024</a>)</span>, there is the so-called <code>tidyverse</code> <span class="citation" data-cites="R-tidyverse">(<a href="#ref-R-tidyverse" role="doc-biblioref"><strong>R-tidyverse?</strong></a>)</span> within <code>R</code>. The <code>tidyverse</code> is a collection of <code>R</code> packages (see <a href="#fig-tidyverse" class="quarto-xref">Figure&nbsp;1</a>) that <em>“share an underlying design philosophy, grammar, and data structures”</em> and are (specifically) designed for data science (see <a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>).</p>
+<p>Besides the functionality of base <code>R</code> <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2024</a>)</span>, there is the so-called <code>tidyverse</code> <span class="citation" data-cites="R-tidyverse">(<a href="#ref-R-tidyverse" role="doc-biblioref">Wickham, 2023</a>)</span> within <code>R</code>. The <code>tidyverse</code> is a collection of <code>R</code> packages (see <a href="#fig-tidyverse" class="quarto-xref">Figure&nbsp;1</a>) that <em>“share an underlying design philosophy, grammar, and data structures”</em> and are (specifically) designed for data science (see <a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>).</p>
 </div><div class="column" style="width:5%;">
 <!-- empty column to create gap -->
 </div><div class="column" style="width:47.5%;">
@@ -1070,7 +1077,7 @@ Figure&nbsp;1: tidyverse package collection
 </div>
 </div>
 </div>
-<p>Within the <code>tidyverse</code> package collection, the <code>dplyr</code> package <span class="citation" data-cites="R-dplyr">(<a href="#ref-R-dplyr" role="doc-biblioref">Wickham et al., 2023</a>)</span> provides a set of convenient functions for manipulating data. Together with the pipe operator <code>%&gt;%</code> from the <code>magrittr</code> package <span class="citation" data-cites="R-magrittr">(<a href="#ref-R-magrittr" role="doc-biblioref"><strong>R-magrittr?</strong></a>)</span>), it is an extremely powerful approach to manipulate data in a clear and comprehensible way. The native<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> <code>R</code> pipe <code>|&gt;</code> was introduced with <code>R</code> <a href="https://cran.r-project.org/bin/windows/base/old/4.1.0/NEWS.R-4.1.0.html">v4.1.0</a>.</p>
+<p>Within the <code>tidyverse</code> package collection, the <code>dplyr</code> package <span class="citation" data-cites="R-dplyr">(<a href="#ref-R-dplyr" role="doc-biblioref">Wickham et al., 2023</a>)</span> provides a set of convenient functions for manipulating data. Together with the pipe operator <code>%&gt;%</code> from the <code>magrittr</code> package <span class="citation" data-cites="R-magrittr">(<a href="#ref-R-magrittr" role="doc-biblioref">Bache &amp; Wickham, 2022</a>)</span>), it is an extremely powerful approach to manipulate data in a clear and comprehensible way. The native<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> <code>R</code> pipe <code>|&gt;</code> was introduced with <code>R</code> <a href="https://cran.r-project.org/bin/windows/base/old/4.1.0/NEWS.R-4.1.0.html">v4.1.0</a>.</p>
 <div id="what-is-pipe-op" class="callout callout-style-default callout-tip callout-titled" title="What does the pipe operator |>?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1159,11 +1166,20 @@ What does the pipe operator |&gt;?
 
 
 </section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-R-learnr" class="csl-entry" role="listitem">
+Aden-Buie, G., Schloerke, B., Allaire, J., &amp; Rossell Hayes, A. (2023). <em>Learnr: Interactive tutorials for r</em>. <a href="https://rstudio.github.io/learnr/">https://rstudio.github.io/learnr/</a>
+</div>
+<div id="ref-R-magrittr" class="csl-entry" role="listitem">
+Bache, S. M., &amp; Wickham, H. (2022). <em>Magrittr: A forward-pipe operator for r</em>. <a href="https://magrittr.tidyverse.org">https://magrittr.tidyverse.org</a>
+</div>
 <div id="ref-R-base" class="csl-entry" role="listitem">
 R Core Team. (2024). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
 </div>
 <div id="ref-R-psych" class="csl-entry" role="listitem">
 Revelle, W. (2024). <em>Psych: Procedures for psychological, psychometric, and personality research</em>. <a href="https://personality-project.org/r/psych/%0D%0Ahttps://personality-project.org/r/psych-manual.pdf">https://personality-project.org/r/psych/ https://personality-project.org/r/psych-manual.pdf</a>
+</div>
+<div id="ref-R-tidyverse" class="csl-entry" role="listitem">
+Wickham, H. (2023). <em>Tidyverse: Easily install and load the tidyverse</em>. <a href="https://tidyverse.tidyverse.org">https://tidyverse.tidyverse.org</a>
 </div>
 <div id="ref-R-dplyr" class="csl-entry" role="listitem">
 Wickham, H., François, R., Henry, L., Müller, K., &amp; Vaughan, D. (2023). <em>Dplyr: A grammar of data manipulation</em>. <a href="https://dplyr.tidyverse.org">https://dplyr.tidyverse.org</a>
@@ -1602,8 +1618,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../../material/software/setup-project-folder.html" class="pagination-link" aria-label="Setup a project folder">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setup a project folder</span>
+      <a href="../../preface.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

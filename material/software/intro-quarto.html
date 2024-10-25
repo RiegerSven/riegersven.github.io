@@ -75,12 +75,13 @@ div.csl-indent {
 }</style>
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../material/example-data/data-hsb.html" rel="next">
+<link href="../../material/software/setup-project.html" rel="next">
 <link href="../../material/software/intro-r-rstudio.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -168,7 +169,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/software/setup-project-folder.html">Software</a></li><li class="breadcrumb-item"><a href="../../material/software/intro-quarto.html">A not so short introduction to Quarto</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/software/intro-r-rstudio.html">Software</a></li><li class="breadcrumb-item"><a href="../../material/software/intro-quarto.html">A not so short introduction to Quarto</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -207,12 +208,6 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../material/software/setup-project-folder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Setup a project folder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../material/software/intro-r-rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to R &amp; RStudio</span></a>
   </div>
@@ -221,6 +216,12 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="../../material/software/intro-quarto.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">A not so short introduction to Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../material/software/setup-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implement a Project-Oriented Workflow</span></a>
   </div>
 </li>
       </ul>
@@ -259,14 +260,20 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-func-loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Functions and Loops</span></a>
+  <a href="../../material/data-proc/data-proc-nam-lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(Named) Lists &amp; character vectors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-nam-lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">(Named) Lists &amp; character vectors</span></a>
+  <a href="../../material/data-proc/data-proc-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../material/data-proc/data-proc-loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Loops in R</span></a>
   </div>
 </li>
       </ul>
@@ -366,7 +373,7 @@ div.csl-indent {
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/software/intro-quarto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/software/setup-project-folder.html">Software</a></li><li class="breadcrumb-item"><a href="../../material/software/intro-quarto.html">A not so short introduction to Quarto</a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/software/intro-r-rstudio.html">Software</a></li><li class="breadcrumb-item"><a href="../../material/software/intro-quarto.html">A not so short introduction to Quarto</a></li></ol></nav><div class="quarto-title">
 </div>
 
 
@@ -405,7 +412,7 @@ Tip for RMarkdown user
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>If you are familiar with RMarkdown <span class="citation" data-cites="R-rmarkdown">(<a href="#ref-R-rmarkdown" role="doc-biblioref"><strong>R-rmarkdown?</strong></a>)</span> the <a href="https://quarto.org/docs/faq/rmarkdown.html">FAQ for RMarkdown Users</a> might be interesting for you.</p>
+<p>If you are familiar with RMarkdown <span class="citation" data-cites="R-rmarkdown">(<a href="#ref-R-rmarkdown" role="doc-biblioref">Allaire et al., 2024</a>)</span> the <a href="https://quarto.org/docs/faq/rmarkdown.html">FAQ for RMarkdown Users</a> might be interesting for you.</p>
 </div>
 </div>
 </div>
@@ -956,7 +963,7 @@ Exercise: Create your first <code>R</code> code block.
 <li>…</li>
 </ul>
 </li>
-<li><p>Using the <code>quarto_render</code> function from the <code>quarto</code> <span class="citation" data-cites="R-quarto">(<a href="#ref-R-quarto" role="doc-biblioref"><strong>R-quarto?</strong></a>)</span> package</p></li>
+<li><p>Using the <code>quarto_render</code> function from the <code>quarto</code> <span class="citation" data-cites="R-quarto">(<a href="#ref-R-quarto" role="doc-biblioref">Allaire &amp; Dervieux, 2024</a>)</span> package</p></li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -975,6 +982,12 @@ Important
 
 
 </section></section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-R-quarto" class="csl-entry" role="listitem">
+Allaire, J., &amp; Dervieux, C. (2024). <em>Quarto: R interface to quarto markdown publishing system</em>. <a href="https://github.com/quarto-dev/quarto-r">https://github.com/quarto-dev/quarto-r</a>
+</div>
+<div id="ref-R-rmarkdown" class="csl-entry" role="listitem">
+Allaire, J., Xie, Y., Dervieux, C., McPherson, J., Luraschi, J., Ushey, K., Atkins, A., Wickham, H., Cheng, J., Chang, W., &amp; Iannone, R. (2024). <em>Rmarkdown: Dynamic documents for r</em>. <a href="https://github.com/rstudio/rmarkdown">https://github.com/rstudio/rmarkdown</a>
+</div>
 <div id="ref-R-base" class="csl-entry" role="listitem">
 R Core Team. (2024). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
 </div>
@@ -1424,8 +1437,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../material/example-data/data-hsb.html" class="pagination-link" aria-label="High School and Beyond (HSB)">
-        <span class="nav-page-text">High School and Beyond (HSB)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../material/software/setup-project.html" class="pagination-link" aria-label="Implement a Project-Oriented Workflow">
+        <span class="nav-page-text">Implement a Project-Oriented Workflow</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

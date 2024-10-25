@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.11">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2024-10-08">
+<meta name="dcterms.date" content="2024-10-21">
 <title>preface – riegersven.github.io</title>
 <style>
 code{white-space: pre-wrap;}
@@ -75,12 +75,13 @@ div.csl-indent {
 }</style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./material/software/setup-project-folder.html" rel="next">
+<link href="./material/software/intro-r-rstudio.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -208,12 +209,6 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./material/software/setup-project-folder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Setup a project folder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./material/software/intro-r-rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to R &amp; RStudio</span></a>
   </div>
@@ -222,6 +217,12 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="./material/software/intro-quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A not so short introduction to Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./material/software/setup-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implement a Project-Oriented Workflow</span></a>
   </div>
 </li>
       </ul>
@@ -260,14 +261,20 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./material/data-proc/data-proc-func-loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Functions and Loops</span></a>
+  <a href="./material/data-proc/data-proc-nam-lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(Named) Lists &amp; character vectors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./material/data-proc/data-proc-nam-lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">(Named) Lists &amp; character vectors</span></a>
+  <a href="./material/data-proc/data-proc-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./material/data-proc/data-proc-loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Loops in R</span></a>
   </div>
 </li>
       </ul>
@@ -332,7 +339,13 @@ div.csl-indent {
    
   <ul>
 <li><a href="#about-the-material" id="toc-about-the-material" class="nav-link active" data-scroll-target="#about-the-material">About the Material</a></li>
-  <li><a href="#used-software" id="toc-used-software" class="nav-link" data-scroll-target="#used-software">Used Software</a></li>
+  <li>
+<a href="#used-software" id="toc-used-software" class="nav-link" data-scroll-target="#used-software">Used Software</a>
+  <ul class="collapse">
+<li><a href="#pkg-overview" id="toc-pkg-overview" class="nav-link" data-scroll-target="#pkg-overview">Package Overview</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  </ul>
+</li>
   <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link" data-scroll-target="#disclaimer">Disclaimer</a></li>
   <li><a href="#bugs-errors" id="toc-bugs-errors" class="nav-link" data-scroll-target="#bugs-errors">Bugs &amp; Errors</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/preface.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -349,7 +362,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Last updated on</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 8, 2024</p>
+      <p class="date">October 21, 2024</p>
     </div>
   </div>
   
@@ -359,31 +372,43 @@ div.csl-indent {
 
 
 </header><section id="about-the-material" class="level2"><h2 class="anchored" data-anchor-id="about-the-material">About the Material</h2>
-<p>This site serves as a compendium of teaching and coding material that I developed along th last couple of years. The material is based on text books (references will be given), websites (e.g., <a href="https://stats.stackexchange.com/" class="uri">https://stats.stackexchange.com/</a>), AI tools (e.g., <a href="https://chat.openai.com/">ChatGPT</a>, <a href="https://www.blackbox.ai/">Blackbox AI</a>). Many of the materials are also available as a <a href="https://quarto.org/docs/presentations/revealjs/">Revealjs</a> presentation that I usually use in teaching.</p>
+<p>This site serves as a compendium of teaching and coding material that I developed along the last couple of years. The material is based on text books (references will be given), websites (e.g., <a href="https://stats.stackexchange.com/" class="uri">https://stats.stackexchange.com/</a>), AI tools (e.g., <a href="https://chat.openai.com/">ChatGPT</a>, <a href="https://www.blackbox.ai/">Blackbox AI</a>). Many of the materials are also available as a <a href="https://quarto.org/docs/presentations/revealjs/">Revealjs</a> presentation that I usually use in teaching.</p>
 </section><section id="used-software" class="level2"><h2 class="anchored" data-anchor-id="used-software">Used Software</h2>
+<section id="pkg-overview" class="level3"><h3 class="anchored" data-anchor-id="pkg-overview">Package Overview</h3>
 <p>The majority of the provided code is from the statistical software <i class="fa-brands fa-r-project fa-xl" aria-label="r-project"></i> <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2024</a>)</span>. Below, I list the packages I use most frequently, along with their respective versions.</p>
 <!-- (last update was on October 08, 2024):
 -->
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>pkgList <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"base"</span>,</span>
-<span id="cb1-2"><a href="#cb1-2"></a>             <span class="st">"devtools"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3"></a>             <span class="st">"haven"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4"></a>             <span class="st">"renv"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5"></a>             <span class="st">"stringr"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6"></a>             <span class="st">"dplyr"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7"></a>             <span class="st">"moments"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8"></a>             <span class="st">"psych"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9"></a>             <span class="st">"lme4"</span>,</span>
-<span id="cb1-10"><a href="#cb1-10"></a>             <span class="st">"merTools"</span>,</span>
-<span id="cb1-11"><a href="#cb1-11"></a>             <span class="st">"mice"</span>,</span>
-<span id="cb1-12"><a href="#cb1-12"></a>             <span class="st">"lavaan"</span>,</span>
-<span id="cb1-13"><a href="#cb1-13"></a>             <span class="st">"knitr"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14"></a>             <span class="st">"kableExtra"</span>,</span>
-<span id="cb1-15"><a href="#cb1-15"></a>             <span class="st">"flextable"</span>,</span>
-<span id="cb1-16"><a href="#cb1-16"></a>             <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a>             <span class="st">"pak"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3"></a>             <span class="st">"quarto"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4"></a>             <span class="st">"rmarkdown"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5"></a>             <span class="st">"knitr"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6"></a>             <span class="st">"devtools"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7"></a>             <span class="st">"haven"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8"></a>             <span class="st">"renv"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9"></a>             <span class="st">"stringr"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>             <span class="st">"dplyr"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11"></a>             <span class="st">"moments"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12"></a>             <span class="st">"psych"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13"></a>             <span class="st">"lme4"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14"></a>             <span class="st">"merTools"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15"></a>             <span class="st">"mice"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16"></a>             <span class="st">"lavaan"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17"></a>             <span class="st">"kableExtra"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18"></a>             <span class="st">"flextable"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19"></a>             <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="1">
 <li>base <span class="citation" data-cites="R-base">(v4.4.1, <a href="#ref-R-base" role="doc-biblioref">R Core Team, 2024</a>)</span>
+</li>
+<li>pak <span class="citation" data-cites="R-pak">(v0.8.0, <a href="#ref-R-pak" role="doc-biblioref">Csárdi &amp; Hester, 2024</a>)</span>
+</li>
+<li>quarto <span class="citation" data-cites="R-quarto">(v1.4.4, <a href="#ref-R-quarto" role="doc-biblioref">Allaire &amp; Dervieux, 2024</a>)</span>
+</li>
+<li>rmarkdown <span class="citation" data-cites="R-rmarkdown">(v2.27, <a href="#ref-R-rmarkdown" role="doc-biblioref">Allaire et al., 2024</a>)</span>
+</li>
+<li>knitr <span class="citation" data-cites="R-knitr">(v1.47, <a href="#ref-R-knitr" role="doc-biblioref">Xie, 2023</a>)</span>
 </li>
 <li>devtools <span class="citation" data-cites="R-devtools">(v2.4.5, <a href="#ref-R-devtools" role="doc-biblioref">Wickham et al., 2022</a>)</span>
 </li>
@@ -407,85 +432,58 @@ div.csl-indent {
 </li>
 <li>lavaan <span class="citation" data-cites="R-lavaan">(v0.6.18, <a href="#ref-R-lavaan" role="doc-biblioref">Rosseel et al., 2023</a>)</span>
 </li>
-<li>knitr <span class="citation" data-cites="R-knitr">(v1.47, <a href="#ref-R-knitr" role="doc-biblioref">Xie, 2023</a>)</span>
-</li>
 <li>kableExtra <span class="citation" data-cites="R-kableExtra">(v1.4.0, <a href="#ref-R-kableExtra" role="doc-biblioref">Zhu, 2024</a>)</span>
 </li>
 <li>flextable <span class="citation" data-cites="R-flextable">(v0.9.6, <a href="#ref-R-flextable" role="doc-biblioref">Gohel &amp; Skintzos, 2024</a>)</span>
 </li>
 <li>ggplot2 <span class="citation" data-cites="R-ggplot2">(v3.5.1, <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham, Chang, et al., 2023</a>)</span>
 </li>
-</ol>
-<div class="callout callout-style-simple callout-tip callout-titled" title="To install these exact versions of the packages, run the following code.">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-To install these exact versions of the packages, run the following code.
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Install the <code>remotes</code> package <span class="citation" data-cites="R-remotes">(<a href="#ref-R-remotes" role="doc-biblioref">Csárdi et al., 2024</a>)</span>.</li>
-</ol>
+</ol></section><section id="installation" class="level3"><h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>Before installing the packages, install the <code>pak</code> package <span class="citation" data-cites="R-pak">(<a href="#ref-R-pak" role="doc-biblioref">Csárdi &amp; Hester, 2024</a>)</span>. The <code>pak</code> package is desinged to overcome some limitations of the <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> function and makes package management in <code>R</code> more reliable.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="2" type="1">
-<li>Then run the following code.</li>
-</ol>
+<p>To install the packages, run one of the following code snippets.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Exact versions</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Most updated versions</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <details class="code-fold"><summary>How I generated the code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>installedPkgs <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">installed.packages</span>()[, <span class="fu">c</span>(<span class="st">"Package"</span>, <span class="st">"Version"</span>)]) <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>                    <span class="fu">subset</span>(<span class="at">subset =</span> Package <span class="sc">%in%</span> pkgList[<span class="sc">-</span><span class="dv">1</span>]) <span class="co"># delete base</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">apply</span>(installedPkgs, <span class="dv">1</span>, <span class="cf">function</span>(pkg) {</span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">paste0</span>(<span class="st">"remotes::install_version('"</span>,</span>
-<span id="cb3-6"><a href="#cb3-6"></a>         pkg[<span class="dv">1</span>], <span class="st">"', version = '"</span>,</span>
-<span id="cb3-7"><a href="#cb3-7"></a>         pkg[<span class="dv">2</span>], <span class="st">"', repos = getOption(</span><span class="sc">\"</span><span class="st">repos</span><span class="sc">\"</span><span class="st">))"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8"></a>         }) <span class="sc">|&gt;</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a>  <span class="fu">cat</span>(<span class="at">sep =</span> <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">paste0</span>(<span class="st">"myPks &lt;- c("</span>,</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="fu">paste0</span>(<span class="st">"'"</span>, <span class="fu">with</span>(installedPkgs, <span class="fu">paste0</span>(Package, <span class="st">"@"</span>, Version)), <span class="st">"'"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6"></a>           <span class="at">collapse =</span> <span class="st">", "</span>),</span>
+<span id="cb3-7"><a href="#cb3-7"></a>    <span class="st">")"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>      stringr<span class="sc">::</span><span class="fu">str_wrap</span>(<span class="at">width =</span> <span class="dv">80</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>      <span class="fu">cat</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
-<pre><code>remotes::install_version('devtools', version = '2.4.5', repos = getOption("repos"))
-
-remotes::install_version('dplyr', version = '1.1.4', repos = getOption("repos"))
-
-remotes::install_version('flextable', version = '0.9.6', repos = getOption("repos"))
-
-remotes::install_version('ggplot2', version = '3.5.1', repos = getOption("repos"))
-
-remotes::install_version('haven', version = '2.5.4', repos = getOption("repos"))
-
-remotes::install_version('kableExtra', version = '1.4.0', repos = getOption("repos"))
-
-remotes::install_version('knitr', version = '1.47', repos = getOption("repos"))
-
-remotes::install_version('lavaan', version = '0.6-18', repos = getOption("repos"))
-
-remotes::install_version('lme4', version = '1.1-35.4', repos = getOption("repos"))
-
-remotes::install_version('merTools', version = '0.6.2', repos = getOption("repos"))
-
-remotes::install_version('mice', version = '3.16.0', repos = getOption("repos"))
-
-remotes::install_version('moments', version = '0.14.1', repos = getOption("repos"))
-
-remotes::install_version('psych', version = '2.4.6.26', repos = getOption("repos"))
-
-remotes::install_version('renv', version = '1.0.9', repos = getOption("repos"))
-
-remotes::install_version('stringr', version = '1.5.1', repos = getOption("repos"))</code></pre>
+<pre><code>myPks &lt;- c('devtools@2.4.5', 'dplyr@1.1.4', 'flextable@0.9.6', 'ggplot2@3.5.1',
+'haven@2.5.4', 'kableExtra@1.4.0', 'knitr@1.47', 'lavaan@0.6-18',
+'lme4@1.1-35.4', 'merTools@0.6.2', 'mice@3.16.0', 'moments@0.14.1',
+'pak@0.8.0', 'psych@2.4.6.26', 'quarto@1.4.4', 'renv@1.0.9', 'rmarkdown@2.27',
+'stringr@1.5.1')</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html">pkg_install</a></span><span class="op">(</span>pkg <span class="op">=</span> <span class="va">myPks</span>, upgrade <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html">pkg_install</a></span><span class="op">(</span>pkg <span class="op">=</span> <span class="va">pkgList</span>, upgrade <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-</div>
-</section><section id="disclaimer" class="level2"><h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
+</section></section><section id="disclaimer" class="level2"><h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
 <p>All material is licensed under the MIT License <a href="https://en.wikipedia.org/wiki/MIT_License">(MIT)</a> and comes with <strong>ABSOLUTELY NO WARRANTY</strong>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -494,7 +492,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>The MIT License</p>
 <p>Copyright (c) 2023</p>
@@ -510,11 +508,17 @@ Important
 
 
 </section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-R-quarto" class="csl-entry" role="listitem">
+Allaire, J., &amp; Dervieux, C. (2024). <em>Quarto: R interface to quarto markdown publishing system</em>. <a href="https://github.com/quarto-dev/quarto-r">https://github.com/quarto-dev/quarto-r</a>
+</div>
+<div id="ref-R-rmarkdown" class="csl-entry" role="listitem">
+Allaire, J., Xie, Y., Dervieux, C., McPherson, J., Luraschi, J., Ushey, K., Atkins, A., Wickham, H., Cheng, J., Chang, W., &amp; Iannone, R. (2024). <em>Rmarkdown: Dynamic documents for r</em>. <a href="https://github.com/rstudio/rmarkdown">https://github.com/rstudio/rmarkdown</a>
+</div>
 <div id="ref-R-lme4" class="csl-entry" role="listitem">
 Bates, D., Maechler, M., Bolker, B., &amp; Walker, S. (2024). <em>lme4: Linear mixed-effects models using eigen and S4</em>. <a href="https://github.com/lme4/lme4/">https://github.com/lme4/lme4/</a>
 </div>
-<div id="ref-R-remotes" class="csl-entry" role="listitem">
-Csárdi, G., Hester, J., Wickham, H., Chang, W., Morgan, M., &amp; Tenenbaum, D. (2024). <em>Remotes: R package installation from remote repositories, including GitHub</em>. <a href="https://remotes.r-lib.org">https://remotes.r-lib.org</a>
+<div id="ref-R-pak" class="csl-entry" role="listitem">
+Csárdi, G., &amp; Hester, J. (2024). <em>Pak: Another approach to package installation</em>. <a href="https://pak.r-lib.org/">https://pak.r-lib.org/</a>
 </div>
 <div id="ref-R-flextable" class="csl-entry" role="listitem">
 Gohel, D., &amp; Skintzos, P. (2024). <em>Flextable: Functions for tabular reporting</em>. <a href="https://ardata-fr.github.io/flextable-book/">https://ardata-fr.github.io/flextable-book/</a>
@@ -988,8 +992,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./material/software/setup-project-folder.html" class="pagination-link" aria-label="Setup a project folder">
-        <span class="nav-page-text">Setup a project folder</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./material/software/intro-r-rstudio.html" class="pagination-link" aria-label="Introduction to R &amp; RStudio">
+        <span class="nav-page-text">Introduction to R &amp; RStudio</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
