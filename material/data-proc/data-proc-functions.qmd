@@ -74,11 +74,6 @@ Functions in `R` can be created using the `function()` statement and consist of 
 2. **arguments and parameters**: may vary across calls of the function
 3. **body** that contains the code which is executed across function calls
 
-In addition, you might want to include warning, and/or error messages.
-
-:::
-
-
 ```{r}
 #| label: function-1
 #| echo: true
@@ -91,6 +86,11 @@ name <- function( arguments ) {
 }
 
 ```
+
+In addition, you might want to include warning, and/or error messages.
+
+:::
+
 
 ::: aside
 
@@ -137,8 +137,12 @@ calcScaleScore <- function( arguments ) {
 
 ### Step 2
 
-Define the inputs and arguments of the function. These are written within the regular brackets `(...)`. When needed, prepare `if` conditions.
+Define the inputs (also known as arguments or parameters) of the function. These inputs provide the necessary data and information and concurenntly define how the function operates. The inputs are written within regular parentheses `(...)`. Optional: Prepare `if` conditions.
 
+To calculate a scale score, we need the following inputs:
+
+- **Dataset**: A data frame containing the items.
+- **Items**: A character vector specifying the names of the items.
 
 ```{r}
 #| label: function-3
@@ -150,11 +154,15 @@ calcScaleScore <- function( data,
   
   if (score == "sum") {
 
+    # code to calculate sum score
+
   } else if ( score == "mean" ) {
+
+    # code to calculate mean score
 
   } else {
 
-    stop("score argument must be either 'sum' or 'mean'")
+    stop("The 'score' argument must be either 'sum' or 'mean'")
 
   }
 }
@@ -173,7 +181,9 @@ calcScaleScore <- function( data,
 
 ### Step 3
 
-Provide code in body of the function. Write it between the curly brackets `{ }`. Do not forget to `return()` the results.
+Provide the actual code in body of the function. This code is written inside the curly brackets `{ }`. Do not forget to `return()` the results.
+
+To calculate the sum score, we use the `rowSums()` function; for the mean score, we use the `rowMeans()` function. The calculated scores are temporarily stored in the `ret` object within the function (the `ret` object does not exist in the global `R` environment).
 
 ```{r}
 #| label: function-4
@@ -265,8 +275,8 @@ Evaluate the results.
 ```{r}
 #| label: function-6
 #| echo: true
-rowSums(wideLSdat[, wideLSVar$Y1]) == wideLSdat$Y1 |>
-  table( )
+table(rowSums(wideLSdat[, wideLSVar$Y1]) == wideLSdat$Y1)
+  
 ```
 
 ## Input validation
