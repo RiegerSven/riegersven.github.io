@@ -1,6 +1,15 @@
-# Introduction to R & RStudio
+---
+title: Introduction to R & RStudio
+date: 04/10/25
+published-title: "Last updated on"
+abstract: |
+  This section provides a short introduction to {{< fa brands r-project size=l >}} and `RStudio`. It also touches differences between base R and the `tidyverse` package collection.  
+code-line-numbers: true
+---
 
-This part gives a short introduction to `R` and `RStudio`. If you are familiar with the programs and are not interested in the `R` vs `tidyverse` "distinction", you can skip this section.
+
+
+## What is {{< fa brands r-project size=l >}}  & RStudio?
 
 ```{r}
 #| label: intro-r-prep
@@ -11,43 +20,49 @@ exDat <- readRDS("exampleDat.RDS")
 
 ```
 
-## What is R & RStudio?
+- {{< fa brands r-project size=l >}} is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS (see [https://www.r-project.org/](<https://www.r-project.org/>)). 
 
-- **R**: `R` is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS (see [https://www.r-project.org/](https://www.r-project.org/){target="_blank"}). 
+- **R Studio** is a integrated development environment (IDE) for {{< fa brands r-project size=l >}}, built by [Posit](<https://posit.co/>). 
 
-- **R Studio**: Coding environment for `R`, built by [Posit](https://posit.co/){target="_blank"}. 
-
-Some advertisement from the [Posit website](https://posit.co/downloads/){target="_blank"}: 
+Some advertisement from the [Posit website](<https://posit.co/downloads/>): 
 
 > Used by millions of people weekly, the RStudio integrated development environment (IDE) is a set of tools built to help you be more productive with R and Python. It includes a console, syntax-highlighting editor that supports direct code execution. It also features tools for plotting, viewing history, debugging and managing your workspace. 
 
-Of course there are other IDEs (e.g., [Visual Studio Code](https://code.visualstudio.com/){target="_blank"}, but if you use `R`, `RStudio` is most likely the way to go.
+Of course there are other IDEs (e.g., [Visual Studio Code](<https://code.visualstudio.com/>), or [VIM](<https://www.vim.org/>)), but if you use R, `RStudio` is most likely the way to go. 
+
+::: {.callout-tip title="Positron a next-generation data science IDE" collapse="true" appearance="simple"}
+
+[Posit](<https://posit.co/>) recently released the beta version of a next-generation data science IDE named [Positron](<https://positron.posit.co/>), which could serve as a viable alternative to `RStudio`. It is also tailored for R but also supports seamless Python integration.
+
+:::
 
 ## How to work with R and RStudio?
 
 ::: {.callout-caution collapse="true"}
 
-## Exercise: Open RStudio!
+## First step: Open RStudio!
 
-This should look like this, maybe or probably with a different appearance (this is the Dracula theme). You can change this via `Tools > Global Options > Appearance`
+This should look like this, maybe or probably with a different appearance (this is the Dracula theme). 
 
-![](../../images/rstudio-panes.PNG)
+![](../images/rstudio-panes.PNG)
+
+You can change the theme via `Tools > Global Options > Appearance`
 
 :::
 
-In `RStudio` there are different panes^[You can customize them: `Tools > Global Options > Pane Layout`]:
+In `RStudio`, there are four customizable panes. These can be configured by navigating to: `Tools > Global Options > Pane Layout`:
 
 
 ### Panes
 
 - **Console**
-  - Here you can access `R`
-  - E.g., ask `R` what is: `2 + 2`
+  - Here you can access R (but you should not, see the [warning](#warning-console) below)
+  - E.g., ask R what is: `2 + 2`
 
 - **Source/Script**
   - Editor to save scripts
 
-::: {.callout-warning}
+::: {#warning-console .callout-warning}
 
 You should **never** work directly in the Console, but always use a R-script (e.g., script.R) or *even better* a Quarto document (e.g., script.qmd). It is important to understand and reproduce everything you did.
 
@@ -56,8 +71,8 @@ You should **never** work directly in the Console, but always use a R-script (e.
 - **Environment/History/.../Tutorial**
   - Environment: contains all objects that were created or loaded during an R session
   - History:
-  - ... e.g., the free and open source distributed version control system [git](https://git-scm.com/)
-  - Tutorial: A tutorial to learn `R` with the `learnr` package [@R-learnr]
+  - ... e.g., the free and open source distributed version control system [git](<https://git-scm.com/>)
+  - Tutorial: A tutorial to learn R with the `learnr` package [@R-learnr]
 
 - **Files/Plots/Packages/Help/Viewer**
   - Files: is kind of the file manager
@@ -70,7 +85,7 @@ You should **never** work directly in the Console, but always use a R-script (e.
 
 ### Projects
 
-It is also reasonable to use the **project option**. This means, whenever you start a new project (e.g., a scale-manual), create an `project`: `File > New Project` 
+It is also advisable to use the **project option**. This means, whenever you start a new project (e.g., a data-related project), create an `(R) project`: `File > New Project` 
 
 ::: {.callout-caution collapse="true"}
 
@@ -78,17 +93,17 @@ It is also reasonable to use the **project option**. This means, whenever you st
 
 1. Choose between:
 
-- **New Directory** (for today)
+- **New Directory** (for now)
 
 - Existing Directory
 
 - Version Control (this is recommended, but is beyond the scope of this workshop)
 
-![](../images/new-proj-wizz.PNG)
+![](../images/rstudio-new-project.PNG)
 
 2. Choose a project type (today a `R project` or `Quarto project`)
 
-![](../images/project-type.PNG)
+![](../images/rstudio-project-type.png)
 
 3. Provide a short name, set the check mark `Open in new session` and click `Create Project`
 
@@ -96,22 +111,23 @@ It is also reasonable to use the **project option**. This means, whenever you st
 
 :::
 
+If you are interested in how to implement a reproducible project-oriented workflow, you might find this [introduction](../software/setup-project.qmd) helpful.
 
 ## Short introduction to the R programming language
 
-This section gives a (very?) brief introduction to the `R` programming language. 
+This section gives a (very?) brief introduction to the R programming language. 
 
 ::: {.callout-tip collapse="true" appearance="simple" title="For (more) comprehensive introductions..."}
 
 ...or overviews of the language see (e.g.): 
 
-- [R Manual](https://cran.r-project.org/doc/manuals/r-release/R-intro.html) on the [CRAN](https://cran.r-project.org) website
+- [R Manual](<https://cran.r-project.org/doc/manuals/r-release/R-intro.html>) on the [CRAN](<https://cran.r-project.org>) website
 
-- [R for Data Science](https://r4ds.had.co.nz/) by Hadley Wickham and Garrett Grolemund
+- [R for Data Science](<https://r4ds.had.co.nz/>) by Hadley Wickham and Garrett Grolemund
 
-- [Hands-On Programming with R](https://rstudio-education.github.io/hopr/) by Garrett Grolemund
+- [Hands-On Programming with R](<https://rstudio-education.github.io/hopr/>) by Garrett Grolemund
 
-- [Introduction to R](https://stats.oarc.ucla.edu/stat/data/intro_r/intro_r_interactive_flat.html) by the [IDRE Statistical Consulting Group](https://stats.oarc.ucla.edu/ucla/policies/)
+- [Introduction to R](<https://stats.oarc.ucla.edu/stat/data/intro_r/intro_r_interactive_flat.html>) by the [IDRE Statistical Consulting Group](<https://stats.oarc.ucla.edu/ucla/policies/>)
 
 - ...
 
@@ -133,13 +149,13 @@ This section gives a (very?) brief introduction to the `R` programming language.
 
 ### Basics
 
-Before working with `R`, there are a few basics you need to know:
+Before working with R, there are a few basics you need to know:
 
 :::: {.columns}
 
 ::: {.column width="40%"}
 
--   `R` is a **case-sensitive** programming language. This means that R distinguishes whether a word is written in upper or lower case
+-   R is a **case-sensitive** programming language. This means that R distinguishes whether a word is written in upper or lower case
 
 :::
 
@@ -221,19 +237,19 @@ df <- data.frame(
 ::: {.callout-caution collapse="true"}
 ## Exercise: Create a new R script
 
-`File > New File > R Script` or alternatively use the shortcut `Ctrl + Shift + N`
+`File > New File > R Script` or alternatively use the shortcut {{< kbd Ctrl+Shift+N >}}
 
-![](../../images/create-r-script.PNG)
+![](../images/create-r-script.png)
 
 
-Then save the file `File > Save` or `File > Save As`. Shortcut: `Ctrl + s`
+Then save the file `File > Save` or `File > Save As` (shortcut: {{< kbd Ctrl-S >}})
 
 
 :::
 
 ### Data Types
 
-The basic data types^[We omitted the `complex` type.] in `R` are depicted in @tbl-data-type-R.
+The basic data types^[We omitted the `complex` type.] in R are depicted in @tbl-data-type-R.
 
 +---------------+-----------------------------------------+-----------------------+
 | Type          | Description                             | Value (example)       |
@@ -260,7 +276,7 @@ The basic data types^[We omitted the `complex` type.] in `R` are depicted in @tb
 |               |                   cell value            |                       |
 +---------------+-----------------------------------------+-----------------------+
 
-: Basic data types in R {#tbl-data-type-R}
+: Basic data types in {{< fa brands r-project size=l >}} {#tbl-data-type-R}
 
 ::: {.callout-caution collapse="true"}
 ## Exercise: Use the class function to check the data type of an object!
@@ -312,7 +328,7 @@ rm(x, fac)
 
 ### Data Structures {#data-structure}
 
-`R` has a couple of different data structures^[We omitted [arrays](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Arrays-and-matrices).] which are briefly described in the following subsections.
+R has a couple of different data structures^[We omitted [arrays](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Arrays-and-matrices).] which are briefly described in the following subsections.
 
 
 #### Vector
@@ -622,14 +638,14 @@ rm(df)
 
 ::::
 
-## Base R ~~vs.~~ & tidyverse {#baseR-tidyverse}
+## Base {{< fa brands r-project size=l >}} ~~vs.~~ & tidyverse {#baseR-tidyverse}
 
 
 :::: {.columns}
 
 ::: {.column width="47.5%"}
 
-Besides the functionality of base `R` [@R-base], there is the so-called `tidyverse` [@R-tidyverse] within `R`. The `tidyverse` is a collection of `R` packages (see @fig-tidyverse) that *"share an underlying design philosophy, grammar, and data structures"* and are (specifically) designed for data science (see <https://www.tidyverse.org/>).
+Besides the functionality of base R [@R-base], there is the so-called `tidyverse` [@R-tidyverse] within R. The `tidyverse` is a collection of R packages (see @fig-tidyverse) that *"share an underlying design philosophy, grammar, and data structures"* and are (specifically) designed for data science (see <https://www.tidyverse.org/>).
 
 :::
 
@@ -639,18 +655,18 @@ Besides the functionality of base `R` [@R-base], there is the so-called `tidyver
 
 ::: {.column width="47.5%"}
 
-![tidyverse package collection](../../images/tidyverse.png){#fig-tidyverse width=50%}
+![tidyverse package collection](../images/tidyverse.PNG){#fig-tidyverse width=50%}
 
 :::
 
 ::::
 
 
-Within the `tidyverse` package collection, the `dplyr` package [@R-dplyr] provides a set of convenient functions for manipulating data. Together with the pipe operator `%>%` from the `magrittr` package [@R-magrittr]), it is an extremely powerful approach to manipulate data in a clear and comprehensible way. The native^[for the difference between `|>` and `%>%` see <https://ivelasq.rbind.io/blog/understanding-the-r-pipe/>] `R` pipe `|>` was introduced with `R` [v4.1.0](https://cran.r-project.org/bin/windows/base/old/4.1.0/NEWS.R-4.1.0.html). 
+Within the `tidyverse` package collection, the `dplyr` package [@R-dplyr] provides a set of convenient functions for manipulating data. Together with the pipe operator `%>%` from the `magrittr` package [@R-magrittr]), it is an extremely powerful approach to manipulate data in a clear and comprehensible way. The native^[for the difference between `|>` and `%>%` see <https://ivelasq.rbind.io/blog/understanding-the-r-pipe/>] R pipe `|>` was introduced with R [v4.1.0](https://cran.r-project.org/bin/windows/base/old/4.1.0/NEWS.R-4.1.0.html). 
 
 ::: {#what-is-pipe-op .callout-tip collapse="true" title="What does the pipe operator |>?"}
 
-[The tidyverse style guide](https://style.tidyverse.org/) suggests using the pipe operator *"to emphasize a sequence of actions"*. The pipe operator can be understood as *"take the object and then"* pass it to the next function. In the following, the use of the base `R` pipe operator is shown:
+[The tidyverse style guide](https://style.tidyverse.org/) suggests using the pipe operator *"to emphasize a sequence of actions"*. The pipe operator can be understood as *"take the object and then"* pass it to the next function. In the following, the use of the base R pipe operator is shown:
 
 1. **Take** the data frame `exDat` **and then** 
 2. Select the variables: `msc1` and `msc2` **and then**
