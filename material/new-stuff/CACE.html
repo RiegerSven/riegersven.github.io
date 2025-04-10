@@ -2,9 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.11">
+<meta name="generator" content="quarto-1.7.22">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>cace – riegersven.github.io</title>
+<meta name="author" content="Sven Rieger">
+<meta name="dcterms.date" content="2025-04-10">
+<title>CACE models – riegersven.github.io</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,8 +20,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -30,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -79,15 +82,16 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-3d3a3f531f1be4526fdd4068b34a2ee6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-68bca3a50acd80feb0cb8c3c361c6f22.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-69adac596de0945cacfdcab5d73d8484.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-a7b7969f839d83333d5abb8c1a1d1995.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -112,7 +116,8 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="../../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+}</script><meta name="mermaid-theme" content="neutral">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.6/tex-mml-chtml.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
@@ -139,17 +144,23 @@ window.Quarto = {
   typesetMath
 };
 </script><link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="riegersven.github.io">
+<meta property="og:title" content="CACE models – riegersven.github.io">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://github.com/RiegerSven/material/new-stuff/CACE_files/figure-html/fig-data-1.png">
 <meta property="og:site_name" content="Personal website of Sven Rieger">
-<meta name="twitter:title" content="riegersven.github.io">
+<meta property="og:image:height" content="3000">
+<meta property="og:image:width" content="4200">
+<meta name="twitter:title" content="CACE models – riegersven.github.io">
 <meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/RiegerSven/material/new-stuff/CACE_files/figure-html/fig-data-1.png">
+<meta name="twitter:image-height" content="3000">
+<meta name="twitter:image-width" content="4200">
+<meta name="twitter:card" content="summary_large_image">
 </head>
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">riegersven.github.io</span>
@@ -193,31 +204,116 @@ window.Quarto = {
 </div>
 <i class="bi bi-x-lg quarto-announcement-action"></i>
 </div>
-</header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+</header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">CACE models</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+        
+        <div class="quarto-title-meta">
+
+                <div>
+            <div class="quarto-title-meta-heading">Author</div>
+            <div class="quarto-title-meta-contents">
+                        <p>Sven Rieger </p>
+                      </div>
+          </div>
+                
+                <div>
+            <div class="quarto-title-meta-heading">Published</div>
+            <div class="quarto-title-meta-contents">
+              <p class="date">April 10, 2025</p>
+            </div>
+          </div>
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#different-types-of-analyses" id="toc-different-types-of-analyses" class="nav-link active" data-scroll-target="#different-types-of-analyses">Different types of analyses</a></li>
-  <li><a href="#overview-complier-average-causal-effect-cace" id="toc-overview-complier-average-causal-effect-cace" class="nav-link" data-scroll-target="#overview-complier-average-causal-effect-cace">Overview <strong>C</strong>omplier <strong>A</strong>verage <strong>C</strong>ausal <strong>E</strong>ffect (CACE)</a></li>
-  <li><a href="#terminology" id="toc-terminology" class="nav-link" data-scroll-target="#terminology">Terminology</a></li>
-  <li><a href="#noncompliance" id="toc-noncompliance" class="nav-link" data-scroll-target="#noncompliance">Noncompliance</a></li>
+<li><a href="#compliance-types-g_i" id="toc-compliance-types-g_i" class="nav-link active" data-scroll-target="#compliance-types-g_i">Compliance Types (<span class="math inline">\(G_i\)</span>)</a></li>
+  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation">Notation</a></li>
+  <li><a href="#different-types-of-analyses" id="toc-different-types-of-analyses" class="nav-link" data-scroll-target="#different-types-of-analyses">Different types of analyses</a></li>
   <li>
 <a href="#one--and-two-sided-noncompliance" id="toc-one--and-two-sided-noncompliance" class="nav-link" data-scroll-target="#one--and-two-sided-noncompliance">One- and two-sided Noncompliance</a>
   <ul class="collapse">
 <li><a href="#one-sided-noncompliance" id="toc-one-sided-noncompliance" class="nav-link" data-scroll-target="#one-sided-noncompliance">One-sided noncompliance</a></li>
-  <li><a href="#iv-estimation" id="toc-iv-estimation" class="nav-link" data-scroll-target="#iv-estimation">IV estimation</a></li>
   </ul>
 </li>
-  <li><a href="#test" id="toc-test" class="nav-link" data-scroll-target="#test">test</a></li>
-  <li><a href="#cace-ref" id="toc-cace-ref" class="nav-link" data-scroll-target="#cace-ref">References (CACE slides)</a></li>
+  <li>
+<a href="#test" id="toc-test" class="nav-link" data-scroll-target="#test">test</a>
+  <ul class="collapse">
+<li><a href="#instrumental-variable-estimation" id="toc-instrumental-variable-estimation" class="nav-link" data-scroll-target="#instrumental-variable-estimation">Instrumental Variable Estimation</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a>
+  <ul class="collapse">
+<li><a href="#required-libraries" id="toc-required-libraries" class="nav-link" data-scroll-target="#required-libraries">Required libraries</a></li>
+  <li><a href="#session-info" id="toc-session-info" class="nav-link" data-scroll-target="#session-info">Session Info</a></li>
+  </ul>
+</li>
+  <li><a href="#data-simulation" id="toc-data-simulation" class="nav-link" data-scroll-target="#data-simulation">Data simulation</a></li>
+  <li><a href="#analyses" id="toc-analyses" class="nav-link" data-scroll-target="#analyses">Analyses</a></li>
+  <li>
+<a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing">Testing</a>
+  <ul class="collapse">
+<li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/new-stuff/CACE.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></p>
-<section id="different-types-of-analyses" class="level2"><h2 class="anchored" data-anchor-id="different-types-of-analyses">Different types of analyses</h2>
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content"><section id="compliance-types-g_i" class="level2"><h2 class="anchored" data-anchor-id="compliance-types-g_i">Compliance Types (<span class="math inline">\(G_i\)</span>)</h2>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><p><em>Compliers (co):</em> Participants who would receive the treatment if assigned to the treatment group and who would not receive the treatment if assigned to the control group</p></li>
+<li><p><em>Never-takers (nt):</em> Participants who would refuse treatment regardless of treatment assignment.</p></li>
+<li><p><em>Always-takers (at):</em> Participants who would receive treatment regardless of treatment assignment. When assigned to the control condition, they would actively seek out the treatment.</p></li>
+<li><p><em>Defiers (df):</em> Participants who would refuse treatment if assigned to the treatment group but would seek out treatment if assigned to the control group.</p></li>
+</ol>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+G_i = g(W_i(0),W_i(1)) = \left\{ \begin{array}{ll} \text{nt   if } W_i(0)=0,W_i(1)=0\\ \text{co   if } W_i(0)=0,W_i(1)=1 \\ \text{df   if } W_i(0)=1,W_i(1)=0 \\ \text{at   if } W_i(0)=1,W_i(1)=1 \end{array}\right.
+\]</span></p>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Compliance types are not generally identified.">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Compliance types are not generally identified.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a participant who was assigend to the treatment (<span class="math inline">\(Z\)</span> = 1) and also participated (or took) the treatment (<span class="math inline">\(W\)</span> = 1). Is he/she a complier or an always-taker? Or consider a participant who was agained assigend to the treatment (<span class="math inline">\(Z\)</span> = 1), but did not participate (or take) the treatment (<span class="math inline">\(W\)</span> = 0). Is the participant a defier or never-taker <span class="citation" data-cites="hernan2024">(<a href="#ref-hernan2024" role="doc-biblioref"><strong>hernan2024?</strong></a>)</span>?</p>
+</div>
+</div>
+</section><section id="notation" class="level2"><h2 class="anchored" data-anchor-id="notation">Notation</h2>
+<p><span class="citation" data-cites="imbens2015">(<a href="#ref-imbens2015" role="doc-biblioref"><strong>imbens2015?</strong></a>)</span></p>
+<p>Y = Outcome</p>
+<p>Z = Assignment to treatment</p>
+<p>W = Receipt of Treatment</p>
+<p><span class="math inline">\(Y_i^{obs} = Y_i(Z_i, W_i^{obs})\)</span></p>
+</section><section id="different-types-of-analyses" class="level2"><h2 class="anchored" data-anchor-id="different-types-of-analyses">Different types of analyses</h2>
 <p>Different types of analyses to analyze a randomized experiment <span class="citation" data-cites="sagarin2014">(<a href="#ref-sagarin2014" role="doc-biblioref"><strong>sagarin2014?</strong></a>)</span></p>
 <ul>
 <li>Intention-to-treat</li>
@@ -227,481 +323,727 @@ window.Quarto = {
 <li>Dose–response estimation</li>
 <li>Propensity score analysis</li>
 <li>Treatment effect bounding</li>
-</ul></section><section id="overview-complier-average-causal-effect-cace" class="level2"><h2 class="anchored" data-anchor-id="overview-complier-average-causal-effect-cace">Overview <strong>C</strong>omplier <strong>A</strong>verage <strong>C</strong>ausal <strong>E</strong>ffect (CACE)</h2>
-</section><section id="terminology" class="level2"><h2 class="anchored" data-anchor-id="terminology">Terminology</h2>
-<ul>
-<li><p>Outcome: <span class="math inline">\(Y_i\)</span></p></li>
-<li><p>Assignment of treatment (and instrument): <span class="math inline">\(Z_i\)</span></p></li>
-<li><p>Receipt of treatment (compliance status): <span class="math inline">\(W_i\)</span></p></li>
-</ul></section><section id="noncompliance" class="level2"><h2 class="anchored" data-anchor-id="noncompliance">Noncompliance</h2>
+</ul></section><section id="one--and-two-sided-noncompliance" class="level2"><h2 class="anchored" data-anchor-id="one--and-two-sided-noncompliance">One- and two-sided Noncompliance</h2>
 <blockquote class="blockquote">
 <p>By noncompliance we refer to the situation where some units who are assigned to receive a particular treatment level do not comply with their assignment and instead receive an alternative treatment <span class="citation" data-cites="imbens2015">(<a href="#ref-imbens2015" role="doc-biblioref"><strong>imbens2015?</strong></a>)</span></p>
 </blockquote>
-</section><section id="one--and-two-sided-noncompliance" class="level2"><h2 class="anchored" data-anchor-id="one--and-two-sided-noncompliance">One- and two-sided Noncompliance</h2>
 <section id="one-sided-noncompliance" class="level3"><h3 class="anchored" data-anchor-id="one-sided-noncompliance">One-sided noncompliance</h3>
 <p>One-sided noncompliance means that it is asymmetric. Only units that are assigned to receive a treatment can circumvent their assigned treatment. Units in the control condition comply with this assignment <span class="citation" data-cites="imbens2015">(<a href="#ref-imbens2015" role="doc-biblioref"><strong>imbens2015?</strong></a>)</span>.</p>
 <p>Observed outcome: <span class="math inline">\(Y^{obs}_i = Y_i(Z_i,W^{obs}_i)= Y_i(Z_i,W_i(Z_i)) = \begin{cases} Y_i(0,0), \text{ if } Z_i = 0, W^{obs}_i = 0\\ Y_i(1,0), \text{ if } Z_i = 1, W^{obs}_i = 0 \\ Y_i(1,1), \text{ if } Z_i = 1, W^{obs}_i = 1 \\ \end{cases}\)</span></p>
-<section id="example-data-generation" class="level4"><h4 class="anchored" data-anchor-id="example-data-generation">Example: Data generation</h4>
+</section></section><section id="test" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="test">test</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-dag-trial" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-dag-trial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-dag-trial">flowchart LR
+    
+    Z ==&gt; W
+    W ==&gt; Y
+        
+    U --&gt; W &amp; Y
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dag-trial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: DAG of randomized trial (with compliance)
+</figcaption></figure>
+</div>
+</div>
+</div>
+<section id="instrumental-variable-estimation" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="instrumental-variable-estimation">Instrumental Variable Estimation</h3>
+<p>To perform instrumental variable estimation, 3 conditions need to be met <span class="citation" data-cites="hernan2024">(see <a href="#ref-hernan2024" role="doc-biblioref"><strong>hernan2024?</strong></a>)</span>:</p>
+<ol type="1">
+<li>Relevance condition: <span class="math inline">\(Z\)</span> is associated with <span class="math inline">\(W\)</span>
+</li>
+<li>Exclusion restriction: <span class="math inline">\(Z\)</span> does not affect <span class="math inline">\(Y\)</span> except through its potential effect on <span class="math inline">\(W\)</span>
+</li>
+<li>Marginal exchangeability: <span class="math inline">\(Z\)</span> and <span class="math inline">\(Y\)</span> do not share causes</li>
+<li>Effect homogeneity vs.&nbsp;monotonicity</li>
+</ol>
+<p>In RCTs <span class="math inline">\(Z\)</span> is a <em>causal instrument</em>, because <span class="math inline">\(Z\)</span> has an causal effect on <span class="math inline">\(W\)</span>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Notation:</p>
+<p><span class="math inline">\(Y_i^{obs} = Y_i(Z_i, W_i^{obs})\)</span></p>
+</div></div><div class="callout callout-style-default callout-important callout-titled" title="Exclusion Restriction for Noncompliers">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exclusion Restriction for Noncompliers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For all noncomplier (<span class="math inline">\(W_i^{obs} = 0\)</span>):</p>
+<p><span class="math display">\[
+Y_i(0,0) = Y_i(1,0)
+\]</span></p>
+<p>This assumptions rules out an effect of <span class="math inline">\(Z_i\)</span> on the outcome <span class="math inline">\(Y_i\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Exclusion Restriction for Compliers">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exclusion Restriction for Compliers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For all complier (<span class="math inline">\(W_i^{obs} = 1\)</span>):</p>
+<p><span class="math display">\[
+Y_i(0,w) = Y_i(1,w)
+\]</span></p>
+<p>…</p>
+</div>
+</div>
+<p><span class="math display">\[
+ITT_W = \pi_{co}
+\]</span></p>
+<p><span class="math display">\[
+ITT_Y = ITT_{Y,co} \cdot ITT_W
+\]</span></p>
+<p><span class="math display">\[
+\tau_{late} = ITT_{Y,co} = \frac{ITT_Y}{ITT_W}
+\]</span></p>
+</section></section><section id="software" class="level1"><h1>Software</h1>
+<section id="required-libraries" class="level2"><h2 class="anchored" data-anchor-id="required-libraries">Required libraries</h2>
 <div class="cell">
-<details open="" class="code-fold"><summary>Show/hide function</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>genOSNC <span class="ot">&lt;-</span> <span class="cf">function</span>( <span class="at">n =</span> <span class="dv">1000</span>,</span>
-<span id="cb1-2"><a href="#cb1-2"></a>                     <span class="at">tau =</span> .<span class="dv">5</span>,</span>
-<span id="cb1-3"><a href="#cb1-3"></a>                     <span class="at">bu =</span> <span class="dv">0</span>, <span class="at">du =</span> <span class="dv">0</span>,</span>
-<span id="cb1-4"><a href="#cb1-4"></a>                     <span class="at">compliance =</span> <span class="st">"one-sided"</span> ) {</span>
-<span id="cb1-5"><a href="#cb1-5"></a>    </span>
-<span id="cb1-6"><a href="#cb1-6"></a>    <span class="co"># treatment</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a>    Z <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> .<span class="dv">5</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a>    n1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(Z)</span>
-<span id="cb1-9"><a href="#cb1-9"></a>    <span class="co"># unobserved confounder</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a>    U <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb1-11"><a href="#cb1-11"></a>    </span>
-<span id="cb1-12"><a href="#cb1-12"></a>    dat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(Z,U))</span>
-<span id="cb1-13"><a href="#cb1-13"></a>    </span>
-<span id="cb1-14"><a href="#cb1-14"></a>   </span>
-<span id="cb1-15"><a href="#cb1-15"></a>    <span class="co"># compliance    </span></span>
-<span id="cb1-16"><a href="#cb1-16"></a>        </span>
-<span id="cb1-17"><a href="#cb1-17"></a>    <span class="cf">if</span> ( compliance <span class="sc">==</span> <span class="st">"one-sided"</span>) {</span>
-<span id="cb1-18"><a href="#cb1-18"></a></span>
-<span id="cb1-19"><a href="#cb1-19"></a>      dat[dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"W"</span>] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n1,</span>
-<span id="cb1-20"><a href="#cb1-20"></a>                                     <span class="at">size =</span> <span class="dv">1</span>,</span>
-<span id="cb1-21"><a href="#cb1-21"></a>                                     <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span> du<span class="sc">*</span>U)))  <span class="co"># check prob</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a>      dat[dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"W"</span>] <span class="ot">&lt;-</span> <span class="dv">0</span>                  </span>
-<span id="cb1-23"><a href="#cb1-23"></a>      </span>
-<span id="cb1-24"><a href="#cb1-24"></a>    } <span class="cf">else</span> <span class="cf">if</span> (compliance <span class="sc">==</span> <span class="st">"two-sided"</span>) {</span>
-<span id="cb1-25"><a href="#cb1-25"></a></span>
-<span id="cb1-26"><a href="#cb1-26"></a>    } <span class="cf">else</span> {</span>
-<span id="cb1-27"><a href="#cb1-27"></a>      <span class="fu">stop</span>(<span class="st">"state either one-sided or two-sided compliance status"</span>)</span>
-<span id="cb1-28"><a href="#cb1-28"></a>    }</span>
-<span id="cb1-29"><a href="#cb1-29"></a>    </span>
-<span id="cb1-30"><a href="#cb1-30"></a></span>
-<span id="cb1-31"><a href="#cb1-31"></a>    <span class="co"># outcome</span></span>
-<span id="cb1-32"><a href="#cb1-32"></a>    dat<span class="sc">$</span>Y <span class="ot">&lt;-</span> <span class="fu">with</span>(dat, <span class="dv">0</span> <span class="sc">+</span> <span class="dv">0</span><span class="sc">*</span>Z <span class="sc">+</span> tau<span class="sc">*</span>W <span class="sc">+</span> bu<span class="sc">*</span>U <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span> ,<span class="dv">1</span>))</span>
-<span id="cb1-33"><a href="#cb1-33"></a></span>
-<span id="cb1-34"><a href="#cb1-34"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb1-35"><a href="#cb1-35"></a></span>
-<span id="cb1-36"><a href="#cb1-36"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(ivreg)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(lavaan)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>This is lavaan 0.6-19
+lavaan is FREE software! Please report any bugs.</code></pre>
+</div>
+</div>
+</section><section id="session-info" class="level2"><h2 class="anchored" data-anchor-id="session-info">Session Info</h2>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.4.3 (2025-02-28 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 10 x64 (build 19045)
+
+Matrix products: default
+
+
+locale:
+[1] LC_COLLATE=German_Germany.utf8  LC_CTYPE=German_Germany.utf8   
+[3] LC_MONETARY=German_Germany.utf8 LC_NUMERIC=C                   
+[5] LC_TIME=German_Germany.utf8    
+
+time zone: Europe/Berlin
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] lavaan_0.6-19 ivreg_0.6-4   ggplot2_3.5.1
+
+loaded via a namespace (and not attached):
+ [1] gtable_0.3.5      jsonlite_1.8.8    dplyr_1.1.4       compiler_4.4.3   
+ [5] tidyselect_1.2.1  scales_1.3.0      yaml_2.3.8        fastmap_1.2.0    
+ [9] pbivnorm_0.6.0    lattice_0.22-6    R6_2.5.1          generics_0.1.3   
+[13] lmtest_0.9-40     Formula_1.2-5     knitr_1.47        htmlwidgets_1.6.4
+[17] MASS_7.3-64       tibble_3.2.1      car_3.1-2         munsell_0.5.1    
+[21] pillar_1.9.0      rlang_1.1.4       utf8_1.2.4        xfun_0.49        
+[25] quadprog_1.5-8    cli_3.6.3         withr_3.0.0       magrittr_2.0.3   
+[29] digest_0.6.36     grid_4.4.3        lifecycle_1.0.4   vctrs_0.6.5      
+[33] mnormt_2.1.1      evaluate_0.24.0   glue_1.7.0        zoo_1.8-12       
+[37] stats4_4.4.3      abind_1.4-5       carData_3.0-5     fansi_1.0.6      
+[41] colorspace_2.1-0  rmarkdown_2.27    tools_4.4.3       pkgconfig_2.0.3  
+[45] htmltools_0.5.8.1</code></pre>
+</div>
+</div>
+</section></section><section id="data-simulation" class="level1"><h1>Data simulation</h1>
+<p>Data generation was done with the following function see <a href="#lst-sim-dat" class="quarto-xref">Listing&nbsp;1</a>.</p>
+<div id="lst-sim-dat" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-sim-dat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;1
+</figcaption><div aria-describedby="lst-sim-dat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>simDat <span class="ot">&lt;-</span> <span class="cf">function</span> ( <span class="at">n =</span> <span class="dv">500</span>,</span>
+<span id="cb5-2"><a href="#cb5-2"></a>                     <span class="at">b0 =</span> <span class="dv">0</span>,</span>
+<span id="cb5-3"><a href="#cb5-3"></a>                     <span class="at">tau =</span> .<span class="dv">25</span>,</span>
+<span id="cb5-4"><a href="#cb5-4"></a>                     <span class="at">bz =</span> <span class="dv">0</span>,</span>
+<span id="cb5-5"><a href="#cb5-5"></a>                     <span class="at">bx =</span> <span class="dv">0</span>,</span>
+<span id="cb5-6"><a href="#cb5-6"></a>                     <span class="at">taux =</span> <span class="dv">0</span>,</span>
+<span id="cb5-7"><a href="#cb5-7"></a>                     <span class="at">gamma0 =</span> <span class="dv">1</span>, <span class="co"># ~ .75%</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>                     <span class="at">gamma0C =</span> <span class="cn">NULL</span>, </span>
+<span id="cb5-9"><a href="#cb5-9"></a>                     <span class="at">gammax =</span> <span class="dv">0</span>,</span>
+<span id="cb5-10"><a href="#cb5-10"></a>                     <span class="at">compliance =</span> <span class="st">"one-sided"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11"></a>                     <span class="at">seed =</span> <span class="dv">999</span>) {</span>
+<span id="cb5-12"><a href="#cb5-12"></a>    <span class="fu">set.seed</span>(seed)</span>
+<span id="cb5-13"><a href="#cb5-13"></a>    dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Z =</span> <span class="fu">rbinom</span>(<span class="at">n =</span> n, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> .<span class="dv">5</span>),</span>
+<span id="cb5-14"><a href="#cb5-14"></a>                      <span class="at">X =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>))</span>
+<span id="cb5-15"><a href="#cb5-15"></a>    </span>
+<span id="cb5-16"><a href="#cb5-16"></a>    <span class="cf">if</span> ( compliance <span class="sc">==</span> <span class="st">"one-sided"</span>) {</span>
+<span id="cb5-17"><a href="#cb5-17"></a></span>
+<span id="cb5-18"><a href="#cb5-18"></a>        compl <span class="ot">&lt;-</span>  <span class="fu">rbinom</span>(<span class="at">n =</span> <span class="fu">sum</span>(dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span>),</span>
+<span id="cb5-19"><a href="#cb5-19"></a>                         <span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb5-20"><a href="#cb5-20"></a>                         <span class="at">p =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>gamma0 <span class="sc">-</span> gammax <span class="sc">*</span> dat<span class="sc">$</span>X)))</span>
+<span id="cb5-21"><a href="#cb5-21"></a></span>
+<span id="cb5-22"><a href="#cb5-22"></a>        dat<span class="sc">$</span>W <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span>, compl, <span class="dv">0</span>)</span>
+<span id="cb5-23"><a href="#cb5-23"></a></span>
+<span id="cb5-24"><a href="#cb5-24"></a>        dat<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> dat<span class="sc">$</span>W <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"co"</span>,</span>
+<span id="cb5-25"><a href="#cb5-25"></a>                        <span class="fu">ifelse</span>(dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> dat<span class="sc">$</span>W <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"nc"</span>, <span class="st">"co or nc"</span>))</span>
+<span id="cb5-26"><a href="#cb5-26"></a></span>
+<span id="cb5-27"><a href="#cb5-27"></a>       </span>
+<span id="cb5-28"><a href="#cb5-28"></a>    </span>
+<span id="cb5-29"><a href="#cb5-29"></a>    } <span class="cf">else</span> <span class="cf">if</span> ( compliance <span class="sc">==</span> <span class="st">"two-sided"</span>) {</span>
+<span id="cb5-30"><a href="#cb5-30"></a></span>
+<span id="cb5-31"><a href="#cb5-31"></a>        complT <span class="ot">&lt;-</span>  <span class="fu">rbinom</span>(<span class="at">n =</span> <span class="fu">sum</span>(dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span>),</span>
+<span id="cb5-32"><a href="#cb5-32"></a>                          <span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb5-33"><a href="#cb5-33"></a>                          <span class="at">p =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>gamma0 <span class="sc">-</span> gammax <span class="sc">*</span> dat<span class="sc">$</span>X)))</span>
+<span id="cb5-34"><a href="#cb5-34"></a>        </span>
+<span id="cb5-35"><a href="#cb5-35"></a>        <span class="cf">if</span> (<span class="fu">is.null</span>(gamma0C)) {</span>
+<span id="cb5-36"><a href="#cb5-36"></a>          gamma0C <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb5-37"><a href="#cb5-37"></a>        }</span>
+<span id="cb5-38"><a href="#cb5-38"></a></span>
+<span id="cb5-39"><a href="#cb5-39"></a>        complC <span class="ot">&lt;-</span>  <span class="fu">rbinom</span>(<span class="at">n =</span> <span class="fu">sum</span>(dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">0</span>),</span>
+<span id="cb5-40"><a href="#cb5-40"></a>                          <span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb5-41"><a href="#cb5-41"></a>                          <span class="at">p =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>gamma0C <span class="sc">-</span> gammax <span class="sc">*</span> dat<span class="sc">$</span>X)))</span>
+<span id="cb5-42"><a href="#cb5-42"></a></span>
+<span id="cb5-43"><a href="#cb5-43"></a>        dat<span class="sc">$</span>W <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span>, complT, complC)</span>
+<span id="cb5-44"><a href="#cb5-44"></a></span>
+<span id="cb5-45"><a href="#cb5-45"></a>        dat<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> dat<span class="sc">$</span>W <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"co/at"</span>,</span>
+<span id="cb5-46"><a href="#cb5-46"></a>                      <span class="fu">ifelse</span>(dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> dat<span class="sc">$</span>W <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"co/nt"</span>,</span>
+<span id="cb5-47"><a href="#cb5-47"></a>                        <span class="fu">ifelse</span>(dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> dat<span class="sc">$</span>W <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"nt/df"</span>,</span>
+<span id="cb5-48"><a href="#cb5-48"></a>                          <span class="fu">ifelse</span>(dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> dat<span class="sc">$</span>W <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"at/df"</span>, <span class="st">"error"</span>))))</span>
+<span id="cb5-49"><a href="#cb5-49"></a></span>
+<span id="cb5-50"><a href="#cb5-50"></a>    } <span class="cf">else</span> {</span>
+<span id="cb5-51"><a href="#cb5-51"></a></span>
+<span id="cb5-52"><a href="#cb5-52"></a>      <span class="fu">stop</span>(<span class="st">"compliance type is either one- or two-sided"</span>)</span>
+<span id="cb5-53"><a href="#cb5-53"></a>    </span>
+<span id="cb5-54"><a href="#cb5-54"></a>    }</span>
+<span id="cb5-55"><a href="#cb5-55"></a>    <span class="co"># note bz should be 0 (assumption of IVE)</span></span>
+<span id="cb5-56"><a href="#cb5-56"></a></span>
+<span id="cb5-57"><a href="#cb5-57"></a>    err <span class="ot">&lt;-</span> <span class="fu">with</span>(dat, <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>((bx<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">var</span>(X) <span class="sc">+</span> (bz<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">var</span>(Z) <span class="sc">+</span> (tau<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">var</span>(W) <span class="sc">+</span> (taux<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">var</span>(X<span class="sc">*</span>W) <span class="sc">+</span></span>
+<span id="cb5-58"><a href="#cb5-58"></a>                                                              <span class="dv">2</span><span class="sc">*</span>bx<span class="sc">*</span>bz<span class="sc">*</span><span class="fu">cov</span>(X, Z) <span class="sc">+</span></span>
+<span id="cb5-59"><a href="#cb5-59"></a>                                                              <span class="dv">2</span><span class="sc">*</span>bx<span class="sc">*</span>tau<span class="sc">*</span><span class="fu">cov</span>(X, W) <span class="sc">+</span></span>
+<span id="cb5-60"><a href="#cb5-60"></a>                                                              <span class="dv">2</span><span class="sc">*</span>bx<span class="sc">*</span>taux<span class="sc">*</span><span class="fu">cov</span>(X, X<span class="sc">*</span>W) <span class="sc">+</span></span>
+<span id="cb5-61"><a href="#cb5-61"></a>                                                              <span class="dv">2</span><span class="sc">*</span>bz<span class="sc">*</span>tau<span class="sc">*</span><span class="fu">cov</span>(Z, W) <span class="sc">+</span> </span>
+<span id="cb5-62"><a href="#cb5-62"></a>                                                              <span class="dv">2</span><span class="sc">*</span>bz<span class="sc">*</span>taux<span class="sc">*</span><span class="fu">cov</span>(Z, X<span class="sc">*</span>W) <span class="sc">+</span> </span>
+<span id="cb5-63"><a href="#cb5-63"></a>                                                              <span class="dv">2</span><span class="sc">*</span>tau<span class="sc">*</span>taux<span class="sc">*</span><span class="fu">cov</span>(W, X<span class="sc">*</span>W))))</span>
+<span id="cb5-64"><a href="#cb5-64"></a></span>
+<span id="cb5-65"><a href="#cb5-65"></a>    dat<span class="sc">$</span>Y <span class="ot">&lt;-</span> <span class="fu">with</span>(dat, b0 <span class="sc">+</span> bx <span class="sc">*</span> X <span class="sc">+</span> bz<span class="sc">*</span>Z <span class="sc">+</span> tau<span class="sc">*</span>W <span class="sc">+</span> taux<span class="sc">*</span>X<span class="sc">*</span>W <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, err)) <span class="co">#</span></span>
+<span id="cb5-66"><a href="#cb5-66"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb5-67"><a href="#cb5-67"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Execute the function with <span class="math inline">\(N =\)</span> 10000.</p>
+</div>
+</figure>
+</div>
+<p>Execute the function and simulate data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">set.seed</span>(<span class="dv">987</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a>exDat <span class="ot">&lt;-</span> <span class="fu">genOSNC</span>(<span class="at">n =</span> <span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">simDat</span>(<span class="at">n =</span> <span class="dv">20000</span>,</span>
+<span id="cb6-2"><a href="#cb6-2"></a>              <span class="at">tau =</span> .<span class="dv">25</span>,</span>
+<span id="cb6-3"><a href="#cb6-3"></a>              <span class="at">seed =</span> <span class="dv">1</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">with</span>(dat,</span>
+<span id="cb6-6"><a href="#cb6-6"></a>     <span class="fu">table</span>(Z, W, <span class="at">useNA =</span> <span class="st">"always"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>        <span class="fu">addmargins</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      W
+Z          0     1  &lt;NA&gt;   Sum
+  0    10041     0     0 10041
+  1     2682  7277     0  9959
+  &lt;NA&gt;     0     0     0     0
+  Sum  12723  7277     0 20000</code></pre>
+</div>
+</div>
+</section><section id="analyses" class="level1 page-columns page-full"><h1>Analyses</h1>
+<div class="cell fig-cap-location-top page-columns page-full">
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div id="fig-data" class="quarto-float quarto-figure quarto-figure-center anchored" data-cap-location="top">
+<figure class="quarto-float quarto-float-fig figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Violin plots of groups
+</figcaption><div aria-describedby="fig-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="CACE_files/figure-html/fig-data-1.png" class="img-fluid figure-img" width="2100">
+</div>
+</figure>
+</div>
+</div></div></div>
+<p>Calculate proportion of complier (<span class="math inline">\(\pi_{co}\)</span>) and non-complier (<span class="math inline">\(\pi_{nc}\)</span>)</p>
+<ul>
+<li><p><span class="math inline">\(\pi_{co}\)</span> = 0.36385</p></li>
+<li><p><span class="math inline">\(\pi_{nc}\)</span> = 0.63615</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>ITTw <span class="ot">&lt;-</span> (<span class="fu">mean</span>(dat<span class="sc">$</span>W[dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span>]) <span class="sc">-</span> <span class="fu">mean</span>(dat<span class="sc">$</span>W[dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">0</span>])) <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>    <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7306959</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>exDat <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">lm</span>(<span class="at">formula =</span> Y <span class="sc">~</span> Z <span class="sc">+</span> W) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>ITTy <span class="ot">&lt;-</span> (<span class="fu">mean</span>(dat<span class="sc">$</span>Y[dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span>]) <span class="sc">-</span> <span class="fu">mean</span>(dat<span class="sc">$</span>Y[dat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">0</span>])) <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1769122</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>late <span class="ot">&lt;-</span> ITTy <span class="sc">/</span> ITTw <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7306959</code></pre>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">lm</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">ivreg</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">lavaan</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(W <span class="sc">~</span> Z, <span class="at">data =</span> dat)</span>
+<span id="cb14-2"><a href="#cb14-2"></a>dat<span class="sc">$</span>What <span class="ot">&lt;-</span> <span class="fu">fitted</span>(mod1)</span>
+<span id="cb14-3"><a href="#cb14-3"></a></span>
+<span id="cb14-4"><a href="#cb14-4"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> What, <span class="at">data =</span> dat)</span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="fu">summary</span>(mod2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = Y ~ Z + W, data = exDat)
+lm(formula = Y ~ What, data = dat)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--3.7332 -0.6933  0.0130  0.6992  3.6143 
+-4.3619 -0.6665  0.0008  0.6724  3.6366 
 
 Coefficients:
              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) -0.001862   0.014188  -0.131    0.896    
-Z            0.003713   0.024807   0.150    0.881    
-W            0.480697   0.028557  16.833   &lt;2e-16 ***
+(Intercept) -0.004602   0.009897  -0.465    0.642    
+What         0.242115   0.019194  12.614   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 1.006 on 9997 degrees of freedom
-Multiple R-squared:  0.04169,   Adjusted R-squared:  0.0415 
-F-statistic: 217.5 on 2 and 9997 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 0.9917 on 19998 degrees of freedom
+Multiple R-squared:  0.007894,  Adjusted R-squared:  0.007844 
+F-statistic: 159.1 on 1 and 19998 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-</section><section id="sample-size-treatment-assignment" class="level4"><h4 class="anchored" data-anchor-id="sample-size-treatment-assignment">Sample size: Treatment assignment</h4>
-<div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">with</span>(exDat, <span class="fu">table</span>(Z))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Z
-   0    1 
-5031 4969 </code></pre>
 </div>
-</div>
-</section><section id="sample-size-treatment-received" class="level4"><h4 class="anchored" data-anchor-id="sample-size-treatment-received">Sample size: Treatment received</h4>
-<div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">with</span>(exDat, <span class="fu">table</span>(W))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>W
-   0    1 
-7477 2523 </code></pre>
-</div>
-</div>
-</section><section id="sample-size-treatment-received-1" class="level4"><h4 class="anchored" data-anchor-id="sample-size-treatment-received-1">Sample size: Treatment received</h4>
-<div class="cell" data-output-location="column-fragment">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">with</span>(exDat, <span class="fu">table</span>(Z, W))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   W
-Z      0    1
-  0 5031    0
-  1 2446 2523</code></pre>
-</div>
-</div>
-</section><section id="estimating-the-itt-effect-for-the-receipt-of-treatment" class="level4"><h4 class="anchored" data-anchor-id="estimating-the-itt-effect-for-the-receipt-of-treatment">Estimating the ITT Effect for the Receipt of Treatment</h4>
-<p>(needed for LATE effect)</p>
-<blockquote class="blockquote">
-<p>Complete randomization of the assignment implies that an unbaised estimator for the avarage causal effect <span class="math inline">\(ITT_W\)</span> exists in the form of the average difference in treatment status by assigment status <span class="citation" data-cites="imbens2015">(<a href="#ref-imbens2015" role="doc-biblioref"><strong>imbens2015?</strong></a>, p, 520)</span></p>
-</blockquote>
-<p><span class="math inline">\(\widehat{ITT_W}=\overline{W}^{obs}_1-\overline{W}^{obs}_0 = \overline{W}^{obs}_1\)</span></p>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>ITTw <span class="ot">&lt;-</span> <span class="fu">mean</span>(exDat[exDat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"W"</span>])</span>
-<span id="cb11-2"><a href="#cb11-2"></a>ITTw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.507748</code></pre>
-</div>
-</div>
-</section><section id="estimating-the-itt-effect-for-the-outcome" class="level4"><h4 class="anchored" data-anchor-id="estimating-the-itt-effect-for-the-outcome">Estimating the ITT Effect for the Outcome</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>ITTcomp <span class="ot">&lt;-</span> <span class="fu">with</span>(exDat, <span class="fu">aggregate</span>(Y <span class="sc">~</span> Z,</span>
-<span id="cb13-2"><a href="#cb13-2"></a>                                 <span class="at">FUN =</span> <span class="cf">function</span>(x) {</span>
-<span id="cb13-3"><a href="#cb13-3"></a>                                  <span class="fu">c</span>(<span class="at">M =</span> <span class="fu">mean</span>(x),</span>
-<span id="cb13-4"><a href="#cb13-4"></a>                                    <span class="at">Var =</span> <span class="fu">var</span>(x))</span>
-<span id="cb13-5"><a href="#cb13-5"></a>                                    }</span>
-<span id="cb13-6"><a href="#cb13-6"></a>                                )</span>
-<span id="cb13-7"><a href="#cb13-7"></a>              )</span>
-<span id="cb13-8"><a href="#cb13-8"></a>ITTcomp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Z          Y.M        Y.Var
-1 0 -0.001861892  1.018743443
-2 1  0.245924519  1.064329908</code></pre>
-</div>
-</div>
-<p><span class="math inline">\(\widehat{ITT_Y} = \overline{Y}^{obs}_1 - \overline{Y}^{obs}_0\)</span> = 0.2459245 - -0.0018619 = 0.2477864</p>
-<p>With the variance and sample sizes, we then caluclate the standard errors and confidence intervals…</p>
-</section><section id="estimating-the-itt-effect-for-the-outcome-by-compliance-status" class="level4"><h4 class="anchored" data-anchor-id="estimating-the-itt-effect-for-the-outcome-by-compliance-status">Estimating the ITT Effect for the Outcome by Compliance Status</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">with</span>(exDat[exDat<span class="sc">$</span>Z <span class="sc">==</span> <span class="dv">1</span>,], <span class="fu">aggregate</span>(Y <span class="sc">~</span> W,</span>
-<span id="cb15-2"><a href="#cb15-2"></a>                                 <span class="at">FUN =</span> <span class="cf">function</span>(x) {</span>
-<span id="cb15-3"><a href="#cb15-3"></a>                                  <span class="fu">c</span>(<span class="at">M =</span> <span class="fu">mean</span>(x),</span>
-<span id="cb15-4"><a href="#cb15-4"></a>                                    <span class="at">Var =</span> <span class="fu">var</span>(x))</span>
-<span id="cb15-5"><a href="#cb15-5"></a>                                    }</span>
-<span id="cb15-6"><a href="#cb15-6"></a>                                )</span>
-<span id="cb15-7"><a href="#cb15-7"></a>              )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  W         Y.M       Y.Var
-1 0 0.001851581 1.000415971
-2 1 0.482548541 1.012924939</code></pre>
-</div>
-</div>
-</section><section id="local-average-treatment-effects-late" class="level4"><h4 class="anchored" data-anchor-id="local-average-treatment-effects-late">Local Average Treatment Effects (LATE)</h4>
-<p><span class="math inline">\(\tau_{late} = ITT_{Y,co} = \frac{ITT_Y}{ITT_W}\)</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">unname</span>(ITTy)<span class="sc">/</span>ITTw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4880106</code></pre>
-</div>
-</div>
-</section></section><section id="iv-estimation" class="level3"><h3 class="anchored" data-anchor-id="iv-estimation">IV estimation</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>ivMod <span class="ot">&lt;-</span> <span class="fu">lm</span>(W <span class="sc">~</span> Z, <span class="at">data =</span> exDat)</span>
-<span id="cb19-2"><a href="#cb19-2"></a>exDat<span class="sc">$</span>What <span class="ot">&lt;-</span> <span class="fu">predict</span>(ivMod)</span>
-<span id="cb19-3"><a href="#cb19-3"></a></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="fu">lm</span>(Y <span class="sc">~</span> What, <span class="at">data =</span> exDat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>ivreg<span class="sc">::</span><span class="fu">ivreg</span>(<span class="at">formula =</span> Y <span class="sc">~</span> W <span class="sc">|</span> Z, <span class="at">data =</span> dat) <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>    <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = Y ~ What, data = exDat)
+ivreg::ivreg(formula = Y ~ W | Z, data = dat)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-4.18500 -0.66668 -0.00269  0.67385  3.63663 
 
 Coefficients:
-(Intercept)         What  
-  -0.001862     0.488011  </code></pre>
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -0.004602   0.009875  -0.466    0.641    
+W            0.242115   0.019153  12.641   &lt;2e-16 ***
+
+Diagnostic tests:
+                   df1   df2 statistic p-value    
+Weak instruments     1 19998 27241.257  &lt;2e-16 ***
+Wu-Hausman           1 19997     1.207   0.272    
+Sargan               0    NA        NA      NA    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.9896 on 19998 degrees of freedom
+Multiple R-Squared: 0.01214,    Adjusted R-squared: 0.01209 
+Wald test: 159.8 on 1 and 19998 DF,  p-value: &lt; 2.2e-16 </code></pre>
 </div>
 </div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">library</span>(ivreg)</span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="fu">ivreg</span>(<span class="at">formula =</span> Y <span class="sc">~</span> W <span class="sc">|</span> Z, <span class="at">data =</span> exDat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">simDat</span>(<span class="at">bx =</span> <span class="dv">0</span>,<span class="co">#as.numeric(simCond[x,"bx"]),</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>                      <span class="at">gammax =</span> <span class="dv">0</span>,<span class="co">#as.numeric(simCond[x,"gammax"]),</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>                      <span class="co">#gamma0 = -1,</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>                      <span class="at">tau =</span> .<span class="dv">3</span>,</span>
+<span id="cb18-5"><a href="#cb18-5"></a>                      <span class="at">n =</span> <span class="dv">500000</span>)</span>
+<span id="cb18-6"><a href="#cb18-6"></a></span>
+<span id="cb18-7"><a href="#cb18-7"></a></span>
+<span id="cb18-8"><a href="#cb18-8"></a>caceMod <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a><span class="st">W ~ Z</span></span>
+<span id="cb18-10"><a href="#cb18-10"></a><span class="st">Y ~ W </span></span>
+<span id="cb18-11"><a href="#cb18-11"></a><span class="st">Y ~~ W</span></span>
+<span id="cb18-12"><a href="#cb18-12"></a><span class="st">'</span></span>
+<span id="cb18-13"><a href="#cb18-13"></a></span>
+<span id="cb18-14"><a href="#cb18-14"></a>fitcaceMod <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">sem</span>(caceMod, <span class="at">data =</span> dat)</span>
+<span id="cb18-15"><a href="#cb18-15"></a></span>
+<span id="cb18-16"><a href="#cb18-16"></a>lavaan<span class="sc">::</span><span class="fu">summary</span>(fitcaceMod, <span class="at">std =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-ivreg(formula = Y ~ W | Z, data = exDat)
+<pre><code>lavaan 0.6-19 ended normally after 10 iterations
 
-Coefficients:
-(Intercept)            W  
-  -0.001862     0.488011  </code></pre>
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                         5
+
+  Number of observations                        500000
+
+Model Test User Model:
+                                                      
+  Test statistic                                 0.000
+  Degrees of freedom                                 0
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  W ~                                                                   
+    Z                 0.731    0.001  823.951    0.000    0.731    0.759
+  Y ~                                                                   
+    W                 0.302    0.004   78.838    0.000    0.302    0.145
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+ .W ~~                                                                  
+   .Y                -0.000    0.001   -0.539    0.590   -0.000   -0.001
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+   .W                 0.098    0.000  500.000    0.000    0.098    0.424
+   .Y                 0.982    0.002  500.000    0.000    0.982    0.979</code></pre>
 </div>
 </div>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb23-1"><a href="#cb23-1"></a></span>
-<span id="cb23-2"><a href="#cb23-2"></a>library(lavaan)</span>
-<span id="cb23-3"><a href="#cb23-3"></a></span>
-<span id="cb23-4"><a href="#cb23-4"></a>ivLavMod &lt;- '</span>
-<span id="cb23-5"><a href="#cb23-5"></a></span>
-<span id="cb23-6"><a href="#cb23-6"></a>Y ~ W</span>
-<span id="cb23-7"><a href="#cb23-7"></a>Y ~ 1</span>
-<span id="cb23-8"><a href="#cb23-8"></a>W ~ Z</span>
-<span id="cb23-9"><a href="#cb23-9"></a>Y ~~ W</span>
-<span id="cb23-10"><a href="#cb23-10"></a>'</span>
-<span id="cb23-11"><a href="#cb23-11"></a></span>
-<span id="cb23-12"><a href="#cb23-12"></a>fitivLavMod &lt;- sem(ivLavMod, data = exDat)</span>
-<span id="cb23-13"><a href="#cb23-13"></a>summary(fitivLavMod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section></section><section id="test" class="level2"><h2 class="anchored" data-anchor-id="test">test</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"></figure><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A[fa:fa-car] --&gt; R
-    R --&gt; Exp
-    R --&gt; Con
-    Exp --&gt; C["Compliance\n"]
-    Exp --&gt; NC["Non-\nCompliance"]
-</pre>
-</div>
-<p></p>
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb24-1"><a href="#cb24-1"></a>for (i in 1:3) {</span>
-<span id="cb24-2"><a href="#cb24-2"></a>  print(i)</span>
-<span id="cb24-3"><a href="#cb24-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="cace-ref" class="level2"><h2 class="anchored" data-anchor-id="cace-ref">References (CACE slides)</h2>
+</section><section id="testing" class="level1"><h1>Testing</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>simCond <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(</span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="at">bx =</span> <span class="fu">seq</span>(<span class="dv">0</span>, .<span class="dv">4</span>, <span class="at">by =</span> .<span class="dv">2</span>),</span>
+<span id="cb20-3"><a href="#cb20-3"></a>  <span class="at">gammax =</span> <span class="fu">seq</span>(<span class="dv">0</span>, .<span class="dv">4</span>, <span class="at">by =</span> .<span class="dv">2</span>),</span>
+<span id="cb20-4"><a href="#cb20-4"></a>  <span class="at">gamma0 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>, <span class="at">by =</span> .<span class="dv">5</span>)<span class="co">#,</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>  <span class="co">#n = c(200, 500, 1000) # for now without sample size </span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>)</span>
+<span id="cb20-7"><a href="#cb20-7"></a></span>
+<span id="cb20-8"><a href="#cb20-8"></a></span>
+<span id="cb20-9"><a href="#cb20-9"></a>simResults <span class="ot">&lt;-</span> <span class="fu">do.call</span>(</span>
+<span id="cb20-10"><a href="#cb20-10"></a>  rbind,</span>
+<span id="cb20-11"><a href="#cb20-11"></a>  <span class="fu">lapply</span>(</span>
+<span id="cb20-12"><a href="#cb20-12"></a>  <span class="at">X =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(simCond),</span>
+<span id="cb20-13"><a href="#cb20-13"></a>  <span class="at">FUN =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb20-14"><a href="#cb20-14"></a>    tempDat <span class="ot">&lt;-</span> <span class="fu">simDat</span>(<span class="at">bx =</span> <span class="fu">as.numeric</span>(simCond[x,<span class="st">"bx"</span>]),</span>
+<span id="cb20-15"><a href="#cb20-15"></a>                      <span class="at">gammax =</span> <span class="fu">as.numeric</span>(simCond[x,<span class="st">"gammax"</span>]),</span>
+<span id="cb20-16"><a href="#cb20-16"></a>                      <span class="at">gamma0 =</span> <span class="fu">as.numeric</span>(simCond[x,<span class="st">"gamma0"</span>]),</span>
+<span id="cb20-17"><a href="#cb20-17"></a>                      <span class="at">tau =</span> .<span class="dv">3</span>,</span>
+<span id="cb20-18"><a href="#cb20-18"></a>                      <span class="at">n =</span> <span class="dv">500000</span>)</span>
+<span id="cb20-19"><a href="#cb20-19"></a></span>
+<span id="cb20-20"><a href="#cb20-20"></a>    LavMod <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb20-21"><a href="#cb20-21"></a><span class="st">    W ~ Z</span></span>
+<span id="cb20-22"><a href="#cb20-22"></a><span class="st">    Y ~ late*W</span></span>
+<span id="cb20-23"><a href="#cb20-23"></a><span class="st">    Y ~~ W </span></span>
+<span id="cb20-24"><a href="#cb20-24"></a><span class="st">    '</span></span>
+<span id="cb20-25"><a href="#cb20-25"></a>    fitLavMod <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">sem</span>(<span class="at">model =</span> LavMod, <span class="at">data =</span> tempDat)</span>
+<span id="cb20-26"><a href="#cb20-26"></a>    </span>
+<span id="cb20-27"><a href="#cb20-27"></a>    paramEst <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">parameterEstimates</span>(fitLavMod)</span>
+<span id="cb20-28"><a href="#cb20-28"></a>    paramEst<span class="sc">$</span>cond <span class="ot">&lt;-</span> x</span>
+<span id="cb20-29"><a href="#cb20-29"></a>  </span>
+<span id="cb20-30"><a href="#cb20-30"></a>    <span class="fu">return</span>(paramEst)</span>
+<span id="cb20-31"><a href="#cb20-31"></a></span>
+<span id="cb20-32"><a href="#cb20-32"></a>    ret <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Data =</span> tempDat,</span>
+<span id="cb20-33"><a href="#cb20-33"></a>                <span class="at">Fitted =</span> fitLavMod,</span>
+<span id="cb20-34"><a href="#cb20-34"></a>                <span class="at">ParamEst =</span> paramEst)</span>
+<span id="cb20-35"><a href="#cb20-35"></a>  })</span>
+<span id="cb20-36"><a href="#cb20-36"></a>)</span>
+<span id="cb20-37"><a href="#cb20-37"></a></span>
+<span id="cb20-38"><a href="#cb20-38"></a></span>
+<span id="cb20-39"><a href="#cb20-39"></a>simCond<span class="sc">$</span>cond <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(simCond)</span>
+<span id="cb20-40"><a href="#cb20-40"></a></span>
+<span id="cb20-41"><a href="#cb20-41"></a>simResults <span class="ot">&lt;-</span> <span class="fu">merge</span>(simResults, simCond,</span>
+<span id="cb20-42"><a href="#cb20-42"></a>                    <span class="at">by =</span> <span class="st">"cond"</span>,</span>
+<span id="cb20-43"><a href="#cb20-43"></a>                    <span class="at">all.x =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb20-44"><a href="#cb20-44"></a></span>
+<span id="cb20-45"><a href="#cb20-45"></a><span class="fu">colnames</span>(simResults)</span>
+<span id="cb20-46"><a href="#cb20-46"></a></span>
+<span id="cb20-47"><a href="#cb20-47"></a>simResults<span class="sc">$</span>gamma0 <span class="ot">&lt;-</span> <span class="fu">factor</span>(simResults<span class="sc">$</span>gamma0,</span>
+<span id="cb20-48"><a href="#cb20-48"></a>                            <span class="at">levels =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>, <span class="at">by =</span> .<span class="dv">5</span>),</span>
+<span id="cb20-49"><a href="#cb20-49"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"18%"</span>, <span class="st">"27%"</span>, <span class="st">"38%"</span>, <span class="st">"50%"</span>, <span class="st">"62%"</span>, <span class="st">"73%"</span>, <span class="st">"82%"</span>))</span>
+<span id="cb20-50"><a href="#cb20-50"></a></span>
+<span id="cb20-51"><a href="#cb20-51"></a>resPlot <span class="ot">&lt;-</span> simResults <span class="sc">|&gt;</span></span>
+<span id="cb20-52"><a href="#cb20-52"></a>  <span class="fu">subset</span>( <span class="at">subset =</span> label <span class="sc">==</span> <span class="st">"late"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb20-53"><a href="#cb20-53"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> est, <span class="at">x =</span> <span class="fu">factor</span>(gamma0), <span class="at">color =</span> <span class="fu">factor</span>(gammax) )) <span class="sc">+</span></span>
+<span id="cb20-54"><a href="#cb20-54"></a>    <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept =</span> .<span class="dv">3</span>), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb20-55"><a href="#cb20-55"></a>    <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="dv">1</span>),</span>
+<span id="cb20-56"><a href="#cb20-56"></a>               <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb20-57"><a href="#cb20-57"></a>    <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> ci.lower, <span class="at">ymax=</span>ci.upper),</span>
+<span id="cb20-58"><a href="#cb20-58"></a>                  <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="dv">1</span>),</span>
+<span id="cb20-59"><a href="#cb20-59"></a>                  <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb20-60"><a href="#cb20-60"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span> bx) <span class="sc">+</span></span>
+<span id="cb20-61"><a href="#cb20-61"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"LATE"</span>, <span class="at">limits =</span> <span class="fu">c</span>(.<span class="dv">2</span>, .<span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb20-62"><a href="#cb20-62"></a>    <span class="fu">scale_color_brewer</span>(<span class="at">name =</span> <span class="st">"X -&gt; W"</span>, <span class="at">palette =</span> <span class="st">"Set1"</span>, <span class="at">type=</span><span class="st">"seq"</span>) <span class="sc">+</span></span>
+<span id="cb20-63"><a href="#cb20-63"></a>    <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">"Compliance ratio ~"</span>) <span class="sc">+</span></span>
+<span id="cb20-64"><a href="#cb20-64"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb20-65"><a href="#cb20-65"></a></span>
+<span id="cb20-66"><a href="#cb20-66"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"late-sim.pdf"</span>, <span class="at">path =</span> <span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Rieger</span><span class="sc">\\</span><span class="st">Desktop"</span>,</span>
+<span id="cb20-67"><a href="#cb20-67"></a>       <span class="at">scale =</span> <span class="dv">2</span>,</span>
+<span id="cb20-68"><a href="#cb20-68"></a>       <span class="at">width =</span> <span class="dv">1000</span>,</span>
+<span id="cb20-69"><a href="#cb20-69"></a>       <span class="at">height =</span> <span class="dv">800</span>,</span>
+<span id="cb20-70"><a href="#cb20-70"></a>       <span class="at">units =</span> <span class="st">"px"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="references" class="level2"><h2 class="anchored" data-anchor-id="references">References</h2>
 <div id="refs" role="list">
 
 </div>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/github\.com\/RiegerSven\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/github\.com\/RiegerSven\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -709,185 +1051,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
