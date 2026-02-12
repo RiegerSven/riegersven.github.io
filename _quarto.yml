@@ -49,8 +49,6 @@ execute:
 bibliography: 
   - "bib-files/rieger-pub.bib"
   - "bib-files/github-page.bib"
-  - "bib-files/most-used-r-refs.bib"
-  - "bib-files/descr-pkg.bib"
 
 csl: apa.csl
 
