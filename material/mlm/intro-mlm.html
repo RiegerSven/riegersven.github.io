@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.22">
+<meta name="generator" content="quarto-1.9.10">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Sven Rieger">
 <meta name="dcterms.date" content="2023-12-01">
@@ -83,18 +83,17 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../material/measurement-models/cfa.html" rel="next">
-<link href="../../material/basic-calculations/descriptive-statistics.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-68bca3a50acd80feb0cb8c3c361c6f22.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-cd11bcd1b437ec35c0dee322a6d3547e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a7b7969f839d83333d5abb8c1a1d1995.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-8b7d5cd672ef1dbfa60903d371f64be5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -119,7 +118,7 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.6/tex-mml-chtml.js" type="text/javascript"></script><script type="text/javascript">
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -130,7 +129,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -154,7 +153,7 @@ window.Quarto = {
 <meta name="twitter:image" content="https://github.com/RiegerSven/material/mlm/intro-mlm_files/figure-html/plot-ses-math-1.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-<body class="nav-sidebar floating nav-fixed slimcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
@@ -171,197 +170,28 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">About me</span></a>
+<span class="menu-text">about me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../preface.html" aria-current="page"> 
-<span class="menu-text">Material</span></a>
+    <a class="nav-link" href="../../library.html"> 
+<span class="menu-text">library</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../publications.html"> 
-<span class="menu-text">Publications</span></a>
+<span class="menu-text">publications</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/RiegerSven/"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://bsky.app/profile/svenrieger.bsky.social"> 
-<span class="menu-text">Bluesky</span></a>
-  </li>  
 </ul>
 </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/mlm/intro-mlm.html">Multilevel Modeling</a></li><li class="breadcrumb-item"><a href="../../material/mlm/intro-mlm.html">Introduction to Multilevel Modeling</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav><div id="quarto-announcement" data-announcement-id="cf5712b0d6d4d53aa37f95e0f08970ba" class="alert alert-primary hidden">
-<i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>This website is work in progress and under active development.</p>
-</div>
-<i class="bi bi-x-lg quarto-announcement-action"></i>
-</div>
-</header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/software/intro-r-rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to R &amp; RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/software/intro-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A not so short introduction to Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/software/setup-project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Implement a Project-Oriented Workflow</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Example Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/example-data/data-hsb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">High School and Beyond (HSB)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/example-data/data-latent-state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulated Data based on 3-dimensional CFA Multiple Group Model</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Data (Pre-)Processing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-nam-lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">(Named) Lists &amp; character vectors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Functions in R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Loops in R</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Basic Calculations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/basic-calculations/descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Multilevel Modeling</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/mlm/intro-mlm.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Introduction to Multilevel Modeling</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Measurement Models</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/measurement-models/cfa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Confirmatory Factor Analyses</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-    </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
@@ -387,7 +217,7 @@ window.Quarto = {
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/mlm/intro-mlm.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="intro-mlm-reveal.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/mlm/intro-mlm.html">Multilevel Modeling</a></li><li class="breadcrumb-item"><a href="../../material/mlm/intro-mlm.html">Introduction to Multilevel Modeling</a></li></ol></nav><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Introduction to Multilevel Modeling</h1>
 </div>
 
@@ -430,23 +260,23 @@ window.Quarto = {
 <li>The following packages are used:</li>
 </ul>
 <div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>mlmPkg <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"merTools"</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>mlmPkg <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"merTools"</span>,</span>
 <span id="cb1-2"><a href="#cb1-2"></a>            <span class="st">"lme4"</span>,</span>
 <span id="cb1-3"><a href="#cb1-3"></a>            <span class="st">"flextable"</span>,</span>
 <span id="cb1-4"><a href="#cb1-4"></a>            <span class="st">"psych"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5"></a>            <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5"></a>            <span class="st">"ggplot2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <ul>
 <li>Install packages when not already installed:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">lapply</span>(mlmPkg,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">lapply</span>(mlmPkg,</span>
 <span id="cb2-2"><a href="#cb2-2"></a>        <span class="cf">function</span>(x) </span>
 <span id="cb2-3"><a href="#cb2-3"></a>          <span class="cf">if</span>(<span class="sc">!</span>x <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())) {</span>
 <span id="cb2-4"><a href="#cb2-4"></a>            <span class="fu">install.packages</span>(x)</span>
 <span id="cb2-5"><a href="#cb2-5"></a>            }</span>
-<span id="cb2-6"><a href="#cb2-6"></a>      )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href="#cb2-6"></a>      )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
@@ -454,15 +284,15 @@ window.Quarto = {
 <li>Load (a subset of) the required package(s) into the <code>R</code> session.</li>
 </ul>
 <div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(lme4)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(lme4)</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">library</span>(flextable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">library</span>(flextable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section><section id="preface-software-ii" class="level2"><h2 class="anchored" data-anchor-id="preface-software-ii">Preface: Software II</h2>
 <p>Print list of packages and cite them via <a href="https://pandoc.org/MANUAL.html#citations" target="_blank">Pandoc citation</a>.</p>
 <div class="cell" data-output-location="fragment">
-<details class="code-fold"><summary>Show/hide fenced code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="in">```{r}</span></span>
+<details class="code-fold"><summary>Show/hide fenced code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="in">```{r}</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="co">#| label: write-mlmPkg</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="co">#| code-fold: true</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="co">#| code-summary: "Show/hide fenced code"</span></span>
@@ -476,25 +306,25 @@ window.Quarto = {
 <span id="cb4-12"><a href="#cb4-12"></a>             <span class="st">" ["</span>, <span class="st">"v"</span>, utils<span class="sc">::</span><span class="fu">packageVersion</span>(mlmPkg[i]),<span class="st">", @R-"</span>, mlmPkg[i],</span>
 <span id="cb4-13"><a href="#cb4-13"></a>             <span class="st">"]</span><span class="sc">\n</span><span class="st">"</span>))</span>
 <span id="cb4-14"><a href="#cb4-14"></a>}</span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details><ol type="1">
-<li>merTools <span class="citation" data-cites="R-merTools">(v0.6.1, <a href="#ref-R-merTools" role="doc-biblioref">Knowles &amp; Frederick, 2024</a>)</span>
+<li>merTools <span class="citation" data-cites="R-merTools">(v0.6.1, <a href="#ref-R-merTools" role="doc-biblioref">Knowles et al., 2023</a>)</span>
 </li>
-<li>lme4 <span class="citation" data-cites="R-lme4">(v1.1.34, <a href="#ref-R-lme4" role="doc-biblioref">Bates et al., 2024</a>)</span>
+<li>lme4 <span class="citation" data-cites="R-lme4">(v1.1.34, <a href="#ref-R-lme4" role="doc-biblioref"><strong>R-lme4?</strong></a>)</span>
 </li>
-<li>flextable <span class="citation" data-cites="R-flextable">(v0.9.2, <a href="#ref-R-flextable" role="doc-biblioref">Gohel &amp; Skintzos, 2024</a>)</span>
+<li>flextable <span class="citation" data-cites="R-flextable">(v0.9.2, <a href="#ref-R-flextable" role="doc-biblioref"><strong>R-flextable?</strong></a>)</span>
 </li>
-<li>psych <span class="citation" data-cites="R-psych">(v2.3.6, <a href="#ref-R-psych" role="doc-biblioref">Revelle, 2024</a>)</span>
+<li>psych <span class="citation" data-cites="R-psych">(v2.3.6, <a href="#ref-R-psych" role="doc-biblioref"><strong>R-psych?</strong></a>)</span>
 </li>
-<li>ggplot2 <span class="citation" data-cites="R-ggplot2">(v3.4.3, <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al., 2023</a>)</span>
+<li>ggplot2 <span class="citation" data-cites="R-ggplot2">(v3.4.3, <a href="#ref-R-ggplot2" role="doc-biblioref"><strong>R-ggplot2?</strong></a>)</span>
 </li>
 </ol>
 </div>
 </section><section id="preface-dataset" class="level2"><h2 class="anchored" data-anchor-id="preface-dataset">Preface: Dataset</h2>
-<p>We use the HSB dataset from the <code>merTools</code> package <span class="citation" data-cites="R-merTools">(<a href="#ref-R-merTools" role="doc-biblioref">Knowles &amp; Frederick, 2024</a>)</span>:</p>
+<p>We use the HSB dataset from the <code>merTools</code> package <span class="citation" data-cites="R-merTools">(<a href="#ref-R-merTools" role="doc-biblioref">Knowles et al., 2023</a>)</span>:</p>
 <div class="cell" data-output-location="column-fragment">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">merTools</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/merTools/man/hsb.html">hsb</a></span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dat</span>, <span class="fl">6</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">merTools</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/merTools/man/hsb.html">hsb</a></span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dat</span>, <span class="fl">6</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  schid minority female    ses mathach size schtype meanses
 1  1224        0      1 -1.528   5.876  842       0  -0.428
@@ -530,13 +360,13 @@ window.Quarto = {
 <p><strong>Example:</strong> The relation between socio-economic status and achievement across all (actually a subsample) schools</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist">
-<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Figure</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Model</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Figure</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Model</a></li>
 </ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell" data-layout-align="center" data-output-location="default">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>dat <span class="sc">|&gt;</span></span>
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>dat <span class="sc">|&gt;</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>  (\(d) d[<span class="dv">1</span><span class="sc">:</span><span class="dv">550</span>,])() <span class="sc">|&gt;</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ses, <span class="at">y =</span> mathach)) <span class="sc">+</span> </span>
 <span id="cb7-4"><a href="#cb7-4"></a>    <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">21</span>,</span>
@@ -555,7 +385,7 @@ window.Quarto = {
 <span id="cb7-17"><a href="#cb7-17"></a>                <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
 <span id="cb7-18"><a href="#cb7-18"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SES"</span>,</span>
 <span id="cb7-19"><a href="#cb7-19"></a>         <span class="at">y =</span> <span class="st">"Math Achievemenet"</span>) <span class="sc">+</span></span>
-<span id="cb7-20"><a href="#cb7-20"></a>    <span class="fu">theme_classic</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-20"><a href="#cb7-20"></a>    <span class="fu">theme_classic</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="intro-mlm_files/figure-html/plot-ses-math-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
@@ -566,10 +396,10 @@ window.Quarto = {
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell" data-output-location="default">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>dat <span class="sc">|&gt;</span></span>
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>dat <span class="sc">|&gt;</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>  (\(d) d[<span class="dv">1</span><span class="sc">:</span><span class="dv">550</span>,])() <span class="sc">|&gt;</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">lm</span>(<span class="at">formula =</span> mathach <span class="sc">~</span> ses) <span class="sc">|&gt;</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -597,7 +427,7 @@ F-statistic: 137.9 on 1 and 548 DF,  p-value: &lt; 2.2e-16</code></pre>
 </section><section id="preliminaries-logic-of-hierarchical-linear-models-ii" class="level2"><h2 class="anchored" data-anchor-id="preliminaries-logic-of-hierarchical-linear-models-ii">Preliminaries: Logic of hierarchical linear models II</h2>
 <p><strong>Example:</strong> The relation between socio-economic status and achievement in <strong>two</strong> selected schools</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>dat <span class="sc">|&gt;</span></span>
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>dat <span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">subset</span>(<span class="at">subset =</span> schid <span class="sc">==</span> <span class="dv">1224</span> <span class="sc">|</span> schid <span class="sc">==</span> <span class="dv">1462</span>) <span class="sc">|&gt;</span></span>
 <span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ses, <span class="at">y =</span> mathach)) <span class="sc">+</span></span>
 <span id="cb10-4"><a href="#cb10-4"></a>    <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">21</span>,</span>
@@ -611,7 +441,7 @@ F-statistic: 137.9 on 1 and 548 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb10-12"><a href="#cb10-12"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>schid, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb10-13"><a href="#cb10-13"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SES"</span>,</span>
 <span id="cb10-14"><a href="#cb10-14"></a>         <span class="at">y =</span> <span class="st">"Math Achievemenet"</span>) <span class="sc">+</span></span>
-<span id="cb10-15"><a href="#cb10-15"></a>    <span class="fu">theme_classic</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-15"><a href="#cb10-15"></a>    <span class="fu">theme_classic</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="intro-mlm_files/figure-html/plot-ses-math-2schools-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
@@ -631,7 +461,7 @@ F-statistic: 137.9 on 1 and 548 DF,  p-value: &lt; 2.2e-16</code></pre>
 </section><section id="preliminaries-logic-of-hierarchical-linear-models-iii" class="level2"><h2 class="anchored" data-anchor-id="preliminaries-logic-of-hierarchical-linear-models-iii">Preliminaries: Logic of hierarchical linear models III</h2>
 <p><strong>Example:</strong> The relation between socio-economic status and achievement separated in <em>J</em> (14) schools</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(dat[<span class="dv">1</span><span class="sc">:</span><span class="dv">550</span>,],</span>
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(dat[<span class="dv">1</span><span class="sc">:</span><span class="dv">550</span>,],</span>
 <span id="cb11-2"><a href="#cb11-2"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ses, <span class="at">y =</span> mathach)) <span class="sc">+</span> </span>
 <span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">21</span>,</span>
 <span id="cb11-4"><a href="#cb11-4"></a>             <span class="at">fill=</span><span class="st">"white"</span>,</span>
@@ -648,7 +478,7 @@ F-statistic: 137.9 on 1 and 548 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb11-15"><a href="#cb11-15"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>schid, <span class="at">nrow =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb11-16"><a href="#cb11-16"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SES"</span>,</span>
 <span id="cb11-17"><a href="#cb11-17"></a>       <span class="at">y =</span> <span class="st">"Math Achievemenet"</span>) <span class="sc">+</span></span>
-<span id="cb11-18"><a href="#cb11-18"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-18"><a href="#cb11-18"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="intro-mlm_files/figure-html/plot-ses-math-14schools-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
@@ -664,7 +494,7 @@ F-statistic: 137.9 on 1 and 548 DF,  p-value: &lt; 2.2e-16</code></pre>
 </ul>
 <p><span id="eq-fixed-eff"><span class="math display">\[
 Y = \beta_0 + \beta_1X + \beta_2I_2 + \beta_3I_3 + \dots + \beta_kI_k
-\qquad(1)\]</span></span></p>
+\tag{1}\]</span></span></p>
 </section><section id="excursion-fixed-effects-approach-ii" class="level2"><h2 class="anchored" data-anchor-id="excursion-fixed-effects-approach-ii">Excursion: Fixed effects approach II</h2>
 <ul>
 <li><p><strong>Example:</strong> The relation between socio-economic status <span class="math inline">\((X)\)</span> and achievement <span class="math inline">\((Y)\)</span> in <em>J</em> (160!) schools</p></li>
@@ -672,7 +502,7 @@ Y = \beta_0 + \beta_1X + \beta_2I_2 + \beta_3I_3 + \dots + \beta_kI_k
 </ul>
 <p><span id="eq-fixed-eff-examp"><span class="math display">\[
 Y = \beta_0 + \beta_1X + \sum\limits_{2}^{160} \beta_kI_k
-\qquad(2)\]</span></span></p>
+\tag{2}\]</span></span></p>
 <ul>
 <li>The regression has already 162 parameters!
 <ul>
@@ -705,27 +535,27 @@ Y = \beta_0 + \beta_1X + \sum\limits_{2}^{160} \beta_kI_k
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Description of this relationship within any school <span class="math inline">\(j\)</span> by the equations
+<span class="screen-reader-only">Note</span>Description of this relationship within any school <span class="math inline">\(j\)</span> by the equations
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Level-specific equations:</strong> <span id="eq-general-lvl1"><span class="math display">\[
 \text{Level 1: } Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij}
-\qquad(3)\]</span></span></p>
+\tag{3}\]</span></span></p>
 <p><span id="eq-general-lv2-1"><span class="math display">\[
 \begin{aligned}
 \text{Level 2 (intercept): }&amp; \beta_{0j} = \gamma_{00} + u_{0j}
 \end{aligned}
-\qquad(4)\]</span></span></p>
+\tag{4}\]</span></span></p>
 <p><span id="eq-general-lv2-2"><span class="math display">\[
 \begin{aligned}
 \text{Level 2 (slope): } &amp;\beta_{1j} = \gamma_{01} + u_{1j}
 \end{aligned}
-\qquad(5)\]</span></span></p>
+\tag{5}\]</span></span></p>
 <p><strong>Combined equation:</strong> Substituting <a href="#eq-general-lv2-1" class="quarto-xref">Equation&nbsp;4</a> and <a href="#eq-general-lv2-2" class="quarto-xref">Equation&nbsp;5</a> into <a href="#eq-general-lvl1" class="quarto-xref">Equation&nbsp;3</a> yields the combined model equation (see <a href="#eq-general-comb" class="quarto-xref">Equation&nbsp;6</a>):</p>
 <p><span id="eq-general-comb"><span class="math display">\[
 Y_{ij} = \gamma_{00} + u_{0j} + (\gamma_{01} + u_{1j})X_{ij} + r_{ij}
-\qquad(6)\]</span></span></p>
+\tag{6}\]</span></span></p>
 </div>
 </div>
 <!--
@@ -805,20 +635,8 @@ $\text{where}\; \mathbf{u} = (u_{0j}, u_{1j}) \sim N(0,\Sigma_u)$
 <li>… there are more!</li>
 </ul></section><section id="mlm-intro-ref" class="level2"><h2 class="anchored" data-anchor-id="mlm-intro-ref">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-R-lme4" class="csl-entry" role="listitem">
-Bates, D., Maechler, M., Bolker, B., &amp; Walker, S. (2024). <em>lme4: Linear mixed-effects models using eigen and S4</em>. <a href="https://github.com/lme4/lme4/">https://github.com/lme4/lme4/</a>
-</div>
-<div id="ref-R-flextable" class="csl-entry" role="listitem">
-Gohel, D., &amp; Skintzos, P. (2024). <em>Flextable: Functions for tabular reporting</em>. <a href="https://ardata-fr.github.io/flextable-book/">https://ardata-fr.github.io/flextable-book/</a>
-</div>
 <div id="ref-R-merTools" class="csl-entry" role="listitem">
-Knowles, J. E., &amp; Frederick, C. (2024). <em>merTools: Tools for analyzing mixed effect regression models</em>. <a href="https://CRAN.R-project.org/package=merTools">https://CRAN.R-project.org/package=merTools</a>
-</div>
-<div id="ref-R-psych" class="csl-entry" role="listitem">
-Revelle, W. (2024). <em>Psych: Procedures for psychological, psychometric, and personality research</em>. <a href="https://personality-project.org/r/psych/%0D%0Ahttps://personality-project.org/r/psych-manual.pdf">https://personality-project.org/r/psych/ https://personality-project.org/r/psych-manual.pdf</a>
-</div>
-<div id="ref-R-ggplot2" class="csl-entry" role="listitem">
-Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., &amp; Dunnington, D. (2023). <em>ggplot2: Create elegant data visualisations using the grammar of graphics</em>. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>
+Knowles, J. E., Frederick, C., &amp; Whitworth, A. (2023). <em><span class="nocase">merTools</span>: <span>Tools</span> for <span>Analyzing Mixed Effect Regression Models</span></em>. <a href="https://github.com/jknowles/merTools">https://github.com/jknowles/merTools</a>
 </div>
 </div>
 
@@ -874,13 +692,14 @@ Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Wo
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1226,17 +1045,7 @@ Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Wo
       }
     }
   });
-  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../../material/basic-calculations/descriptive-statistics.html" class="pagination-link" aria-label="Descriptive statistics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Descriptive statistics</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../material/measurement-models/cfa.html" class="pagination-link" aria-label="Confirmatory Factor Analyses">
-        <span class="nav-page-text">Confirmatory Factor Analyses</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
+  </script>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">

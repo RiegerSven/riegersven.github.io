@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.22">
+<meta name="generator" content="quarto-1.8.18">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="dcterms.date" content="2024-10-21">
 <title>Implement a Project-Oriented Workflow – riegersven.github.io</title>
@@ -86,14 +86,15 @@ div.csl-indent {
 <link href="../../material/software/intro-quarto.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-68bca3a50acd80feb0cb8c3c361c6f22.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15c2b2a077b9a33bf61fabe4fdd00398.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a7b7969f839d83333d5abb8c1a1d1995.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-815340da18c4a404ba350e9fcce1f983.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -135,6 +136,8 @@ div.csl-indent {
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">riegersven.github.io</span>
     </a>
@@ -146,25 +149,21 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">About me</span></a>
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+<span class="menu-text">about me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../preface.html" aria-current="page"> 
-<span class="menu-text">Material</span></a>
+    <a class="nav-link" href="../../library.html"> 
+<span class="menu-text">library</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../publications.html"> 
-<span class="menu-text">Publications</span></a>
+<span class="menu-text">publications</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/RiegerSven/"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://bsky.app/profile/svenrieger.bsky.social"> 
-<span class="menu-text">Bluesky</span></a>
   </li>  
 </ul>
 </div> <!-- /navcollapse -->
@@ -182,15 +181,13 @@ div.csl-indent {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav><div id="quarto-announcement" data-announcement-id="cf5712b0d6d4d53aa37f95e0f08970ba" class="alert alert-primary hidden">
-<i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>This website is work in progress and under active development.</p>
-</div>
-<i class="bi bi-x-lg quarto-announcement-action"></i>
-</div>
-</header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
@@ -410,7 +407,7 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-A project-oriented workflow begins by creating a folder (working directory) to store all files related to a specific project.
+<span class="screen-reader-only">Tip</span>A project-oriented workflow begins by creating a folder (working directory) to store all files related to a specific project.
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -437,7 +434,7 @@ or `venv` for Python [](<https://www.python.org/>))
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise (5min)
+<span class="screen-reader-only">Caution</span>Exercise (5min)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -529,7 +526,7 @@ Exercise (5min)
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p><code>.md</code> = markdown, <code>.qmd</code> = quarto-markdown, <code>.csv</code> = comma-separated-values-format, <code>.png</code> = portable-network-graphics, <code>.pdf</code> = portable-document-format, <code>yml</code> = Yet Another Markup Language</p>
-</div></div><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1"></a>ProjectName/</span>
+</div></div><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1"></a>ProjectName/</span>
 <span id="cb1-2"><a href="#cb1-2"></a>├── data/</span>
 <span id="cb1-3"><a href="#cb1-3"></a>│   ├── raw/ # Original datasets <span class="in">(</span>read-only<span class="in">)</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a>│   │   ├── rawData-1<span class="fu">.csv</span> </span>
@@ -565,19 +562,19 @@ Exercise (5min)
 <span id="cb1-34"><a href="#cb1-34"></a>├── _quarto<span class="fu">.yml</span> # Quarto Projects only</span>
 <span id="cb1-35"><a href="#cb1-35"></a>├── <span class="fu">.Rprofile</span> / renv<span class="fu">.lock</span> # information about evironment</span>
 <span id="cb1-36"><a href="#cb1-36"></a>├── codebook<span class="fu">.md</span></span>
-<span id="cb1-37"><a href="#cb1-37"></a>└── ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-37"><a href="#cb1-37"></a>└── ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To enhance the reproducibility of the project, it is essential to provide a clear and comprehensive documentation. Adding a <code>README.md</code> file at the root of your working directory helps others to understand the structure, and usage of your project.</p>
 </section><section id="create-the-subdirectories-programmatically" class="level2"><h2 class="anchored" data-anchor-id="create-the-subdirectories-programmatically">Create the (sub)directories (programmatically)</h2>
 <p>First, create a file (<code>File &gt; New File &gt; R Script</code>) and name it, for example, <code>createDirs.R</code>. Next, to efficiently create all (sub)directories, you need to define a character vector that contains all the directories (paths).</p>
 <div class="cell" data-output-location="column" data-code-annotations="hover">
-<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="0" onclick="event.preventDefault();">0</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1"></a>myFolders <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="0" onclick="event.preventDefault();">0</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1"></a>myFolders <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2"></a>  <span class="fu">file.path</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>),</span>
 <span id="annotated-cell-2-3"><a href="#annotated-cell-2-3"></a>  <span class="fu">file.path</span>(<span class="st">"data"</span>, <span class="st">"processed"</span>),</span>
 <span id="annotated-cell-2-4"><a href="#annotated-cell-2-4"></a>  <span class="fu">file.path</span>(<span class="st">"code"</span>, <span class="st">"scripts"</span>),</span>
 <span id="annotated-cell-2-5"><a href="#annotated-cell-2-5"></a>  <span class="fu">file.path</span>(<span class="st">"code"</span>, <span class="st">"src"</span>),</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6"></a>  <span class="st">"output"</span>,</span>
 <span id="annotated-cell-2-7"><a href="#annotated-cell-2-7"></a>  <span class="st">"images"</span></span>
-<span id="annotated-cell-2-8"><a href="#annotated-cell-2-8"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-2-8"><a href="#annotated-cell-2-8"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="0">0</dt>
@@ -596,12 +593,12 @@ Exercise (5min)
 </div>
 </div>
 <div class="callout callout-style-simple callout-important callout-titled" title="These directories will be created in the current working directory!">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-These directories will be created in the current working directory!
+<span class="screen-reader-only">Important</span>These directories will be created in the current working directory!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -613,7 +610,7 @@ These directories will be created in the current working directory!
 </div>
 <p>Finally, we used a (<code>for</code>) loop to iterate over each path and executing the <code><a href="https://rdrr.io/r/base/files2.html">dir.create()</a></code> function. This loop also checks whether each directory already exists to prevent redundant operations. The <code>recursive = TRUE</code> argument ensures that all necessary parent directories are created if they do not exist.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="cf">for</span> (x <span class="cf">in</span> myFolders) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="cf">for</span> (x <span class="cf">in</span> myFolders) {</span>
 <span id="cb2-2"><a href="#cb2-2"></a>    </span>
 <span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(x)) {</span>
 <span id="cb2-4"><a href="#cb2-4"></a>      </span>
@@ -629,7 +626,7 @@ These directories will be created in the current working directory!
 <span id="cb2-14"><a href="#cb2-14"></a>      <span class="fu">message</span>(<span class="st">"Directory '"</span>, x, <span class="st">"' already exists."</span>)</span>
 <span id="cb2-15"><a href="#cb2-15"></a>    </span>
 <span id="cb2-16"><a href="#cb2-16"></a>    }</span>
-<span id="cb2-17"><a href="#cb2-17"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-17"><a href="#cb2-17"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-simple callout-caution callout-titled" title="Exercise (10min)">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
@@ -637,7 +634,7 @@ These directories will be created in the current working directory!
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise (10min)
+<span class="screen-reader-only">Caution</span>Exercise (10min)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -752,12 +749,12 @@ Exercise (10min)
 <p>Download &amp; install Git <i class="fa-brands fa-git-alt" aria-label="git-alt"></i>: <a href="https://git-scm.com/downloads" class="uri">https://git-scm.com/downloads</a></p>
 <p>While installing Git on Windows is straightforward (just run <code>git-current-version.exe</code>), on macOS it requires an additional step of installing a package manager (here: <a href="https://brew.sh/">Homebrew</a>), before proceeding with the Git installation.</p>
 <div class="callout callout-style-simple callout-warning callout-titled" title="Git installation for macOS only.">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Git installation for macOS only.
+<span class="screen-reader-only">Warning</span>Git installation for macOS only.
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -765,11 +762,11 @@ Git installation for macOS only.
 <div class="callout-body-container callout-body">
 <p>Copy and paste the following comand in a macOS terminal. Follow the steps.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Then:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> brew install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> brew install git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -813,7 +810,7 @@ Git installation for macOS only.
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>After installation, you might want to check the installed version of git. Copy and paste the following comand in the terminal.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div></section><section id="combine-it-with-github" class="level2"><h2 class="anchored" data-anchor-id="combine-it-with-github">Combine it with GitHub <i class="fa-brands fa-github" aria-label="github"></i>
 </h2>
@@ -832,7 +829,7 @@ Git installation for macOS only.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-But…no panacea for reproducibility
+<span class="screen-reader-only">Warning</span>But…no panacea for reproducibility
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -846,7 +843,7 @@ But…no panacea for reproducibility
 <p><strong>Recommendation:</strong> Initiate the package when creating a <code>R</code> project. Alternativey, call the <code><a href="https://rstudio.github.io/renv/reference/init.html">renv::init()</a></code> function to set up the project infrastructure.</p>
 
 <div class="no-row-height column-margin column-container"><div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/init.html">init</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/init.html">init</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div><div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist">
 <li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">RStudio</a></li>
@@ -864,7 +861,7 @@ But…no panacea for reproducibility
 <section id="renv.lock" class="level3"><h3 class="anchored" data-anchor-id="renv.lock"><code>renv.lock</code></h3>
 <p>The <code>renv.lock</code> file captures the exact state of an <code>R</code> project’s environment (stored as a <a href="https://en.wikipedia.org/wiki/JSON"><strong>JSON</strong></a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> format).</p>
 <section id="after-initialization" class="level4"><h4 class="anchored" data-anchor-id="after-initialization">After initialization</h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">{</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>  <span class="dt">"R"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>    <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"4.4.1"</span><span class="fu">,</span></span>
 <span id="cb7-4"><a href="#cb7-4"></a>    <span class="dt">"Repositories"</span><span class="fu">:</span> <span class="ot">[</span></span>
@@ -886,7 +883,7 @@ But…no panacea for reproducibility
 <span id="cb7-20"><a href="#cb7-20"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"ef233f0e9064fc88c898b340c9add5c2"</span></span>
 <span id="cb7-21"><a href="#cb7-21"></a>    <span class="fu">}</span></span>
 <span id="cb7-22"><a href="#cb7-22"></a>  <span class="fu">}</span></span>
-<span id="cb7-23"><a href="#cb7-23"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-23"><a href="#cb7-23"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section><section id="monitoring-used-packages" class="level4"><h4 class="anchored" data-anchor-id="monitoring-used-packages">Monitoring (used) packages</h4>
 <div class="callout callout-style-simple callout-caution callout-titled" title="Exercise (10min)">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
@@ -894,7 +891,7 @@ But…no panacea for reproducibility
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise (10min)
+<span class="screen-reader-only">Caution</span>Exercise (10min)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -908,21 +905,21 @@ Exercise (10min)
 <li>Use a function of the package (e.g., <code>toJSON()</code>)</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"jsonlite"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"jsonlite"</span>)</span>
 <span id="cb8-2"><a href="#cb8-2"></a></span>
-<span id="cb8-3"><a href="#cb8-3"></a>jsonlite<span class="sc">::</span><span class="fu">toJSON</span>(<span class="fu">list</span>(<span class="at">name =</span> <span class="st">"JohnDoe"</span>, <span class="at">age =</span> <span class="dv">25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a href="#cb8-3"></a>jsonlite<span class="sc">::</span><span class="fu">toJSON</span>(<span class="fu">list</span>(<span class="at">name =</span> <span class="st">"JohnDoe"</span>, <span class="at">age =</span> <span class="dv">25</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="4" type="1">
 <li>Call <code><a href="https://rstudio.github.io/renv/reference/snapshot.html">renv::snapshot()</a></code>:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>(<span class="at">type =</span> <span class="st">"implicit"</span>) <span class="co"># default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>(<span class="at">type =</span> <span class="st">"implicit"</span>) <span class="co"># default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </div>
 <p>The updated <code>renv.lock</code> file looks now as follows:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">{</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>  <span class="dt">"R"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb10-3"><a href="#cb10-3"></a>    <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"4.4.1"</span><span class="fu">,</span></span>
 <span id="cb10-4"><a href="#cb10-4"></a>    <span class="dt">"Repositories"</span><span class="fu">:</span> <span class="ot">[</span></span>
@@ -954,21 +951,21 @@ Exercise (10min)
 <span id="cb10-30"><a href="#cb10-30"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"ef233f0e9064fc88c898b340c9add5c2"</span></span>
 <span id="cb10-31"><a href="#cb10-31"></a>    <span class="fu">}</span></span>
 <span id="cb10-32"><a href="#cb10-32"></a>  <span class="fu">}</span></span>
-<span id="cb10-33"><a href="#cb10-33"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-33"><a href="#cb10-33"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>renv</code> package offers more useful functions such as <code><a href="https://rstudio.github.io/renv/reference/restore.html">renv::restore()</a></code> or <code>renv::upodate()</code> (see the package documentation: <a href="https://rstudio.github.io/renv/articles/renv.html" class="uri">https://rstudio.github.io/renv/articles/renv.html</a>).</p>
 </section></section><section id="rprofile" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="rprofile"><code>.Rprofile</code></h3>
 <p>In general, the <code>.Rprofile</code> file is a user-controllable file that enables the user to set default options (e.g., <code>options(digits = 4)</code>) and environment variables either on the user or the project level (see <a href="https://support.posit.co/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf#:~:text=Rprofile%20files%20are%20user%2Dcontrollable,base%20of%20the%20project%20directory.">here</a>). The <code>.Rprofile</code> file is run automatically every time you start <code>R</code> or a certain project.</p>
 <p>In the context of <code>renv</code> package, it sources the <code>activate.R</code> script that was created by the <code>renv</code> package. Recall, this script is run, everytime you (or somebody else) open(s) the project and creates the project environment (e.g., project-specific library).</p>
 
 <div class="no-row-height column-margin column-container"><div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"renv/activate.R"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"renv/activate.R"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div><div class="callout callout-style-simple callout-important callout-titled" title="Collaboration and the use of version control">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Collaboration and the use of version control
+<span class="screen-reader-only">Important</span>Collaboration and the use of version control
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>

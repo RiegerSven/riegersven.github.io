@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.22">
+<meta name="generator" content="quarto-1.9.10">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>(Named) Lists &amp; character vectors – riegersven.github.io</title>
 <style>
@@ -61,18 +61,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../material/data-proc/data-proc-functions.html" rel="next">
-<link href="../../material/example-data/data-latent-state.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-68bca3a50acd80feb0cb8c3c361c6f22.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-cd11bcd1b437ec35c0dee322a6d3547e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a7b7969f839d83333d5abb8c1a1d1995.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-8b7d5cd672ef1dbfa60903d371f64be5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -105,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
@@ -122,197 +121,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">About me</span></a>
+<span class="menu-text">about me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../preface.html" aria-current="page"> 
-<span class="menu-text">Material</span></a>
+    <a class="nav-link" href="../../library.html"> 
+<span class="menu-text">library</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../publications.html"> 
-<span class="menu-text">Publications</span></a>
+<span class="menu-text">publications</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/RiegerSven/"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://bsky.app/profile/svenrieger.bsky.social"> 
-<span class="menu-text">Bluesky</span></a>
-  </li>  
 </ul>
 </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/data-proc/data-proc-nam-lists.html">Data (Pre-)Processing</a></li><li class="breadcrumb-item"><a href="../../material/data-proc/data-proc-nam-lists.html">(Named) Lists &amp; character vectors</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav><div id="quarto-announcement" data-announcement-id="cf5712b0d6d4d53aa37f95e0f08970ba" class="alert alert-primary hidden">
-<i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>This website is work in progress and under active development.</p>
-</div>
-<i class="bi bi-x-lg quarto-announcement-action"></i>
-</div>
-</header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/software/intro-r-rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to R &amp; RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/software/intro-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A not so short introduction to Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/software/setup-project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Implement a Project-Oriented Workflow</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Example Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/example-data/data-hsb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">High School and Beyond (HSB)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/example-data/data-latent-state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulated Data based on 3-dimensional CFA Multiple Group Model</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Data (Pre-)Processing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-nam-lists.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">(Named) Lists &amp; character vectors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Functions in R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Loops in R</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Basic Calculations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/basic-calculations/descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">Multilevel Modeling</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/mlm/intro-mlm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Multilevel Modeling</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Measurement Models</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/measurement-models/cfa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Confirmatory Factor Analyses</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-    </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
@@ -323,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/data-proc/data-proc-nam-lists.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/data-proc/data-proc-nam-lists.html">Data (Pre-)Processing</a></li><li class="breadcrumb-item"><a href="../../material/data-proc/data-proc-nam-lists.html">(Named) Lists &amp; character vectors</a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">(Named) Lists &amp; character vectors</h1>
 </div>
 
@@ -346,39 +176,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header><p>During the last years, I heavily rely on using (named) lists and/or character vectors. What is a character or a character <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vector-objects">vector</a>? A character is a string It is created using single quotes or double quotes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>myChr <span class="ot">&lt;-</span> <span class="st">"Hi I am string"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>myChr <span class="ot">&lt;-</span> <span class="st">"Hi I am string"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>It is possible to combine (<code>c(...)</code>) multiple characters into a vector or a list.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>myChr1 <span class="ot">&lt;-</span> <span class="st">"Hi I am string"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>myChr1 <span class="ot">&lt;-</span> <span class="st">"Hi I am string"</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>myChr2 <span class="ot">&lt;-</span> <span class="st">"Hi I am string, too"</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a>myChr <span class="ot">&lt;-</span> <span class="fu">c</span>(myChr1, myChr2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4"></a>myChr <span class="ot">&lt;-</span> <span class="fu">c</span>(myChr1, myChr2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="named-lists" class="level2"><h2 class="anchored" data-anchor-id="named-lists">(Named) Lists</h2>
 <p>What is a <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#List-objects">list</a> in R? Lists are objects which contain any type of other R objects (e.g., characters, numeric inputs).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>myList <span class="ot">&lt;-</span> <span class="fu">list</span>(myChr,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>myList <span class="ot">&lt;-</span> <span class="fu">list</span>(myChr,</span>
 <span id="cb3-2"><a href="#cb3-2"></a>               <span class="st">"Hi Iam another string"</span>,</span>
-<span id="cb3-3"><a href="#cb3-3"></a>               <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3"></a>               <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Sometimes<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> it is advisable to name the list elements.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>myNamedList <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">MyChr =</span> myChr,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>myNamedList <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">MyChr =</span> myChr,</span>
 <span id="cb4-2"><a href="#cb4-2"></a>                    <span class="at">String3 =</span> <span class="st">"Hi Iam another string"</span>,</span>
 <span id="cb4-3"><a href="#cb4-3"></a>                    <span class="st">"Number 3"</span> <span class="ot">=</span> <span class="dv">3</span>)</span>
 <span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">names</span>(myNamedList) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MyChr"</span>, <span class="st">"String3"</span>, <span class="st">"Number 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">names</span>(myNamedList) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MyChr"</span>, <span class="st">"String3"</span>, <span class="st">"Number 3"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Or alternatively.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">names</span>(myList) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MyChr"</span>, <span class="st">"String3"</span>, <span class="st">"Number 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">names</span>(myList) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MyChr"</span>, <span class="st">"String3"</span>, <span class="st">"Number 3"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="create-chr-vec" class="level2"><h2 class="anchored" data-anchor-id="create-chr-vec">Creating character vectors</h2>
 <p>The <code>paste</code> and <code>paste0</code> functions are extremely powerful functions. They convert R objects to character vectors. With the <code>sep=</code> and <code>collapse=</code> arguments, it is possible to select specific character strings which separates/collapse the objects. It is important to note that the functions behave slightly different (see <a href="https://stackoverflow.com/questions/36279800/difference-between-paste-and-paste0">here</a>). The focus here is on <code>paste0</code> which sets <code>sep=""</code>.</p>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>myName <span class="ot">&lt;-</span> <span class="st">"John Doe"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>myName <span class="ot">&lt;-</span> <span class="st">"John Doe"</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">paste0</span>(<span class="fu">c</span>(<span class="st">"hello, my name is "</span>, myName), <span class="at">collapse =</span> <span class="st">" &lt;3 "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">paste0</span>(<span class="fu">c</span>(<span class="st">"hello, my name is "</span>, myName), <span class="at">collapse =</span> <span class="st">" &lt;3 "</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[1] “hello, my name is &lt;3 John Doe”</p>
 <p>We can use the <code>paste0</code> function to create the names of the variables (of a measure)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. The variable names should follow a precise structure<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> see <a href="#tbl-varNames" class="quarto-xref">Table&nbsp;1</a>.</p>
 <div id="tbl-varNames" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -434,8 +264,8 @@ Table&nbsp;1: Overview of the Structure of Variable Names
 </div>
 <p><code>paste0</code> function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">list</span>(<span class="st">"ScT1"</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"sc"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"T1"</span>),</span>
-<span id="cb7-2"><a href="#cb7-2"></a>     <span class="st">"ScT2"</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"sc"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"T2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">list</span>(<span class="st">"ScT1"</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"sc"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"T1"</span>),</span>
+<span id="cb7-2"><a href="#cb7-2"></a>     <span class="st">"ScT2"</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"sc"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"T2"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$ScT1
 [1] "sc1T1" "sc2T1" "sc3T1"
@@ -446,7 +276,7 @@ $ScT2
 </div>
 <p>If you are really laze you could also write.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">paste0</span>(<span class="st">"sc"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">rep</span>(<span class="fu">paste0</span>(<span class="st">"T"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>), <span class="at">each =</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">paste0</span>(<span class="st">"sc"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">rep</span>(<span class="fu">paste0</span>(<span class="st">"T"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>), <span class="at">each =</span> <span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "sc1T1" "sc2T1" "sc3T1" "sc1T2" "sc2T2" "sc3T2"</code></pre>
 </div>
@@ -509,13 +339,14 @@ $ScT2
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -861,17 +692,7 @@ $ScT2
       }
     }
   });
-  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../../material/example-data/data-latent-state.html" class="pagination-link" aria-label="Simulated Data based on 3-dimensional CFA Multiple Group Model">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Simulated Data based on 3-dimensional CFA Multiple Group Model</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../material/data-proc/data-proc-functions.html" class="pagination-link" aria-label="Functions in R">
-        <span class="nav-page-text">Functions in R</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
+  </script>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.22">
+<meta name="generator" content="quarto-1.9.10">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="dcterms.date" content="2024-10-25">
 <title>Functions in R – riegersven.github.io</title>
@@ -62,18 +62,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../material/data-proc/data-proc-loops.html" rel="next">
-<link href="../../material/data-proc/data-proc-nam-lists.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-68bca3a50acd80feb0cb8c3c361c6f22.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-cd11bcd1b437ec35c0dee322a6d3547e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a7b7969f839d83333d5abb8c1a1d1995.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-8b7d5cd672ef1dbfa60903d371f64be5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -106,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:description" content="Writing functions is the best way to enhance your data processing skills. Functions allow you to automate tasks that are needed to be repeated more than 2-times. This sections gives a brief introduction in writing your own functions. There are other sources that cover this topic in much more detail (see R for Data Science by Hadley Wickham &amp; Garrett Grolemund).">
 <meta name="twitter:card" content="summary">
 </head>
-<body class="nav-sidebar floating nav-fixed slimcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
@@ -123,197 +122,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">About me</span></a>
+<span class="menu-text">about me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../preface.html" aria-current="page"> 
-<span class="menu-text">Material</span></a>
+    <a class="nav-link" href="../../library.html"> 
+<span class="menu-text">library</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../publications.html"> 
-<span class="menu-text">Publications</span></a>
+<span class="menu-text">publications</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/RiegerSven/"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://bsky.app/profile/svenrieger.bsky.social"> 
-<span class="menu-text">Bluesky</span></a>
-  </li>  
 </ul>
 </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/data-proc/data-proc-nam-lists.html">Data (Pre-)Processing</a></li><li class="breadcrumb-item"><a href="../../material/data-proc/data-proc-functions.html">Functions in R</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav><div id="quarto-announcement" data-announcement-id="cf5712b0d6d4d53aa37f95e0f08970ba" class="alert alert-primary hidden">
-<i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>This website is work in progress and under active development.</p>
-</div>
-<i class="bi bi-x-lg quarto-announcement-action"></i>
-</div>
-</header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/software/intro-r-rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to R &amp; RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/software/intro-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A not so short introduction to Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/software/setup-project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Implement a Project-Oriented Workflow</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Example Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/example-data/data-hsb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">High School and Beyond (HSB)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/example-data/data-latent-state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulated Data based on 3-dimensional CFA Multiple Group Model</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Data (Pre-)Processing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-nam-lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">(Named) Lists &amp; character vectors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-functions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Functions in R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/data-proc/data-proc-loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Loops in R</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Basic Calculations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/basic-calculations/descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">Multilevel Modeling</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/mlm/intro-mlm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Multilevel Modeling</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Measurement Models</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../material/measurement-models/cfa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Confirmatory Factor Analyses</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-    </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
@@ -334,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/RiegerSven/riegersven.github.io/edit/main/material/data-proc/data-proc-functions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/RiegerSven/riegersven.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../material/data-proc/data-proc-nam-lists.html">Data (Pre-)Processing</a></li><li class="breadcrumb-item"><a href="../../material/data-proc/data-proc-functions.html">Functions in R</a></li></ol></nav><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Functions in R</h1>
 </div>
 
@@ -405,11 +235,11 @@ If you want to see the presentation in full screen go to **Other Formats** on th
 <strong>body</strong> that contains the code which is executed across function calls</li>
 </ol>
 <div class="cell" data-output-location="column">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>name <span class="ot">&lt;-</span> <span class="cf">function</span>( arguments ) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>name <span class="ot">&lt;-</span> <span class="cf">function</span>( arguments ) {</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>  body </span>
 <span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In addition, you might want to include warning, and/or error messages.</p>
 </div>
@@ -423,11 +253,11 @@ If you want to see the presentation in full screen go to **Other Formats** on th
 <section id="step-1" class="level3"><h3 class="anchored" data-anchor-id="step-1">Step 1</h3>
 <p>Provide a concise and meaningful name (here: <code>calcScaleScore</code>). The name of the function object will–after defining the function–appear in the <code>R</code> environment.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>calcScaleScore <span class="ot">&lt;-</span> <span class="cf">function</span>( arguments ) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>calcScaleScore <span class="ot">&lt;-</span> <span class="cf">function</span>( arguments ) {</span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a>  body </span>
 <span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="step-2" class="level3"><h3 class="anchored" data-anchor-id="step-2">Step 2</h3>
 <p>Define the inputs (also known as arguments or parameters) of the function. These inputs provide the necessary data and information and concurenntly define how the function operates. The inputs are written within regular parentheses <code>(...)</code>. Optional: Prepare <code>if</code> conditions.</p>
@@ -439,7 +269,7 @@ If you want to see the presentation in full screen go to **Other Formats** on th
 <strong>Items</strong>: A character vector specifying the names of the items.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>calcScaleScore <span class="ot">&lt;-</span> <span class="cf">function</span>( data,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>calcScaleScore <span class="ot">&lt;-</span> <span class="cf">function</span>( data,</span>
 <span id="cb3-2"><a href="#cb3-2"></a>                            items,</span>
 <span id="cb3-3"><a href="#cb3-3"></a>                            <span class="at">score =</span> <span class="st">"sum"</span> ) {</span>
 <span id="cb3-4"><a href="#cb3-4"></a>  </span>
@@ -456,13 +286,13 @@ If you want to see the presentation in full screen go to **Other Formats** on th
 <span id="cb3-15"><a href="#cb3-15"></a>    <span class="fu">stop</span>(<span class="st">"The 'score' argument must be either 'sum' or 'mean'"</span>)</span>
 <span id="cb3-16"><a href="#cb3-16"></a></span>
 <span id="cb3-17"><a href="#cb3-17"></a>  }</span>
-<span id="cb3-18"><a href="#cb3-18"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-18"><a href="#cb3-18"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="step-3" class="level3"><h3 class="anchored" data-anchor-id="step-3">Step 3</h3>
 <p>Provide the actual code in body of the function. This code is written inside the curly brackets <code><a href="https://rdrr.io/r/base/Paren.html">{ }</a></code>. Do not forget to <code><a href="https://rdrr.io/r/base/function.html">return()</a></code> the results.</p>
 <p>To calculate the sum score, we use the <code><a href="https://rdrr.io/r/base/colSums.html">rowSums()</a></code> function; for the mean score, we use the <code><a href="https://rdrr.io/r/base/colSums.html">rowMeans()</a></code> function. The calculated scores are temporarily stored in the <code>ret</code> object within the function (the <code>ret</code> object does not exist in the global <code>R</code> environment).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>calcScaleScore <span class="ot">&lt;-</span> <span class="cf">function</span>( data,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>calcScaleScore <span class="ot">&lt;-</span> <span class="cf">function</span>( data,</span>
 <span id="cb4-2"><a href="#cb4-2"></a>                            items,</span>
 <span id="cb4-3"><a href="#cb4-3"></a>                            <span class="at">score =</span> <span class="st">"sum"</span> ) {</span>
 <span id="cb4-4"><a href="#cb4-4"></a></span>
@@ -482,25 +312,25 @@ If you want to see the presentation in full screen go to **Other Formats** on th
 <span id="cb4-18"><a href="#cb4-18"></a></span>
 <span id="cb4-19"><a href="#cb4-19"></a>  <span class="fu">return</span>(ret)</span>
 <span id="cb4-20"><a href="#cb4-20"></a></span>
-<span id="cb4-21"><a href="#cb4-21"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-21"><a href="#cb4-21"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="step-4" class="level3"><h3 class="anchored" data-anchor-id="step-4">Step 4</h3>
 <p>Test the function.</p>
 <div class="callout callout-style-simple callout-note callout-titled" title="Do you need data?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Do you need data?
+<span class="screen-reader-only">Note</span>Do you need data?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A simulated data set (<code>wideLSdat</code>) can be found in the <a href="../../material/example-data/data-latent-state.html">Example Data</a> section.</p>
+<p>A simulated data set (<code>wideLSdat</code>) can be found in the <a href="../example-data/data-latent-state.qmd">Example Data</a> section.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">wideLSdat</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">wideLSdat</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         Y11        Y21        Y31        Y12        Y22        Y32
 1 -1.1184017 -1.6943188  0.1323046  0.5748477  0.3150744  1.4075321
@@ -513,10 +343,10 @@ Do you need data?
 </div>
 <p>Quickly create a named list.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>wideLSVar <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"Y1"</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"Y"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span>),</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>wideLSVar <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"Y1"</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"Y"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span>),</span>
 <span id="cb7-2"><a href="#cb7-2"></a>                  <span class="st">"Y2"</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"Y"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">2</span>),</span>
 <span id="cb7-3"><a href="#cb7-3"></a>                  <span class="st">"Y3"</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"Y"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">3</span>))</span>
-<span id="cb7-4"><a href="#cb7-4"></a>wideLSVar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-4"><a href="#cb7-4"></a>wideLSVar</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$Y1
 [1] "Y11" "Y21" "Y31"
@@ -532,13 +362,13 @@ $Y3
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>wideLSdat<span class="sc">$</span>Y1 <span class="ot">&lt;-</span> <span class="fu">calcScaleScore</span>(<span class="at">data =</span> wideLSdat,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>wideLSdat<span class="sc">$</span>Y1 <span class="ot">&lt;-</span> <span class="fu">calcScaleScore</span>(<span class="at">data =</span> wideLSdat,</span>
 <span id="cb9-2"><a href="#cb9-2"></a>                               <span class="at">items =</span> wideLSVar<span class="sc">$</span>Y1,</span>
-<span id="cb9-3"><a href="#cb9-3"></a>                               <span class="at">score =</span> <span class="st">"sum"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3"></a>                               <span class="at">score =</span> <span class="st">"sum"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Evaluate the results.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">table</span>(<span class="fu">rowSums</span>(wideLSdat[, wideLSVar<span class="sc">$</span>Y1]) <span class="sc">==</span> wideLSdat<span class="sc">$</span>Y1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">table</span>(<span class="fu">rowSums</span>(wideLSdat[, wideLSVar<span class="sc">$</span>Y1]) <span class="sc">==</span> wideLSdat<span class="sc">$</span>Y1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 TRUE 
@@ -553,7 +383,7 @@ TRUE
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise (15min): Input validation
+<span class="screen-reader-only">Caution</span>Exercise (15min): Input validation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -561,7 +391,7 @@ Exercise (15min): Input validation
 <div class="callout-body-container callout-body">
 <p>Add an input validation that all items exist in the data set. Bonus: Print the missing items</p>
 <div class="cell">
-<details class="code-fold"><summary>Show solution</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>calcScaleScore <span class="ot">&lt;-</span> <span class="cf">function</span>( data,</span>
+<details class="code-fold"><summary>Show solution</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>calcScaleScore <span class="ot">&lt;-</span> <span class="cf">function</span>( data,</span>
 <span id="cb12-2"><a href="#cb12-2"></a>                            items,</span>
 <span id="cb12-3"><a href="#cb12-3"></a>                            <span class="at">score =</span> <span class="st">"sum"</span> ) {</span>
 <span id="cb12-4"><a href="#cb12-4"></a></span>
@@ -592,7 +422,7 @@ Exercise (15min): Input validation
 <span id="cb12-29"><a href="#cb12-29"></a></span>
 <span id="cb12-30"><a href="#cb12-30"></a>  <span class="fu">return</span>(ret)</span>
 <span id="cb12-31"><a href="#cb12-31"></a></span>
-<span id="cb12-32"><a href="#cb12-32"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-32"><a href="#cb12-32"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -651,13 +481,14 @@ Exercise (15min): Input validation
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1003,17 +834,7 @@ Exercise (15min): Input validation
       }
     }
   });
-  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../../material/data-proc/data-proc-nam-lists.html" class="pagination-link" aria-label="(Named) Lists &amp; character vectors">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">(Named) Lists &amp; character vectors</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../material/data-proc/data-proc-loops.html" class="pagination-link" aria-label="Loops in R">
-        <span class="nav-page-text">Loops in R</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
+  </script>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
