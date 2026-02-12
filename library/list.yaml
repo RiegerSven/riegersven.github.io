@@ -1,0 +1,17 @@
+- title: "Coding and Teaching Library"
+  path: https://riegersven.github.io/library/
+  description: Work in progress... 
+  date: "2026-02-12"  
+  categories:
+    - Software
+    - ...
+- title: "Workshop: Data documentation with R and Quarto"
+  path: https://riegersven.github.io/data-doc-workshop-2023/
+  description: "Workshop for student assistants hosted at the Hector Research Institute for Education Sciences and Psychology (HIB) in Tübingen, Germany on April 13, 2023. The workshop introduces R and Quarto for data documentation." 
+  date: "2023-04-13"
+  categories:
+    - data documentation
+    - R and RStudio
+    - Quarto
+
+
