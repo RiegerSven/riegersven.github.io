@@ -1,0 +1,29 @@
+---
+title: "Coding and Teaching Library"
+date: "2025-10-09"
+keywords: 
+    - R and RStudio
+    - Quarto
+    - "..."
+---
+
+
+
+```{=html}
+<style>
+  .fullframe {
+    position: fixed;
+    top: 4rem;   /* adjust: matches Quarto navbar height */
+    left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: calc(100vh - 4rem); /* subtract navbar */
+    border: 0;
+  }
+</style>
+
+<iframe class="fullframe"
+  src="https://riegersven.github.io/library"
+  loading="lazy"
+  sandbox="allow-scripts allow-same-origin">
+</iframe>
+```

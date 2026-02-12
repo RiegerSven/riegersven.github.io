@@ -1,0 +1,15 @@
+---
+title: "library"
+listing: 
+  contents:
+    - content/*.qmd
+  type: default
+  categories: true
+  fields: [date, title, keywords]
+---
+
+::: {.callout-warning }
+
+This page is currently being updated... (2026-02-12)
+
+:::

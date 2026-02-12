@@ -3,12 +3,6 @@ project:
   output-dir: _site
 website:
   title: "riegersven.github.io"
-  announcement:
-    icon: info-circle
-    dismissable: true
-    content: "This website is work in progress and under active development."
-    type: primary
-    position: below-navbar
   open-graph:
     site-name: "Personal website of Sven Rieger"
   twitter-card: true
@@ -28,56 +22,19 @@ website:
     collapse: true
     pinned: false
     right:
-      - text: "About me"
+      - text: "about me"
         file: index.qmd 
-      - text: Material
-        file: preface.qmd
-      - text: Publications
+      - text: library
+        file: library.qmd
+      - text: publications
         file: publications.qmd
       - icon: github
         href: https://github.com/RiegerSven/
-      - text: Bluesky 
-        href: https://bsky.app/profile/svenrieger.bsky.social
-  sidebar:
-    - title: "Material"
-      style: "floating"
-      border: false
-      type: dark
-      background: none
-      reader-mode: true
-      search: true
-      collapse-level: 1
-      contents:
-        - text: "Preface"
-          href: preface.qmd
-        - section: "Software"
-          contents: 
-            - material/software/intro-r-rstudio.qmd
-            - material/software/intro-quarto.qmd
-            - material/software/setup-project.qmd
-        - section: "Example Data"
-          contents:
-            - material/example-data/data-hsb.qmd
-            - material/example-data/data-latent-state.qmd
-        - section: "Data (Pre-)Processing"
-          contents:            
-            - material/data-proc/data-proc-nam-lists.qmd
-            - material/data-proc/data-proc-functions.qmd
-            - material/data-proc/data-proc-loops.qmd
-        - section: "Basic Calculations"
-          contents: 
-            - material/basic-calculations/descriptive-statistics.qmd
-        - section: "Multilevel Modeling"
-          contents:
-            - material/mlm/intro-mlm.qmd
-        - section: "Measurement Models"
-          contents:
-            - material/measurement-models/cfa.qmd
 
 format:
   html:
     toc: true
-    theme: zephyr
+    theme: litera
     mermaid:
       theme: neutral
     grid:
@@ -112,11 +69,6 @@ fig-responsive: true
 # links
 link-external-icon: false
 link-external-newwindow: true
-
-html-math-method: 
-  method: mathjax
-  number-equations: true
-  url: https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.6/tex-mml-chtml.js
   
 #
 #url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"

@@ -31,9 +31,9 @@ I am a postdoctoral researcher in educational research at the [University of Tü
 My research interests encompass:
 
 - causal inference
-- automation of data analyses with {{< fa brands r-project size=xl >}} and `Quarto`
-- latent variable modeling (focus on longitudinal analyses)
-- motivation & personality development 
+- R programming paired with Quarto
+- latent variable modeling with a focus on longitudinal analyses
+- (motivation & personality development)
 
 ## Education
 
