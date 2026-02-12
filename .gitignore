@@ -3,11 +3,7 @@
 /docs/
 /_site/
 /_freeze/
-/material/software/_freeze/
 /_extensions/
-
-/material/new-stuff/
-/material/
 
 .Rproj.user
 .Rhistory
